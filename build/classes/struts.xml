@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <constant name="struts.strictMethodInvocation.methodRegex" value="([a-zA-Z]*)"/>
+    <constant name="struts.multipart.saveDir" value="/tmp/files/" />
+    
+    <include file="actionEmpresa.xml"/>
+    
+
+    <package name="default" namespace="/" extends="tiles-default">
+    <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+    </result-types>
+ 	<!--   <action name="/" class="com.kaltia.action.ActionBase">
+    			 <result type="redirectAction">kaltia</result>
+    		</action>  -->
+        <action name="*" class="com.kaltia.action.InitAction">
+            <!-- <param name="name">Chain from A to B</param> -->
+            <result name="kaltia" type="tiles">kaltia</result>
+            <result name="actionA" type="tiles">actionA</result>
+            <result name="carinary" type="tiles">carinary</result>
+            <result name="menuA" type="tiles">menuA</result>
+            <result name="test" type="tiles">test</result> 
+            <result name="hambur" type="tiles">hambur</result> 
+            <result name="PuroCuero" type="tiles">PuroCuero</result>
+            <result name="vortex" type="tiles">vortex</result> 
+            <result name="abele" type="tiles">abele</result> 
+            <result name="appsea" type="tiles">appsea</result>
+            <result name="arialogic" type="tiles">arialogic</result>
+            <result name="artland" type="tiles">artland</result>
+            <result name="aerogem" type="tiles">aerogem</result>
+            <result name="algenius" type="tiles">algenius</result>
+            <result name="arrival" type="tiles">arrival</result>
+            <result name="bronea" type="tiles">bronea</result>
+            <result name="error">/WEB-INF/inicio/error.jsp</result>
+        </action>
+     </package>
+     
+    </struts>

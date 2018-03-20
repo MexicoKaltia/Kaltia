@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseInicio" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="title" value="tituloBaseinicio" cascade="true" />
+		<put-attribute name="header" value="/WEB-INF/inicio/header.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="css" expression="/css/inicio.css" cascade="true" />
+	</definition>
+
+	<definition name="bronea" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/bronea/pages/broneaHeader.jsp" cascade="true" />
+		<put-attribute name="left" value="/modelo/bronea/pages/broneaLeft.jsp" cascade="true" />
+		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp" cascade="true" />
+		<put-attribute name="right" value="/modelo/bronea/pages/broneaRight.jsp" />
+		<put-attribute name="footer" value="/modelo/bronea/pages/broneaFooter.jsp" />
+		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/carinary/pages/carinaryHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/carinary/pages/carinaryBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/carinary/pages/carinaryFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="skaxis" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/skaxis/pages/skaxisHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/skaxis/pages/skaxisBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/skaxis/pages/skaxisFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/viral/pages/viralHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/viral/pages/viralBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+		<definition name="vortex" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/vortex/pages/vortexHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/vortex/pages/vortexBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/vortex/pages/vortexFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	
+	<!-- segunda generacion -->
+	
+	<definition name="abele" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/abele/pages/abeleHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/abele/pages/abeleBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/abele/pages/abeleFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="appsea" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/appsea/pages/appseaHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/appsea/pages/appseaBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/appsea/pages/appseaFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="arialogic" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/arialogic/pages/arialogicHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/arialogic/pages/arialogicBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/arialogic/pages/arialogicFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="artland" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/artland/pages/artlandHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/artland/pages/artlandBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/artland/pages/artlandFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="aerogem" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/aerogem/pages/aerogemHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/aerogem/pages/aerogemBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="algenius" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/algenius/pages/algeniusHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/algenius/pages/algeniusBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+	<definition name="arrival" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/arrival/pages/arrivalHeader.jsp" />
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="body" value="/modelo/arrival/pages/arrivalBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/modelo/arrival/pages/arrivalFooter.jsp" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	</definition>
+		
+	
+
+	
+</tiles-definitions>

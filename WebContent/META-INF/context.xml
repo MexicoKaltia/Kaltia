@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+    <Resource name="jdbc/kaltiaConexion" auth="Container" type="javax.sql.DataSource"
+        maxActive="20" maxIdle="10" maxWait="5000"
+        username="root" password="H00W6odR" driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/kaltiadb"/>
+
+</Context>
