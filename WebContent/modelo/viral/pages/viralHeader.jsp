@@ -29,19 +29,19 @@
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
   <header id="header" class="clear">
-  <!-- ################################################################################################ --> 
+  
 <div id="logo" class="fl_left">
-	<h1><a href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>">
-      <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(2)'/>" alt="">
-      <s:property value='header.idEmpresa'/>
-      </a></h1>
+	
 <form class="form-signin" action="<%=request.getContextPath() + "/"%><s:property value='identidadVO.idAction'/>/ingresar" method="post">				
  <div id="accordion" role="tablist" class="centrar">
   <div class="card">
     <div class="card-header" role="tab" id="headingTwo">
       <h3 class="mb-0">
         <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-			<s:property value='header.idEmpresa' />
+			<h1>
+			<img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
+			<s:property value='header.idEmpresa'/>
+	 		</h1>
         </a>
       </h3>
     </div>
@@ -72,7 +72,7 @@
 					<ul class="clear">
 						<li class="active"><a href="<%=request.getContextPath() + "/"%><s:property value='identidadVO.idAction'/>"><s:property value="#idEmpresa" /></a></li>			
 						<s:iterator value='header.headerMenu.menu' var="menuValue">
-							<li><a class="drop" href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuValue.substring(#menuValue.lastIndexOf(".")+1,#menuValue.length())'/>">
+							<li><a class="drop" href="<s:property value='#menuValue.substring(#menuValue.lastIndexOf(".")+1,#menuValue.length())'/>">
 							<s:property value='#menuValue.substring(0,#menuValue.indexOf("."))' /></a>
 								<ul>
 									<s:iterator value='header.headerMenu.subMenu' var="menuValueSub">
@@ -102,14 +102,13 @@
 </div>
 <!-- ################################################################################################ -->
 
-<!-- ################################################################################################ -->
-<div class="wrapper row2 bgded" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)' />');">
+<div class="wrapper row2 bgded" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)'/>?v=1');">
+<a id="nosotros">
   <div class="overlay">
     <section id="pageintro" class="clear"> 
-      <!-- ################################################################################################ -->
       <div class="center btmspace-80">
-        <h2 class="heading xxl uppercase btmspace-30"><s:property value='header.headerSeccionArray2.get(0).objetoVO.get(1)'/></h2>
-        <p class="xl nospace capitalise"><s:property value='header.headerSeccionArray2.get(0).objetoVO.get(2)'/></p>
+        <h2 class="heading xxl uppercase btmspace-30"><s:property value='header.headerSeccionArray2.get(0).objetoVO.get(0)'/></h2>
+        <p class="xl nospace capitalise"><s:property value='header.headerSeccionArray2.get(0).objetoVO.get(1)'/></p>
       </div>
       <ul class="nospace group services">
           <s:subset start="1" source ="header.headerSeccionArray2">
@@ -126,7 +125,9 @@
       </ul>
     </section>
   </div>
+  </a>
 </div>
+
 <!-- ################################################################################################ -->
 </body>
 </html>

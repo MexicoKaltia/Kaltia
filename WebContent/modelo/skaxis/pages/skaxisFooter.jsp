@@ -57,14 +57,15 @@
     </div>
     <!-- ################################################################################################ -->
     <div class="one_quarter">
-      <h6 class="heading">+++</h6>
-      <p class="nospace btmspace-15">++++</p>
-      <form method="post" action="#">
+      <h6 class="heading"><s:property value='footer.footerLista5.get(0)' /></h6>
+      <p class="nospace btmspace-15"><s:property value='footer.footerLista5.get(1)' /></p>
+      <p class="nospace btmspace-15"><s:property value='footer.footerLista5.get(2)' /></p>
+      <form method="post" action="<s:property value='footer.footerLista5.get(3)' />">
         <fieldset>
           <legend>Newsletter:</legend>
           <input class="btmspace-15" type="text" value="" placeholder="Name">
           <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
+          <button type="submit" value="submit"><s:property value='footer.footerLista5.get(4)' /></button>
         </fieldset>
       </form>
     </div>

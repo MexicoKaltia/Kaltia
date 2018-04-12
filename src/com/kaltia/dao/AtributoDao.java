@@ -2,17 +2,52 @@ package com.kaltia.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.kaltia.action.ActionBase;
+import com.kaltia.infra.BaseInfra;
 import com.kaltia.infra.ComunResolution;
 import com.kaltia.vo.UserEmpresa;
 import com.kaltia.vo.UserPrimarioVO;
 
 public class AtributoDao {
+	
+	static final Logger logger = LogManager.getLogger(ActionBase.class.getName());
+	public static Properties PROPS = BaseInfra.PROPS;
 
 	public AtributoDao() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	@SuppressWarnings("null")
+	public String[] getMaquetas() {
+		
+		List<String> complemento = new ArrayList<String>();
+		String[] maquetas = null;
+		String sql = "SELECT tc_action.idAction from tc_action where actionPrincipal =1";
+		
+		try {	
+			ArrayList<Object> arrReturnDAO = ConexionDao.doConexionSet(sql, complemento);
+			
+			if (arrReturnDAO != null && arrReturnDAO.size() > 0) {
+				maquetas = new String[arrReturnDAO.size()] ;		
+				//int i = 0;
+				for(int i = 0; i < arrReturnDAO.size(); i++) {
+			  		maquetas[i]= arrReturnDAO.get(i).toString().substring(1, arrReturnDAO.get(i).toString().length()-1);
+			  		logger.info("action:"+arrReturnDAO.get(i).toString());
+			  	
+				}
+			}
+			}catch (Exception e) {
+					logger.error("elemento mal recuperado de base de datos"+ PROPS.getProperty("error.03")+"\tarticulo:");
+					e.printStackTrace();
+				}
+			
+		return maquetas;
+	}
 	/*
 
 	@SuppressWarnings("rawtypes")
