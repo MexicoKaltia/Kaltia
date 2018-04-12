@@ -59,6 +59,7 @@ public class InitAction extends ActionSupport {
 					body = (BodyVO) identidadHash.get("body");
 					footer = (FooterVO) identidadHash.get("footer");
 					logger.info("Termina ejecutar action:"+actionName);
+					logger.info("---------------------------------------------------------------------------------------");
 					return identidadVO.getAction().toString();
 			} else {
 				return ERROR;

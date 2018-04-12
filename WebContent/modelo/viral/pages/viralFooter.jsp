@@ -24,7 +24,7 @@
       <ul class="nospace linklist">
         <s:subset start="1" source ="footer.footerLista2">
         <s:iterator>
-          		<li><a href="#"><s:property/></a></li>
+          		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li>
          </s:iterator>
          </s:subset>
 
@@ -35,21 +35,22 @@
     <div class="one_quarter">
       <h6 class="title"><s:property value='footer.footerLista3.get(0)' /></h6>
       <article>
-        <h2 class="nospace"><a href="#"><s:property value='footer.footerLista3.get(1)' /></a></h2>
-        <time class="smallfont" datetime="2045-04-06">hoy</time>
-        <p><s:property value='footer.footerLista3.get(2)' /></p>
+        <h2 class="nospace"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='footer.footerLista3.get(1)' />">
+        <s:property value='footer.footerLista3.get(2)' /></a></h2>
+        <time class="smallfont" datetime="2045-04-06"><s:property value='footer.footerLista3.get(3)' /></time>
+        <p><s:property value='footer.footerLista3.get(4)' /></p>
       </article>
     </div>
     <!-- ################################################################################################ -->
     <div class="one_quarter">
       <h6 class="title"><s:property value='footer.footerLista5.get(0)' /></h6>
       <p><s:property value='footer.footerLista5.get(1)' /></p>
-      <form method="post" action="#">
+      <form method="post" action="<s:property value='identidadVO.idAction'/>/<s:property value='footer.footerLista5.get(2)' />">
         <fieldset>
           <legend>Newsletter:</legend>
           <input class="btmspace-15" type="text" value="" placeholder="Name">
           <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
+          <button type="submit" value="submit"><s:property value='footer.footerLista5.get(3)' /></button>
         </fieldset>
       </form>
     </div>

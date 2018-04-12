@@ -15,12 +15,14 @@
         <p><strong><s:property value='body.bodyTexto1.get(1)'/></strong></p>
         <p><s:property value='body.bodyTexto1.get(2)'/></p>
         <p class="btmspace-30"><s:property value='body.bodyTexto1.get(3)'/> [&hellip;]</p>
-        <footer><a class="btn" href="#"><s:property value='body.bodyTexto1.get(4)'/> &raquo;</a></footer>
+        <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto1.get(4)'/>">
+        <s:property value='body.bodyTexto1.get(5)'/> &raquo;</a></footer>
       </div>
       <div class="one_half">
-        <p><strong><s:property value='body.bodyTexto1.get(5)'/></strong></p>
-        <a href="#"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto1.get(6)'/>" alt=""></a>
-        <p><s:property value='body.bodyTexto1.get(7)'/></p>
+        <p><strong><s:property value='body.bodyTexto1.get(6)'/></strong></p>
+        <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto1.get(7)'/>">
+        <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto1.get(8)'/>" alt=""></a>
+        <p><s:property value='body.bodyTexto1.get(9)'/></p>
       </div>
     </div>
   </section>
@@ -35,10 +37,10 @@
     <div class="group testimonials">
     <s:subset start="1" source ="body.bodySeccionArray1">
     <s:iterator var="bodySeccionArray1">
-      <article class="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray1.objetoVO.get(0)'/>" alt="">
-        <blockquote><s:property value='#bodySeccionArray1.objetoVO.get(1)'/></blockquote>
-        <h6 class="heading"><s:property value='#bodySeccionArray1.objetoVO.get(2)'/></h6>
-        <em><s:property value='#bodySeccionArray1.objetoVO.get(3)'/></em></article>
+      <article class="<s:property value='#bodySeccionArray1.objetoVO.get(0)'/>"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray1.objetoVO.get(1)'/>" alt="">
+        <blockquote><s:property value='#bodySeccionArray1.objetoVO.get(2)'/></blockquote>
+        <h6 class="heading"><s:property value='#bodySeccionArray1.objetoVO.get(3)'/></h6>
+        <em><s:property value='#bodySeccionArray1.objetoVO.get(4)'/></em></article>
      </s:iterator>
      </s:subset>
     </div>
@@ -53,7 +55,9 @@
     <div class="group team">
     <s:subset start="1" source ="body.bodySeccionArray2">
     <s:iterator var="bodySeccionArray2">
-      <figure class="<s:property value='#bodySeccionArray2.objetoVO.get(0)'/>"><a href="<s:property value='#bodySeccionArray2.objetoVO.get(1)'/>"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>" alt=""></a>
+      <figure class="<s:property value='#bodySeccionArray2.objetoVO.get(0)'/>">
+      <a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray2.objetoVO.get(1)'/>">
+      <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>" alt=""></a>
         <figcaption>
           <h6 class="heading"><s:property value='#bodySeccionArray2.objetoVO.get(3)'/></h6>
           <em><s:property value='#bodySeccionArray2.objetoVO.get(4)'/></em>
@@ -78,7 +82,9 @@
   <figure class="hoc clear"> 
     <ul class="nospace group logos">
     <s:iterator value="body.bodySeccionArray3" var="bodySeccionArray3">
-      <li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>"><a href="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>" alt=""></a></li>
+      <li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>">
+      <a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
+      <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>" alt=""></a></li>
       </s:iterator>
     </ul>
   </figure>
