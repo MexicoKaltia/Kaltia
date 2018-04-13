@@ -5,10 +5,11 @@
 
 <html>
 <body> 
-<div class="wrapper row4 bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='footer.footerLista1.get(0)'/>');">
+<div class="wrapper row4 bgded overlay" style="background-image:url('../images/demo/backgrounds/04.png');">
   <footer id="footer" class="hoc clear"> 
     <div class="one_quarter first">
-      <h6 class="heading"><s:property value='footer.footerLista1.get(1)' /></h6>
+      <h6 class="heading"><s:property value='footer.footerLista1.get(0)' /></h6>
+      <p><s:property value='footer.footerLista1.get(1)' /></p>
       <p><s:property value='footer.footerLista1.get(2)' /></p>
       <p><s:property value='footer.footerLista1.get(3)' /></p>
     </div>
@@ -36,9 +37,9 @@
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerLista3.get(0)' /></h6>
       <article>
-        <h2 class="nospace font-x1"><a href="#"><s:property value='footer.footerLista3.get(1)' /></a></h2>
-        <time class="font-xs" datetime="<s:property value='footer.footerLista3.get(1)' />"><s:property value='footer.footerLista3.get(1)' /></time>
-        <p><s:property value='footer.footerLista3.get(3)' /></p>
+        <h2 class="nospace font-x1"><a href="#"></a></h2>
+        <time class="font-xs" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
+        <p><s:property value='footer.footerLista3.get(1)' /></p>
       </article>
     </div>
         <!-- ################################################################################################ -->

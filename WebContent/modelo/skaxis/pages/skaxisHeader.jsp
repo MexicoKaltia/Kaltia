@@ -6,14 +6,14 @@
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> 
+<div class="bgded overlay " style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)' />');"> 
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
       <div id="logo" class="fl_left">
-        <h1><a href="<s:property value='identidadVO.idAction'/>">
-		<img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
-		<s:property value='header.idEmpresa'/>
-	 </a></h1>
+        <h1><a href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>">
+      		<img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(2)'/>" alt="">
+      		<s:property value='header.idEmpresa'/>
+      	</a></h1>
       </div>
       <s:set var="idEmpresa" value="header.idEmpresa" />
 				<nav id="mainav" class="fl_right">
@@ -55,29 +55,29 @@
       <s:iterator value='header.headerSeccionArray2' var="headerSeccionArray2">
       	<li>
       	<article>
-      	<div class="one_half first">
+      	<table>
+      	 <td>
             <p><s:property value='#headerSeccionArray2.objetoVO.get(0)' /></p>
             <h3 class="heading"><s:property value='#headerSeccionArray2.objetoVO.get(1)' /></h3>
             <p><s:property value='#headerSeccionArray2.objetoVO.get(2)' /></p>
-            </div>
-      	<div class="one_half">
-            <a aline='center' href="<s:property value='identidadVO.idAction'/>/<s:property value='#headerSeccionArray2.objetoVO.get(3)' />">
-            <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#headerSeccionArray2.objetoVO.get(4)' />" alt=""></a>
-		</div><br>
-           <s:if test='#headerSeccionArray2.objetoVO.get(5).startWith("Email")'>
+            </td>
+            <td>
+            <a aline='center' href="#"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#headerSeccionArray2.objetoVO.get(4)' />" alt=""></a>
+            </td>
+            </table>
+           <s:if test='#headerSeccionArray2.objetoVO.get(3).startWith("Email")'>
             <footer>
               <form class="group" method="post" action="#">
                 <fieldset>
                   <legend>Sign-Up:</legend>
                   <input type="email" value="" placeholder="Email Here&hellip;">
-                  <button class="fa fa-sign-in" type="submit" title="Submit"><em><s:property value='#headerSeccionArray2.objetoVO.get(5)' /></em></button>
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em><s:property value='#headerSeccionArray2.objetoVO.get(3)' /></em></button>
                 </fieldset>
               </form>
             </footer>
             </s:if>
             <s:else>
-            <footer><br><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='#headerSeccionArray2.objetoVO.get(3)' />">
-            <s:property value='#headerSeccionArray2.objetoVO.get(6)' /></a></footer>
+            <footer><a class="btn" href="#"><s:property value='#headerSeccionArray2.objetoVO.get(3)' /></a></footer>
             </s:else>
          </article>
         </li>
@@ -93,16 +93,12 @@
   <div class="hoc clear"> 
     <figure id="introblocks">
       <ul class="nospace group">
-        <li class="one_third first"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(0)' />">
-        <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(1)' />" alt=""></a></li>
-        <li class="one_third"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(2)' />">
-        <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(3)' />" alt=""></a></li>
-        <li class="one_third"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(4)' />">
-        <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(5)' />" alt=""></a></li>
+        <li class="one_third first"><a href="#"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(0)' />" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(1)' />" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion4.get(2)' />" alt=""></a></li>
       </ul>
     </figure>
-    <p class="center"><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(6)' />">
-    <s:property value='header.headerSeccion4.get(7)' /></a></p>
+    <p class="center"><a class="btn" href="#">Contacto</a></p>
   </div>
 </div>
 </body>

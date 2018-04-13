@@ -12,15 +12,6 @@
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
 		<put-attribute name="body" value="/modelo/viral/pages/accesoControl1.jsp" />
 	</definition>
-	<definition name="kaltiaMaquetas" extends="kaltia">
-		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
-		<put-attribute name="body" value="/empresa/kaltia/pages/kaltiaMaquetas.jsp" />
-		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		
-	</definition>
-	
 	
 	<definition name="actionA" extends="bronea">
 		<put-attribute name="title" value="actionA" cascade="true" />
