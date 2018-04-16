@@ -21,6 +21,7 @@
         <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
       </ul>
     </div>
+    <!-- ################################################################################################ -->
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerLista2.get(0)' /></h6>
       <ul class="nospace linklist">
@@ -32,6 +33,7 @@
         
       </ul>
     </div>
+    <!-- ################################################################################################ -->
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerLista3.get(0)' /></h6>
       <ul class="nospace linklist">

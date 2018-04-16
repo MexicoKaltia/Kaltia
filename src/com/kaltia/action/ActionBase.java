@@ -13,6 +13,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.kaltia.infra.BaseInfra;
 import com.kaltia.service.AltaElemento;
+import com.kaltia.service.EmpresaService;
 import com.kaltia.service.Identidad;
 import com.kaltia.service.Loggin;
 import com.kaltia.vo.BaseVO;
@@ -45,7 +46,10 @@ public class ActionBase extends InitAction  {
 	private HeaderVO altaHeaderVO;
 	private BodyVO altaBodyVO;
 	private FooterVO altaFooterVO;
+	
+	private String[] maquetaskaltia;
 
+	
 	private String subAction;
 	private String actionInicial;
 	
@@ -148,6 +152,18 @@ public class ActionBase extends InitAction  {
 			return ERROR;
 	}
 	
+	public String maquetasKaltia() {
+		
+		EmpresaService empresaService = new EmpresaService();
+		contexto("kaltia");
+		
+		try {
+			maquetaskaltia = empresaService.getMaquetas();
+		}catch(Exception e) {
+			logger.info(e);
+		}
+		return "kaltiaMaquetas";
+	}
 
 	/*
 	public String action(){
@@ -258,6 +274,14 @@ public class ActionBase extends InitAction  {
 		this.actionInicial = actionInicial;
 	}
 
+	public String[] getMaquetaskaltia() {
+		return maquetaskaltia;
+	}
+
+
+	public void setMaquetaskaltia(String[] maquetaskaltia) {
+		this.maquetaskaltia = maquetaskaltia;
+	}
 
 
 
