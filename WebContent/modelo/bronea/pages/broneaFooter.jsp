@@ -27,7 +27,9 @@
       <ul class="nospace linklist">
         <s:subset start="1" source ="footer.footerLista2">
         <s:iterator>
-          		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li>
+<%--identificar Secciones
+           		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%>
+           		<li><a href="#seccion4"><s:property/></a></li>
          </s:iterator>
          </s:subset>
         

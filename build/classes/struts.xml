@@ -39,6 +39,7 @@
             <result name="bronea" type="tiles">bronea</result>
             <result name="skaxis" type="tiles">skaxis</result>
             <result name="viral" type="tiles">viral</result>
+            <result name="mazda" type="tiles">mazda</result>
             <result name="error">/WEB-INF/inicio/error.jsp</result>
         </action>
      </package>

@@ -18,8 +18,11 @@
 		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		
 	</definition>
+	<definition name="mazda" extends="bronea">
+		<put-attribute name="empresa" value="Mazda" cascade="true" />
+	</definition>	
+
 	
 	
 	<definition name="actionA" extends="bronea">

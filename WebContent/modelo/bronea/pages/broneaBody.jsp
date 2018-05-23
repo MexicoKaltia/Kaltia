@@ -5,6 +5,7 @@
 <html>
 <body id="top">
 <div class="wrapper row3">
+<a  id="seccion2"></a>
   <main class="hoc container clear"> 
     <!-- main body -->
     <div class="sectiontitle">
@@ -38,6 +39,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row2">
+<a  id="seccion3"></a>
   <div class="hoc container clear"> 
     <ul class="nospace group cta">
       <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
@@ -53,6 +55,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
+<a  id="seccion4"></a>
   <div class="hoc container clear"> 
     <div class="sectiontitle">
       <h6 class="heading"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' /></h6>
@@ -64,7 +67,9 @@
       <s:iterator var="bodySeccionArray3">
        	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>">
         	<article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');">
-          		<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>">
+<%-- identificar secciones
+          		<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%>
+          		<h6 class="heading font-x1"><a href="<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>">
           		<s:property value='#bodySeccionArray3.objetoVO.get(3)'/></a></h6>
           		<p><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></p>
         	</article>
@@ -77,6 +82,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto1.get(0)'/>');">
+<a  id="seccion5"></a>
   <article class="hoc container clear center"> 
     <div class="sectiontitle" style="margin-bottom:30px;">
       <h6 class="heading"><s:property value='body.bodyTexto1.get(1)'/></h6>
@@ -87,6 +93,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
+<a  id="seccion6"></a>
   <section class="hoc container clear"> 
     <div class="sectiontitle">
       <h6 class="heading"><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(0)' /></h6>
@@ -96,7 +103,9 @@
       <s:subset start="1" source ="body.bodySeccionArray4">
       <s:iterator var="bodySeccionArray4">
        	<article class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
-       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
+<%-- identificar Secciones
+       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
+       	<a href="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
        	<img class="btmspace-30" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>"></a>
         	<h3 class="heading"><s:property value='#bodySeccionArray4.objetoVO.get(3)'/></h3>
         	<p><s:property value='#bodySeccionArray4.objetoVO.get(4)'/>&hellip;</p>
