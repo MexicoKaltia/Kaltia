@@ -7,7 +7,7 @@
 <body id="top">
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');">
-		<div class="wrapper row0">
+		<div class="wrapper row0 edicion">
 			<div id="topbar" class="hoc clear" >
 				<div class="fl_left">
 					<ul class="nospace">
@@ -15,7 +15,7 @@
 						<s:iterator value='header.headerSeccion1' var="menu2Value">
 							<li><a
 <%--    Identificando secciones
- 								href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
+ 							    	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
 									href="<s:property value='identidadVO.idAction'/><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
 									<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
 							</a></li>
@@ -95,6 +95,9 @@
 						<p>
 							<s:property value='header.headerSeccion4.get(2)'/>
 						</p>
+					</div>
+					<div>
+					<p><%=request.getParameter("tok")%></p>
 					</div>
 				 <footer>
 			          <ul class="nospace inline pushright">

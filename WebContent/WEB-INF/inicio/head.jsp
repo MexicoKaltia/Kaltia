@@ -21,6 +21,10 @@
 	
 <link href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/css/complemento.css"
 	rel="stylesheet" type="text/css" media="all">
+
+<link href="<%=request.getContextPath()%>/layout/css/edicion.css"
+	rel="stylesheet" type="text/css" media="all">
+
 	
 </head>
 </html>
