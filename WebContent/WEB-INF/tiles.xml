@@ -25,6 +25,7 @@
 		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/carinary/pages/carinaryHeader.jsp" />

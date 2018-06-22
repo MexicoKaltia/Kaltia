@@ -7,9 +7,9 @@
 <body id="top">
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');">
-		<div class="wrapper row0 edicion">
+		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
-				<div class="fl_left">
+				<div class="fl_left headerSeccion1">
 					<ul class="nospace">
 						<li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
 						<s:iterator value='header.headerSeccion1' var="menu2Value">
@@ -22,7 +22,7 @@
 						</s:iterator>
 					</ul>
 				</div>
-				<div class="fl_right">
+				<div class="fl_right headerSeccion2">
 					<ul class="nospace">
 						<li><i class="fa fa-phone"></i> <s:property value='header.headerSeccion2.get(0)' /></li>
 						<li><i class="fa fa-envelope-o"></i> <s:property value='header.headerSeccion2.get(1)' /></li>
@@ -33,7 +33,7 @@
 <!-- ################################################################################################ -->
 		<div class="wrapper row1">
 			<header id="header" class="hoc clear">
-				<div id="logo" class="fl_left">
+				<div id="logo" class="fl_left headerSeccion3">
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
 			          <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
 			          <s:property value='header.idEmpresa'/>
@@ -83,7 +83,7 @@
 		<!-- ################################################################################################ -->
 		<div class="wrapper">
 		<a  id="seccion1"></a>
-			<div id="pageintro" class="hoc clear">
+			<div id="pageintro" class="hoc clear headerSeccion4">
 				<article>
 					<div>
 						<p class="heading">
@@ -97,7 +97,6 @@
 						</p>
 					</div>
 					<div>
-					<p><%=request.getParameter("tok")%></p>
 					</div>
 				 <footer>
 			          <ul class="nospace inline pushright">
