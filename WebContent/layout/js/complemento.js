@@ -84,7 +84,7 @@ $(document).ready(function() {
 		  return $.getJSON("http://rest-service.guides.spring.io/greeting", callback);
 	}
 
-	
+	/*
 	//METODO SINCRONO PARA INVOCAR AL SECCION LECTURA
 	function _getDataSeccion(action, section, jsonLectura){
 		console.log(action+":1:"+seccion);
@@ -105,7 +105,44 @@ $(document).ready(function() {
 		$.respuestaSeccion = respuesta;
 		return $.respuestaSeccion;
 	}
-	
+	//FIN METODO SINCRONO PARA INVOCAR AL SECCION LECTURA  */
+	/*
+	 * Metodo para pintar el MODAL con los campos de jsonCampos
+	 */
+	function elementosCampos(jsonValues, jsonCampos ){
+		console.log(jsonCampos);
+		console.log(jsonValues);
+		for (var tipo in jsonCampos){
+			  // Controlando que json realmente tenga esa propiedad
+			  if (jsonCampos.hasOwnProperty(tipo)) {
+			    // Mostrando en pantalla la clave junto a su valor
+			    console.log("La clave es " + tipo+ " y el valor es " + jsonCampos[tipo]);
+			    
+			    switch (tipo) { 
+				case "arrayText": 
+					$(jsonValues.arrayText).each(function(i){
+						console.log(jsonValues.arrayText[i])
+						valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.arrayText[i]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$(i).text()+"_chk></div></div></div>";
+						 $(valor).insertAfter($('.soloLectura_in'));
+						});
+					break;
+				case "telefono": 
+					$.tipojQry = tipo
+					console.log(tipo)
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.telefono+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+jsonValues.tipo+"_chk></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+					break;
+				case "email": 
+					console.log("ee"+tipo)
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.email+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+jsonValues.tipo+"_chk></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+
+
+			  }
+			}
+		}
+	}
 	
 	$('.headerSeccion1').click(function(){
 		if($.param === $.paramInicial){
@@ -113,7 +150,7 @@ $(document).ready(function() {
 			console.log(window.location.href);
 			action = "action";
 			seccion = "seccion";
-			jsonLectura = {"arrayText" :"text"}
+			jsonCampos = {"arrayText" :"text"}
 			 
 			$('.headerSeccion1').attr("data-toggle","modal");
 			$('.headerSeccion1').attr("data-target","#headerSeccion1");
@@ -124,11 +161,7 @@ $(document).ready(function() {
 			console.log($.respuestaSeccion)
 			 $.respuestaSeccion = {"arrayText":["ACERCA DE NOSOTROS.referencia1",  "CONTACTO.referencia2", "REGISTRO.referencia3", "INGRESA.referencia4"]};
 			//console.log($.respuestaSeccion)
-			$($.respuestaSeccion.arrayText).each(function(i){
-				console.log($.respuestaSeccion.arrayText[i])
-				valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+$.respuestaSeccion.arrayText[i]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$(i).text()+"_chk></div></div></div>";
-				 $(valor).insertAfter($('.soloLectura_in'));
-				});
+			elementosCampos($.respuestaSeccion, jsonCampos)			
 	   });
 		
 		$('#agregarStr').click(function(){
@@ -158,7 +191,23 @@ $(document).ready(function() {
 	$('.headerSeccion2').click(function(){
 		if($.param != null){
 			console.log("param:"+$.param)
-			headerSeccion2Json = {"telefono" : "text","email" : "text"}
+			action = "action";
+			seccion = "seccion";
+			
+			jsonCampos = {"telefono" : "text","email" : "text"}
+			 
+			$('.headerSeccion2').attr("data-toggle","modal");
+			$('.headerSeccion2').attr("data-target","#headerSeccion1");
+			$("div.soloLectura > div").remove();
+			//_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
+		seccionValoresLectura(action, seccion, function(data){  //     ASYNCRONO
+			$.respuestaSeccion = data;
+			console.log($.respuestaSeccion)
+			 $.respuestaSeccion = {"telefono" : "5325900","email" : "mail@com.xom"};
+			//console.log($.respuestaSeccion)
+			elementosCampos($.respuestaSeccion, jsonCampos)			
+	   });
+
 			
 			
 			
