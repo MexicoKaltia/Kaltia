@@ -28,8 +28,8 @@ $(document).ready(function() {
 	//funciones de prueba
 	
 	function foo(){
-		var status = document.getElementById("spanStatus")
-		alert(decodeURI(status));
+		var status = document.getElementById("spanStatus").innerHTML;
+		console.log(decodeURI(status));
 		}
 
 	

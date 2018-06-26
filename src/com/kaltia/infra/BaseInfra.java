@@ -27,6 +27,7 @@ public class BaseInfra {
 	
 	
     public static Properties PROPS = loadProperties();
+    public static Properties _bronea = loadBronea();
     
     public BaseInfra() {
         super();
@@ -56,4 +57,27 @@ public class BaseInfra {
         return props;
     }
     
+    public static Properties loadBronea() {
+        Properties props = new Properties();
+        //FileInputStream fis=null;
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        InputStream fis = classLoader.getResourceAsStream("../../props/bronea.properties");
+        
+        try {
+          //fis = new FileInputStream("../../props/error.properties");
+          //  fis = new FileInputStream("/opt/vun/tect2/properties/globals.properties");// properties QA
+            props.load(fis);
+        } catch (FileNotFoundException fnfException) {
+            fnfException.printStackTrace();
+        } catch (IOException iOException) {
+            iOException.printStackTrace();
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return props;
+    }
 }

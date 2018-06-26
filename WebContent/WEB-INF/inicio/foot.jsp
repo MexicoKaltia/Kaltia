@@ -18,5 +18,10 @@
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
 	<!-- ################################################################################################ -->
+
+	<span id="spanStatus" hidden="true"> 
+	<s:property value='header.headerSeccion3' />
+	</span>
+
 </body>
 </html>

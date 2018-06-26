@@ -107,6 +107,7 @@ public class Identidad {
 
 		try {
 			headerVOEm = (HeaderVO) identidadDao.qryElementoHeader(action);
+			JsonDOM.jsonElementoHeader(headerVOEm, action);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
