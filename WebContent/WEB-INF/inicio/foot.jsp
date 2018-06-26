@@ -15,8 +15,6 @@
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/sss/sss.min.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.easypiechart.min.js"></script>
 
-	
-	
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
 	<!-- ################################################################################################ -->

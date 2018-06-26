@@ -2,9 +2,16 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+
+
+
 <html lang="">
 <!-- ################################################################################################ -->
 <body id="top">
+<span id="spanStatus">
+<s:set var="varMsg" value="<s:property value='identidadVO.idAction'/>" />
+</span>
+
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');">
 		<div class="wrapper row0">

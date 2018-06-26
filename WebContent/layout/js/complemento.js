@@ -24,10 +24,14 @@ $(document).ready(function() {
 	/*    FIN  login en la pagina principal de Kaltia */
 	
 	
+	/***********************************************************************************************************************************************************/
+	//funciones de prueba
 	
-	
-	
-	
+	function foo(){
+		var status = document.getElementById("spanStatus")
+		alert(decodeURI(status));
+		}
+
 	
 	
 	
@@ -184,6 +188,8 @@ $(document).ready(function() {
 		}else{
 			console.log("param:Nulo");
 		}
+		
+		foo();
 	});
 	
 	
