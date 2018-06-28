@@ -27,11 +27,7 @@ $(document).ready(function() {
 	/***********************************************************************************************************************************************************/
 	//funciones de prueba
 	
-	function foo(){
-		var status = document.getElementById("spanStatus").innerHTML;
-		console.log(decodeURI(status));
-		}
-
+	
 	
 	
 	
@@ -83,7 +79,7 @@ $(document).ready(function() {
 	}
 	   
 	
-	function seccionValoresLectura (action, section, callback) {
+	function seccionLectura (action, section, callback) {
 		  var scriptURL = "somefile.php?name=" + action + section;
 		  return $.getJSON("http://rest-service.guides.spring.io/greeting", callback);
 	}
@@ -113,39 +109,71 @@ $(document).ready(function() {
 	/*
 	 * Metodo para pintar el MODAL con los campos de jsonCampos
 	 */
-	function elementosCampos(jsonValues, jsonCampos ){
-		console.log(jsonCampos);
-		console.log(jsonValues);
-		for (var tipo in jsonCampos){
+	function elementosCampos(jsonSeccion){
+
+		for (var tipo in jsonSeccion){
 			  // Controlando que json realmente tenga esa propiedad
-			  if (jsonCampos.hasOwnProperty(tipo)) {
+			  if (jsonSeccion.hasOwnProperty(tipo)) {
 			    // Mostrando en pantalla la clave junto a su valor
-			    console.log("La clave es " + tipo+ " y el valor es " + jsonCampos[tipo]);
+//			    console.log("La clave es " + tipo+ " y el valor es:" + jsonSeccion[tipo]);
 			    
 			    switch (tipo) { 
 				case "arrayText": 
-					$(jsonValues.arrayText).each(function(i){
-						console.log(jsonValues.arrayText[i])
-						valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.arrayText[i]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$(i).text()+"_chk></div></div></div>";
+					arrayText = jsonSeccion[tipo].split(",");
+					console.log(jsonSeccion[tipo].split(","));
+					for(i=0; i<arrayText.length;i++ ){
+						single = arrayText[i];
+						console.log("single:"+single);
+						valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+single+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
 						 $(valor).insertAfter($('.soloLectura_in'));
-						});
+					}
 					break;
 				case "telefono": 
-					$.tipojQry = tipo
-					console.log(tipo)
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.telefono+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+jsonValues.tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 					break;
 				case "email": 
-					console.log("ee"+tipo)
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonValues.email+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+jsonValues.tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
-
-
 			  }
 			}
 		}
+	}
+	
+	function valoresSeccion(seccion){
+//		console.log(seccion);
+		var status = document.getElementById(seccion).innerHTML;
+		status= status.toString().trim();
+//		console.log(status);
+		status = status.slice(1,-1)
+		status = status.split(",");
+		return status;
+		}
+	
+	function ajusteJson(jsonCampos , valores){
+//		console.log(valores);
+		var indice = 0;
+		var jsonSeccion = "{";
+		for (var tipo in jsonCampos){
+			  // Controlando que json realmente tenga esa propiedad
+			  if (jsonCampos.hasOwnProperty(tipo)) {
+				    // Mostrando en pantalla la clave junto a su valor
+
+				  if(tipo === "arrayText"){
+					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores);
+					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores+'",';					  
+					    }else{
+					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores[indice]);
+					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores[indice]+'",';					  
+				  }
+
+			  }
+			  indice++;
+		}
+		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
+		console.log(jsonSeccion);
+		return JSON.parse(jsonSeccion);
 	}
 	
 	$('.headerSeccion1').click(function(){
@@ -155,18 +183,23 @@ $(document).ready(function() {
 			action = "action";
 			seccion = "seccion";
 			jsonCampos = {"arrayText" :"text"}
-			 
+			var valores = valoresSeccion("headerSeccion1_valores");
+			jsonSeccion = ajusteJson(jsonCampos, valores);
+			
 			$('.headerSeccion1').attr("data-toggle","modal");
 			$('.headerSeccion1').attr("data-target","#headerSeccion1");
 			$("div.soloLectura > div").remove();
-			//_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
-		seccionValoresLectura(action, seccion, function(data){  //     ASYNCRONO
-			$.respuestaSeccion = data;
-			console.log($.respuestaSeccion)
-			 $.respuestaSeccion = {"arrayText":["ACERCA DE NOSOTROS.referencia1",  "CONTACTO.referencia2", "REGISTRO.referencia3", "INGRESA.referencia4"]};
-			//console.log($.respuestaSeccion)
-			elementosCampos($.respuestaSeccion, jsonCampos)			
-	   });
+			
+			elementosCampos(jsonSeccion);
+			
+//			_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
+//		seccionLectura(action, seccion, function(data){  //     ASYNCRONO
+//			$.respuestaSeccion = data;
+//			console.log($.respuestaSeccion)
+//			 $.respuestaSeccion = {"arrayText":["ACERCA DE NOSOTROS.referencia1",  "CONTACTO.referencia2", "REGISTRO.referencia3", "INGRESA.referencia4"]};
+//			//console.log($.respuestaSeccion)
+//			elementosCampos($.respuestaSeccion, jsonCampos)			
+//	   });
 		
 		$('#agregarStr').click(function(){
 			var  valor2 =null;
@@ -189,7 +222,7 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 		
-		foo();
+		
 	});
 	
 	
@@ -201,21 +234,15 @@ $(document).ready(function() {
 			seccion = "seccion";
 			
 			jsonCampos = {"telefono" : "text","email" : "text"}
+			valores = valoresSeccion("headerSeccion2_valores");
+			
+			jsonSeccion = ajusteJson(jsonCampos, valores);
 			 
 			$('.headerSeccion2').attr("data-toggle","modal");
 			$('.headerSeccion2').attr("data-target","#headerSeccion1");
 			$("div.soloLectura > div").remove();
-			//_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
-		seccionValoresLectura(action, seccion, function(data){  //     ASYNCRONO
-			$.respuestaSeccion = data;
-			console.log($.respuestaSeccion)
-			 $.respuestaSeccion = {"telefono" : "5325900","email" : "mail@com.xom"};
-			//console.log($.respuestaSeccion)
-			elementosCampos($.respuestaSeccion, jsonCampos)			
-	   });
-
 			
-			
+			elementosCampos(jsonSeccion);
 			
 		}else{
 			console.log("param:Nulo");

@@ -19,8 +19,11 @@
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
 	<!-- ################################################################################################ -->
 
-	<span id="spanStatus" hidden="true"> 
-	<s:property value='header.headerSeccion3' />
+	<span id="headerSeccion1_valores" hidden="true"> 
+	<s:property value='header.headerSeccion1' />
+	</span>
+	<span id="headerSeccion2_valores" hidden="true"> 
+	<s:property value='header.headerSeccion2' />
 	</span>
 
 </body>

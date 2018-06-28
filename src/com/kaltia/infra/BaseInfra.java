@@ -27,7 +27,7 @@ public class BaseInfra {
 	
 	
     public static Properties PROPS = loadProperties();
-    public static Properties _bronea = loadBronea();
+    public static Properties jsonSeccion = loadBronea();
     
     public BaseInfra() {
         super();
@@ -61,7 +61,7 @@ public class BaseInfra {
         Properties props = new Properties();
         //FileInputStream fis=null;
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        InputStream fis = classLoader.getResourceAsStream("../../props/bronea.properties");
+        InputStream fis = classLoader.getResourceAsStream("../../props/jsonSeccion.properties");
         
         try {
           //fis = new FileInputStream("../../props/error.properties");

@@ -52,7 +52,7 @@ public class Identidad {
 		
 		
 		if (identidadVO.getHeaderRequerido().equals("1")) {
-			hashIdentidad.put("header", headerEm(action));
+			hashIdentidad.put("header", headerEm(action,identidadVO.getActionEstilo()));
 			HeaderVO headerVO = (HeaderVO) hashIdentidad.get("header");
 			identidadVO.setCodigoVO(headerVO.getCodigoVO());
 		//	valida(headerVO);
@@ -102,12 +102,12 @@ public class Identidad {
 		return hashIdentidad;
 	}
 
-	private HeaderVO headerEm(String action) {
+	private HeaderVO headerEm(String action, String estilo) {
 		HeaderVO headerVOEm = null;
 
 		try {
 			headerVOEm = (HeaderVO) identidadDao.qryElementoHeader(action);
-			JsonDOM.jsonElementoHeader(headerVOEm, action);
+			//JsonDOM.jsonElementoHeader(headerVOEm, action, estilo);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
