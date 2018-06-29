@@ -84,6 +84,7 @@ public class ComunResolution {
 
 		String[] temp = listMenuA.split(token);
 		for (String a : temp) {
+			a=a.replace(",", "|");
 			menu.add(a.trim());
 			//logger.info("valores:"a.charAt(index));
 		}
