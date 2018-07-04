@@ -51,6 +51,10 @@ $(document).ready(function() {
 	$.variableParam = "tipo";
 	$.param ="";
 	$.respuestaSeccion ="";
+	
+	var arrayTextActualizado ="";
+	var arrayTextOriginal ="";
+	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
 		if (results == null){
@@ -148,7 +152,6 @@ $(document).ready(function() {
 	 */
 	function elementosCampos(jsonSeccion){
 		for (var tipo in jsonSeccion){
-			
 			  // Controlando que json realmente tenga esa propiedad
 			  if (jsonSeccion.hasOwnProperty(tipo)) {
 			    // Mostrando en pantalla la clave junto a su valor
@@ -170,11 +173,11 @@ $(document).ready(function() {
 						$(agregar).insertAfter($('.agregarText'));	
 					break;
 				case "telefono": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' id="+tipo+" aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 					break;
 				case "email": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' id="+tipo+" aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "titulo": 
@@ -265,12 +268,20 @@ $(document).ready(function() {
 		return JSON.parse(jsonSeccion);
 	}
 	
+	function valoresActualizados(seccionNombre, jsonCampos){
+		for (var tipo in jsonCampos){
+			
+		}
+	}
+	
+	
+	
 	$('.headerSeccion1').click(function(){
 		if($.param === $.paramInicial){
 			//console.log("param:"+$.param)
 			console.log(window.location.href);
-			action = "action";
-			seccion = "seccion";
+//			action = "action";
+//			seccion = "seccion";
 			jsonCampos = {"arrayText" :"text"}
 			var valores = valoresSeccion("headerSeccion1_valores");
 			jsonSeccion = ajusteJson(jsonCampos, valores);
@@ -289,55 +300,50 @@ $(document).ready(function() {
 //			//console.log($.respuestaSeccion)
 //			elementosCampos($.respuestaSeccion, jsonCampos)			
 //	   });
-			var arrayTextActualizado = jsonSeccion.arrayText.split(",");
-			var arrayTextOriginal = jsonSeccion.arrayText;
-		$('#agregarStr').click(function(){
-			var  valor2 =null;
-			valor2 = $('#modalEdicion_ingresarStr').val();
-			if($('#modalEdicion_ingresarStr').val() !== ""){
-//			 var valor3 ="<div class='input-group' id='"+$('#headerSeccion1_ingresarStr').val()+"'><div class='input-group-prepend id='"+$('#headerSeccion1_ingresarStr').val()+"''><input class='form-control' aria-label='Text input with checkbox' type='text' placeholder="+$('#headerSeccion1_ingresarStr').val()+" readonly><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#headerSeccion1_ingresarStr').val()+"_chk></div></div></div>"
-			var valor3 ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+$('#modalEdicion_ingresarStr').val()+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#modalEdicion_ingresarStr').val()+"_chk></div></div></div>";
-				$(valor3).insertAfter($('.soloLectura_in'));	 
-				arrayTextActualizado.push($('#modalEdicion_ingresarStr').val());
-				jsonSeccion.arrayText = arrayTextActualizado.toString();
-				$('#modalEdicion_ingresarStr').val("");
-				console.log(arrayTextActualizado)
-				console.log(jsonSeccion.arrayText);
-			}
-		})
-		
-		$('#modalEdicion_btnClose').click(function(){
-			alert("Sin Guardar cambios");
-			$("div.soloLectura > div").remove();
-			console.log($("div.soloLectura").html());
-		});
-		
-		$('#modalEdicion_btnSave').click(function(){
-//			console.log(jsonSeccion.arrayText)
-//			console.log(arrayTextActualizado.toString())
-			if(arrayTextOriginal.toString() === arrayTextActualizado.toString())
-				alert("No hay Cambios");
-			else{
-				alert("Esta Seguro Guardar cambios");
-				$.ajax({
-					  type: "POST",
-					  url: url,
-					  data: jsonSeccion,
-					  success: success,
-					  dataType: JSON
-					});
-				
-			}
-			
-			
-			//console.log($("div.soloLectura").html());
-		});
-		
+			$.arrayTextActualizado = jsonSeccion.arrayText.split(",");
+			$.arrayTextOriginal = jsonSeccion.arrayText;
+			$('#agregarStr').click(function(){
+				var  valor2 =null;
+				valor2 = $('#modalEdicion_ingresarStr').val();
+				if($('#modalEdicion_ingresarStr').val() !== ""){
+	//			 var valor3 ="<div class='input-group' id='"+$('#headerSeccion1_ingresarStr').val()+"'><div class='input-group-prepend id='"+$('#headerSeccion1_ingresarStr').val()+"''><input class='form-control' aria-label='Text input with checkbox' type='text' placeholder="+$('#headerSeccion1_ingresarStr').val()+" readonly><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#headerSeccion1_ingresarStr').val()+"_chk></div></div></div>"
+				var valor3 ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+$('#modalEdicion_ingresarStr').val()+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#modalEdicion_ingresarStr').val()+"_chk></div></div></div>";
+					$(valor3).insertAfter($('.soloLectura_in'));	 
+					$.arrayTextActualizado.push($('#modalEdicion_ingresarStr').val());
+					jsonSeccion.arrayText = $.arrayTextActualizado.toString();
+					$('#modalEdicion_ingresarStr').val("");
+					console.log($.arrayTextActualizado)
+					console.log(jsonSeccion.arrayText);
+				}
+			})
+			$('#modalEdicion_btnClose').click(function(){
+				alert("Sin Guardar cambios");
+				$("div.soloLectura > div").remove();
+				console.log($("div.soloLectura").html());
+			});
+			$('#modalEdicion_btnSave').click(function(){
+//				console.log(jsonSeccion.arrayText)
+//				console.log(arrayTextActualizado.toString())
+				if($.arrayTextOriginal.toString() === $.arrayTextActualizado.toString())
+					alert("No hay Cambios");
+				else{
+					alert("Esta Seguro Guardar cambios");
+					console.log($.arrayTextActualizado.toString())
+					$.ajax({
+						  type: "POST",
+						  url: url,
+						  data: jsonSeccion,
+						  success: success,
+						  dataType: JSON
+						});
+					
+				}
+				//console.log($("div.soloLectura").html());
+			});
+
 		}else{
 			console.log("param:Nulo");
 		}
-		
-		
 	});
 	
 	
@@ -358,11 +364,14 @@ $(document).ready(function() {
 			$("div.soloLectura > div").remove();
 			
 			elementosCampos(jsonSeccion);
+			$.arrayTextOriginal = jsonSeccion.toString();
+			$.arrayTextActualizado = valoresActualizados("headerSeccion2", jsonCampos);
 			
 		}else{
 			console.log("param:Nulo");
 		}
 	});
+	
 	$('.headerSeccion3').click(function(){
 		if($.param != null){
 			console.log("param:"+$.param)
