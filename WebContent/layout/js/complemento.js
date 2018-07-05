@@ -50,7 +50,10 @@ $(document).ready(function() {
 	$.paramInicial = "AAA";
 	$.variableParam = "tipo";
 	$.param ="";
-	$.respuestaSeccion ="";
+	$.jsonSeccion ="";
+	$.valoresOriginal="";
+	$.valoresActualizados="";
+//	$.respuestaSeccion ="";
 	
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
@@ -251,7 +254,6 @@ $(document).ready(function() {
 			  // Controlando que json realmente tenga esa propiedad
 			  if (jsonCampos.hasOwnProperty(tipo)) {
 				    // Mostrando en pantalla la clave junto a su valor
-
 				  if(tipo === "arrayText"){
 					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores);
 					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores+'",';					  
@@ -259,20 +261,66 @@ $(document).ready(function() {
 					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores[indice]);
 					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores[indice]+'",';					  
 				  }
-
 			  }
 			  indice++;
 		}
 		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
+		$.valoresOriginal = JSON.parse(jsonSeccion);
 		console.log(jsonSeccion);
 		return JSON.parse(jsonSeccion);
 	}
 	
-	function valoresActualizados(seccionNombre, jsonCampos){
+//	function valoresActualizados(seccionNombre, jsonCampos){
+//		console.log("valoresActualizados");
+//		var valoresActualizados = "{";
+//		for (var tipo in jsonCampos){
+//			valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
+//		}
+//		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
+//		console.log(valoresActualizados);
+//		return JSON.parse(valoresActualizados);
+//
+//	}
+	
+	$('#modalEdicion_btnClose').click(function(){
+		alert("Sin Guardar cambios");
+		$("div.soloLectura > div").remove();
+		console.log($("div.soloLectura").html());
+	});
+	$('#modalEdicion_btnSave').click(function(){
+//		console.log(jsonSeccion.arrayText)
+//		console.log(arrayTextActualizado.toString())
+
+		var valoresActualizados = "{";
 		for (var tipo in jsonCampos){
+			valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
+		}
+		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
+
+//		return 
+		$.valoresActualizados=JSON.parse(valoresActualizados);
+		console.log("valoresActualizados");
+		console.log($.valoresActualizados);
+		console.log("valoresOriginales");
+		console.log($.valoresOriginal);
+
+		if($.valoresOriginal === $.valoresActualizados)
+			alert("No hay Cambios");
+		else{
+			alert("Esta Seguro Guardar cambios");
+//			console.log($.valoresActualizados.toString())
+			$.ajax({
+				  type: "POST",
+				  url: url,
+				  data: $.arrayTextActualizado,
+				  success: success,
+				  dataType: JSON
+				});
 			
 		}
-	}
+		//console.log($("div.soloLectura").html());
+	});
+
 	
 	
 	
@@ -332,7 +380,7 @@ $(document).ready(function() {
 					$.ajax({
 						  type: "POST",
 						  url: url,
-						  data: jsonSeccion,
+						  data: $.arrayTextActualizado,
 						  success: success,
 						  dataType: JSON
 						});
@@ -363,9 +411,9 @@ $(document).ready(function() {
 			$('.headerSeccion2').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
 			
-			elementosCampos(jsonSeccion);
-			$.arrayTextOriginal = jsonSeccion.toString();
-			$.arrayTextActualizado = valoresActualizados("headerSeccion2", jsonCampos);
+			$.jsonSeccion = elementosCampos(jsonSeccion);
+			//$.valoresOriginal = $.jsonSeccion.toString();
+			//$.arrayTextActualizado = valoresActualizados("headerSeccion2", jsonCampos);
 			
 		}else{
 			console.log("param:Nulo");
@@ -387,7 +435,7 @@ $(document).ready(function() {
 			$('.headerSeccion3').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
 			
-			elementosCampos(jsonSeccion);
+			$.jsonSeccion = elementosCampos(jsonSeccion);
 			
 		}else{
 			console.log("param:Nulo");
@@ -408,7 +456,7 @@ $(document).ready(function() {
 			$('.headerSeccion4').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
 			
-			elementosCampos(jsonSeccion);
+			$.jsonSeccion = elementosCampos(jsonSeccion);
 			
 		}else{
 			console.log("param:Nulo");
