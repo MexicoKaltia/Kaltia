@@ -17,6 +17,8 @@
 
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/complementoModal.js"></script>
+	
 	<!-- ################################################################################################ -->
 
 	<span id="headerSeccion1_valores" hidden="true"> 
