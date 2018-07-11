@@ -171,72 +171,68 @@ $(document).ready(function() {
 						for(e =0;e<arraySingle.length;e++){
 //							valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
 							if(e===0){
-							valor ="<div class='input-group'><div class='input-group-prepend'><label for='textinput'>Texto</label><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control input-md' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
+							valor ="<div class='input-group-prepend row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Texto</label></span><div class='col-md-8'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control form-control-sm' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
 							}
 							else{
-							valor ="<div class='input-group'><div class='input-group-prepend'><label for='textinput'>Referencia</label><input id='textinput' name="+e+"."+i+" placeholder='Referencia' class='form-control input-md' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
+							valor ="<div class='input-group-prepend row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></span><div class='col-md-8'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control form-control-sm' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
 							}
 							 $(valor).insertAfter($('.soloLectura_in'));
 						}
 					}
-					agregar = "<div class='input-group input-group-sm'><label for='textinput'>Texto</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><label for='textinput'>Referencia</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><div class='input-group-prepend' id='agregarStr'><span class='input-group-text btn btn-link complemento1' id='inputGroup-sizing-sm'>Agregar</span></div></div>";
+					agregar = "<div class='input-group input-group-sm'><label style='color:#00FFFF;font-size:12px;'>Texto</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><label class='labelModal' for='textinput'>Referencia</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><div class='input-group-prepend' id='agregarStr'><span class='input-group-text btn btn-link complemento1' id='inputGroup-sizing-sm'>Agregar</span></div></div>";
 						$(agregar).insertAfter($('.agregarText'));	
 					break;
 				case "telefono":
-					valor ="<div class='input-group'><div class='input-group-prepend'><label for='textinput'>Telefono</label><input id="+tipo+" name="+tipo+" placeholder='Telefono' class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>Telefono</label><input id="+tipo+" name="+tipo+" placeholder='Telefono' class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
 //					$(valor).html('<input id="textinput" name="nombreCompleto"	placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text" value="Chilpancingo">');
 					 $(valor).insertAfter($('.soloLectura_in'));
 					break;
 				case "email": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label for='textinput'>Email</label><input id="+tipo+" name="+tipo+" placeholder='Email' class='form-control input-md' type='email' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder='Email' class='form-control input-md' type='email' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "titulo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "icono": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><div class='custom-file'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md custom-file-input' type='file' required value="+jsonSeccion[tipo]+"></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "varios": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "logo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "fondoHeader": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "subtitulo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
-					 $(valor).insertAfter($('.soloLectura_in'));
-				break;
-				case "titulo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "descripcion": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "referencia1": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "boton1": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "referencia2": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "boton2": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 			  }
@@ -245,12 +241,15 @@ $(document).ready(function() {
 	}
 	
 	function valoresSeccion(seccion){
-//		console.log(seccion);
 		var status = document.getElementById(seccion).innerHTML;
 		status= status.toString().trim();
-//		console.log(status);
+		console.log(status);
 		status = status.slice(1,-1)
 		status = status.split(",");
+		for(var o=0; o<status.length; o++){
+			if(o!==0)
+			status[o] = status[o].slice(1);
+			}
 		return status;
 		}
 	
@@ -273,8 +272,8 @@ $(document).ready(function() {
 			  indice++;
 		}
 		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
-		$.valoresOriginal = JSON.parse(jsonSeccion);
-		console.log(jsonSeccion);
+//		$.valoresOriginal = JSON.parse(jsonSeccion);
+//		console.log(jsonSeccion);
 		return JSON.parse(jsonSeccion);
 	}
 	
@@ -296,13 +295,12 @@ $(document).ready(function() {
 		console.log($("div.soloLectura").html());
 	});
 	$('#modalEdicion_btnSave').click(function(){
+		$("div.alerta > div").remove();
 		var valoresActualizados = "{";
 		for (var tipo in jsonCampos){
 			valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-			if(!validaTipo(tipo, $(tipo).val())){
-				console.log("false");
-				$('#modalEdicion_btnSave').end();
-				$('#modalEdicion_btnSave').stop();
+			if(!validaTipo(tipo, $("#"+tipo).val())){
+				return false;
 			}
 		}
 		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
@@ -313,7 +311,7 @@ $(document).ready(function() {
 		console.log("valoresOriginales");
 		console.log($.valoresOriginal);
 
-		if($.valoresOriginal === $.valoresActualizados)
+		if($.valoresOriginal.toString() === $.valoresActualizados.toString())
 			alert("No hay Cambios");
 		else{
 			alert("Esta Seguro Guardar cambios");
@@ -330,28 +328,116 @@ $(document).ready(function() {
 		//console.log($("div.soloLectura").html());
 	});
 
-	function validaTipo(alo , dos){
+	function validaTipo(tipo , valor){
+		console.log(tipo);
+		console.log(valor);
+		var texto = /^[A-Za-z0-9]$/;
+		var validaStatus =[ true, "",""];
+		switch (tipo) { 
+		case "arrayText": 
+			console.log(tipo);
+		break;
+		case "telefono":
+			  var expreg = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
+			  if(!expreg.test(valor)){ 
+				  validaStatus=[false,"El numero telefono NO es correcto","Debe ser formato 123456789"];
+			    console.log("El numero telefono NO es correcto");
+			  }
+		break;
+		case "email":
+			var expreg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
+			  if(!expreg.test(valor)){ 
+				  validaStatus=[false,"El email NO es correcto","Debe ser formato user@dominio.com"];
+			    console.log("El email NO es correcto");
+			  }
+		break;
+		case "titulo": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" valor:"+valor+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" valor:"+valor+" NO es correcto");
+			  }
+		break;
+		case "icono": 
+			console.log(tipo);
+		break;
+		case "varios": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" NO es correcto");
+			  }
+		break;
+		case "logo": 
+			console.log(tipo);
+		break;
+		case "fondoHeader": 
+			console.log(tipo);
+		break;
+		case "subtitulo": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+":"+valor+" NO es correcto");
+			  }
+		break;
+		case "descripcion": 
+			console.log(tipo);
+		break;
+		case "referencia1": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" NO es correcto");
+			  }		
+		break;
+		case "boton1": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" NO es correcto");
+			  }
+		break;
+		case "referencia2": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" NO es correcto");
+			  }
+		break;
+		case "boton2": 
+			//var expreg = texto;
+			  if(!texto.test(valor)){ 
+				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+			    console.log("El "+tipo+" NO es correcto");
+			  }
+		break;
+		}
 		
-		return false;
+		if(!validaStatus[0]){
+			alerta='<div class="alert alert-danger" role="alert">'+validaStatus[1]+'\n'+validaStatus[2]+'</div>';
+			$(alerta).insertAfter($('.alerta_in'));
+			//var validaStatus =[ true, false,""];
+		}
+		valor="";
+		return validaStatus[0];
 	}
 	
 	
 	
 	$('.headerSeccion1').click(function(){
 		if($.param === $.paramInicial){
-			//console.log("param:"+$.param)
 			console.log(window.location.href);
-//			action = "action";
-//			seccion = "seccion";
 			jsonCampos = {"arrayText" :"text"}
 			var valores = valoresSeccion("headerSeccion1_valores");
-			jsonSeccion = ajusteJson(jsonCampos, valores);
+			$.valoresOriginal = ajusteJson(jsonCampos, valores);
 			
 			$('.headerSeccion1').attr("data-toggle","modal");
 			$('.headerSeccion1').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
+			$("div.alerta > div").remove();
 			
-			elementosCampos(jsonSeccion);
+			elementosCampos($.valoresOriginal);
 			
 //			_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
 //		seccionLectura(action, seccion, function(data){  //     ASYNCRONO
@@ -361,8 +447,8 @@ $(document).ready(function() {
 //			//console.log($.respuestaSeccion)
 //			elementosCampos($.respuestaSeccion, jsonCampos)			
 //	   });
-			$.arrayTextActualizado = jsonSeccion.arrayText.split(",");
-			$.arrayTextOriginal = jsonSeccion.arrayText;
+			$.arrayTextActualizado = $.valoresOriginal.arrayText.split(",");
+			$.arrayTextOriginal = $.valoresOriginal.arrayText;
 			$('#agregarStr').click(function(){
 				var  valor2 =null;
 				valor2 = $('#modalEdicion_ingresarStr').val();
@@ -374,7 +460,7 @@ $(document).ready(function() {
 					jsonSeccion.arrayText = $.arrayTextActualizado.toString();
 					$('#modalEdicion_ingresarStr').val("");
 					console.log($.arrayTextActualizado)
-					console.log(jsonSeccion.arrayText);
+					console.log($.valoresOriginal.arrayText);
 				}
 			})
 			$('#modalEdicion_btnClose').click(function(){
@@ -418,15 +504,14 @@ $(document).ready(function() {
 			jsonCampos = {"telefono" : "text","email" : "text"}
 			valores = valoresSeccion("headerSeccion2_valores");
 			
-			jsonSeccion = ajusteJson(jsonCampos, valores);
+			$.valoresOriginal = ajusteJson(jsonCampos, valores);
 			 
 			$('.headerSeccion2').attr("data-toggle","modal");
 			$('.headerSeccion2').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
+			$("div.alerta > div").remove();
 			
-			$.jsonSeccion = elementosCampos(jsonSeccion);
-			//$.valoresOriginal = $.jsonSeccion.toString();
-			//$.arrayTextActualizado = valoresActualizados("headerSeccion2", jsonCampos);
+			elementosCampos($.valoresOriginal);
 			
 		}else{
 			console.log("param:Nulo");
@@ -442,13 +527,14 @@ $(document).ready(function() {
 			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
 			valores = valoresSeccion("headerSeccion3_valores");
 			
-			jsonSeccion = ajusteJson(jsonCampos, valores);
+			$.valoresOriginal = ajusteJson(jsonCampos, valores);
 			 
 			$('.headerSeccion3').attr("data-toggle","modal");
 			$('.headerSeccion3').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
+			$("div.alerta > div").remove();
 			
-			$.jsonSeccion = elementosCampos(jsonSeccion);
+			elementosCampos($.valoresOriginal);
 			
 		}else{
 			console.log("param:Nulo");
@@ -463,13 +549,14 @@ $(document).ready(function() {
 			jsonCampos = {"subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"}
 			valores = valoresSeccion("headerSeccion4_valores");
 			
-			jsonSeccion = ajusteJson(jsonCampos, valores);
+			$.valoresOriginal = ajusteJson(jsonCampos, valores);
 			 
 			$('.headerSeccion4').attr("data-toggle","modal");
 			$('.headerSeccion4').attr("data-target","#modalEdicion");
 			$("div.soloLectura > div").remove();
+			$("div.alerta > div").remove();
 			
-			$.jsonSeccion = elementosCampos(jsonSeccion);
+			elementosCampos($.valoresOriginal);
 			
 		}else{
 			console.log("param:Nulo");

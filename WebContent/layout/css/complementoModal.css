@@ -182,3 +182,11 @@ body{
   left:0!important;
   top: 1px!important;
 }
+
+label.labelModal{
+	text-align: left;
+	text-transform: capitalize;
+	text-color: #00FFFF;
+	font-size:0.7em;
+	
+}

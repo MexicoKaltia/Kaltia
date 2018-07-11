@@ -1,0 +1,74 @@
+				case "arrayText": 
+					arrayText = jsonSeccion[tipo].split(",");
+//					console.log(jsonSeccion[tipo].split(","));
+					for(i=0; i<arrayText.length;i++ ){
+						single = arrayText[i];
+						console.log("single:"+single);
+						arraySingle = single.split(".");
+						for(e =0;e<arraySingle.length;e++){
+//							valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
+							if(e===0){
+							valor ="<div class='input-group'><div class='input-group-prepend'><div class='flex-container'><div style='flex-grow: 1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div style='flex-grow: 3'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control input-md' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div></div>";
+							}
+							else{
+							valor ="<div class='input-group'><div class='input-group-prepend'><div class='flex-container'><div style='flex-grow: 1'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div style='flex-grow: 3'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control input-md' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div></div>";
+							}
+							 $(valor).insertAfter($('.soloLectura_in'));
+						}
+					}
+					agregar = "<div class='input-group input-group-sm'><label style='color:#00FFFF;font-size:12px;'>Texto</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><label class='labelModal' for='textinput'>Referencia</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><div class='input-group-prepend' id='agregarStr'><span class='input-group-text btn btn-link complemento1' id='inputGroup-sizing-sm'>Agregar</span></div></div>";
+						$(agregar).insertAfter($('.agregarText'));	
+					break;
+				case "telefono":
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>Telefono</label><input id="+tipo+" name="+tipo+" placeholder='Telefono' class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
+//					$(valor).html('<input id="textinput" name="nombreCompleto"	placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text" value="Chilpancingo">');
+					 $(valor).insertAfter($('.soloLectura_in'));
+					break;
+				case "email": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder='Email' class='form-control input-md' type='email' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "titulo": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "icono": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><div class='custom-file'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md custom-file-input' type='file' required value="+jsonSeccion[tipo]+"></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "varios": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "logo": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "fondoHeader": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "subtitulo": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "descripcion": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "referencia1": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "boton1": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "referencia2": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;
+				case "boton2": 
+					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					 $(valor).insertAfter($('.soloLectura_in'));
+				break;

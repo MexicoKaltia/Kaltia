@@ -86,7 +86,7 @@ public class ComunResolution {
 		for (String a : temp) {
 			a=a.replace(",", "|");
 			menu.add(a.trim());
-			//logger.info("valores:"a.charAt(index));
+			//logger.info("valores:"+a+"-");
 		}
 
 		return menu;

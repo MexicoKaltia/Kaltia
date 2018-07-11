@@ -4,3 +4,12 @@
 .edicion:hover{
 	 background-color: yellow;
 	}
+
+.labelModal{
+	text-align: left;
+	text-transform: capitalize;
+	text-color: #00FFFF;
+	font-size:12px;
+	
+}
+
