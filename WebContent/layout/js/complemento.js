@@ -158,81 +158,87 @@ $(document).ready(function() {
 			  // Controlando que json realmente tenga esa propiedad
 			  if (jsonSeccion.hasOwnProperty(tipo)) {
 			    // Mostrando en pantalla la clave junto a su valor
-//			    console.log("La clave es " + tipo+ " y el valor es:" + jsonSeccion[tipo]);
+
+				  texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
+				  file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='custom-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='custom-file-input' value="+jsonSeccion[tipo]+"><label class='custom-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
+				  lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
 				  valor ="";
 			    switch (tipo) { 
 				case "arrayText": 
 					arrayText = jsonSeccion[tipo].split(",");
-//					console.log(jsonSeccion[tipo].split(","));
 					for(i=0; i<arrayText.length;i++ ){
 						single = arrayText[i];
 						console.log("single:"+single);
 						arraySingle = single.split(".");
 						for(e =0;e<arraySingle.length;e++){
-//							valor ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
 							if(e===0){
-							valor ="<div class='input-group-prepend row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Texto</label></span><div class='col-md-8'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control form-control-sm' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
+							valor ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
 							}
 							else{
-							valor ="<div class='input-group-prepend row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></span><div class='col-md-8'><input id='textinput' name="+e+"."+i+" placeholder='Texto' class='form-control form-control-sm' type='text'  value="+arraySingle[e]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+single+"_chk></div></div></div>";
+							valor ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
 							}
-							 $(valor).insertAfter($('.soloLectura_in'));
+							valor = $(valor).html(); 
+							$(valor).insertAfter($('.soloLectura_in'));
 						}
+						
 					}
 					agregar = "<div class='input-group input-group-sm'><label style='color:#00FFFF;font-size:12px;'>Texto</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><label class='labelModal' for='textinput'>Referencia</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><div class='input-group-prepend' id='agregarStr'><span class='input-group-text btn btn-link complemento1' id='inputGroup-sizing-sm'>Agregar</span></div></div>";
+					agregar = $(agregar).html();
 						$(agregar).insertAfter($('.agregarText'));	
 					break;
 				case "telefono":
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>Telefono</label><input id="+tipo+" name="+tipo+" placeholder='Telefono' class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 //					$(valor).html('<input id="textinput" name="nombreCompleto"	placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text" value="Chilpancingo">');
 					 $(valor).insertAfter($('.soloLectura_in'));
 					break;
 				case "email": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder='Email' class='form-control input-md' type='email' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "titulo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor =$(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "icono": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><div class='custom-file'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md custom-file-input' type='file' required value="+jsonSeccion[tipo]+"></div></div></div>";
+					valor =$(file).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "varios": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(lorem).html()
 					 $(valor).insertAfter($('.soloLectura_in'));
+					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "logo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor =$(file).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "fondoHeader": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor =$(file).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "subtitulo": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor =$(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "descripcion": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input class='form-control' aria-label='Text input with checkbox' type='text' value="+jsonSeccion[tipo]+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+tipo+"_chk></div></div></div>";
+					valor = $(lorem).html()
 					 $(valor).insertAfter($('.soloLectura_in'));
+					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "referencia1": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "boton1": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "referencia2": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "boton2": 
-					valor ="<div class='input-group'><div class='input-group-prepend'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text' required value="+jsonSeccion[tipo]+"></div></div>";
+					valor = $(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 			  }

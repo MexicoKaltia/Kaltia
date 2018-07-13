@@ -1,8 +1,8 @@
 
 <!-- modal -->
-<head><link href="<%=request.getContextPath()%>/layout/css/complementoModal.css" 
-	rel="stylesheet" type="text/css" media="all">	
-</head>
+<%-- <head><link href="<%=request.getContextPath()%>/layout/css/complementoModal.css"  --%>
+<!-- 	rel="stylesheet" type="text/css" media="all">	 -->
+<!-- </head> -->
 
 <!-- modalEdicion -->
 <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog"
@@ -21,18 +21,16 @@
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">
-			<div class="container auth" class="clear">
+			<div class="container-fluid">
 			<div class="alerta">
 					<hiden class="alerta_in"></hiden>					
 				</div>
-             <div id="big-form" class="well auth-box">
-              <form action=""><fieldset>
+			
 				<div class="soloLectura">
 					<hiden class="soloLectura_in"></hiden>
 					<hiden class="agregarText"></hiden>
 				</div>
-				</fieldset></form>
-				</div></div>
+			</div>
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-footer">
