@@ -54,7 +54,8 @@ $(document).ready(function() {
 	$.valoresOriginal="";
 	$.valoresActualizados="";
 //	$.respuestaSeccion ="";
-	
+
+	var url = "http://31.220.60.92:8012/mail"
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -313,23 +314,31 @@ $(document).ready(function() {
 
 		$.valoresActualizados=JSON.parse(valoresActualizados);
 		console.log("valoresActualizados");
-		console.log($.valoresActualizados);
+		console.log($.valoresActualizados);		console.log($.valoresActualizados.toString().length);
 		console.log("valoresOriginales");
-		console.log($.valoresOriginal);
+		console.log($.valoresOriginal); console.log($.valoresOriginal.toString().length);
 
-		if($.valoresOriginal.toString() === $.valoresActualizados.toString())
+		if(JSON.stringify($.valoresOriginal) === JSON.stringify($.valoresActualizados))
 			alert("No hay Cambios");
 		else{
 			alert("Esta Seguro Guardar cambios");
 //			console.log($.valoresActualizados.toString())
-			$.ajax({
-				  type: "POST",
-				  url: url,
-				  data: $.valoresActualizados,
-				  success: success,
-				  dataType: JSON
-				});
-			
+			$.getJSON(url, function (data) {
+			      console.log(data);
+
+			      var items = data.items.map(function (item) {
+			        return item.key + ': ' + item.value;
+			      });
+		      });
+//			$.ajax({
+//				  type: "GET",
+//				  url: url,
+//				  data: $.valoresActualizados,
+//				  success: 	function(data){
+//						alerta='<div class="alert alert-success" role="alert">'+data+'\n'+data+'</div>';
+//						$(alerta).insertAfter($('.alerta_in'));
+//					}
+//				});
 		}
 		//console.log($("div.soloLectura").html());
 	});
@@ -482,6 +491,7 @@ $(document).ready(function() {
 				else{
 					alert("Esta Seguro Guardar cambios");
 					console.log($.arrayTextActualizado.toString())
+
 					$.ajax({
 						  type: "POST",
 						  url: url,
