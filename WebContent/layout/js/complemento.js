@@ -55,7 +55,7 @@ $(document).ready(function() {
 	$.valoresActualizados="";
 //	$.respuestaSeccion ="";
 
-	var url = "http://31.220.60.92:8010/modelo/seccionA";//"http://localhost:8012/mail";
+	var url = "http://localhost:8010/modelo/seccionA";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -341,7 +341,7 @@ $(document).ready(function() {
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
-				  data: $.valoresActualizados,
+				  data: JSON.stringify($.valoresActualizados),
 				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
 				  crossDomain: true,
 				  success: 	function(data){					  
