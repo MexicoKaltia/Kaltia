@@ -55,7 +55,7 @@ $(document).ready(function() {
 	$.valoresActualizados="";
 //	$.respuestaSeccion ="";
 
-	var url = "http://31.220.60.92:8012/mail"
+	var url = "http://31.220.60.92:8010/modelo/seccionA";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -314,31 +314,42 @@ $(document).ready(function() {
 
 		$.valoresActualizados=JSON.parse(valoresActualizados);
 		console.log("valoresActualizados");
-		console.log($.valoresActualizados);		console.log($.valoresActualizados.toString().length);
+		console.log($.valoresActualizados);//		console.log($.valoresActualizados.toString().length);
 		console.log("valoresOriginales");
-		console.log($.valoresOriginal); console.log($.valoresOriginal.toString().length);
+		console.log($.valoresOriginal); //console.log($.valoresOriginal.toString().length);
 
 		if(JSON.stringify($.valoresOriginal) === JSON.stringify($.valoresActualizados))
 			alert("No hay Cambios");
 		else{
 			alert("Esta Seguro Guardar cambios");
 //			console.log($.valoresActualizados.toString())
-			$.getJSON(url, function (data) {
-			      console.log(data);
-
-			      var items = data.items.map(function (item) {
-			        return item.key + ': ' + item.value;
-			      });
-		      });
-//			$.ajax({
-//				  type: "GET",
-//				  url: url,
-//				  data: $.valoresActualizados,
-//				  success: 	function(data){
-//						alerta='<div class="alert alert-success" role="alert">'+data+'\n'+data+'</div>';
-//						$(alerta).insertAfter($('.alerta_in'));
-//					}
-//				});
+//			$.getJSON(url, function (data) {
+//				console.log("ingreso a get");
+//			      console.log(data);
+//			      var items = data.item(function (item) {
+//			        console.log(item.key + ': ' + item.value);
+//			      });
+//		      });
+//			$.post( url, JSON.stringify($.valoresActualizados), 'application/json')
+//			  .done(function( data ) {
+//				  console.log(data);
+//				  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+//					$(alerta).insertAfter($('.alerta_in'));
+//			  });
+			$.ajax({
+			   	  url: url,
+			      dataType: 'json',
+				  type: 'POST',
+				  contentType: "application/json",
+				  data: $.valoresActualizados,
+				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
+				  crossDomain: true,
+				  success: 	function(data){					  
+					  console.log(data);
+					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+					}
+				});
 		}
 		//console.log($("div.soloLectura").html());
 	});

@@ -8,7 +8,7 @@
 			<!-- JAVASCRIPTS -->
 	<script src="<%=request.getContextPath()%>/layout/js/jquery-3.2.1.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/prefixfree.min.js"></script>
-	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.min.js"></script>
+<%-- 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.min.js"></script> --%>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.backtotop.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.mobilemenu.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.flexslider-min.js"></script>

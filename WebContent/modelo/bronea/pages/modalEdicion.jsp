@@ -24,7 +24,7 @@
 			<div class="container-fluid">
 			<div class="alerta">
 					<hiden class="alerta_in"></hiden>					
-				</div>
+			</div>
 			
 				<div class="soloLectura">
 					<hiden class="soloLectura_in"></hiden>
