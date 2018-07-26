@@ -56,7 +56,7 @@ $(document).ready(function() {
 //	$.respuestaSeccion ="";
 
 	//var url = "http://31.220.60.92:8010/";
-	var url = "http://localhost:8010/";//"http://localhost:8012/mail";
+	var url = "http://localhost:8010/mod/sdd";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -163,14 +163,22 @@ $(document).ready(function() {
 				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
 				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='custom-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='custom-file-input' value="+jsonSeccion[tipo]+"><label class='custom-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
 				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
-				  var agregar = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='referencia'  class='form-control input-md' type='text'></div></div><div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='texto'  class='form-control input-md' type='text'></div></div><div class='input-group-prepend' id='agregarStr'><span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span></div>";
+				  //var agregar = "<div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span><div class='col-md-8'><input id='referencia' name='referencia' type='text' placeholder='referencia' class='form-control'></div></div><div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Texto</label></span><div class='col-md-8'><input id='texto' name='texto' type='text' placeholder='Texto' class='form-control'></div></div><div class='input-group-prepend' id='agregarStr'><span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span></div>";
+				  var agregarReferencia = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div>";
+				  var agregarTexto ="<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='agregarTexto'  class='form-control input-md' type='text'></div></div>";
+				  var agregarBoton ="<div class='input-group-prepend' id='agregarStr'><span class='btn btn-link agregarStr' id='inputGroup-sizing-sm'>Agregar</span></div>";
 				  var valor ="";
 				if (jsonSeccion.hasOwnProperty(tipo)) {
 					console.log("tipo de dato : "+tipo);
 			    switch (tipo) { 
 				case "arrayText":
-					valor  = $(agregar).html();
-					$(valor).insertAfter($('.soloLectura_in'));	
+					valor  = $(agregarBoton).html();
+					$(valor).insertAfter($('.soloLectura_in'));
+					valor  = $(agregarReferencia).html();
+					$(valor).insertAfter($('.soloLectura_in'));
+					valor  = $(agregarTexto).html();
+					$(valor).insertAfter($('.soloLectura_in'));
+					
 
 					arrayText = jsonSeccion[tipo].split(",");
 					for(i=0; i<arrayText.length;i++ ){
@@ -308,18 +316,28 @@ $(document).ready(function() {
 		$("div.alerta > div").remove();
 		var valoresActualizados = "{";
 		for (var tipo in jsonCampos){
-			valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-			if(!validaTipo(tipo, $("#"+tipo).val())){
-				return false;
+			if(tipo === "arrayText"){
+				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$.arrayTextActualizado+'",';
+				console.log($.arrayTextActualizado);
+			}else{
+				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
+				console.log($("#"+tipo).val());
 			}
+			
+			/*
+			 * CORREGIR LA FUNCION DE VALIDAR DATOS !!!
+			 */
+//			if(!validaTipo(tipo, $("#"+tipo).val())){
+//				return false;
+//			}
 		}
 		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
 
 		$.valoresActualizados=JSON.parse(valoresActualizados);
 		console.log("valoresActualizados");
-		console.log($.valoresActualizados);//		console.log($.valoresActualizados.toString().length);
+		console.log($.valoresActualizados);
 		console.log("valoresOriginales");
-		console.log($.valoresOriginal); //console.log($.valoresOriginal.toString().length);
+		console.log($.valoresOriginal); 
 
 		if(JSON.stringify($.valoresOriginal) === JSON.stringify($.valoresActualizados))
 			alert("No hay Cambios");
@@ -358,7 +376,6 @@ $(document).ready(function() {
 				  }
 				});
 		}
-		//console.log($("div.soloLectura").html());
 	});
 
 	function validaTipo(tipo , valor){
@@ -482,45 +499,49 @@ $(document).ready(function() {
 //	   });
 			$.arrayTextActualizado = $.valoresOriginal.arrayText.split(",");
 			$.arrayTextOriginal = $.valoresOriginal.arrayText;
-			$('#agregarStr').click(function(){
+			$('.agregarStr').click(function(){
 				var  valor2 =null;
-				//valor2 = $('#modalEdicion_ingresarStr').val();
-				if($('#modalEdicion_ingresarStr').val() !== ""){
-				var valor3 ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#textoAgregar').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div><div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#referenciaAgregar').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
+//				console.log($('#agregarTexto').val());
+//				console.log($('#agregarReferencia').val());
+				if($('#agregarTexto').val() !== "" && $('#agregarReferencia').val() !== ""){
+				var valor3 ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#agregarReferencia').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
+				valor3 = $(valor3).html();
+				 $(valor3).insertAfter($('.soloLectura_in'));
+				valor3 = "<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#agregarTexto').val()+"></div></div></div>";
 				valor3 = $(valor3).html();
 				 $(valor3).insertAfter($('.soloLectura_in'));		 
-					$.arrayTextActualizado.push($('#textoAgregar').val()+"."+$('#referenciaAgregar').val());
-					$('#textoAgregar').val("")
-					$('#referenciaAgregar').val("")
+					$.arrayTextActualizado.push($('#agregarTexto').val()+"."+$('#agregarReferencia').val());
+					$('#agregarReferencia').val("")
+					$('#agregarTexto').val("")
 					console.log($.arrayTextActualizado)
 					console.log($.valoresOriginal.arrayText);
 				}
 			})
-			$('#modalEdicion_btnClose').click(function(){
-				alert("Sin Guardar cambios");
-				$("div.soloLectura > div").remove();
-				console.log($("div.soloLectura").html());
-			});
-			$('#modalEdicion_btnSave').click(function(){
-//				console.log(jsonSeccion.arrayText)
-//				console.log(arrayTextActualizado.toString())
-				if($.arrayTextOriginal.toString() === $.arrayTextActualizado.toString())
-					alert("No hay Cambios");
-				else{
-					alert("Esta Seguro Guardar cambios");
-					console.log($.arrayTextActualizado.toString())
-
-					$.ajax({
-						  type: "POST",
-						  url: url,
-						  data: $.arrayTextActualizado,
-						  success: success,
-						  dataType: JSON
-						});
-					
-				}
-				//console.log($("div.soloLectura").html());
-			});
+//			$('#modalEdicion_btnClose').click(function(){
+//				alert("Sin Guardar cambios");
+//				$("div.soloLectura > div").remove();
+//				console.log($("div.soloLectura").html());
+//			});
+//			$('#modalEdicion_btnSave').click(function(){
+////				console.log(jsonSeccion.arrayText)
+////				console.log(arrayTextActualizado.toString())
+//				if($.arrayTextOriginal.toString() === $.arrayTextActualizado.toString())
+//					alert("No hay Cambios");
+//				else{
+//					alert("Esta Seguro Guardar cambios");
+//					console.log($.arrayTextActualizado.toString())
+//
+//					$.ajax({
+//						  type: "POST",
+//						  url: url,
+//						  data: $.arrayTextActualizado,
+//						  success: success,
+//						  dataType: JSON
+//						});
+//					
+//				}
+//				//console.log($("div.soloLectura").html());
+//			});
 
 		}else{
 			console.log("param:Nulo");
