@@ -1,8 +1,8 @@
-
+<!DOCTYPE html>
 <!-- modal -->
-<%-- <head><link href="<%=request.getContextPath()%>/layout/css/complementoModal.css"  --%>
-<!-- 	rel="stylesheet" type="text/css" media="all">	 -->
-<!-- </head> -->
+<head><link href="<%=request.getContextPath()%>/layout/css/complementoModal.css" 
+	rel="stylesheet" type="text/css" media="all">	
+</head>
 
 <!-- modalEdicion -->
 <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog"
@@ -11,10 +11,10 @@
 		<div class="modal-content"
 			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLongTitle">Edicion Seccion</h5>
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close" id="headerSeccion1_btnClose">
+					aria-label="Close" id="modalEdicion_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
 				

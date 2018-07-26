@@ -157,15 +157,19 @@ $(document).ready(function() {
 	function elementosCampos(jsonSeccion){
 		for (var tipo in jsonSeccion){
 			  // Controlando que json realmente tenga esa propiedad
-			  if (jsonSeccion.hasOwnProperty(tipo)) {
-			    // Mostrando en pantalla la clave junto a su valor
-
-				  texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
-				  file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='custom-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='custom-file-input' value="+jsonSeccion[tipo]+"><label class='custom-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
-				  lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
-				  valor ="";
+			  
+				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
+				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='custom-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='custom-file-input' value="+jsonSeccion[tipo]+"><label class='custom-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
+				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
+				  var agregar = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='referencia'  class='form-control input-md' type='text'></div></div><div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='texto'  class='form-control input-md' type='text'></div></div><div class='input-group-prepend' id='agregarStr'><span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span></div>";
+				  var valor ="";
+				if (jsonSeccion.hasOwnProperty(tipo)) {
+					console.log("tipo de dato : "+tipo);
 			    switch (tipo) { 
-				case "arrayText": 
+				case "arrayText":
+					valor  = $(agregar).html();
+					$(valor).insertAfter($('.soloLectura_in'));	
+
 					arrayText = jsonSeccion[tipo].split(",");
 					for(i=0; i<arrayText.length;i++ ){
 						single = arrayText[i];
@@ -173,19 +177,16 @@ $(document).ready(function() {
 						arraySingle = single.split(".");
 						for(e =0;e<arraySingle.length;e++){
 							if(e===0){
-							valor ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
+							valor ="<div class='row'><div class='col-md-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'><hr style='color: #0056b2;' /></div></div></div></div></div>";
 							}
 							else{
-							valor ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
+							valor ="<div class='row'><div class='col-md-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"></div></div></div>";
 							}
 							valor = $(valor).html(); 
 							$(valor).insertAfter($('.soloLectura_in'));
 						}
 						
 					}
-					agregar = "<div class='input-group input-group-sm'><label style='color:#00FFFF;font-size:12px;'>Texto</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><label class='labelModal' for='textinput'>Referencia</label><input class='form-control' id='modalEdicion_ingresarStr' aria-label='Small' aria-describedby='inputGroup-sizing-sm' type='text'><div class='input-group-prepend' id='agregarStr'><span class='input-group-text btn btn-link complemento1' id='inputGroup-sizing-sm'>Agregar</span></div></div>";
-					agregar = $(agregar).html();
-						$(agregar).insertAfter($('.agregarText'));	
 					break;
 				case "telefono":
 					valor = $(texto).html();
@@ -348,7 +349,11 @@ $(document).ready(function() {
 					  console.log(data);
 					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
 						$(alerta).insertAfter($('.alerta_in'));
-					}
+					},
+				  error: function(){
+					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+				  }
 				});
 		}
 		//console.log($("div.soloLectura").html());
@@ -477,14 +482,14 @@ $(document).ready(function() {
 			$.arrayTextOriginal = $.valoresOriginal.arrayText;
 			$('#agregarStr').click(function(){
 				var  valor2 =null;
-				valor2 = $('#modalEdicion_ingresarStr').val();
+				//valor2 = $('#modalEdicion_ingresarStr').val();
 				if($('#modalEdicion_ingresarStr').val() !== ""){
-	//			 var valor3 ="<div class='input-group' id='"+$('#headerSeccion1_ingresarStr').val()+"'><div class='input-group-prepend id='"+$('#headerSeccion1_ingresarStr').val()+"''><input class='form-control' aria-label='Text input with checkbox' type='text' placeholder="+$('#headerSeccion1_ingresarStr').val()+" readonly><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#headerSeccion1_ingresarStr').val()+"_chk></div></div></div>"
-				var valor3 ="<div class='input-group'><div class='input-group-prepend'><input class='form-control' aria-label='Text input with checkbox' type='text' value="+$('#modalEdicion_ingresarStr').val()+"><div class='input-group-text'><input aria-label='Checkbox for following text input' type='checkbox' id="+$('#modalEdicion_ingresarStr').val()+"_chk></div></div></div>";
-					$(valor3).insertAfter($('.soloLectura_in'));	 
-					$.arrayTextActualizado.push($('#modalEdicion_ingresarStr').val());
-					jsonSeccion.arrayText = $.arrayTextActualizado.toString();
-					$('#modalEdicion_ingresarStr').val("");
+				var valor3 ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#textoAgregar').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div><div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#referenciaAgregar').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
+				valor3 = $(valor3).html();
+				 $(valor3).insertAfter($('.soloLectura_in'));		 
+					$.arrayTextActualizado.push($('#textoAgregar').val()+"."+$('#referenciaAgregar').val());
+					$('#textoAgregar').val("")
+					$('#referenciaAgregar').val("")
 					console.log($.arrayTextActualizado)
 					console.log($.valoresOriginal.arrayText);
 				}
