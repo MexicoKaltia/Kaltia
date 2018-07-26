@@ -55,12 +55,14 @@ $(document).ready(function() {
 	$.valoresActualizados="";
 //	$.respuestaSeccion ="";
 
-	var url = "http://localhost:8010/modelo/seccionA";//"http://localhost:8012/mail";
+	//var url = "http://31.220.60.92:8010/";
+	var url = "http://localhost:8010/";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
+		console.log(window.location.href);
 		if (results == null){
 			_desactiveSeccionEdicion();
 			console.log("results null")
