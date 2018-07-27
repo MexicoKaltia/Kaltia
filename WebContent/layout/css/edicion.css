@@ -1,5 +1,9 @@
 @charset "ISO-8859-1";
 
+hr {
+  height: 1px;
+  color: red;
+}
 
 .edicion:hover{
 	 background-color: yellow;

@@ -161,7 +161,7 @@ $(document).ready(function() {
 			  // Controlando que json realmente tenga esa propiedad
 			  
 				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
-				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='custom-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='custom-file-input' value="+jsonSeccion[tipo]+"><label class='custom-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
+				  var file = "<form id='upload-file-form'><label for='upload-file-input'>Actualiza imagen jpeg:</label><input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//"<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='upload-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='upload-file-input' value="+jsonSeccion[tipo]+"><label class='upload-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
 				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
 				  //var agregar = "<div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span><div class='col-md-8'><input id='referencia' name='referencia' type='text' placeholder='referencia' class='form-control'></div></div><div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Texto</label></span><div class='col-md-8'><input id='texto' name='texto' type='text' placeholder='Texto' class='form-control'></div></div><div class='input-group-prepend' id='agregarStr'><span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span></div>";
 				  var agregarReferencia = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div>";
@@ -327,9 +327,9 @@ $(document).ready(function() {
 			/*
 			 * CORREGIR LA FUNCION DE VALIDAR DATOS !!!
 			 */
-//			if(!validaTipo(tipo, $("#"+tipo).val())){
-//				return false;
-//			}
+			if(!validaTipo(tipo, $("#"+tipo).val())){
+				return false;
+			}
 		}
 		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
 
@@ -403,64 +403,61 @@ $(document).ready(function() {
 		break;
 		case "titulo": 
 			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" valor:"+valor+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" valor:"+valor+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" valor:"+valor+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" valor:"+valor+" NO es correcto");
+//			  }
 		break;
 		case "icono": 
 			console.log(tipo);
+			
 		break;
 		case "varios": 
 			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" NO es correcto");
+//			  }
 		break;
 		case "logo": 
 			console.log(tipo);
 		break;
 		case "fondoHeader": 
 			console.log(tipo);
+			uploadFile(tipo);
 		break;
 		case "subtitulo": 
-			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+":"+valor+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+":"+valor+" NO es correcto");
+//			  }
 		break;
 		case "descripcion": 
 			console.log(tipo);
 		break;
 		case "referencia1": 
-			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" NO es correcto");
-			  }		
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" NO es correcto");
+//			  }		
 		break;
 		case "boton1": 
-			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" NO es correcto");
+//			  }
 		break;
 		case "referencia2": 
-			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" NO es correcto");
+//			  }
 		break;
 		case "boton2": 
-			//var expreg = texto;
-			  if(!texto.test(valor)){ 
-				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
-			    console.log("El "+tipo+" NO es correcto");
-			  }
+//			  if(!texto.test(valor)){ 
+//				  validaStatus=[false,"El "+tipo+" NO es correcto","Debe ser formato A-z0-9"];
+//			    console.log("El "+tipo+" NO es correcto");
+//			  }
 		break;
 		}
 		
@@ -472,6 +469,30 @@ $(document).ready(function() {
 		valor="";
 		return validaStatus[0];
 	}
+	
+	function uploadFile() {
+		  $.ajax({
+		    url: "http://localhost:8010/fileUpload",
+		    type: "POST",
+		    data: new FormData($("#upload-file-form")[0]),
+		    enctype: 'multipart/form-data',
+		    processData: false,
+		    contentType: false,
+		    cache: false,
+		    success: function () {
+		      // Handle upload success
+		      // ...
+		      alert("exito")
+		    },
+		    error: function () {
+		      // Handle upload error
+		      // ...
+		      alert("negative")
+		    }
+		  });
+		} // function uploadFile
+
+
 	
 	
 	
