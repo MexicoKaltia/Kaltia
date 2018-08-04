@@ -14,6 +14,7 @@
 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 
 	<definition name="bronea" template="/WEB-INF/inicio/inicio.jsp">
@@ -35,6 +36,7 @@
 		<put-attribute name="footer" value="/modelo/carinary/pages/carinaryFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="skaxis" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/skaxis/pages/skaxisHeader.jsp" />
@@ -44,6 +46,7 @@
 		<put-attribute name="footer" value="/modelo/skaxis/pages/skaxisFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeader.jsp" />
@@ -53,6 +56,7 @@
 		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 		<definition name="vortex" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/vortex/pages/vortexHeader.jsp" />
@@ -62,6 +66,7 @@
 		<put-attribute name="footer" value="/modelo/vortex/pages/vortexFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	
 	<!-- segunda generacion -->
@@ -74,6 +79,7 @@
 		<put-attribute name="footer" value="/modelo/abele/pages/abeleFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="appsea" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/appsea/pages/appseaHeader.jsp" />
@@ -83,6 +89,7 @@
 		<put-attribute name="footer" value="/modelo/appsea/pages/appseaFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="arialogic" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/arialogic/pages/arialogicHeader.jsp" />
@@ -92,6 +99,7 @@
 		<put-attribute name="footer" value="/modelo/arialogic/pages/arialogicFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="artland" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/artland/pages/artlandHeader.jsp" />
@@ -101,6 +109,7 @@
 		<put-attribute name="footer" value="/modelo/artland/pages/artlandFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="aerogem" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/aerogem/pages/aerogemHeader.jsp" />
@@ -110,6 +119,7 @@
 		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="algenius" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/algenius/pages/algeniusHeader.jsp" />
@@ -119,6 +129,7 @@
 		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="arrival" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/arrival/pages/arrivalHeader.jsp" />
@@ -128,6 +139,7 @@
 		<put-attribute name="footer" value="/modelo/arrival/pages/arrivalFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 		
 	

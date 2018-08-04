@@ -19,8 +19,14 @@
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 	</definition>
+	
 	<definition name="mazda" extends="bronea">
 		<put-attribute name="empresa" value="Mazda" cascade="true" />
+	</definition>	
+	
+	
+	<definition name="bebedero" extends="skaxis">
+		<put-attribute name="empresa" value="Bebedero" cascade="true" />
 	</definition>	
 
 	
@@ -32,12 +38,14 @@
 		<put-attribute name="css" expression="/css/inicio.css"
 			cascade="true" />
 	</definition>
+	
 	<definition name="menuA" extends="bronea">
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
 		<!-- <put-attribute name="body" value="/tiles/inicio/Kaltia1.jsp"/> -->
 	</definition>
+	
 	<definition name="test" extends="bronea">
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
