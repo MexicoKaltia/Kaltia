@@ -318,10 +318,10 @@ $(document).ready(function() {
 		for (var tipo in jsonCampos){
 			if(tipo === "arrayText"){
 				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$.arrayTextActualizado+'",';
-				console.log($.arrayTextActualizado);
+				//console.log($.arrayTextActualizado);
 			}else{
 				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-				console.log($("#"+tipo).val());
+				//console.log($("#"+tipo).val());
 			}
 			
 			/*
@@ -469,7 +469,7 @@ $(document).ready(function() {
 		valor="";
 		return validaStatus[0];
 	}
-	
+	https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
 	function uploadFile() {
 		  $.ajax({
 		    url: "http://localhost:8010/fileUpload",
@@ -479,11 +479,11 @@ $(document).ready(function() {
 		    processData: false,
 		    contentType: false,
 		    cache: false,
-		    success: function () {
-		      // Handle upload success
-		      // ...
-		      alert("exito")
-		    },
+		    success: 	function(data){					  
+				  alert(data.codigo+" "+data.mensaje.toString());
+				  alerta="<div class='alert alert-success' role='alert'>imagen"+data.codigo+" "+data.mensaje.toString()+"</div>";
+					$(alerta).insertAfter($('.alerta_in'));
+				},
 		    error: function () {
 		      // Handle upload error
 		      // ...
