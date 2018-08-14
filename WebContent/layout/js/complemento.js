@@ -55,8 +55,8 @@ $(document).ready(function() {
 	$.valoresActualizados="";
 //	$.respuestaSeccion ="";
 
-	//var url = "http://31.220.60.92:8010/";
-	var url = "http://localhost:8010/mod/sdd";//"http://localhost:8012/mail";
+	var url = "http://31.220.60.92:8010/";
+//	var url = "http://localhost:8010/mod/sdd";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -121,15 +121,16 @@ $(document).ready(function() {
 		$('div').removeClass("edicion footerSeccion1 footerSeccion2 footerSeccion3 footerSeccion4 footerSeccion5")
 		$('div').removeClass("edicion footerSeccionArray1 footerSeccionArray2 footerSeccionArray3 footerSeccionArray4 footerSeccionArray5")
 
-
 		$('nav').removeClass("edicion")
 	}
 	   
-	
-	function seccionLectura (action, section, callback) {
-		  var scriptURL = "somefile.php?name=" + action + section;
-		  return $.getJSON("http://rest-service.guides.spring.io/greeting", callback);
-	}
+/*
+ *  METODO FUNCION QUE HACE LECTURA DE MANERA ASINCRONA 
+ */	
+//	function seccionLectura (action, section, callback) {
+//		  var scriptURL = "somefile.php?name=" + action + section;
+//		  return $.getJSON("http://rest-service.guides.spring.io/greeting", callback);
+//	}
 
 	/*
 	//METODO SINCRONO PARA INVOCAR AL SECCION LECTURA
@@ -153,6 +154,61 @@ $(document).ready(function() {
 		return $.respuestaSeccion;
 	}
 	//FIN METODO SINCRONO PARA INVOCAR AL SECCION LECTURA  */
+	
+	/*
+	 *  Validacion para activar las sentencias de modalEdicion
+	 */
+	function validaParam(){
+		if($.param != null && $.param === $.paramInicial){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	
+	/*
+	 *  Metodo para recuperar los valores de ORIGEN de la seccion y retornar un arreglo
+	 */
+	function valoresSeccion(seccion){
+		var status = document.getElementById(seccion).innerHTML;
+		status= status.toString().trim();
+		//console.log(status);
+		status = status.slice(1,-1)
+		status = status.split(",");
+		for(var o=0; o<status.length; o++){
+			if(o!==0)
+			status[o] = status[o].slice(1);
+			}
+		return status;
+		}
+	
+	/*
+	 *  Metodo para configurar los valores Origen y retornar un JSON
+	 */
+	function ajusteJson(jsonCampos , valores){
+		var indice = 0;
+		var jsonSeccion = "{";
+		for (var tipo in jsonCampos){
+			  // Controlando que json realmente tenga esa propiedad
+			  if (jsonCampos.hasOwnProperty(tipo)) {
+				    // Mostrando en pantalla la clave junto a su valor
+				  if(tipo === "arrayText"){
+					    //console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores);
+					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores+'",';					  
+					    }else{
+					    //console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores[indice]);
+					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores[indice]+'",';					  
+				  }
+			  }
+			  indice++;
+		}
+		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
+		console.log(JSON.parse(jsonSeccion));
+		return JSON.parse(jsonSeccion);
+	}
+
+	
 	/*
 	 * Metodo para pintar el MODAL con los campos de jsonCampos
 	 */
@@ -161,15 +217,13 @@ $(document).ready(function() {
 			  // Controlando que json realmente tenga esa propiedad
 			  
 				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
-				  var file = "<form id='upload-file-form' method='POST' enctype='multipart/form-data'><label for='upload-file-input'>Actualiza imagen jpeg:</label><input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//"<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='upload-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='upload-file-input' value="+jsonSeccion[tipo]+"><label class='upload-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";
+				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='upload-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='upload-file-input' value="+jsonSeccion[tipo]+"><label class='upload-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";//"<form id='upload-file-form'><label for='upload-file-input'>Upload your file:</label> <input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//
 				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
-				  //var agregar = "<div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span><div class='col-md-8'><input id='referencia' name='referencia' type='text' placeholder='referencia' class='form-control'></div></div><div class='row'><span class='col-md-1 col-md-offset-2 text-center'><label style='color:#00FFFF;font-size:12px;'>Texto</label></span><div class='col-md-8'><input id='texto' name='texto' type='text' placeholder='Texto' class='form-control'></div></div><div class='input-group-prepend' id='agregarStr'><span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span></div>";
 				  var agregarReferencia = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div>";
 				  var agregarTexto ="<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='agregarTexto'  class='form-control input-md' type='text'></div></div>";
 				  var agregarBoton ="<div class='input-group-prepend' id='agregarStr'><span class='btn btn-link agregarStr' id='inputGroup-sizing-sm'>Agregar</span></div>";
 				  var valor ="";
 				if (jsonSeccion.hasOwnProperty(tipo)) {
-					console.log("tipo de dato : "+tipo);
 			    switch (tipo) { 
 				case "arrayText":
 					valor  = $(agregarBoton).html();
@@ -179,7 +233,6 @@ $(document).ready(function() {
 					valor  = $(agregarTexto).html();
 					$(valor).insertAfter($('.soloLectura_in'));
 					
-
 					arrayText = jsonSeccion[tipo].split(",");
 					for(i=0; i<arrayText.length;i++ ){
 						single = arrayText[i];
@@ -212,7 +265,7 @@ $(document).ready(function() {
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "icono": 
-					valor =$(file).html();
+					valor =$(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "varios": 
@@ -221,7 +274,7 @@ $(document).ready(function() {
 					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "logo": 
-					valor =$(file).html();
+					valor =$(texto).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "fondoHeader": 
@@ -258,42 +311,7 @@ $(document).ready(function() {
 		}
 	}
 	
-	function valoresSeccion(seccion){
-		var status = document.getElementById(seccion).innerHTML;
-		status= status.toString().trim();
-		console.log(status);
-		status = status.slice(1,-1)
-		status = status.split(",");
-		for(var o=0; o<status.length; o++){
-			if(o!==0)
-			status[o] = status[o].slice(1);
-			}
-		return status;
-		}
 	
-	function ajusteJson(jsonCampos , valores){
-//		console.log(valores);
-		var indice = 0;
-		var jsonSeccion = "{";
-		for (var tipo in jsonCampos){
-			  // Controlando que json realmente tenga esa propiedad
-			  if (jsonCampos.hasOwnProperty(tipo)) {
-				    // Mostrando en pantalla la clave junto a su valor
-				  if(tipo === "arrayText"){
-					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores);
-					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores+'",';					  
-					    }else{
-					    console.log("La clave es " + tipo+ " y el tipo es " + jsonCampos[tipo]+ " y el valor es:"+valores[indice]);
-					    jsonSeccion = jsonSeccion+'"'+tipo+'":"'+valores[indice]+'",';					  
-				  }
-			  }
-			  indice++;
-		}
-		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
-//		$.valoresOriginal = JSON.parse(jsonSeccion);
-//		console.log(jsonSeccion);
-		return JSON.parse(jsonSeccion);
-	}
 	
 //	function valoresActualizados(seccionNombre, jsonCampos){
 //		console.log("valoresActualizados");
@@ -310,8 +328,9 @@ $(document).ready(function() {
 	$('#modalEdicion_btnClose').click(function(){
 		alert("Sin Guardar cambios");
 		$("div.soloLectura > div").remove();
-		console.log($("div.soloLectura").html());
+//		console.log($("div.soloLectura").html());
 	});
+	
 	$('#modalEdicion_btnSave').click(function(){
 		$("div.alerta > div").remove();
 		var valoresActualizados = "{";
@@ -343,14 +362,6 @@ $(document).ready(function() {
 			alert("No hay Cambios");
 		else{
 			alert("Esta Seguro Guardar cambios");
-//			console.log($.valoresActualizados.toString())
-//			$.getJSON(url, function (data) {
-//				console.log("ingreso a get");
-//			      console.log(data);
-//			      var items = data.item(function (item) {
-//			        console.log(item.key + ': ' + item.value);
-//			      });
-//		      });
 //			$.post( url, JSON.stringify($.valoresActualizados), 'application/json')
 //			  .done(function( data ) {
 //				  console.log(data);
@@ -379,8 +390,7 @@ $(document).ready(function() {
 	});
 
 	function validaTipo(tipo , valor){
-		console.log(tipo);
-		console.log(valor);
+		console.log(tipo+":"+valor);
 		var texto = /^[A-Za-z0-9]$/;
 		var validaStatus =[ true, "",""];
 		switch (tipo) { 
@@ -409,7 +419,7 @@ $(document).ready(function() {
 //			  }
 		break;
 		case "icono": 
-			console.log(tipo);
+			//console.log(tipo);
 			
 		break;
 		case "varios": 
@@ -420,10 +430,10 @@ $(document).ready(function() {
 //			  }
 		break;
 		case "logo": 
-			console.log(tipo);
+			//console.log(tipo);
 		break;
 		case "fondoHeader": 
-			console.log(tipo);
+			//console.log(tipo);
 			uploadFile(tipo);
 		break;
 		case "subtitulo": 
@@ -433,7 +443,7 @@ $(document).ready(function() {
 //			  }
 		break;
 		case "descripcion": 
-			console.log(tipo);
+			//console.log(tipo);
 		break;
 		case "referencia1": 
 //			  if(!texto.test(valor)){ 
@@ -472,22 +482,21 @@ $(document).ready(function() {
 	//https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
 	function uploadFile() {
 		  $.ajax({
-		    url: "http://localhost:8010/fileUpload",
+//		    url: "http://localhost:8010/fileUpload",
+			  url: "http://31.220.60.92:8010/fileUpload",
 		    type: "POST",
 		    data: new FormData($("#upload-file-form")[0]),
 		    enctype: 'multipart/form-data',
 		    processData: false,
 		    contentType: false,
 		    cache: false,
-		    success: 	function(data){					  
-				  alert(data.codigo+" "+data.mensaje.toString());
+		    success: 	function(data){
 				  alerta="<div class='alert alert-success' role='alert'>imagen"+data.codigo+" "+data.mensaje.toString()+"</div>";
 					$(alerta).insertAfter($('.alerta_in'));
 				},
 		    error: function () {
-		      // Handle upload error
-		      // ...
-		      alert("negative")
+		    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
+				$(alerta).insertAfter($('.alerta_in'));
 		    }
 		  });
 		} // function uploadFile
@@ -497,7 +506,7 @@ $(document).ready(function() {
 	
 	
 	$('.headerSeccion1').click(function(){
-		if($.param === $.paramInicial){
+		if(validaParam()){
 			console.log(window.location.href);
 			jsonCampos = {"arrayText" :"text"}
 			var valores = valoresSeccion("headerSeccion1_valores");
@@ -572,8 +581,8 @@ $(document).ready(function() {
 	
 	
 	$('.headerSeccion2').click(function(){
-		if($.param != null){
-			console.log("param:"+$.param)
+		if(validaParam()){
+//			console.log("param:"+$.param)
 			action = "action";
 			seccion = "seccion";
 			
@@ -595,8 +604,8 @@ $(document).ready(function() {
 	});
 	
 	$('.headerSeccion3').click(function(){
-		if($.param != null){
-			console.log("param:"+$.param)
+		if(validaParam()){
+//			console.log("param:"+$.param)
 			action = "action";
 			seccion = "seccion";
 			
@@ -617,8 +626,8 @@ $(document).ready(function() {
 		}
 	});
 	$('.headerSeccion4').click(function(){
-		if($.param != null){
-			console.log("param:"+$.param)
+		if(validaParam()){
+//			console.log("param:"+$.param)
 			action = "action";
 			seccion = "seccion";
 			

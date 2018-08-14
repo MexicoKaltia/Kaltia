@@ -28,7 +28,12 @@
 			
 				<div class="soloLectura">
 					<hiden class="soloLectura_in"></hiden>
-					<hiden class="agregarText"></hiden>
+						<form id="upload-file-form">
+							<label for="upload-file-input">Upload your file:</label> <input
+								id="upload-file-input" type="file" name="uploadfile"
+								accept="image/jpeg" />
+						</form>
+						<hiden class="agregarText"></hiden>
 				</div>
 			</div>
 			</div>
