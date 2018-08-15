@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 					
 	/*    Funciones de ingreso login 
 	 *  en la pagina principal de Kaltia 
@@ -37,24 +37,13 @@ $(document).ready(function() {
 	 * 	Activar y Desactivar las secciones de Edicion
 	 * 	por medio de parametros URL
 	 */
-//	$.urlParam = function(tipo){
-//		var results = new RegExp('[\?&]' + tipo + '=([^&#]*)').exec(window.location.href);
-//		if (results==null){
-//		       return null;
-//		    }
-//		    else{
-//		    	console.log("PARAM1:"+decodeURI(results[1]));
-//		       return decodeURI(results[1]) || 0;
-//		    }
-//	}
+	
 	$.paramInicial = "AAA";
 	$.variableParam = "tipo";
 	$.param ="";
 	$.jsonSeccion ="";
 	$.valoresOriginal="";
 	$.valoresActualizados="";
-//	$.respuestaSeccion ="";
-
 	var url = "http://31.220.60.92:8010/";
 //	var url = "http://localhost:8010/mod/sdd";//"http://localhost:8012/mail";
 	var arrayTextActualizado ="";
@@ -101,9 +90,7 @@ $(document).ready(function() {
 					$('div.footerSeccionArray3').addClass("edicion")
 					$('div.footerSeccionArray4').addClass("edicion")
 					$('div.footerSeccionArray5').addClass("edicion")
-		    	//console.log("PARAM1:"+decodeURI(results[1]));
 		    	$.param = decodeURI(results[1]);
-		       //return decodeURI(results[1]) || 0;
 		    	return $.param;
 		    	}
 		    	else{
@@ -210,14 +197,14 @@ $(document).ready(function() {
 
 	
 	/*
-	 * Metodo para pintar el MODAL con los campos de jsonCampos
+	 * Metodo para pintar el MODAL con los campos y valores Originales de jsonCampos
 	 */
 	function elementosCampos(jsonSeccion){
 		for (var tipo in jsonSeccion){
 			  // Controlando que json realmente tenga esa propiedad
 			  
 				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
-				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><div class='upload-file'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='upload-file-input' value="+jsonSeccion[tipo]+"><label class='upload-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label></div></div></div>";//"<form id='upload-file-form'><label for='upload-file-input'>Upload your file:</label> <input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//
+				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 row'><label class='upload-file-label' id="+tipo+" for="+tipo+" name="+tipo+" value="+jsonSeccion[tipo]+">"+jsonSeccion[tipo]+"</label><a data-toggle='modal' href='#modalFile' class='btn btn-outline-primary'>Actualizar Imagen</a></div></div>";//"<form id='upload-file-form'><label for='upload-file-input'>Upload your file:</label> <input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//
 				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
 				  var agregarReferencia = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div>";
 				  var agregarTexto ="<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='agregarTexto'  class='form-control input-md' type='text'></div></div>";
@@ -265,7 +252,7 @@ $(document).ready(function() {
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "icono": 
-					valor =$(texto).html();
+					valor =$(file).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
 				break;
 				case "varios": 
@@ -274,8 +261,9 @@ $(document).ready(function() {
 					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "logo": 
-					valor =$(texto).html();
+					valor =$(file).html();
 					 $(valor).insertAfter($('.soloLectura_in'));
+					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "fondoHeader": 
 					valor =$(file).html();
@@ -310,25 +298,10 @@ $(document).ready(function() {
 			}
 		}
 	}
-	
-	
-	
-//	function valoresActualizados(seccionNombre, jsonCampos){
-//		console.log("valoresActualizados");
-//		var valoresActualizados = "{";
-//		for (var tipo in jsonCampos){
-//			valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-//		}
-//		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
-//		console.log(valoresActualizados);
-//		return JSON.parse(valoresActualizados);
-//
-//	}
-	
+		
 	$('#modalEdicion_btnClose').click(function(){
 		alert("Sin Guardar cambios");
 		$("div.soloLectura > div").remove();
-//		console.log($("div.soloLectura").html());
 	});
 	
 	$('#modalEdicion_btnSave').click(function(){
@@ -369,7 +342,7 @@ $(document).ready(function() {
 //					$(alerta).insertAfter($('.alerta_in'));
 //			  });
 			$.ajax({
-			   	  url: url,
+			   	  url: url+'modelo/action-Seccion',
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
@@ -388,7 +361,10 @@ $(document).ready(function() {
 				});
 		}
 	});
-
+	
+	/*
+	 *  Metodo de validacion de campos
+	 */
 	function validaTipo(tipo , valor){
 		console.log(tipo+":"+valor);
 		var texto = /^[A-Za-z0-9]$/;
@@ -479,7 +455,26 @@ $(document).ready(function() {
 		valor="";
 		return validaStatus[0];
 	}
+	
+	/*
+	 *   Funciones de modal para carga de Imagenes
+	 */
 	//https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
+	$(function() {
+		$("#upload-file-input").on("change", uploadFile);
+	});
+	
+	$('#btnCloseFile').click(function(){
+		$("div.alerta_file > div").remove();
+	});
+	
+	$('#btnSaveFile').click(function(){
+		var nombre = $('#upload-file-input').val().split('\\');
+		console.log(nombre[nombre.length-1]);
+		document.getElementById('fondoHeader').value ="hola";// nombre[nombre.length-1];
+		$('#btnCloseFile').on();
+	});
+
 	function uploadFile() {
 		  $.ajax({
 //		    url: "http://localhost:8010/fileUpload",
@@ -491,160 +486,12 @@ $(document).ready(function() {
 		    contentType: false,
 		    cache: false,
 		    success: 	function(data){
-				  alerta="<div class='alert alert-success' role='alert'>imagen"+data.codigo+" "+data.mensaje.toString()+"</div>";
-					$(alerta).insertAfter($('.alerta_in'));
+				  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+					$(alerta).insertAfter($('.alerta_inFile'));
 				},
 		    error: function () {
 		    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
-				$(alerta).insertAfter($('.alerta_in'));
+				$(alerta).insertAfter($('.alerta_inFile'));
 		    }
 		  });
 		} // function uploadFile
-
-
-	
-	
-	
-	$('.headerSeccion1').click(function(){
-		if(validaParam()){
-			console.log(window.location.href);
-			jsonCampos = {"arrayText" :"text"}
-			var valores = valoresSeccion("headerSeccion1_valores");
-			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-			
-			$('.headerSeccion1').attr("data-toggle","modal");
-			$('.headerSeccion1').attr("data-target","#modalEdicion");
-			$("div.soloLectura > div").remove();
-			$("div.alerta > div").remove();
-			
-			elementosCampos($.valoresOriginal);
-			
-//			_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
-//		seccionLectura(action, seccion, function(data){  //     ASYNCRONO
-//			$.respuestaSeccion = data;
-//			console.log($.respuestaSeccion)
-//			 $.respuestaSeccion = {"arrayText":["ACERCA DE NOSOTROS.referencia1",  "CONTACTO.referencia2", "REGISTRO.referencia3", "INGRESA.referencia4"]};
-//			//console.log($.respuestaSeccion)
-//			elementosCampos($.respuestaSeccion, jsonCampos)			
-//	   });
-			$.arrayTextActualizado = $.valoresOriginal.arrayText.split(",");
-			$.arrayTextOriginal = $.valoresOriginal.arrayText;
-			$('.agregarStr').click(function(){
-				var  valor2 =null;
-//				console.log($('#agregarTexto').val());
-//				console.log($('#agregarReferencia').val());
-				if($('#agregarTexto').val() !== "" && $('#agregarReferencia').val() !== ""){
-				var valor3 ="<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Referencia</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#agregarReferencia').val()+"><div class='input-group-prepend'><div class='input-group-text'><input type='checkbox' aria-label='Checkbox for following text input'></div></div></div></div></div>";
-				valor3 = $(valor3).html();
-				 $(valor3).insertAfter($('.soloLectura_in'));
-				valor3 = "<div class='row'><div class='col-xs-3'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+$('#agregarTexto').val()+"></div></div></div>";
-				valor3 = $(valor3).html();
-				 $(valor3).insertAfter($('.soloLectura_in'));		 
-					$.arrayTextActualizado.push($('#agregarTexto').val()+"."+$('#agregarReferencia').val());
-					$('#agregarReferencia').val("")
-					$('#agregarTexto').val("")
-					console.log($.arrayTextActualizado)
-					console.log($.valoresOriginal.arrayText);
-				}
-			})
-//			$('#modalEdicion_btnClose').click(function(){
-//				alert("Sin Guardar cambios");
-//				$("div.soloLectura > div").remove();
-//				console.log($("div.soloLectura").html());
-//			});
-//			$('#modalEdicion_btnSave').click(function(){
-////				console.log(jsonSeccion.arrayText)
-////				console.log(arrayTextActualizado.toString())
-//				if($.arrayTextOriginal.toString() === $.arrayTextActualizado.toString())
-//					alert("No hay Cambios");
-//				else{
-//					alert("Esta Seguro Guardar cambios");
-//					console.log($.arrayTextActualizado.toString())
-//
-//					$.ajax({
-//						  type: "POST",
-//						  url: url,
-//						  data: $.arrayTextActualizado,
-//						  success: success,
-//						  dataType: JSON
-//						});
-//					
-//				}
-//				//console.log($("div.soloLectura").html());
-//			});
-
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-	
-	
-	
-	$('.headerSeccion2').click(function(){
-		if(validaParam()){
-//			console.log("param:"+$.param)
-			action = "action";
-			seccion = "seccion";
-			
-			jsonCampos = {"telefono" : "text","email" : "text"}
-			valores = valoresSeccion("headerSeccion2_valores");
-			
-			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-			 
-			$('.headerSeccion2').attr("data-toggle","modal");
-			$('.headerSeccion2').attr("data-target","#modalEdicion");
-			$("div.soloLectura > div").remove();
-			$("div.alerta > div").remove();
-			
-			elementosCampos($.valoresOriginal);
-			
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-	
-	$('.headerSeccion3').click(function(){
-		if(validaParam()){
-//			console.log("param:"+$.param)
-			action = "action";
-			seccion = "seccion";
-			
-			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
-			valores = valoresSeccion("headerSeccion3_valores");
-			
-			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-			 
-			$('.headerSeccion3').attr("data-toggle","modal");
-			$('.headerSeccion3').attr("data-target","#modalEdicion");
-			$("div.soloLectura > div").remove();
-			$("div.alerta > div").remove();
-			
-			elementosCampos($.valoresOriginal);
-			
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-	$('.headerSeccion4').click(function(){
-		if(validaParam()){
-//			console.log("param:"+$.param)
-			action = "action";
-			seccion = "seccion";
-			
-			jsonCampos = {"subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"}
-			valores = valoresSeccion("headerSeccion4_valores");
-			
-			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-			 
-			$('.headerSeccion4').attr("data-toggle","modal");
-			$('.headerSeccion4').attr("data-target","#modalEdicion");
-			$("div.soloLectura > div").remove();
-			$("div.alerta > div").remove();
-			
-			elementosCampos($.valoresOriginal);
-			
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-});

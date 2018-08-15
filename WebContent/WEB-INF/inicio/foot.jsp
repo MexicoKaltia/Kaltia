@@ -17,6 +17,8 @@
 
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>
+	
 <%-- 	<script src="<%=request.getContextPath()%>/layout/js/complementoModal.js"></script> --%>
 	
 	<!-- ################################################################################################ -->

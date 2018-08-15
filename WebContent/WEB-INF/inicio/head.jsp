@@ -25,8 +25,5 @@
 <link href="<%=request.getContextPath()%>/layout/css/edicion.css"
 	rel="stylesheet" type="text/css" media="all">
 
-<%-- <link href="<%=request.getContextPath()%>/layout/css/complementoFormato.css"  --%>
-<!-- 	rel="stylesheet" type="text/css" media="all"> -->
-	
 </head>
 </html>

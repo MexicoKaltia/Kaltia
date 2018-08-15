@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <!-- modal -->
-<head><link href="<%=request.getContextPath()%>/layout/css/complementoModal.css" 
-	rel="stylesheet" type="text/css" media="all">	
+<head>
+<link
+	href="<%=request.getContextPath()%>/layout/css/complementoModal.css"
+	rel="stylesheet" type="text/css" media="all">
 </head>
 
 <!-- modalEdicion -->
@@ -17,25 +19,19 @@
 					aria-label="Close" id="modalEdicion_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				
+
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">
-			<div class="container-fluid">
-			<div class="alerta">
-					<hiden class="alerta_in"></hiden>					
-			</div>
-			
-				<div class="soloLectura">
-					<hiden class="soloLectura_in"></hiden>
-						<form id="upload-file-form">
-							<label for="upload-file-input">Upload your file:</label> <input
-								id="upload-file-input" type="file" name="uploadfile"
-								accept="image/jpeg" />
-						</form>
+				<div class="container-fluid">
+					<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+					</div>
+					<div class="soloLectura">
+						<hiden class="soloLectura_in"></hiden>
 						<hiden class="agregarText"></hiden>
+					</div>
 				</div>
-			</div>
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-footer">
@@ -47,4 +43,25 @@
 		</div>
 	</div>
 </div>
-<!-- fin headerSeccion1 -->
+<!-- fin modalEdicion -->
+
+<!-- modalFile -->
+<div class="modal fade" id="modalFile">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/02.jpg?v=1');">
+			<div class="modal-body">
+				<form id="upload-file-form">
+					<div class="alerta_file">
+					<hiden class="alerta_inFile"></hiden>
+					</div>
+					<label for="upload-file-input">Actualiza imagen:</label> 
+					<input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn" id="btnCloseFile">Cerrar</a>
+				<a href="#" class="btn btn-primary" id="btnSaveFile">Guardar</a>
+			</div>
+		</div>
+	</div>
+</div>
