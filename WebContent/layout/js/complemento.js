@@ -204,7 +204,8 @@
 			  // Controlando que json realmente tenga esa propiedad
 			  
 				  var texto = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div>";
-				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 row'><label class='upload-file-label' id="+tipo+" for="+tipo+" name="+tipo+" value="+jsonSeccion[tipo]+">"+jsonSeccion[tipo]+"</label><a data-toggle='modal' href='#modalFile' class='btn btn-outline-primary'>Actualizar Imagen</a></div></div>";//"<form id='upload-file-form'><label for='upload-file-input'>Upload your file:</label> <input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//
+				  var file = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 row'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+" readonly><a data-toggle='modal' href='#modalFile' class='btn btn-outline-primary imagen'>Actualizar Imagen</a></div></div>";//"<form id='upload-file-form'><label for='upload-file-input'>Upload your file:</label> <input id='upload-file-input' type='file' name='uploadfile' accept='image/jpeg' /></form>";//
+				  var imagen = "<form id='upload-file-form' class="+tipo+"><label for='upload-file-input' style='color:#00FFFF;font-size:12px;'>"+tipo+"</label><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+" readonly><input id='upload-file-input'  class='"+tipo+"Imagen' type='file' name='uploadfile' accept='image/jpeg' /></form>";
 				  var lorem = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-xs-3 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div>";
 				  var agregarReferencia = "<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-xs-3'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div>";
 				  var agregarTexto ="<div class='row'><div class='col-xs-1'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-xs-3'><input id='agregarTexto'  class='form-control input-md' type='text'></div></div>";
@@ -239,60 +240,87 @@
 					}
 					break;
 				case "telefono":
-					valor = $(texto).html();
-//					$(valor).html('<input id="textinput" name="nombreCompleto"	placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text" value="Chilpancingo">');
-					 $(valor).insertAfter($('.soloLectura_in'));
-					break;
-				case "email": 
-					valor = $(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					$('.soloLectura').append(texto);
 				break;
-				case "titulo": 
-					valor =$(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+				case "email": 
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					$('.soloLectura').append(texto);
+				break;
+				case "titulo":
+					$('.soloLectura').append(texto);
+//					valor =$(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "icono": 
-					valor =$(file).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+					//$('#upload-file-input').addClass(tipo)
+					$('.soloLectura').append(imagen);
+					 //$(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
-				case "varios": 
-					valor = $(lorem).html()
-					 $(valor).insertAfter($('.soloLectura_in'));
+				case "varios":
+					$('.soloLectura').append(lorem);
+//					valor = $(lorem).html()
+//					 $(valor).insertAfter($('.soloLectura_in'));
 					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
-				case "logo": 
-					valor =$(file).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+				case "logo":
+					$('.soloLectura').append(imagen);
+//					$('#upload-file-input').addClass(tipo)
+//					valor =$(file).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
 					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
-				case "fondoHeader": 
-					valor =$(file).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+				case "fondoHeader":
+					$('.soloLectura').append(imagen);
+//					$('#upload-file-input').addClass(tipo)
+//					valor =$(file).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "subtitulo": 
-					valor =$(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor =$(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					$('.soloLectura').append(texto);
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					
 				break;
 				case "descripcion": 
-					valor = $(lorem).html()
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(lorem).html()
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					$('.soloLectura').append(lorem);
 					document.getElementById(tipo).value = jsonSeccion[tipo];
 				break;
 				case "referencia1": 
-					valor = $(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					$('.soloLectura').append(texto);
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					
 				break;
 				case "boton1": 
-					valor = $(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					$('.soloLectura').append(texto);
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					
 				break;
 				case "referencia2": 
-					valor = $(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					$('.soloLectura').append(texto);
 				break;
 				case "boton2": 
-					valor = $(texto).html();
-					 $(valor).insertAfter($('.soloLectura_in'));
+//					valor = $(texto).html();
+//					 $(valor).insertAfter($('.soloLectura_in'));
+					 document.getElementById(tipo).value = jsonSeccion[tipo];
+					$('.soloLectura').append(texto);
 				break;
 			  }
 			}
@@ -301,6 +329,7 @@
 		
 	$('#modalEdicion_btnClose').click(function(){
 		alert("Sin Guardar cambios");
+		$('.soloLectura').html("</>")
 		$("div.soloLectura > div").remove();
 	});
 	
@@ -311,9 +340,19 @@
 			if(tipo === "arrayText"){
 				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$.arrayTextActualizado+'",';
 				//console.log($.arrayTextActualizado);
+			
+			}else if(tipo === "logo" || tipo === "fondoHeader" || tipo === "icono"){
+				console.log($("."+tipo+'Imagen').val());
+				if($("."+tipo+'Imagen').val() === null || $("."+tipo+'Imagen').val() === ""){
+					valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
+				}else{
+					var nombre = $("."+tipo+'Imagen').val().split('\\');
+					console.log(nombre[nombre.length-1]);
+					valoresActualizados = valoresActualizados+'"'+tipo+'":"'+nombre[nombre.length-1]+'",';	
+				}	
 			}else{
 				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-				//console.log($("#"+tipo).val());
+				console.log($("#"+tipo).val());
 			}
 			
 			/*
@@ -408,6 +447,10 @@
 		case "logo": 
 			//console.log(tipo);
 		break;
+		case "imagen": 
+			uploadFile(tipo);
+			//console.log(tipo);
+		break;
 		case "fondoHeader": 
 			//console.log(tipo);
 			uploadFile(tipo);
@@ -460,6 +503,11 @@
 	 *   Funciones de modal para carga de Imagenes
 	 */
 	//https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
+	$('.imagen').click(function(){
+		console.log("hola");
+		console.log($('.imagen').attr('id'));
+	});
+	
 	$(function() {
 		$("#upload-file-input").on("change", uploadFile);
 	});
@@ -471,11 +519,15 @@
 	$('#btnSaveFile').click(function(){
 		var nombre = $('#upload-file-input').val().split('\\');
 		console.log(nombre[nombre.length-1]);
-		document.getElementById('fondoHeader').value ="hola";// nombre[nombre.length-1];
-		$('#btnCloseFile').on();
+		console.log($('#upload-file-input').attr('class'));
+		var tipoImagen = $('#upload-file-input').attr('class');
+		//document.getElementById($('#upload-file-input').attr('class')).value = nombre[nombre.length-1];
+		$('#'+tipoImagen).val();
+		$('#'+tipoImagen).val((nombre[nombre.length-1]).toString());
+		//$('#btnCloseFile').load();
 	});
 
-	function uploadFile() {
+	function uploadFile(tipo) {
 		  $.ajax({
 //		    url: "http://localhost:8010/fileUpload",
 			  url: "http://31.220.60.92:8010/fileUpload",

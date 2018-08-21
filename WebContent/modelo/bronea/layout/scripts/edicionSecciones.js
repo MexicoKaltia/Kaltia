@@ -15,6 +15,7 @@ $(document).ready(function() {
 			
 			$('.headerSeccion1').attr("data-toggle","modal");
 			$('.headerSeccion1').attr("data-target","#modalEdicion");
+			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
 			
@@ -68,6 +69,7 @@ $(document).ready(function() {
 			 
 			$('.headerSeccion2').attr("data-toggle","modal");
 			$('.headerSeccion2').attr("data-target","#modalEdicion");
+			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
 			
@@ -91,6 +93,7 @@ $(document).ready(function() {
 			 
 			$('.headerSeccion3').attr("data-toggle","modal");
 			$('.headerSeccion3').attr("data-target","#modalEdicion");
+			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
 			
@@ -114,6 +117,7 @@ $(document).ready(function() {
 			 
 			$('.headerSeccion4').attr("data-toggle","modal");
 			$('.headerSeccion4').attr("data-target","#modalEdicion");
+			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
 			
