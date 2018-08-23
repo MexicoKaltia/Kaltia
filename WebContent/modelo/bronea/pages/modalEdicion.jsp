@@ -27,6 +27,9 @@
 					<div class="alerta">
 						<hiden class="alerta_in"></hiden>
 					</div>
+					<div class="alerta_file">
+						<hiden class="alerta_inFile"></hiden>
+					</div>
 					<div class="soloLectura">
 						<hiden class="soloLectura_in"></hiden>
 						<hiden class="agregarText"></hiden>
