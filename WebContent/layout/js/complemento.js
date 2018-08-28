@@ -191,7 +191,7 @@
 			  indice++;
 		}
 		jsonSeccion = jsonSeccion.slice(0,jsonSeccion.length-1) + "}";
-		console.log(JSON.parse(jsonSeccion));
+//		console.log(JSON.parse(jsonSeccion));
 		return JSON.parse(jsonSeccion);
 	}
 
@@ -213,22 +213,27 @@
 				  var valor ="";
 				if (jsonSeccion.hasOwnProperty(tipo)) {
 			    switch (tipo) { 
-				case "arrayText":					
-					arrayText = jsonSeccion[tipo].split(",");
+				case "arrayText":	
+//					console.log(jsonSeccion);
+					var arrayText = jsonSeccion[tipo].split("\,");
+					var arrayJson = '{"arrayText":['
 					for(i=0; i<arrayText.length;i++ ){
-						single = arrayText[i];
-						//console.log("single:"+single);
-						arraySingle = single.split(".");
-						for(e =0;e<arraySingle.length;e++){
-							if(e===0){
-							valor ="<div class='row'><div class='col-sm-3'><label style='color:#00FFFF;font-size:12px;'>Referencia "+[i+1]+"</label></div><div class='col-sm-9'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"></div></div></div>";
-							}
-							else{
-							valor2 ="<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-sm-10'><div class='input-group'><input type='text' class='form-control' aria-label='Text input with checkbox' value="+arraySingle[e]+"></div></div></div>";
-							}
-						}
-						$('.soloLectura').append(valor);
+						arrayJson = arrayJson + '"' + arrayText[i] + '",' 
+//						single = arrayText[i];
 					}
+					arrayJson = arrayJson.slice(0,arrayJson.length-1) + ']}'; 
+//					console.log(arrayJson);
+					jsonSeccion = JSON.parse(arrayJson);
+//					console.log(jsonSeccion);
+					$.each(jsonSeccion[tipo], function(i , val){
+						var valor ="<div class='row'><div class='col-sm-3'><label style='color:#00FFFF;font-size:12px;'>Referencia "+[i+1]+"</label></div><div class='col-sm-9'><div class='input-group'><input type='text' class='form-control' id="+tipo+i+" aria-label='Text input with checkbox' value='"+val+"'></div></div></div>";
+						$('.soloLectura').append(valor);
+//						console.log(tipo+i);
+//						console.log($('#arrayText'+i).val());
+//						console.log(val)
+//						document.getElementById(tipo+i).value = val;//jsonSeccion[tipo];
+					});
+					
 //					$('.soloLectura').append(agregarReferencia);
 //					$('.soloLectura').append(agregarTexto);
 //					$('.soloLectura').append(agregarBoton);
@@ -247,7 +252,6 @@
 				break;
 				case "logo":
 					$('.soloLectura').append(imagen);
-					console.log(jsonSeccion[tipo])
 //					$('#upload-file-input').addClass(tipo)
 //					valor =$(file).html();
 //					 $(valor).insertAfter($('.soloLectura_in'));
@@ -295,16 +299,23 @@
 		var valoresActualizados = "{";
 		for (var tipo in jsonCampos){
 			if(tipo === "arrayText"){
-				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$.arrayTextActualizado+'",';
+				arrayText = $.valoresOriginal.arrayText.split(",");
+				var valorActualizado="";
+				$.each(arrayText,function(i){
+					valorActualizado = valorActualizado + $('#'+tipo+i).val()+",";
+//					console.log([i]+valorActualizado);
+				});
+				valorActualizado = valorActualizado.slice(0,valorActualizado.length-1);
+				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+valorActualizado+'",';
 				//console.log($.arrayTextActualizado);
 			}else if(tipo === "logo" || tipo === "fondoHeader" || tipo === "icono"){
-				console.log($("."+tipo+'Imagen').val());
+//				console.log($("."+tipo+'Imagen').val());
 				if($("."+tipo+'Imagen').val() === null || $("."+tipo+'Imagen').val() === ""){
 					valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-					console.log(tipo+":"+$("#"+tipo).val());
+//					console.log(tipo+":"+$("#"+tipo).val());
 				}else{
 					var nombre = $("."+tipo+'Imagen').val().split('\\');
-					console.log(nombre[nombre.length-1]);
+//					console.log(nombre[nombre.length-1]);
 					valoresActualizados = valoresActualizados+'"'+tipo+'":"'+nombre[nombre.length-1]+'",';
 					uploadFile(tipo);
 				}	
@@ -323,10 +334,10 @@
 		valoresActualizados = valoresActualizados.slice(0,valoresActualizados.length-1) + "}";
 
 		$.valoresActualizados=JSON.parse(valoresActualizados);
-		console.log("valoresActualizados");
-		console.log($.valoresActualizados);
-		console.log("valoresOriginales");
+		console.log("valoresOriginales:");
 		console.log($.valoresOriginal); 
+		console.log("valoresActualizados:");
+		console.log($.valoresActualizados);
 
 		if(JSON.stringify($.valoresOriginal) === JSON.stringify($.valoresActualizados))
 			alert("No hay Cambios");
@@ -368,7 +379,7 @@
 		var validaStatus =[ true, "",""];
 		switch (tipo) { 
 		case "arrayText": 
-			console.log(tipo);
+//			console.log(tipo);
 		break;
 		case "telefono":
 			  var expreg = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;

@@ -8,7 +8,7 @@ $(document).ready(function() {
 /////////////
 	$('.headerSeccion1').click(function(){
 			if(validaParam()){
-			console.log(window.location.href);
+//			console.log(window.location.href);
 			jsonCampos = {"arrayText" :"text"}
 			var valores = valoresSeccion("headerSeccion1_valores");
 			$.valoresOriginal = ajusteJson(jsonCampos, valores);
