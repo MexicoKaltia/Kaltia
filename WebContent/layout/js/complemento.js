@@ -158,6 +158,10 @@
 	 *  Metodo para recuperar los valores de ORIGEN de la seccion y retornar un arreglo
 	 */
 	function valoresSeccion(seccion){
+		if(seccion.includes("Array")){
+			console.log(seccion[0].objetoVO[0])
+			
+		}else{
 		var status = document.getElementById(seccion).innerHTML;
 		status= status.toString().trim();
 		//console.log(status);
@@ -169,7 +173,7 @@
 			}
 		return status;
 		}
-	
+	}
 	/*
 	 *  Metodo para configurar los valores Origen y retornar un JSON
 	 */
@@ -203,12 +207,12 @@
 		for (var tipo in jsonSeccion){
 			  // Controlando que json realmente tenga esa propiedad
 			  //console.log(tipo+":"+jsonSeccion[tipo]);
-				  var texto = "<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+"></div></div><hr style='color: #0056b2;'>";
-				  var imagen = "<form id='upload-file-form' class="+tipo+"><div class='row'><div class='col-sm-2'><label for='upload-file-input' style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10'><input id="+tipo+" name="+tipo+" placeholder="+tipo+" class='form-control input-md' type='text'  value="+jsonSeccion[tipo]+" readonly></div><div class='row'><div class='col-sm'><span/></div><div class='col-sm-9'><input id='upload-file-input'  class='"+tipo+"Imagen' type='file' name='uploadfile' accept='image/jpeg' /></div></div></form><hr style='color: #0056b2;'>";
+				  var texto = "<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10'><input id='"+tipo+"' name='"+tipo+"' placeholder='"+tipo+"' class='form-control input-md' type='text'  value='"+jsonSeccion[tipo]+"'></div></div><hr style='color: #0056b2;'>";
+				  var imagen = "<form id='upload-file-form' class='"+tipo+"'><div class='row'><div class='col-sm-2'><label for='upload-file-input' style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10'><input id='"+tipo+"' name='"+tipo+"' placeholder='"+tipo+"' class='form-control input-md' type='text'  value='"+jsonSeccion[tipo]+"' readonly></div><div class='row'><div class='col-sm'><span/></div><div class='col-sm-9'><input id='upload-file-input'  class='"+tipo+"Imagen' type='file' name='uploadfile' accept='image/jpeg' /></div></div></form><hr style='color: #0056b2;'>";
 				  var agregarReferencia = "<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></div><div class='col-sm-10'><input id='agregarReferencia'  class='form-control input-md' type='text'></div></div><hr style='color: #0056b2;'>";
 				  var agregarTexto ="<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>Texto</label></div><div class='col-sm-10'><input id='agregarTexto'  class='form-control input-md' type='text'></div></div><hr style='color: #0056b2;'>";
 				  var agregarBoton ="<div class='input-group-prepend' id='agregarStr'><span class='btn btn-link agregarStr' id='inputGroup-sizing-sm'>Agregar</span></div>";
-				  var lorem = "<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10 form-group'><textarea class='form-control' id="+tipo+" name="+tipo+"   rows='5' value="+jsonSeccion[tipo]+"></textarea></div></div><hr style='color: #0056b2;'>";
+				  var lorem = "<div class='row'><div class='col-sm-2'><label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label></div><div class='col-sm-10 form-group'><textarea class='form-control' id='"+tipo+"' name='"+tipo+"'   rows='5' value='"+jsonSeccion[tipo]+"'></textarea></div></div><hr style='color: #0056b2;'>";
 					
 				  var valor ="";
 				if (jsonSeccion.hasOwnProperty(tipo)) {
@@ -309,10 +313,8 @@
 				valoresActualizados = valoresActualizados+'"'+tipo+'":"'+valorActualizado+'",';
 				//console.log($.arrayTextActualizado);
 			}else if(tipo === "logo" || tipo === "fondoHeader" || tipo === "icono"){
-//				console.log($("."+tipo+'Imagen').val());
 				if($("."+tipo+'Imagen').val() === null || $("."+tipo+'Imagen').val() === ""){
 					valoresActualizados = valoresActualizados+'"'+tipo+'":"'+$("#"+tipo).val()+'",';
-//					console.log(tipo+":"+$("#"+tipo).val());
 				}else{
 					var nombre = $("."+tipo+'Imagen').val().split('\\');
 //					console.log(nombre[nombre.length-1]);
@@ -515,3 +517,123 @@
 		    }
 		  });
 		} // function uploadFile
+	
+	
+
+	/************************************************************************************************************************************************************/
+	
+	
+	/*
+	 * funciones segunda generacion de Edicion Modal
+	 * 1 Septiembre 2018 
+	 * 
+	 */
+	
+	$.seccionCampos="";
+	
+	function cargaModal(seccion){
+		
+		console.log(seccion);
+//		action = "action";
+//		seccion = "seccion";
+		$.seccionCampos = estructuraSeccion(seccion);
+//		console.log($.seccionCampos)
+		$('.'+seccion).attr("data-toggle","modal");
+		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
+		$("div.alertaBody_file > div").remove();
+	}
+	
+	function estructuraSeccion(seccion){
+		var camposModelo = {
+				"headerSeccion1" 		   :{  "arrayText" :"text"},
+				"headerSeccion2" 		   :{   "telefono" : "text",   "email" : "text"},
+				"headerSeccion3" 		   :{"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"},
+				"headerSeccion4Bronea"   :{  "subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"},
+				"bodySeccion1Bronea"     :{  "imagen" :"img",  "titulo" :"text",  "subtitulo":"lorem",  "referencia":"text",  "boton":"text"},
+				"bodySeccionArray1Bronea":{  "titulo":"text",  "subTitulo":"text",  "descripcion1":"lorem",  "descripcion2":"lorem",  "imagen" : "img",  "objeto" :[{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto" :"text",      "descripcionObjeto" :"lorem"  },{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto" :"text",      "descripcionObjeto" :"lorem"  }]},
+				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto" :"text",    "descripcionObjeto" :"lorem"  }},
+				"bodySeccionArray3Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : {      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto" :"text",      "descripcionObjeto" :"text"  }},
+				"bodySeccionArray4Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : {      "posicionObjeto" :"text",      "referenciaObjeto" : "text",      "imagenObjeto" : "img",      "tituloObjeto" :"text",      "descripcionObjeto" :"text",      "boton":"text"  }},
+				"footerSeccion1Bronea"   :{  "titulo" : "text",  "subtitulo" : "lorem",  "domicilio" : "text",  "telefono" : "text",  "correo" : "text"},
+				"footerSeccion2Bronea"   :{  "titulo" : "text",  "objeto" : {    "arrayText" :"text"  }},
+				"footerSeccion3Bronea"   :{  "titulo" : "text","arrayText" :"text"},
+				}
+		seccion = seccion+"Bronea";
+		switch (seccion) { 
+		case "headerSeccion1": return camposModelo.headerSeccion1; break;
+		case "headerSeccion2": return camposModelo.headerSeccion2; break;
+		case "headerSeccion3": return camposModelo.headerSeccion3; break;
+		case "headerSeccion4Bronea": return camposModelo.headerSeccion4Bronea; break;
+		case "bodySeccion1Bronea": return camposModelo.bodySeccion1Bronea; break;
+		case "bodySeccionArray1Bronea": return camposModelo.bodySeccionArray1Bronea; break;
+		case "bodySeccionArray2Bronea": return camposModelo.bodySeccionArray2Bronea; break;
+		case "bodySeccionArray3Bronea": return camposModelo.bodySeccionArray3Bronea; break;
+		case "bodySeccionArray4Bronea": return camposModelo.bodySeccionArray4Bronea; break;
+		case "footerSeccion1Bronea": return camposModelo.footerSeccion1Bronea; break;   
+		case "footerSeccion2Bronea": return camposModelo.footerSeccion2Bronea; break;   
+		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
+		}
+	}
+	
+	$('#upload-file-inputBody').on('change', function(){
+		/*
+		 * toogle para activar el control de formulario de carga de imagen
+		 * 
+		 * 
+		 		<form id="upload-file-form">
+					<div class="alerta_file">
+					<hiden class="alerta_inFile"></hiden>
+					</div>
+					<label for="upload-file-input">Actualiza imagen:</label> 
+					<input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
+				</form>
+		 * 
+		 */
+			console.log("envio imagenBody");
+			  $.ajax({
+//			    url: "http://localhost:8010/fileUpload",
+				  url: "http://31.220.60.92:8010/fileUpload",
+			    type: "POST",
+			    data: new FormData($("#upload-file-form")[0]),
+			    enctype: 'multipart/form-data',
+			    processData: false,
+			    contentType: false,
+			    cache: false,
+			    success: 	function(data){
+					  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+						$(alerta).insertAfter($('.alertaBody_inFile'));
+						console.log("imagen enviada:"+tipo);
+					},
+			    error: function () {
+			    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
+					$(alerta).insertAfter($('.alertaBody_inFile'));
+			    }
+			  });
+	});
+	
+	$('#modalEdicionBody_btnSave2').click(function(){
+		
+		console.log($.seccionCampos);
+		for(campo in $.seccionCampos){
+			console.log(campo)
+			if(campo === "imagen"){
+				var nombre = $("#upload-file-inputBody").val().split('\\');
+				console.log(nombre[nombre.length-1])
+			}else if (campo ==="objeto"){
+//				console.log($.seccionCampos.objeto);
+				for(var i = 0 ; i < $.seccionCampos.objeto.length; i++){
+					for(var campoObjeto in $.seccionCampos.objeto[i]){
+						console.log(campoObjeto);
+						console.log($("#"+campoObjeto).val());	
+					}
+				}
+				
+			}else{
+				console.log($("#"+campo).val())	
+			}
+			
+		}
+		
+		
+	});
+	

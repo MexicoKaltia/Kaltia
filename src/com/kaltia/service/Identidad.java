@@ -193,8 +193,8 @@ public class Identidad {
 	*/
 	
 		FooterVO footerVO = (FooterVO)object;
-		for(int i = 0; i< footerVO.getFooterLista3().size(); i++)
-		logger.info("valida Footer: "+footerVO.getFooterLista3().get(i));
+		for(int i = 0; i< footerVO.getFooterSeccion3().size(); i++)
+		logger.info("valida Footer: "+footerVO.getFooterSeccion3().get(i));
 	
 	
 	}

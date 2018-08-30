@@ -18,7 +18,8 @@ $(document).ready(function() {
 			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
-			
+			$("div.alerta_file > div").remove();
+			$('.alerta_file').html("</>")
 			elementosCampos($.valoresOriginal);
 			
 //			_getDataSeccion(action, seccion, jsonLectura)    SINCRONO	 
@@ -72,7 +73,8 @@ $(document).ready(function() {
 			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
-			
+			$("div.alerta_file > div").remove();
+			$('.alerta_file').html("</>")
 			elementosCampos($.valoresOriginal);
 			
 		}else{
@@ -96,7 +98,8 @@ $(document).ready(function() {
 			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
-			
+			$("div.alerta_file > div").remove();
+			$('.alerta_file').html("</>")
 			elementosCampos($.valoresOriginal);
 			
 		}else{
@@ -120,7 +123,8 @@ $(document).ready(function() {
 			$('.soloLectura').html("</>")
 			$("div.soloLectura > div").remove();
 			$("div.alerta > div").remove();
-			
+			$("div.alerta_file > div").remove();
+			$('.alerta_file').html("</>")
 			elementosCampos($.valoresOriginal);
 			
 		}else{
@@ -128,5 +132,13 @@ $(document).ready(function() {
 		}
 	});
 	
-
-});
+	$('.bodySeccionArray1').click(function(){
+		if(validaParam()){
+			cargaModal("bodySeccionArray1");
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	});
+	
+	

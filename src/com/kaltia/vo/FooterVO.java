@@ -16,11 +16,11 @@ public class FooterVO extends BaseVO implements Serializable{
 	
 	private String idFooter; 
 	private String idEmpresa; 
-	private ArrayList<String> footerLista1; 
-	private ArrayList<String> footerLista2; 
-	private ArrayList<String> footerLista3; 
-	private ArrayList<String> footerLista4; 
-	private ArrayList<String> footerLista5; 
+	private ArrayList<String> footerSeccion1; 
+	private ArrayList<String> footerSeccion2; 
+	private ArrayList<String> footerSeccion3; 
+	private ArrayList<String> footerSeccion4; 
+	private ArrayList<String> footerSeccion5; 
 	private ArrayList<ObjetoVO> footerSeccionArray1; 
 	private ArrayList<ObjetoVO> footerSeccionArray2; 
 	private ArrayList<String> footerAux1;
@@ -38,35 +38,35 @@ public class FooterVO extends BaseVO implements Serializable{
 	public void setIdEmpresa(String idEmpresa) {
 		this.idEmpresa = idEmpresa;
 	}
-	public ArrayList<String> getFooterLista1() {
-		return footerLista1;
+	public ArrayList<String> getFooterSeccion1() {
+		return footerSeccion1;
 	}
-	public void setFooterLista1(ArrayList<String> footerLista1) {
-		this.footerLista1 = footerLista1;
+	public void setFooterSeccion1(ArrayList<String> footerSeccion1) {
+		this.footerSeccion1 = footerSeccion1;
 	}
-	public ArrayList<String> getFooterLista2() {
-		return footerLista2;
+	public ArrayList<String> getFooterSeccion2() {
+		return footerSeccion2;
 	}
-	public void setFooterLista2(ArrayList<String> footerLista2) {
-		this.footerLista2 = footerLista2;
+	public void setFooterSeccion2(ArrayList<String> footerSeccion2) {
+		this.footerSeccion2 = footerSeccion2;
 	}
-	public ArrayList<String> getFooterLista3() {
-		return footerLista3;
+	public ArrayList<String> getFooterSeccion3() {
+		return footerSeccion3;
 	}
-	public void setFooterLista3(ArrayList<String> footerLista3) {
-		this.footerLista3 = footerLista3;
+	public void setFooterSeccion3(ArrayList<String> footerSeccion3) {
+		this.footerSeccion3 = footerSeccion3;
 	}
-	public ArrayList<String> getFooterLista4() {
-		return footerLista4;
+	public ArrayList<String> getFooterSeccion4() {
+		return footerSeccion4;
 	}
-	public void setFooterLista4(ArrayList<String> footerLista4) {
-		this.footerLista4 = footerLista4;
+	public void setFooterSeccion4(ArrayList<String> footerSeccion4) {
+		this.footerSeccion4 = footerSeccion4;
 	}
-	public ArrayList<String> getFooterLista5() {
-		return footerLista5;
+	public ArrayList<String> getFooterSeccion5() {
+		return footerSeccion5;
 	}
-	public void setFooterLista5(ArrayList<String> footerLista5) {
-		this.footerLista5 = footerLista5;
+	public void setFooterSeccion5(ArrayList<String> footerSeccion5) {
+		this.footerSeccion5 = footerSeccion5;
 	}
 	public ArrayList<ObjetoVO> getFooterSeccionArray1() {
 		return footerSeccionArray1;

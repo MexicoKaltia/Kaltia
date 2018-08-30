@@ -21,16 +21,16 @@ public class BodyVO extends BaseVO implements Serializable{
 private String idBody; 
 private String idEmpresa; 
 private String bodyFondo; 
-private ArrayList<String> bodyTexto1; 
-private ArrayList<String> bodyTexto2; 
-private ArrayList<String> bodyTexto3; 
-private ArrayList<String> bodyTexto4; 
-private ArrayList<String> bodyTexto5; 
-private ArrayList<String> bodyTexto6; 
-private ArrayList<String> bodyTexto7; 
-private ArrayList<String> bodyTexto8; 
-private ArrayList<String> bodyTexto9; 
-private ArrayList<String> bodyTexto10; 
+private ArrayList<String> bodySeccion1; 
+private ArrayList<String> bodySeccion2; 
+private ArrayList<String> bodySeccion3; 
+private ArrayList<String> bodySeccion4; 
+private ArrayList<String> bodySeccion5; 
+private ArrayList<String> bodySeccion6; 
+private ArrayList<String> bodySeccion7; 
+private ArrayList<String> bodySeccion8; 
+private ArrayList<String> bodySeccion9; 
+private ArrayList<String> bodySeccion10; 
 private ArrayList<ObjetoVO> bodySeccionArray1;
 private ArrayList<ObjetoVO> bodySeccionArray2;
 private ArrayList<ObjetoVO> bodySeccionArray3;
@@ -57,65 +57,65 @@ public String getBodyFondo() {
 public void setBodyFondo(String bodyFondo) {
 	this.bodyFondo = bodyFondo;
 }
-public ArrayList<String> getBodyTexto1() {
-	return bodyTexto1;
+public ArrayList<String> getBodySeccion1() {
+	return bodySeccion1;
 }
-public void setBodyTexto1(ArrayList<String> bodyTexto1) {
-	this.bodyTexto1 = bodyTexto1;
+public void setBodySeccion1(ArrayList<String> bodySeccion1) {
+	this.bodySeccion1 = bodySeccion1;
 }
-public ArrayList<String> getBodyTexto2() {
-	return bodyTexto2;
+public ArrayList<String> getBodySeccion2() {
+	return bodySeccion2;
 }
-public void setBodyTexto2(ArrayList<String> bodyTexto2) {
-	this.bodyTexto2 = bodyTexto2;
+public void setBodySeccion2(ArrayList<String> bodySeccion2) {
+	this.bodySeccion2 = bodySeccion2;
 }
-public ArrayList<String> getBodyTexto3() {
-	return bodyTexto3;
+public ArrayList<String> getBodySeccion3() {
+	return bodySeccion3;
 }
-public void setBodyTexto3(ArrayList<String> bodyTexto3) {
-	this.bodyTexto3 = bodyTexto3;
+public void setBodySeccion3(ArrayList<String> bodySeccion3) {
+	this.bodySeccion3 = bodySeccion3;
 }
-public ArrayList<String> getBodyTexto4() {
-	return bodyTexto4;
+public ArrayList<String> getBodySeccion4() {
+	return bodySeccion4;
 }
-public void setBodyTexto4(ArrayList<String> bodyTexto4) {
-	this.bodyTexto4 = bodyTexto4;
+public void setBodySeccion4(ArrayList<String> bodySeccion4) {
+	this.bodySeccion4 = bodySeccion4;
 }
-public ArrayList<String> getBodyTexto5() {
-	return bodyTexto5;
+public ArrayList<String> getBodySeccion5() {
+	return bodySeccion5;
 }
-public void setBodyTexto5(ArrayList<String> bodyTexto5) {
-	this.bodyTexto5 = bodyTexto5;
+public void setBodySeccion5(ArrayList<String> bodySeccion5) {
+	this.bodySeccion5 = bodySeccion5;
 }
-public ArrayList<String> getBodyTexto6() {
-	return bodyTexto6;
+public ArrayList<String> getBodySeccion6() {
+	return bodySeccion6;
 }
-public void setBodyTexto6(ArrayList<String> bodyTexto6) {
-	this.bodyTexto6 = bodyTexto6;
+public void setBodySeccion6(ArrayList<String> bodySeccion6) {
+	this.bodySeccion6 = bodySeccion6;
 }
-public ArrayList<String> getBodyTexto7() {
-	return bodyTexto7;
+public ArrayList<String> getBodySeccion7() {
+	return bodySeccion7;
 }
-public void setBodyTexto7(ArrayList<String> bodyTexto7) {
-	this.bodyTexto7 = bodyTexto7;
+public void setBodySeccion7(ArrayList<String> bodySeccion7) {
+	this.bodySeccion7 = bodySeccion7;
 }
-public ArrayList<String> getBodyTexto8() {
-	return bodyTexto8;
+public ArrayList<String> getBodySeccion8() {
+	return bodySeccion8;
 }
-public void setBodyTexto8(ArrayList<String> bodyTexto8) {
-	this.bodyTexto8 = bodyTexto8;
+public void setBodySeccion8(ArrayList<String> bodySeccion8) {
+	this.bodySeccion8 = bodySeccion8;
 }
-public ArrayList<String> getBodyTexto9() {
-	return bodyTexto9;
+public ArrayList<String> getBodySeccion9() {
+	return bodySeccion9;
 }
-public void setBodyTexto9(ArrayList<String> bodyTexto9) {
-	this.bodyTexto9 = bodyTexto9;
+public void setBodySeccion9(ArrayList<String> bodySeccion9) {
+	this.bodySeccion9 = bodySeccion9;
 }
-public ArrayList<String> getBodyTexto10() {
-	return bodyTexto10;
+public ArrayList<String> getBodySeccion10() {
+	return bodySeccion10;
 }
-public void setBodyTexto10(ArrayList<String> bodyTexto10) {
-	this.bodyTexto10 = bodyTexto10;
+public void setBodySeccion10(ArrayList<String> bodySeccion10) {
+	this.bodySeccion10 = bodySeccion10;
 }
 public ArrayList<ObjetoVO> getBodySeccionArray1() {
 	return bodySeccionArray1;
