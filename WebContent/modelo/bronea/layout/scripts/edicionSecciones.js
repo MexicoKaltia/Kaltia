@@ -135,10 +135,37 @@ $(document).ready(function() {
 	$('.bodySeccionArray1').click(function(){
 		if(validaParam()){
 			cargaModal("bodySeccionArray1");
+			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
+				modalEdicionBody_btnSave("bodySeccionArray1");
+			});
 		}else{
 			console.log("param:Nulo");
 		}
 	});
+	
+	$('.bodySeccionArray2').click(function(){
+		if(validaParam()){
+			cargaModal("bodySeccionArray2");
+			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
+				modalEdicionBody_btnSave("bodySeccionArray2");
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	$('.bodySeccionArray3').click(function(){
+		if(validaParam()){
+			cargaModal("bodySeccionArray3");
+			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
+				modalEdicionBody_btnSave("bodySeccionArray3");
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	
 	});
 	
 	

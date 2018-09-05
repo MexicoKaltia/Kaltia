@@ -40,7 +40,7 @@
   </main>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row2">
+<div class="wrapper row2 bodySeccionArray2">
 <a  id="seccion3"></a>
   <div class="hoc container clear"> 
     <ul class="nospace group cta">
@@ -56,7 +56,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3 bodySeccionArray3">
 <a  id="seccion4"></a>
   <div class="hoc container clear"> 
     <div class="sectiontitle">
@@ -157,11 +157,12 @@
 			          <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />">
 			            <article><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)' />">
 			            <i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
-			              <h6 class="heading font-x1"><input type="text" id="'tituloObjeto'+<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
-			              <p><textarea class='form-control' id="descripcionObjeto"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
+			              <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
+			              <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
 			            </article>
 			          </li>
-			          <s:property value='#bodySeccionArray1.count'/>
+			          <s:set var="conta" value="#conta+1" />
+			          <s:property value='#conta'/>
 			          </s:iterator>
 			          </s:subset>
 			        </ul>
@@ -184,12 +185,109 @@
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"
 					id="modalEdicionBody_btnClose">Cerrar</button>
 				<button type="submit" class="btn btn-primary"
-					id="modalEdicionBody_btnSave2">Guardar Cambios</button>
+					id="modalEdicionBodySeccionArray1_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- fin modalEdicion -->
+<!--**********************************************************************************-->
+<!-- modalBodySeccionArray2 -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray2" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content"
+			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+ 			<!--**********************************************************************************-->
+			  <div class="hoc container clear"> 
+			    <ul class="nospace group cta">
+			           <s:set var="conta" value="0" />
+			      <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
+			      <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
+			        <article><i class="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
+			          <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)' />"/></h6>
+			          <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
+			        </article>
+			      </li>
+			             <s:set var="conta" value="#conta+1" />
+			      </s:iterator>
+			    </ul>
+			  </div>
+			<%--   id="tituloObjeto<s:property value='#conta'/>" --%>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccionArray2_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--**********************************************************************************-->
+<!-- modalBodySeccionArray3 -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray3" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content"
+			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="wrapper row3">
+				  <div class="hoc container clear"> 
+				    <div class="sectiontitle">
+				      <h6 class="heading"><input type="text" id="titulo" value="<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />"/></h6>
+				      <p><textarea class='form-control' id="descripcion"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></textarea></p>
+				    </div>
+				    <ul class="nospace group services">
+				     <!-- inicio Categorias-->
+				     <s:set var="conta" value="0" />
+				     <s:subset start="1" source ="body.bodySeccionArray3">
+				     <s:iterator var="bodySeccionArray3">
+				       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>">
+				        	<a href="UNA FUNCION JS PARA CARGAR IMAGEN"></a><article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');">
+							<%-- identificar secciones
+				          		<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%>
+				          		<h6 class="heading font-x1">
+				          		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6>
+				          		<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p>
+				        	</article>
+				      	</li>
+				      <s:set var="conta" value="#conta+1" />
+				      </s:iterator>
+				      </s:subset>
+				      <!-- fin Categorias -->
+				    </ul>
+				  </div>
+				</div>
+ 			
+			<%--   id="tituloObjeto<s:property value='#conta'/>" --%>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccionArray3_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 
 
