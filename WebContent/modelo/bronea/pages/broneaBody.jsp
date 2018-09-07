@@ -254,28 +254,29 @@
 				      <h6 class="heading"><input type="text" id="titulo" value="<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />"/></h6>
 				      <p><textarea class='form-control' id="descripcion"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></textarea></p>
 				    </div>
-				    <ul class="nospace group services">
+				    <ul class="nospace group services elemento">
 				     <!-- inicio Categorias-->
 				     <s:set var="conta" value="0" />
 				     <s:subset start="1" source ="body.bodySeccionArray3">
 				     <s:iterator var="bodySeccionArray3">
-				       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>">
-				        	<a href="UNA FUNCION JS PARA CARGAR IMAGEN"></a><article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');">
-							<%-- identificar secciones
-				          		<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%>
-				          		<h6 class="heading font-x1">
-				          		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6>
-				          		<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p>
-				        	</article>
+				       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>" id="idObjeto<s:property value='#conta'/>">
+				        	<a href="UNA FUNCION JS PARA CARGAR IMAGEN"></a>
+ 				        	<article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> 
+				<%-- 		identificar secciones
+							<%--<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%> 
+ 				          		<h6 class="heading font-x1"> 
+ 				          		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6> 
+ 				          		<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p> 
+ 				        	</article> 
 				      	</li>
 				      <s:set var="conta" value="#conta+1" />
 				      </s:iterator>
 				      </s:subset>
 				      <!-- fin Categorias -->
+				      <button type="button" class="btn btn-secondary" id="boton">Siguiente</button>
 				    </ul>
 				  </div>
 				</div>
- 			
 			<%--   id="tituloObjeto<s:property value='#conta'/>" --%>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">

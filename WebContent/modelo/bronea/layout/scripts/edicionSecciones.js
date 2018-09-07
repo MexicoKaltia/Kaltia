@@ -160,6 +160,12 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				modalEdicionBody_btnSave("bodySeccionArray3");
 			});
+			$("#boton").click(function(){
+	       		$(".elemento li").each(function(){
+	       		    alert($(this).attr('id'));
+	       		 <article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6> <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p> </article>
+	       		});
+	    });
 		}else{
 			console.log("param:Nulo");
 		}
