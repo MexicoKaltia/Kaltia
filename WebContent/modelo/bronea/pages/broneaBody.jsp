@@ -150,22 +150,38 @@
 			      <div class="one_half first">
 			        <p><textarea class='form-control' id="descripcion1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></textarea></p>
 			        <p class="btmspace-50"><textarea class='form-control' id="descripcion2"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(3)' /></textarea></p>
+			        </div>
+			        <!-- carrusel -->
+			        <div id="carouselExampleIndicators" class="carousel slide" >
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+			        <div class="carousel-inner">
 			        <ul class="nospace group">
 			        <s:set var="conta" value="0" />
 			        <s:subset source="body.bodySeccionArray1" start="1">  
 			    	<s:iterator  var ="bodySeccionArray1">
-			          <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />">
-			            <article><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)' />">
-			            <i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
-			              <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
-			              <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
-			            </article>
-			          </li>
+			    	<div class="carousel-item active">
+			          <s:property value='#conta'/>
+			          </div>
 			          <s:set var="conta" value="#conta+1" />
 			          <s:property value='#conta'/>
 			          </s:iterator>
 			          </s:subset>
 			        </ul>
+			        </div>
+			        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+				</div>
+				<!-- fin carrusel -->
 			      </div>
 			      <div class="one_half">
 			      <img class="inspace-10 borderedbox" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
@@ -178,7 +194,7 @@
 	    			</form>
 			      
 			      </div>
-			    </div>
+			    
 			  </main> 			
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
