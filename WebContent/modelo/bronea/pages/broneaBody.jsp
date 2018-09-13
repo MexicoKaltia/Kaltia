@@ -83,7 +83,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.BodySeccion1.get(0)'/>');">
+<div class="wrapper bgded overlay bodySeccion1" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.BodySeccion1.get(0)'/>');">
 <a  id="seccion5"></a>
   <article class="hoc container clear center"> 
     <div class="sectiontitle" style="margin-bottom:30px;">
@@ -94,7 +94,7 @@
   </article>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3 bodySeccionArray4">
 <a  id="seccion6"></a>
   <section class="hoc container clear"> 
     <div class="sectiontitle">
@@ -129,8 +129,7 @@
 <div class="modal fade" id="modalEdicion_bodySeccionArray1" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
 				<br>
@@ -150,39 +149,46 @@
 			      <div class="one_half first">
 			        <p><textarea class='form-control' id="descripcion1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></textarea></p>
 			        <p class="btmspace-50"><textarea class='form-control' id="descripcion2"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(3)' /></textarea></p>
-			        </div>
 			        <!-- carrusel -->
-			        <div id="carouselExampleIndicators" class="carousel slide" >
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					</ol>
-			        <div class="carousel-inner">
-			        <ul class="nospace group">
-			        <s:set var="conta" value="0" />
-			        <s:subset source="body.bodySeccionArray1" start="1">  
-			    	<s:iterator  var ="bodySeccionArray1">
-			    	<div class="carousel-item active">
-			          <s:property value='#conta'/>
-			          </div>
-			          <s:set var="conta" value="#conta+1" />
-			          <s:property value='#conta'/>
-			          </s:iterator>
-			          </s:subset>
-			        </ul>
-			        </div>
-			        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-				</div>
-				<!-- fin carrusel -->
-			      </div>
+			        <div id="carouselExampleIndicators" class="carousel slide">
+						  <ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						  </ol>	  
+						  <div class="carousel-inner">
+       						    <s:set var="conta" value="0" />
+						        <s:subset source="body.bodySeccionArray1" start="1">  
+    							<s:iterator  var ="bodySeccionArray1">
+						  
+							  	<s:if test="#conta == 0">
+    								<div class="carousel-item active">
+								</s:if>
+								<s:else>
+   									<div class="carousel-item">
+								</s:else>
+									<article>
+										<a href="#">
+											<i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
+										<h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
+										<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
+									</article>
+									</div>
+								<s:set var="conta" value="#conta+1" />
+				      			</s:iterator>
+				      			</s:subset>
+						  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						</div>
+    			       </div>
+	    		      </div>
+			      <!-- fin carrusel -->
 			      <div class="one_half">
 			      <img class="inspace-10 borderedbox" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
     				<form id="upload-file-form">
@@ -192,9 +198,8 @@
 						<label for="upload-file-input">Actualiza imagen:</label> 
 						<input id="upload-file-inputBody" type="file" name="uploadfile" accept="image/jpeg" />
 	    			</form>
-			      
 			      </div>
-			    
+			    </div>
 			  </main> 			
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
@@ -212,8 +217,7 @@
 <div class="modal fade" id="modalEdicion_bodySeccionArray2" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
 				<br>
@@ -223,21 +227,40 @@
 				</button>
 			</div>
  			<!--**********************************************************************************-->
-			  <div class="hoc container clear"> 
-			    <ul class="nospace group cta">
-			           <s:set var="conta" value="0" />
-			      <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
-			      <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
-			        <article><i class="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
-			          <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)' />"/></h6>
-			          <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
-			        </article>
-			      </li>
-			             <s:set var="conta" value="#conta+1" />
-			      </s:iterator>
-			    </ul>
-			  </div>
-			<%--   id="tituloObjeto<s:property value='#conta'/>" --%>
+ 			<div class="hoc container clear">
+			      <div id="carouselExampleIndicators1" class="carousel slide">
+						  <ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+						  </ol>	  
+						  <div class="carousel-inner">
+						      <s:set var="conta1" value="0" />
+						      <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
+						      <s:if test="#conta1 == 0">
+			    					<div class="carousel-item active">
+						      </s:if>
+							  <s:else>
+			   						<div class="carousel-item">
+							  </s:else>
+								        <article><i class="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
+								          <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)' />"/></h6>
+								          <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></textarea></p>
+								        </article>
+								    </div>
+						      	<s:set var="conta1" value="#conta+1" />
+							    </s:iterator>
+							  	  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+									    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									    <span class="sr-only">Previous</span>
+									  </a>
+								  <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+					      </div>
+					    </div>  	
+              	</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"
@@ -250,11 +273,9 @@
 </div>
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray3 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray3" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_bodySeccionArray3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
 				<br>
@@ -264,33 +285,53 @@
 				</button>
 			</div>
  			<!--**********************************************************************************-->
- 			<div class="wrapper row3">
+ 			<div class="wrapper modal-body">
 				  <div class="hoc container clear"> 
 				    <div class="sectiontitle">
 				      <h6 class="heading"><input type="text" id="titulo" value="<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />"/></h6>
 				      <p><textarea class='form-control' id="descripcion"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></textarea></p>
 				    </div>
-				    <ul class="nospace group services elemento">
-				     <!-- inicio Categorias-->
-				     <s:set var="conta" value="0" />
-				     <s:subset start="1" source ="body.bodySeccionArray3">
-				     <s:iterator var="bodySeccionArray3">
-				       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>" id="idObjeto<s:property value='#conta'/>">
-				        	<a href="UNA FUNCION JS PARA CARGAR IMAGEN"></a>
- 				        	<article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> 
-				<%-- 		identificar secciones
-							<%--<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%> 
- 				          		<h6 class="heading font-x1"> 
- 				          		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6> 
- 				          		<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p> 
- 				        	</article> 
-				      	</li>
-				      <s:set var="conta" value="#conta+1" />
-				      </s:iterator>
-				      </s:subset>
-				      <!-- fin Categorias -->
-				      <button type="button" class="btn btn-secondary" id="boton">Siguiente</button>
-				    </ul>
+				    <!-- carrusel -->
+				    <ul class="nospace group services">
+			        <div id="carouselExampleIndicators2" class="carousel slide">
+						  <ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+						  </ol>	  
+						  <div class="carousel-inner">
+						     <s:set var="conta" value="0" />
+						     <s:subset start="1" source ="body.bodySeccionArray3">
+						     <s:iterator var="bodySeccionArray3">
+						       	<s:if test="#conta == 0">
+    								<div class="carousel-item active">
+								</s:if>
+								<s:else>
+   									<div class="carousel-item">
+								</s:else>
+		 				        	<article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> 
+						<%-- 		identificar secciones
+									<%--<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%> 
+		 				          		<h6 class="heading font-x1"> 
+		 				          		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/></h6> 
+		 				          		<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea></p> 
+		 				        	</article> 
+						      	</div>
+						      <s:set var="conta" value="#conta+1" />
+						      </s:iterator>
+						      </s:subset>
+						      <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						</div>
+    			      </div>
+    			      </ul>
+				    <!-- fin carrusel -->
 				  </div>
 				</div>
 			<%--   id="tituloObjeto<s:property value='#conta'/>" --%>
@@ -304,6 +345,113 @@
 		</div>
 	</div>
 </div>
+<!-- fin modalEdicion -->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!-- modalBodySeccion1 -->
+<div class="modal fade" id="modalEdicion_bodySeccion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+ 			<!--**********************************************************************************-->
+			<div class="modal-body">
+				  <article class="hoc container clear center"> 
+				    <div class="sectiontitle" style="margin-bottom:30px;">
+				      <h6 class="heading"><input type="text" id="titulo" value="<s:property value='body.BodySeccion1.get(1)'/>"/></h6>
+				      <p><textarea class='form-control' id="descripcion"><s:property value='body.BodySeccion1.get(2)'/></textarea></p>
+				    </div>
+				    <p><a class="btn medium" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.BodySeccion1.get(3)'/>"><s:property value='body.BodySeccion1.get(4)'/></a></p>
+				  </article>
+				
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodySeccion1_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicion -->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!-- modalBodySeccionArray4 -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+ 			<!--**********************************************************************************-->
+			<div class="modal-body">
+				<div class="sectiontitle">
+			      <h6 class="heading"><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(0)' /></h6>
+			      <p><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(1)' /></p>
+			    </div>
+			    			        <!-- carrusel -->
+			        <div id="carouselExampleIndicators3" class="carousel slide">
+						  <ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+						  </ol>	  
+						  <div class="carousel-inner">
+       						    <s:set var="conta" value="0" />
+						        <s:subset source="body.bodySeccionArray4" start="1">  
+    							<s:iterator  var ="bodySeccionArray4">
+						  
+							  	<s:if test="#conta == 0">
+    								<div class="carousel-item active">
+								</s:if>
+								<s:else>
+   									<div class="carousel-item">
+								</s:else>
+										<article class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
+								<%-- identificar Secciones
+								       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
+								       	<a href="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
+								       	<img class="btmspace-30" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>"></a>
+								        	<h3 class="heading"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray4.objetoVO.get(3)'/>"/></h3>
+								        	<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray4.objetoVO.get(4)'/></textarea>&hellip;</p>
+								        <footer class="nospace"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
+								        <s:property value='#bodySeccionArray4.objetoVO.get(5)'/> &raquo;</a></footer>
+								      </article>
+									</div>
+								<s:set var="conta" value="#conta+1" />
+				      			</s:iterator>
+				      			</s:subset>
+						  <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						</div>
+    			       </div>
+			      <!-- fin carrusel -->
+    		</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodySeccionArray4_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicion -->
+
 
 
 

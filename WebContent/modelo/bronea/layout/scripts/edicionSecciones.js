@@ -160,18 +160,35 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				modalEdicionBody_btnSave("bodySeccionArray3");
 			});
-			$("#boton").click(function(){
-	       		$(".elemento li").each(function(){
-	       		    alert($(this).attr('id'));
-	       		 
-	       		});
-	    });
 		}else{
 			console.log("param:Nulo");
 		}
 	});
+	$('.bodySeccion1').click(function(){
+		if(validaParam()){
+			cargaModal("bodySeccion1");
+			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
+				modalEdicionBody_btnSave("bodySeccionArray3");
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	$('.bodySeccionArray4').click(function(){
+		if(validaParam()){
+			cargaModal("bodySeccionArray4");
+			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
+				modalEdicionBody_btnSave("bodySeccionArray4");
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
 	
 	
+	
+	/*********  fin de documento *********/
 	});
 	
 	
