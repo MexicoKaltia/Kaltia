@@ -7,19 +7,19 @@
 <!-- ################################################################################################ -->
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
-    <div class="one_half first">
-      <h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
-      <p class="btmspace-30"><s:property value='footer.footerSeccion1.get(1)' /></p>
-      <ul class="nospace linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address>
-          <s:property value='footer.footerSeccion1.get(2)' />
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion1.get(3)' /></li>
-        <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion1.get(4)' /></li>
-        <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </ul>
+    <div class="one_half first footerSeccion1">
+      	<h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
+		  <p class="btmspace-30"><s:property value='footer.footerSeccion1.get(1)' /></p>
+		  <ul class="nospace linklist contact">
+		  <li><i class="fa fa-map-marker"></i>
+		  <address>
+		    <s:property value='footer.footerSeccion1.get(2)' />
+		 </address>
+		 </li>
+		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion1.get(3)' /></li>
+		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion1.get(4)' /></li>
+		 <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</ul>
     </div>
     <!-- ################################################################################################ -->
     <div class="one_quarter">
@@ -61,4 +61,46 @@
 <!-- ################################################################################################ -->
 
 </body>
+<!--    MODAL EDICION -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--**********************************************************************************-->
+<!-- modalBodySeccion1 -->
+<div class="modal fade" id="modalEdicion_footerSeccion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+ 			<!--**********************************************************************************-->
+			<div class="modal-body">
+			
+			      <h6 class="heading"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='footer.footerSeccion1.get(0)' />"/></h6>
+      <p class="btmspace-30"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='footer.footerSeccion1.get(1)' />"/></p>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          <input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='footer.footerSeccion1.get(2)' />"/>
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='footer.footerSeccion1.get(3)' />"/></li>
+        <li><i class="fa fa-envelope-o"></i><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='footer.footerSeccion1.get(4)' />"/></li>
+        <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</ul>
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion1_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicion -->
+
 </html>

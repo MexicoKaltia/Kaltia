@@ -33,7 +33,7 @@
 	
 	
 	/***********************************************************************************************************************************************************/
-	/*  Funciones de Edicion 
+	/*  Funciones de Edicion Version 1
 	 * 	Activar y Desactivar las secciones de Edicion
 	 * 	por medio de parametros URL
 	 */
