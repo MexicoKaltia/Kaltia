@@ -36,7 +36,7 @@
 		<put-attribute name="footer" value="/modelo/carinary/pages/carinaryFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/carinary/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="skaxis" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/skaxis/pages/skaxisHeader.jsp" />

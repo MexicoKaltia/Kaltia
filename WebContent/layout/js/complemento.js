@@ -531,12 +531,12 @@
 	
 	$.seccionCampos="";
 	
-	function cargaModal(seccion){
+	function cargaModal(seccion, modelo){
 		
-		console.log(seccion);
+		console.log("cargarModal : "+seccion);
 //		action = "action";
 //		seccion = "seccion";
-		$.seccionCampos = estructuraSeccion(seccion);
+		$.seccionCampos = estructuraSeccion(seccion+modelo);
 //		console.log($.seccionCampos)
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
@@ -545,7 +545,7 @@
 	
 	function estructuraSeccion(seccion){
 		var camposModelo = {
-				"headerSeccion1" 		   :{  "arrayText" :"text"},
+				"headerSeccion1" 		   :{  "objeto" : {    "enlace" :"text"  }},
 				"headerSeccion2" 		   :{   "telefono" : "text",   "email" : "text"},
 				"headerSeccion3" 		   :{"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"},
 				"headerSeccion4Bronea"   :{  "subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"},
@@ -558,7 +558,7 @@
 				"footerSeccion2Bronea"   :{  "titulo" : "text",  "objeto" : {    "arrayText" :"text"  }},
 				"footerSeccion3Bronea"   :{  "titulo" : "text","arrayText" :"text"},
 				}
-		seccion = seccion+"Bronea";
+		seccion = seccion;//+"Bronea";    <--- obtener la seccion dinamica con el nombre del modelo
 		switch (seccion) { 
 		case "headerSeccion1": return camposModelo.headerSeccion1; break;
 		case "headerSeccion2": return camposModelo.headerSeccion2; break;
@@ -611,26 +611,53 @@
 			  });
 	});
 	
-//	$('#modalEdicionBody_btnSave').click(function(){
-		function modalEdicionBody_btnSave(seccion){
-			console.log(seccion);	
-		console.log($.seccionCampos);
+	function dataEdicion(seccionEmpresa){
+		console.log("salvarDataEdicion : "+seccionEmpresa);
+		 $.seccionEmpresa = seccionEmpresa;
+		var valoresString = "";
+		var valoresStringObjeto = "";
+		var finalJson ="";
 		for(campo in $.seccionCampos){
 			console.log(campo)
 			if(campo === "imagen"){
 				var nombre = $("#upload-file-inputBody").val().split('\\');
 				console.log(nombre[nombre.length-1])
 			}else if (campo ==="objeto"){
-//				console.log($.seccionCampos.objeto);
-				for(var i = 0 ; i < $.seccionCampos.objeto.length; i++){
-					for(var campoObjeto in $.seccionCampos.objeto[i]){
-						console.log(campoObjeto);
-						console.log($("#"+campoObjeto).val());	
-					}
-				}	
+					
+				for(var i = 0 ; i < contaObjeto; i++){
+					valoresStringObjeto = valoresStringObjeto + $("#tituloObjeto"+i).val()+"."+$("#selectModalObjeto"+i).val()+ "++";
+				}
+					valoresStringObjeto = valoresStringObjeto.slice(0,valoresStringObjeto.length-2)
+					finalJson = {seccion : valoresStringObjeto }
 			}else{
-				console.log($("#"+campo).val())	
+				console.log($("#"+campo).val())
+				valoresString = valoresString + $("#"+campo).val() + "++" 
 			}
-		}	
+		}
+		valoresString = valoresString.slice(0,valoresString.length-2)
+		return valoresString ;
+		
 	}
+			
+		function enviaDataEdicion(finalJson){
+			
+			$.ajax({
+			   	  url: url+'modelo/action-Seccion',
+			      dataType: 'json',
+				  type: 'POST',
+				  contentType: "application/json",
+				  data: JSON.stringify(finalJson),
+				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
+				  crossDomain: true,
+				  success: 	function(data){					  
+					  console.log(data);
+					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+					},
+				  error: function(){
+					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+				  }
+				});
+		}
 	

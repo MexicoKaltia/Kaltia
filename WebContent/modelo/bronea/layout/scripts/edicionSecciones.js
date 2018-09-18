@@ -10,17 +10,42 @@ $(document).ready(function() {
 		if(validaParam()){
 			cargaModal("headerSeccion1");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
-				modalEdicionBody_btnSave("headerSeccion1");
-			});
+				console.log($.seccionCampos);
+				for(campo in $.seccionCampos){
+					console.log(campo)
+					if(campo === "imagen"){
+						var nombre = $("#upload-file-inputBody").val().split('\\');
+						console.log(nombre[nombre.length-1])
+					}else if (campo ==="objeto"){
+						var valoresString = ""
+						for(var i = 0 ; i < contaHeaderSeccion1; i++){
+								valoresString = valoresString + $("#tituloObjeto"+i).val()+"."+$("#selectModalObjeto"+i).val()+ "++";
+						}
+						valoresString = valoresString.slice(0,valoresString.length-2)
+						finalJson = {'headerSeccion1': valoresString }
+						console.log(finalJson);
+						enviaDataEdicion(finalJson)
+						
+					}else{
+						console.log($("#"+campo).val())	
+					}
+			}	
+		  });
 		}else{
 			console.log("param:Nulo");
 		}
 	});
 	$('.headerSeccion2').click(function(){
 		if(validaParam()){
-			cargaModal("headerSeccion2");
+			bronea = "headerSeccion2++bronea";   // <--- Definir el nombre de la empresa.
+			cargaModal("headerSeccion2","");
 			$('#modalEdicionHeaderSeccion2_btnSave').click(function(){
-				modalEdicionBody_btnSave("headerSeccion2");
+				valoresFinales = dataEdicion("headerSeccion2");
+				finalJson = { "headerSeccion2" : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
 			});
 		}else{
 			console.log("param:Nulo");
@@ -52,9 +77,9 @@ $(document).ready(function() {
 	});
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
-			cargaModal("headerSeccion4");
+			cargaModal("headerSeccion4", "Bronea");
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
-				modalEdicionBody_btnSave("headerSeccion4");
+				salvarDataEdicion("headerSeccion4");
 			});
 		}else{
 			console.log("param:Nulo");
