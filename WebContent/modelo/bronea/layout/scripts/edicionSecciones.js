@@ -8,33 +8,26 @@ $(document).ready(function() {
 /////////////
 	$('.headerSeccion1').click(function(){
 		if(validaParam()){
-			cargaModal("headerSeccion1");
+			cargaModal("headerSeccion1","");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
-				console.log($.seccionCampos);
-				for(campo in $.seccionCampos){
-					console.log(campo)
-					if(campo === "imagen"){
-						var nombre = $("#upload-file-inputBody").val().split('\\');
-						console.log(nombre[nombre.length-1])
-					}else if (campo ==="objeto"){
-						var valoresString = ""
-						for(var i = 0 ; i < contaHeaderSeccion1; i++){
-								valoresString = valoresString + $("#tituloObjeto"+i).val()+"."+$("#selectModalObjeto"+i).val()+ "++";
-						}
-						valoresString = valoresString.slice(0,valoresString.length-2)
-						finalJson = {'headerSeccion1': valoresString }
-						console.log(finalJson);
-						enviaDataEdicion(finalJson)
-						
-					}else{
-						console.log($("#"+campo).val())	
-					}
-			}	
-		  });
+				valoresFinales = dataEdicion("headerSeccion1");
+				console.log(valoresFinales)
+				var headerSeccion1Array = "";
+				var tmp = valoresFinales.split("\++"); 
+				for(i=0; i<tmp.length;i++){
+					valoresFinales =valoresFinales.replace("&&", ".")
+				}
+				finalJson = { "headerSeccion1" : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
 		}else{
 			console.log("param:Nulo");
 		}
 	});
+	
 	$('.headerSeccion2').click(function(){
 		if(validaParam()){
 			bronea = "headerSeccion2++bronea";   // <--- Definir el nombre de la empresa.
@@ -79,7 +72,12 @@ $(document).ready(function() {
 		if(validaParam()){
 			cargaModal("headerSeccion4", "Bronea");
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
-				salvarDataEdicion("headerSeccion4");
+				valoresFinales = dataEdicion("headerSeccion2");
+				finalJson = { "headerSeccion4" : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
 			});
 		}else{
 			console.log("param:Nulo");
@@ -88,9 +86,14 @@ $(document).ready(function() {
 	
 	$('.bodySeccionArray1').click(function(){
 		if(validaParam()){
-			cargaModal("bodySeccionArray1");
+			cargaModal("bodySeccionArray1","Bronea");
 			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
-				modalEdicionBody_btnSave("bodySeccionArray1");
+				valoresFinales = dataEdicion("bodySeccionArray1Bronea");
+				finalJson = { "bodySeccionArray1Bronea" : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
 			});
 		}else{
 			console.log("param:Nulo");

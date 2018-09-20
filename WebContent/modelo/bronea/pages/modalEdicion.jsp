@@ -37,6 +37,7 @@
 						    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
 						  </ol>	  
 						  <div class="carousel-inner">
+						  		<script type="text/javascript">var contaObjeto = <s:property value='0'/></script>
        						    <s:set var="conta" value="0" />
 								<s:iterator value='header.headerSeccion1' var="menu2Value">	
 						  
@@ -48,8 +49,8 @@
 								</s:else>
 									<li>
 										<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />"/>
-										<select class="form-control" id="selectModalObjeto<s:property value='#conta'/>">
-											  <option value="" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+										<select class="form-control" id="enlaceObjeto<s:property value='#conta'/>">
+											  <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
 											  <hr>										
       										  <option value="Ubicacion">Ubicacion</option>
 										      <option value="Cita">Cita</option>
@@ -61,7 +62,7 @@
 									</div>
 								<s:set var="conta" value="#conta+1" />
 				      			</s:iterator>
-				      			<script type="text/javascript">var contaHeaderSeccion1 = <s:property value='#conta'/></script>
+				      			<script type="text/javascript">var contaObjeto = <s:property value='#conta'/></script>
 						  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
 						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						    <span class="sr-only">Previous</span>
@@ -145,7 +146,7 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalHeaderSeccion4 -->
-<div class="modal fade" id="modalEdicion_headerSeccion4Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_headerSeccion4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -163,7 +164,7 @@
 						<article>
 					<div>
 						<p class="heading">
-							<input type="text" id="subTitulo" value="<s:property value='header.headerSeccion4.get(0)'/>"/>
+							<input type="text" id="subtitulo" value="<s:property value='header.headerSeccion4.get(0)'/>"/>
 						</p>
 						<h2 class="heading">
 							<input type="text" id="titulo" value="<s:property value='header.headerSeccion4.get(1)'/>"/>
@@ -178,10 +179,28 @@
 			          <ul class="nospace inline pushright">
 <%-- Identificar Secciones
 			            <li><a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
-						<li><a class="btn inverse" href="<s:property value='header.headerSeccion4.get(3)'/>"><input type="text" id="boton1" value="<s:property value='header.headerSeccion4.get(4)'/>"/></a></li>
+						<li><input type="text" id="boton1" value="<s:property value='header.headerSeccion4.get(4)'/>"/>
+						<select class="form-control" id="referencia1">
+											  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+											  <hr>										
+      										  <option value="Ubicacion">Ubicacion</option>
+										      <option value="Cita">Cita</option>
+										      <option value="Contacto">Contacto</option>
+										      <option value="Registro">Registro</option>
+										 </select>
+						</li>
 <%-- Identificar Secciones
 			            <li><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li> --%>
-			            <li><a class="btn" href="<s:property value='header.headerSeccion4.get(5)'/>"><input type="text" id="boton2" value="<s:property value='header.headerSeccion4.get(6)'/>"/></a></li>
+			            <li><input type="text" id="boton2" value="<s:property value='header.headerSeccion4.get(6)'/>"/>
+							<select class="form-control" id="referencia2">
+											  <option value="<s:property value='header.headerSeccion4.get(5)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+											  <hr>										
+      										  <option value="Ubicacion">Ubicacion</option>
+										      <option value="Cita">Cita</option>
+										      <option value="Contacto">Contacto</option>
+										      <option value="Registro">Registro</option>
+										 </select>
+						</li>
 			          </ul>
 		        </footer>
 
@@ -236,6 +255,7 @@
 						    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 						  </ol>	  
 						  <div class="carousel-inner">
+						  		<script type="text/javascript">var contaObjeto = <s:property value='0'/></script>
        						    <s:set var="conta" value="0" />
 						        <s:subset source="body.bodySeccionArray1" start="1">  
     							<s:iterator  var ="bodySeccionArray1">
@@ -253,9 +273,11 @@
 										<p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
 									</article>
 									</div>
+									
 								<s:set var="conta" value="#conta+1" />
 				      			</s:iterator>
 				      			</s:subset>
+				      			<script type="text/javascript">var contaObjeto = <s:property value='#conta'/></script>
 						  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						    <span class="sr-only">Previous</span>

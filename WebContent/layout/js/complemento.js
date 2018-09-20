@@ -537,7 +537,7 @@
 //		action = "action";
 //		seccion = "seccion";
 		$.seccionCampos = estructuraSeccion(seccion+modelo);
-//		console.log($.seccionCampos)
+		console.log($.seccionCampos)
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
 		$("div.alertaBody_file > div").remove();
@@ -545,12 +545,12 @@
 	
 	function estructuraSeccion(seccion){
 		var camposModelo = {
-				"headerSeccion1" 		   :{  "objeto" : {    "enlace" :"text"  }},
+				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjeto" :"text", "enlaceObjeto" :"text"  }},
 				"headerSeccion2" 		   :{   "telefono" : "text",   "email" : "text"},
 				"headerSeccion3" 		   :{"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"},
 				"headerSeccion4Bronea"   :{  "subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"},
 				"bodySeccion1Bronea"     :{  "imagen" :"img",  "titulo" :"text",  "subtitulo":"lorem",  "referencia":"text",  "boton":"text"},
-				"bodySeccionArray1Bronea":{  "titulo":"text",  "subTitulo":"text",  "descripcion1":"lorem",  "descripcion2":"lorem",  "imagen" : "img",  "objeto" :[{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto0" :"text",      "descripcionObjeto0" :"lorem"  },{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto1" :"text",      "descripcionObjeto1" :"lorem"  }]},
+				"bodySeccionArray1Bronea":{  "titulo":"text",  "subTitulo":"text",  "descripcion1":"lorem",  "descripcion2":"lorem",  "imagen" : "img",  "objeto" :{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto" :"text",      "descripcionObjeto" :"lorem"  }},
 				"bodySeccionArray2Bronea":{  "objeto":[{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto0" :"text",    "descripcionObjeto0" :"lorem"  },{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto1" :"text",    "descripcionObjeto1" :"lorem"  },{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto2" :"text",    "descripcionObjeto2" :"lorem"  }]},
 				"bodySeccionArray3Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : [{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto0" :"text",      "descripcionObjeto0" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto1" :"text",      "descripcionObjeto1" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto2" :"text",      "descripcionObjeto2" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto3" :"text",      "descripcionObjeto3" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto4" :"text",      "descripcionObjeto4" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto5" :"text",      "descripcionObjeto5" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto6" :"text",      "descripcionObjeto6" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto7" :"text",      "descripcionObjeto7" :"text"  }]},
 				"bodySeccionArray4Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : {      "posicionObjeto" :"text",      "referenciaObjeto" : "text",      "imagenObjeto" : "img",      "tituloObjeto" :"text",      "descripcionObjeto" :"text",      "boton":"text"  }},
@@ -612,23 +612,28 @@
 	});
 	
 	function dataEdicion(seccionEmpresa){
-		console.log("salvarDataEdicion : "+seccionEmpresa);
-		 $.seccionEmpresa = seccionEmpresa;
+		console.log("dataEdicion : "+seccionEmpresa);
+		console.log($.seccionCampos);
+//		 $.seccionEmpresa = seccionEmpresa;
 		var valoresString = "";
 		var valoresStringObjeto = "";
+		var valorStringObjeto ="";
 		var finalJson ="";
 		for(campo in $.seccionCampos){
 			console.log(campo)
 			if(campo === "imagen"){
 				var nombre = $("#upload-file-inputBody").val().split('\\');
 				console.log(nombre[nombre.length-1])
-			}else if (campo ==="objeto"){
-					
+			}else if (campo ==="objeto"){					
 				for(var i = 0 ; i < contaObjeto; i++){
-					valoresStringObjeto = valoresStringObjeto + $("#tituloObjeto"+i).val()+"."+$("#selectModalObjeto"+i).val()+ "++";
+					for(campoObjeto in $.seccionCampos.objeto){
+						console.log(campoObjeto +" : "+$("#"+campoObjeto+i).val())
+						valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
+					}
+					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
+					valorStringObjeto = valorStringObjeto + "++";
 				}
-					valoresStringObjeto = valoresStringObjeto.slice(0,valoresStringObjeto.length-2)
-					finalJson = {seccion : valoresStringObjeto }
+				valoresString = valorStringObjeto
 			}else{
 				console.log($("#"+campo).val())
 				valoresString = valoresString + $("#"+campo).val() + "++" 
