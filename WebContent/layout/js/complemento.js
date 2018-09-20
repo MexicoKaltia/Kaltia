@@ -529,34 +529,35 @@
 	 * 
 	 */
 	
-	$.seccionCampos="";
 	
 	function cargaModal(seccion, modelo){
-		
+		$.seccionCampos="";
+			
 		console.log("cargarModal : "+seccion);
 //		action = "action";
 //		seccion = "seccion";
 		$.seccionCampos = estructuraSeccion(seccion+modelo);
-		console.log($.seccionCampos)
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
 		$("div.alertaBody_file > div").remove();
+		
+		return $.seccionCampos; 
 	}
 	
 	function estructuraSeccion(seccion){
 		var camposModelo = {
-				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjeto" :"text", "enlaceObjeto" :"text"  }},
-				"headerSeccion2" 		   :{   "telefono" : "text",   "email" : "text"},
-				"headerSeccion3" 		   :{"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"},
-				"headerSeccion4Bronea"   :{  "subtitulo":"text",  "titulo":"text",  "descripcion" :"lorem",  "referencia1" : "text",  "boton1" : "boton",  "referencia2" : "text",  "boton2" : "boton"},
-				"bodySeccion1Bronea"     :{  "imagen" :"img",  "titulo" :"text",  "subtitulo":"lorem",  "referencia":"text",  "boton":"text"},
-				"bodySeccionArray1Bronea":{  "titulo":"text",  "subTitulo":"text",  "descripcion1":"lorem",  "descripcion2":"lorem",  "imagen" : "img",  "objeto" :{"posicionObjeto" :"text","referenciaObjeto" : "text",      "iconoObjeto" : "text",      "tituloObjeto" :"text",      "descripcionObjeto" :"lorem"  }},
-				"bodySeccionArray2Bronea":{  "objeto":[{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto0" :"text",    "descripcionObjeto0" :"lorem"  },{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto1" :"text",    "descripcionObjeto1" :"lorem"  },{    "posicionObjeto" :"text",    "iconoObjeto" :"text",    "referenciaObjeto" :"text",    "tituloObjeto2" :"text",    "descripcionObjeto2" :"lorem"  }]},
-				"bodySeccionArray3Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : [{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto0" :"text",      "descripcionObjeto0" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto1" :"text",      "descripcionObjeto1" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto2" :"text",      "descripcionObjeto2" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto3" :"text",      "descripcionObjeto3" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto4" :"text",      "descripcionObjeto4" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto5" :"text",      "descripcionObjeto5" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto6" :"text",      "descripcionObjeto6" :"text"  },{      "posicionObjeto" :"text",      "imagenObjeto" : "img",      "referenciaObjeto" : "text",      "tituloObjeto7" :"text",      "descripcionObjeto7" :"text"  }]},
-				"bodySeccionArray4Bronea":{  "titulo" :"text",  "descripcion" : "lorem",  "objeto" : {      "posicionObjeto" :"text",      "referenciaObjeto" : "text",      "imagenObjeto" : "img",      "tituloObjeto" :"text",      "descripcionObjeto" :"text",      "boton":"text"  }},
-				"footerSeccion1Bronea"   :{  "titulo" : "text",  "subtitulo" : "lorem",  "domicilio" : "text",  "telefono" : "text",  "correo" : "text"},
-				"footerSeccion2Bronea"   :{  "titulo" : "text",  "objeto" : {    "arrayText" :"text"  }},
-				"footerSeccion3Bronea"   :{  "titulo" : "text","arrayText" :"text"},
+				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "enlaceObjetoHS1" :"text"  }},
+				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
+				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
+				"headerSeccion4Bronea"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "referencia1HS4" : "text",  "boton1HS4" : "text",  "referencia2HS4" : "text",  "boton2HS4" : "text"},
+				"bodySeccion1Bronea"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "referenciaBS1":"text",  "botonBS1":"text"},
+				"bodySeccionArray1Bronea":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
+				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
+				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
+				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "referenciaObjetoBSA4" : "text",      "imagenObjetoBSA4" : "img",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonBSA4":"text"  }},
+				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text"},
+				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "objetoFS2" : {    "tituloObjetoFS2" :"text", "enlaceObjetoFS2" :"text"  }},
+				"footerSeccion3Bronea"   :{  "tituloFS3" : "text",  "objetoFS3" : {    "tituloObjetoFS3" :"text", "enlaceObjetoFS3" :"text"  }},
 				}
 		seccion = seccion;//+"Bronea";    <--- obtener la seccion dinamica con el nombre del modelo
 		switch (seccion) { 
@@ -575,71 +576,66 @@
 		}
 	}
 	
-	$('#upload-file-inputBody').on('change', function(){
-		/*
-		 * toogle para activar el control de formulario de carga de imagen
-		 * 
-		 * 
-		 		<form id="upload-file-form">
-					<div class="alerta_file">
-					<hiden class="alerta_inFile"></hiden>
-					</div>
-					<label for="upload-file-input">Actualiza imagen:</label> 
-					<input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
-				</form>
-		 * 
-		 */
-			console.log("envio imagenBody");
-			  $.ajax({
-//			    url: "http://localhost:8010/fileUpload",
-				  url: "http://31.220.60.92:8010/fileUpload",
-			    type: "POST",
-			    data: new FormData($("#upload-file-form")[0]),
-			    enctype: 'multipart/form-data',
-			    processData: false,
-			    contentType: false,
-			    cache: false,
-			    success: 	function(data){
-					  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
-						$(alerta).insertAfter($('.alertaBody_inFile'));
-						console.log("imagen enviada:"+tipo);
-					},
-			    error: function () {
-			    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
-					$(alerta).insertAfter($('.alertaBody_inFile'));
-			    }
-			  });
-	});
+	function limpiaData(camposSeccion){
+		
+		for(campo in camposSeccion){
+			console.log("limpiaData : "+campo);
+		}
+		
+	}
 	
-	function dataEdicion(seccionEmpresa){
-		console.log("dataEdicion : "+seccionEmpresa);
-		console.log($.seccionCampos);
-//		 $.seccionEmpresa = seccionEmpresa;
+	
+	
+	function dataEdicion(seccionEmpresa, contaObjeto){
+		console.log(seccionEmpresa);
+		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
 		var valorStringObjeto ="";
 		var finalJson ="";
-		for(campo in $.seccionCampos){
-			console.log(campo)
-			if(campo === "imagen"){
-				var nombre = $("#upload-file-inputBody").val().split('\\');
-				console.log(nombre[nombre.length-1])
-			}else if (campo ==="objeto"){					
-				for(var i = 0 ; i < contaObjeto; i++){
-					for(campoObjeto in $.seccionCampos.objeto){
-						console.log(campoObjeto +" : "+$("#"+campoObjeto+i).val())
-						valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
+		if(contaObjeto > 0){
+			for(campo in seccionEmpresa){
+				console.log(campo)
+				if(campo.includes("imagen")){
+					var nombre = $("#upload-file-inputBody").val().split('\\');
+					console.log(nombre[nombre.length-1])
+					valoresString = valoresString + nombre[nombre.length-1] + "&&"
+				}else if (campo.includes("objeto")){				
+					if(valoresString.length > 0){
+					valoresString = valoresString.slice(0,valoresString.length-2)
+					valoresString = valoresString + "++";
+					}
+					for(var i = 0 ; i < contaObjeto; i++){
+						for(campoObjeto in seccionEmpresa.objeto){
+//							console.log(campoObjeto+i +" : "+$("#"+campoObjeto+i).val())
+							valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
+						}
+						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
+						valorStringObjeto = valorStringObjeto + "++";
 					}
 					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
-					valorStringObjeto = valorStringObjeto + "++";
+					valoresString = valoresString + valorStringObjeto ;
+				}else{
+//					console.log($("#"+campo).val())
+					valoresString = valoresString + $("#"+campo).val() + "&&" 
 				}
-				valoresString = valorStringObjeto
-			}else{
-				console.log($("#"+campo).val())
-				valoresString = valoresString + $("#"+campo).val() + "++" 
+			}	
+		}else{
+			for(campo in seccionEmpresa){
+				console.log(campo)
+				if(campo.includes("imagen")){
+					var nombre = $("#upload-file-inputBody").val().split('\\');
+					console.log(nombre[nombre.length-1])
+					valoresString = valoresString + nombre[nombre.length-1] + "++"
+				}else{
+//					console.log($("#"+campo).val())
+					valoresString = valoresString + $("#"+campo).val() + "++" 
+				}
 			}
+			valoresString = valoresString.slice(0,valoresString.length-2)
 		}
-		valoresString = valoresString.slice(0,valoresString.length-2)
+		
+		console.log(valoresString);
 		return valoresString ;
 		
 	}
@@ -665,4 +661,40 @@
 				  }
 				});
 		}
+		
+		$('#upload-file-inputBody').on('change', function(){
+			/*
+			 * toogle para activar el control de formulario de carga de imagen
+			 * 
+			 * 
+			 		<form id="upload-file-form">
+						<div class="alerta_file">
+						<hiden class="alerta_inFile"></hiden>
+						</div>
+						<label for="upload-file-input">Actualiza imagen:</label> 
+						<input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
+					</form>
+			 * 
+			 */
+				console.log("envio imagenBody");
+				  $.ajax({
+//				    url: "http://localhost:8010/fileUpload",
+					  url: "http://31.220.60.92:8010/fileUpload",
+				    type: "POST",
+				    data: new FormData($("#upload-file-form")[0]),
+				    enctype: 'multipart/form-data',
+				    processData: false,
+				    contentType: false,
+				    cache: false,
+				    success: 	function(data){
+						  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+							$(alerta).insertAfter($('.alertaBody_inFile'));
+							console.log("imagen enviada:"+tipo);
+						},
+				    error: function () {
+				    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
+						$(alerta).insertAfter($('.alertaBody_inFile'));
+				    }
+				  });
+		});
 	
