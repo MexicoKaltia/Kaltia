@@ -44,14 +44,19 @@
 	$.jsonSeccion ="";
 	$.valoresOriginal="";
 	$.valoresActualizados="";
-	var url = "http://31.220.60.92:8010/";
-//	var url = "http://localhost:8010/mod/sdd";//"http://localhost:8012/mail";
+	$.action="";
+//	var url = "http://31.220.60.92:8010/";
+	var url = "http://localhost:8010/";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
 		console.log(window.location.href);
+		urlAction = window.location.href;
+		action = urlAction.split("\/");
+		$.action = action[3];
+		console.log(action[3]);
 		if (results == null){
 			_desactiveSeccionEdicion();
 			console.log("results null")
@@ -91,6 +96,7 @@
 					$('div.footerSeccionArray4').addClass("edicion")
 					$('div.footerSeccionArray5').addClass("edicion")
 		    	$.param = decodeURI(results[1]);
+		    		console.log($.param);
 		    	return $.param;
 		    	}
 		    	else{
@@ -533,12 +539,12 @@
 	function cargaModal(seccion, modelo){
 		$.seccionCampos="";
 			
-		console.log("cargarModal : "+seccion);
+		console.log("cargarModal : "+seccion+modelo);
 //		action = "action";
 //		seccion = "seccion";
 		$.seccionCampos = estructuraSeccion(seccion+modelo);
 		$('.'+seccion).attr("data-toggle","modal");
-		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
+		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
 		$("div.alertaBody_file > div").remove();
 		
 		return $.seccionCampos; 
@@ -559,7 +565,7 @@
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "objetoFS2" : {    "tituloObjetoFS2" :"text", "enlaceObjetoFS2" :"text"  }},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text",  "objetoFS3" : {    "tituloObjetoFS3" :"text", "enlaceObjetoFS3" :"text"  }},
 				}
-		seccion = seccion;//+"Bronea";    <--- obtener la seccion dinamica con el nombre del modelo
+		seccion = seccion;
 		switch (seccion) { 
 		case "headerSeccion1": return camposModelo.headerSeccion1; break;
 		case "headerSeccion2": return camposModelo.headerSeccion2; break;
@@ -575,15 +581,6 @@
 		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
 		}
 	}
-	
-	function limpiaData(camposSeccion){
-		
-		for(campo in camposSeccion){
-			console.log("limpiaData : "+campo);
-		}
-		
-	}
-	
 	
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
@@ -641,9 +638,17 @@
 	}
 			
 		function enviaDataEdicion(finalJson){
-			
+			var context = "";
+			for(campo in finalJson){
+				if(campo === "action")
+					context = context + finalJson.action +"/"
+				else{
+					context = context + campo +"/"
+				}
+			}
+			console.log(url + context)
 			$.ajax({
-			   	  url: url+'modelo/action-Seccion',
+			   	  url: url + context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",

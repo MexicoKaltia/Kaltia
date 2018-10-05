@@ -146,7 +146,7 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalHeaderSeccion4 -->
-<div class="modal fade" id="modalEdicion_headerSeccion4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_headerSeccion4Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -221,7 +221,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- modalBodySeccionArray1 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray1" tabindex="-1" role="dialog"
+<div class="modal fade" id="modalEdicion_bodySeccionArray1Bronea" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
@@ -315,7 +315,7 @@
 <!-- fin modalEdicion -->
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray2 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray2" tabindex="-1" role="dialog"
+<div class="modal fade" id="modalEdicion_bodySeccionArray2Bronea" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
@@ -379,7 +379,7 @@
 </div>
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray3 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_bodySeccionArray3Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -459,7 +459,7 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalBodySeccion1 -->
-<div class="modal fade" id="modalEdicion_bodySeccion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_bodySeccion1Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -503,7 +503,7 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray4 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_bodySeccionArray4Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -583,7 +583,7 @@
 <!-- ################################################################################################ -->
 <!--**********************************************************************************-->
 <!-- modalFooterSeccion1 -->
-<div class="modal fade" id="modalEdicion_footerSeccion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_footerSeccion1Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">

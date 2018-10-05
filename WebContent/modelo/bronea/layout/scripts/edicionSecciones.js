@@ -6,11 +6,11 @@ $(document).ready(function() {
 	 *   Secciones   *
 	 */
 /////////////
-	var action = "bronea"
+	 $.modelo = "Bronea";
 	
 	$('.headerSeccion1').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("headerSeccion1","");
+			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoHeaderSeccion1);
 				console.log(valoresFinales)
@@ -19,7 +19,8 @@ $(document).ready(function() {
 				for(i=0; i<tmp.length;i++){
 					valoresFinales = valoresFinales.replace("&&", ".")
 				}
-				finalJson = { action : action,
+				
+				finalJson = { action : $.action,
 							"headerSeccion1" : valoresFinales }
 				console.log(finalJson);
 				
@@ -33,11 +34,11 @@ $(document).ready(function() {
 	
 	$('.headerSeccion2').click(function(){
 		if(validaParam()){
-			bronea = "headerSeccion2++bronea";   // <--- Definir el nombre de la empresa.
-			$.seccionCampos = cargaModal("headerSeccion2","");
+			
+			$.seccionCampos = cargaModal("headerSeccion2", "");
 			$('#modalEdicionHeaderSeccion2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"headerSeccion2" : valoresFinales }
 				console.log(finalJson);
 				
@@ -74,11 +75,11 @@ $(document).ready(function() {
 	});
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
-			bronea = "headerSeccion2++bronea";   // <--- Definir el nombre de la empresa.
-			$.seccionCampos = cargaModal("headerSeccion4","Bronea");
+			
+			$.seccionCampos = cargaModal("headerSeccion4",$.modelo);
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"headerSeccion4" : valoresFinales }
 				console.log(finalJson);
 				
@@ -92,10 +93,11 @@ $(document).ready(function() {
 	
 	$('.bodySeccionArray1').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray1","Bronea");
+			$.seccionCampos = cargaModal("bodySeccionArray1",$.modelo);
 			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
-				finalJson = { action : action,
+				console.log($.action)
+				finalJson = { action : $.action,
 							"bodySeccionArray1" : valoresFinales }
 				console.log(finalJson);
 				
@@ -109,10 +111,10 @@ $(document).ready(function() {
 	
 	$('.bodySeccionArray2').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray2","Bronea");
+			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
 			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"bodySeccionArray2" : valoresFinales }
 				console.log(finalJson);
 				
@@ -126,10 +128,10 @@ $(document).ready(function() {
 	
 	$('.bodySeccionArray3').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray3","Bronea");
+			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"bodySeccionArray3" : valoresFinales }
 				console.log(finalJson);
 				
@@ -142,10 +144,10 @@ $(document).ready(function() {
 	});
 	$('.bodySeccion1').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccion1","Bronea");
+			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
 			$('#modalEdicionBodySeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"bodySeccion1" : valoresFinales }
 				console.log(finalJson);
 				
@@ -158,10 +160,10 @@ $(document).ready(function() {
 	});
 	$('.bodySeccionArray4').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray4","Bronea");
+			$.seccionCampos = cargaModal("bodySeccionArray4",$.modelo);
 			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray4);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"bodySeccionArray4" : valoresFinales }
 				console.log(finalJson);
 				
@@ -175,10 +177,10 @@ $(document).ready(function() {
 	
 	$('.footerSeccion1').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion1","Bronea");
+			$.seccionCampos = cargaModal("footerSeccion1",$.modelo);
 			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : action,
+				finalJson = { action : $.action,
 							"footerSeccion1" : valoresFinales }
 				console.log(finalJson);
 				
