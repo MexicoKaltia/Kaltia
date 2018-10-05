@@ -45,8 +45,8 @@
 	$.valoresOriginal="";
 	$.valoresActualizados="";
 	$.action="";
-//	var url = "http://31.220.60.92:8010/";
-	var url = "http://localhost:8010/";
+	var url = "http://31.220.60.92:8010/";
+//	var url = "http://localhost:8010/";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -55,8 +55,17 @@
 		console.log(window.location.href);
 		urlAction = window.location.href;
 		action = urlAction.split("\/");
+		
+		//actionProd -- para pruebas locales comentar las siguientes lineas
+		urlAction = "http://kaltia.xyz/bronea?tipo=AAA"
+		action = urlAction.split("\/");
+		actionProd = action[3].split("\?");
+		action[3] = actionProd[0]
+		// fin actionProd
+		
 		$.action = action[3];
 		console.log(action[3]);
+		
 		if (results == null){
 			_desactiveSeccionEdicion();
 			console.log("results null")
