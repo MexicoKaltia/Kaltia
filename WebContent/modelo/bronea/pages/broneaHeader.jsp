@@ -35,13 +35,13 @@
 			</div>
 		</div>
 <!-- ################################################################################################ -->
-		<div class="wrapper row1">
+		<div class="wrapper row1 headerSeccion3">
 			<header id="header" class="hoc clear">
-				<div id="logo" class="fl_left headerSeccion3">
+				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
-			          <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
-			          <s:property value='header.idEmpresa'/>
-			      	  </a></h1>     
+					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
+			           <s:property value='header.idEmpresa'/>
+			      	</a></h1>     
 				</div>
 				<s:set var="idEmpresa" value="header.idEmpresa" />
 

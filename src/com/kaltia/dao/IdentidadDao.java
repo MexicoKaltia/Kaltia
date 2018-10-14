@@ -162,7 +162,7 @@ public class IdentidadDao {
 
 
 		String sql = "SELECT tw_body.idBody, tw_body.idEmpresa, tw_body.bodyFondo, "
-				+ " tw_body.bodyTexto1, tw_body.bodyTexto2, tw_body.bodyTexto3, tw_body.bodyTexto4, tw_body.bodyTexto5, tw_body.bodyTexto6, tw_body.bodyTexto7, tw_body.bodyTexto8, tw_body.bodyTexto9, tw_body.bodyTexto10, "
+				+ " tw_body.bodySeccion1, tw_body.bodySeccion2, tw_body.bodySeccion3, tw_body.bodySeccion4, tw_body.bodySeccion5, tw_body.bodySeccion6, tw_body.bodySeccion7, tw_body.bodySeccion8, tw_body.bodySeccion9, tw_body.bodySeccion10, "
 				+ " tw_body.bodySeccionArray1, tw_body.bodySeccionArray2, tw_body.bodySeccionArray3, tw_body.bodySeccionArray4, tw_body.bodySeccionArray5, tw_body.bodySeccionArray6, tw_body.bodySeccionArray7" 
 				+ " from tw_body LEFT JOIN tc_action "
 				+ "ON tw_body.idEmpresa = tc_action.idEmpresa" 
@@ -226,7 +226,7 @@ public class IdentidadDao {
 		complemento.add(action);
 
 		String sql = "SELECT tw_footer.idFooter, tw_footer.idEmpresa, "
-				+ " tw_footer.footerLista1, tw_footer.footerLista2, tw_footer.footerLista3, tw_footer.footerLista4, tw_footer.footerLista5, "
+				+ " tw_footer.footerSeccion1, tw_footer.footerSeccion2, tw_footer.footerSeccion3, tw_footer.footerSeccion4, tw_footer.footerSeccion5, "
 				+ " tw_footer.footerSeccionArray1, tw_footer.footerSeccionArray2,"
 				+ " tw_footer.footerAux1, tw_footer.footerAux2, tw_footer.footerVarios" 
 				+ " from tw_footer LEFT JOIN tc_action "

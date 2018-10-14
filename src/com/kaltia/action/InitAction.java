@@ -58,9 +58,22 @@ public class InitAction extends ActionSupport {
 					header = (HeaderVO) identidadHash.get("header");
 					body = (BodyVO) identidadHash.get("body");
 					footer = (FooterVO) identidadHash.get("footer");
-					logger.info("Termina ejecutar action:"+actionName);
-					logger.info("---------------------------------------------------------------------------------------");
+					logger.info("Termina ejecutar action:"+actionName);					
+					if(identidadVO.getActionPrincipal().equals("1") || identidadVO.getActionPrincipal().equals("2")) {
+						if(identidadVO.getActionPrincipal().equals("1")) {
+							logger.info("modelo:"+identidadVO.getActionEstilo());
+							logger.info("modelo con action:"+identidadVO.getAction());
+						}else {
+							logger.info("Nueva Empresa Estandar con modelo:"+identidadVO.getActionEstilo());
+							logger.info("Nueva Empresa Estandar con action:"+identidadVO.getAction());
+						}
+						logger.info("---------------------------------------------------------------------------------------");
+						return identidadVO.getActionEstilo().toString();
+					}else {
+						logger.info("Empresa con modificaciones para TILES");
+						logger.info("---------------------------------------------------------------------------------------");
 					return identidadVO.getAction().toString();
+					}
 			} else {
 				return ERROR;
 			}

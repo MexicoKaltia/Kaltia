@@ -27,7 +27,13 @@ public class AtributoDao {
 		
 		List<String> complemento = new ArrayList<String>();
 		String[] maquetas = null;
-		String sql = "SELECT tc_action.idAction from tc_action where actionPrincipal =1";
+		/*
+		 * actionPrincipal =1 --- MODELO PRINCIPAL
+		 * actionPrincipal =2 --- EMPRESA ESTANDAR
+		 * actionPrincipal =3 --- EMPRESA PERSONALIZADA
+		 * 
+		 */
+		String sql = "SELECT tc_action.idAction from tc_action where actionPrincipal in(1,2,3)";
 		
 		try {	
 			ArrayList<Object> arrReturnDAO = ConexionDao.doConexionSet(sql, complemento);
