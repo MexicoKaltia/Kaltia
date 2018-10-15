@@ -20,7 +20,7 @@
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>
 	
 	<!-- ################################################################################################ -->
-
+<input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
 <%-- 	<span id="headerSeccion1_valores" hidden="true">  --%>
 <%-- 	<s:property value='header.headerSeccion1' /> --%>
 <%-- 	</span> --%>

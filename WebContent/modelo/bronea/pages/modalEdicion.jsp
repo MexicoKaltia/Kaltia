@@ -255,11 +255,9 @@
 						    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
 						  </ol>	  
 						  <div class="carousel-inner">
-<%-- 						  		<script type="text/javascript">var contaObjetoBodySeccionArray1 = <s:property value='0'/></script> --%>
        						    <s:set var="conta" value="0" />
 						        <s:subset source="body.bodySeccionArray1" start="1">  
-    							<s:iterator  var ="bodySeccionArray1">
-						  
+    							<s:iterator  var ="bodySeccionArray1">			  
 							  	<s:if test="#conta == 0">
     								<div class="carousel-item active">
 								</s:if>

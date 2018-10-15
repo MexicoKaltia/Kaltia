@@ -64,7 +64,10 @@
 		// fin actionProd
 		
 		$.action = action[3];
-		console.log(action[3]);
+		console.log("Action:"+action[3]);
+		
+		$.idEmpresa = $("#idEmpresa").val()
+		console.log("idEmpresa:"+$.idEmpresa);
 		
 		if (results == null){
 			_desactiveSeccionEdicion();
@@ -105,7 +108,7 @@
 					$('div.footerSeccionArray4').addClass("edicion")
 					$('div.footerSeccionArray5').addClass("edicion")
 		    	$.param = decodeURI(results[1]);
-		    		console.log($.param);
+//		    		console.log($.param);
 		    	return $.param;
 		    	}
 		    	else{
@@ -491,9 +494,9 @@
 	 */
 	//https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
 	
-	$(function() {
-		$("#upload-file-input").on("change", uploadFile);
-	});
+//	$(function() {
+//		$("#upload-file-input").on("change", uploadFile);
+//	});
 	
 //	$('#btnCloseFile').click(function(){
 //		$("div.alerta_file > div").remove();
@@ -549,8 +552,6 @@
 		$.seccionCampos="";
 			
 		console.log("cargarModal : "+seccion+modelo);
-//		action = "action";
-//		seccion = "seccion";
 		$.seccionCampos = estructuraSeccion(seccion+modelo);
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
@@ -593,18 +594,18 @@
 	
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
-		console.log(seccionEmpresa);
-		console.log(contaObjeto);
+//		console.log(seccionEmpresa);
+//		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
 		var valorStringObjeto ="";
 		var finalJson ="";
 		if(contaObjeto > 0){
 			for(campo in seccionEmpresa){
-				console.log(campo)
+//				console.log(campo)
 				if(campo.includes("imagen")){
 					var nombre = $("#upload-file-inputBody").val().split('\\');
-					console.log(nombre[nombre.length-1])
+//					console.log(nombre[nombre.length-1])
 					valoresString = valoresString + nombre[nombre.length-1] + "&&"
 				}else if (campo.includes("objeto")){				
 					if(valoresString.length > 0){
@@ -628,10 +629,10 @@
 			}	
 		}else{
 			for(campo in seccionEmpresa){
-				console.log(campo)
+//				console.log(campo)
 				if(campo.includes("imagen")){
 					var nombre = $("#upload-file-inputBody").val().split('\\');
-					console.log(nombre[nombre.length-1])
+//					console.log(nombre[nombre.length-1])
 					valoresString = valoresString + nombre[nombre.length-1] + "++"
 				}else{
 //					console.log($("#"+campo).val())
@@ -641,7 +642,7 @@
 			valoresString = valoresString.slice(0,valoresString.length-2)
 		}
 		
-		console.log(valoresString);
+//		console.log(valoresString);
 		return valoresString ;
 		
 	}
@@ -655,9 +656,9 @@
 					context = context + campo +"/"
 				}
 			}
-			console.log(url + context)
+//			console.log(url + context)
 			$.ajax({
-			   	  url: url + context,//+finalJson.action+"/"+finalJson[1],
+			   	  url: url +"/edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
@@ -666,8 +667,13 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
+					  if(data.codigo===0){
 					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
 						$(alerta).insertAfter($('.alerta_in'));
+					  }else{
+						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+							$(alerta).insertAfter($('.alerta_in'));
+					  }
 					},
 				  error: function(){
 					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";

@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-	
+	 $.modelo = "Bronea";	
 /////////////
 	/*
 	 *   Secciones   *
 	 */
 /////////////
-	 $.modelo = "Bronea";
-	
 	$('.headerSeccion1').click(function(){
+		console.log("idEmpresa:"+idEmpresa);
 		if(validaParam()){
 			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
@@ -21,7 +20,9 @@ $(document).ready(function() {
 				}
 				
 				finalJson = { action : $.action,
-							"headerSeccion1" : valoresFinales }
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "headerSeccion1",
+							 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -39,7 +40,9 @@ $(document).ready(function() {
 			$('#modalEdicionHeaderSeccion2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				finalJson = { action : $.action,
-							"headerSeccion2" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "headerSeccion2",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -80,7 +83,9 @@ $(document).ready(function() {
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				finalJson = { action : $.action,
-							"headerSeccion4" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "headerSeccion4",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -98,7 +103,9 @@ $(document).ready(function() {
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
 				console.log($.action)
 				finalJson = { action : $.action,
-							"bodySeccionArray1" : valoresFinales }
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "bodySeccionArray1",
+							 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -115,7 +122,9 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
 				finalJson = { action : $.action,
-							"bodySeccionArray2" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray2",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -132,7 +141,9 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
 				finalJson = { action : $.action,
-							"bodySeccionArray3" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray3",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -148,7 +159,9 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				finalJson = { action : $.action,
-							"bodySeccion1" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccion1",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -164,7 +177,9 @@ $(document).ready(function() {
 			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray4);
 				finalJson = { action : $.action,
-							"bodySeccionArray4" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray4",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -181,7 +196,9 @@ $(document).ready(function() {
 			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				finalJson = { action : $.action,
-							"footerSeccion1" : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccion1",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
