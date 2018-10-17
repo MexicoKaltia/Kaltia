@@ -289,7 +289,7 @@
 	    		      </div>
 			      <!-- fin carrusel -->
 			      <div class="one_half">
-			      <img class="inspace-10 borderedbox" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
+			      <img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
     				<form id="upload-file-form">
 						<div class="alertaBody_file">
 							<hiden class="alertaBody_inFile"></hiden>
@@ -416,7 +416,7 @@
 								<s:else>
    									<div class="carousel-item">
 								</s:else>
-		 				        	<article class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> 
+		 				        	<article class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');"> 
 						<%-- 		identificar secciones
 									<%--<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%> 
 		 				          		<h6 class="heading font-x1"> 
@@ -542,7 +542,7 @@
 								<%-- identificar Secciones
 								       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
 								       	
-								       	<img class="btmspace-30" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>">
+								       	<img class="btmspace-30" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>">
 								        	<h3 class="heading"><input type="text" id="tituloObjetoBSA4<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray4.objetoVO.get(3)'/>"/></h3>
 								        	<p><textarea class='form-control' id="descripcionObjetoBSA4<s:property value='#conta'/>"><s:property value='#bodySeccionArray4.objetoVO.get(4)'/></textarea>&hellip;</p>
 								        <footer class="nospace">

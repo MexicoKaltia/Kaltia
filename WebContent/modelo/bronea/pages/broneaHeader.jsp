@@ -10,7 +10,8 @@
 <body id="top">
 
 	<!-- Top Background Image Wrapper -->
-	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');">
+<%-- 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> --%>
+	<div class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(4)'/>?v=1');">
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
 				<div class="fl_left headerSeccion1">
@@ -39,7 +40,8 @@
 			<header id="header" class="hoc clear">
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
-					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
+<%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
+						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
 			           <s:property value='header.idEmpresa'/>
 			      	</a></h1>     
 				</div>

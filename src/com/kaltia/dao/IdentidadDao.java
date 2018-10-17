@@ -52,7 +52,7 @@ public class IdentidadDao {
 
 		String sql = "SELECT idAction, idEmpresa, actionEstilo,"
 				+ "headerRequerido, bodyRequerido, leftRequerido, rigthRequerido, footerRequerido, "
-				+ "actionPrincipal , actionSeccion1, actionSeccion2, actionPrincipal" +
+				+ "actionPrincipal , actionSeccion1, actionSeccion2, actionPrincipal, ambiente" +
 				"  FROM tc_action  " +
 				" WHERE idAction = ? ";
 
@@ -71,7 +71,7 @@ public class IdentidadDao {
 				identidadVO.setActionSeccion1(returnDAO.get(9) != null ? ComunResolution.arrayUno(returnDAO.get(9).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				identidadVO.setActionSeccion2(returnDAO.get(10) != null ? ComunResolution.arrayUno(returnDAO.get(9).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				identidadVO.setActionPrincipal(returnDAO.get(11) != null ? returnDAO.get(11).toString() : "01");
-				
+				identidadVO.setAmbiente(returnDAO.get(12) != null ? returnDAO.get(12).toString() : "NA"); 
 				identidadVO.setIdAction(action);
 				identidadVO.setCodigoVO("00");
 				//instIdentidadDao.setIdAction(instIdentidadDao.getAction());

@@ -494,9 +494,9 @@
 	 */
 	//https://www.mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/
 	
-//	$(function() {
-//		$("#upload-file-input").on("change", uploadFile);
-//	});
+	$(function() {
+		$("#upload-file-input").on("change", uploadFile);
+	});
 	
 //	$('#btnCloseFile').click(function(){
 //		$("div.alerta_file > div").remove();
@@ -517,7 +517,7 @@
 		console.log("envio imagen:"+tipo);
 		  $.ajax({
 //		    url: "http://localhost:8010/fileUpload",
-			  url: "http://31.220.60.92:8010/fileUpload",
+			  url: "http://31.220.60.92:8010/fileUpload/"+$.idEmpresa,
 		    type: "POST",
 		    data: new FormData($("#upload-file-form")[0]),
 		    enctype: 'multipart/form-data',
@@ -658,7 +658,7 @@
 			}
 //			console.log(url + context)
 			$.ajax({
-			   	  url: url +"/edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			   	  url: url +"edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
@@ -699,7 +699,7 @@
 				console.log("envio imagenBody");
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
-					  url: "http://31.220.60.92:8010/fileUpload",
+					  url: "http://31.220.60.92:8011/fileUpload/"+$.idEmpresa,
 				    type: "POST",
 				    data: new FormData($("#upload-file-form")[0]),
 				    enctype: 'multipart/form-data',
@@ -707,9 +707,14 @@
 				    contentType: false,
 				    cache: false,
 				    success: 	function(data){
+				    	if(data.codigo===0){
 						  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
 							$(alerta).insertAfter($('.alertaBody_inFile'));
-							console.log("imagen enviada:"+tipo);
+				    	}else{
+				    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+							$(alerta).insertAfter($('.alertaBody_inFile'));
+				    	}
+//							console.log("imagen enviada:"+tipo);
 						},
 				    error: function () {
 				    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";

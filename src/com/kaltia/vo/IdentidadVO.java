@@ -20,9 +20,16 @@ public class IdentidadVO extends BaseVO implements Serializable {
 	private String actionPrincipal;
 	private ArrayList<String> actionSeccion1;
 	private ArrayList<String> actionSeccion2;
+	private String ambiente;
 	
 	
 	
+	public String getAmbiente() {
+		return ambiente;
+	}
+	public void setAmbiente(String ambiente) {
+		this.ambiente = ambiente;
+	}
 	public String getActionPrincipal() {
 		return actionPrincipal;
 	}
