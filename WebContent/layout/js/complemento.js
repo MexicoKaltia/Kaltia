@@ -707,7 +707,7 @@
 				    contentType: false,
 				    cache: false,
 				    success: 	function(data){
-				    	if(data.codigo===0){
+				    	if(data.codigo==="00"){
 						  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
 							$(alerta).insertAfter($('.alertaBody_inFile'));
 				    	}else{
