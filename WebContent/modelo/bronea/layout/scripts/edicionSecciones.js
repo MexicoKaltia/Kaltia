@@ -54,6 +54,25 @@ $(document).ready(function() {
 	});
 	$('.headerSeccion3').click(function(){
 		if(validaParam()){
+			
+			$.seccionCampos = cargaModal("headerSeccion3", "");
+			$('#modalEdicionHeaderSeccion3_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "headerSeccion3",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	$('.headerSeccion33').click(function(){
+		if(validaParam()){
 //			console.log("param:"+$.param)
 			action = "action";
 			seccion = "seccion";
