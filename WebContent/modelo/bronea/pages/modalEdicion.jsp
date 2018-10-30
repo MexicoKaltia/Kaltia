@@ -20,7 +20,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccion1</h5>
 				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalbtnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
 				<div class="alerta">
@@ -111,13 +111,13 @@
 				    <div class="row">
 			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-phone"></i>Telefono</span>
 			          <div class="col-md-8">
-						<input type="text" id="telefonoHS2" value="<s:property value='header.headerSeccion2.get(0)' />"/> 
+						<input type="number" id="telefonoHS2" value="<s:property value='header.headerSeccion2.get(0)' />"/> 
 			          </div>
 			        </div>
 			        <div class="row">
 			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Correo</span>
 			          <div class="col-md-8">
-						<input type="text" id="emailHS2" value="<s:property value='header.headerSeccion2.get(1)' />"/>
+						<input type="email" id="emailHS2" value="<s:property value='header.headerSeccion2.get(1)' />"/>
 			          </div>
 			        </div>
 			</div>
@@ -132,12 +132,12 @@
 <!-- fin modalEdicion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
-<!-- modalHeaderSeccion3 -->
-<div class="modal fade" id="modalEdicion_headerSeccion3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- modalheaderSeccionArray5 -->
+<div class="modal fade" id="modalEdicion_headerSeccionArray5Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccion3</h5>
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccionArray5</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
@@ -151,13 +151,7 @@
 				    <div class="row">
 			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-phone"></i>Titulo Pagina</span>
 			          <div class="col-md-8">
-						<input type="text" id="tituloHS3" value="<s:property value='header.headerSeccion3.get(0)' />"/> 
-			          </div>
-			        </div>
-			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Enlaces Secciones</span>
-			          <div class="col-md-8">
-						<input type="text" id="enlacesSeccionesHS3" value="<s:property value='header.headerSeccion3.get(0)' />"/>
+						<input type="text" id="tituloHSA5" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(0)' />"/> 
 			          </div>
 			        </div>
 			        <div class="row">
@@ -202,16 +196,27 @@
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Varios</span>
-			          <div class="col-md-8">
-						<textarea class="form-control" id="variosHS3" name="variosHS3" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"><s:property value='header.headerSeccion3.get(2)' /></textarea>
+			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Titulo Secciones Separar por | </span>
+<!-- 			          <div class="col-md-8"> -->
+<!--						<textarea class="form-control" id="variosHS3" name="variosHS3" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"><s:property value='header.headerSeccion3.get(2)' /></textarea> -->
+<!-- 			          </div> -->
+ 					  <div class="col-md-8">				
+						<s:set var="seccion" value="0" />
+			            <s:subset source="header.headerSeccionArray5" start="1">  
+	    				<s:iterator  var ="headerSeccionArray5">
+	    				<s:iterator  value ="#headerSeccionArray5.objetoVO">
+			         	 <li><input type="text" id="enlaceHSA5<s:property value="#seccion"/>" value="<s:property />"/></li>
+			         	 <s:set var="seccion" value="#seccion+1" />
+			         	 </s:iterator>
+			            </s:iterator>
+	          			</s:subset> 
 			          </div>
 			        </div>
 			</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccion3_btnSave">Guardar Cambios</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccionArray5_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
@@ -718,37 +723,7 @@
 		</div>
 	</div>
 </div>
-<!-- fin modalEdicion -->
-<!--**********************************************************************************-->
-<!--**********************************************************************************-->
-<!--**********************************************************************************-->
-<!-- modalEdicionUbicacion -->
-<div class="modal fade" id="modalUbicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Ubicacion</h5>
-				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicion_btnClose">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-		 	<!--**********************************************************************************-->
-			<div class="modal-body">
-				<div class="container-fluid">
-					<iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</div>
-			</div>
-			<!--**********************************************************************************-->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"
-					id="modalEdicion_btnClose">Cerrar</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- fin modalEdicion -->
+<!-- fin modalFooterSeccion1 -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
@@ -772,6 +747,37 @@
 		</div>
 	</div>
 </div>
+<!-- FIN modalFile -->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!-- modalEdicionUbicacion -->
+<div class="modal fade" id="modalUbicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content"
+			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Ubicacion</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		 	<!--**********************************************************************************-->
+			<div class="modal-body">
+				<div class="container-fluid">
+					<iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<!--**********************************************************************************-->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modal_btnClose">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicionUbicacion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
@@ -783,7 +789,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Registro Cliente</h5>
 				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicion_btnClose">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -839,13 +845,13 @@
 		      </div>
 		      <!--**********************************************************************************-->
 			<div class="modal-footer">
-				<a href="#" data-dismiss="modal" class="btn" id="btnCloseRegistro">Cerrar</a>
+				<a href="#" data-dismiss="modal" class="btn" id="modal_btnClose">Cerrar</a>
 				<a href="#" class="btn btn-primary" id="btnSaveRegistro">Guardar</a>
 			</div>
 		</div>
 	</div>
 </div>
-
+<!-- FIN modalREGISTRO -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
@@ -857,7 +863,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Contacto</h5>
 				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicion_btnClose">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -899,13 +905,13 @@
 		      </div>
 		      <!--**********************************************************************************-->
 			<div class="modal-footer">
-				<a href="#" data-dismiss="modal" class="btn" id="btnCloseContacto">Cerrar</a>
+				<a href="#" data-dismiss="modal" class="btn" id="modal_btnClose">Cerrar</a>
 				<a href="#" class="btn btn-primary" id="btnSaveContacto">Guardar</a>
 			</div>
 		</div>
 	</div>
 </div>
-
+<!-- modalContacto -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
@@ -917,7 +923,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Contacto</h5>
 				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicion_btnClose">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -927,12 +933,13 @@
 		    </div>
 		    <!--**********************************************************************************-->
 			<div class="modal-footer">
-				<a href="#" data-dismiss="modal" class="btn" id="btnCloseContacto">Cerrar</a>
+				<a href="#" data-dismiss="modal" class="btn" id="modal_btnClose">Cerrar</a>
 				<a href="#" class="btn btn-primary" id="btnSaveContacto">Guardar</a>
 			</div>
 		</div>
 	</div>
 </div>
+<!-- FIN modalCita -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->

@@ -14,10 +14,11 @@
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.flexslider-min.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/sss/sss.min.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.easypiechart.min.js"></script>
-
-	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
-	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+<%-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> --%>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
+	
 	
 	<!-- ################################################################################################ -->
 <input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />

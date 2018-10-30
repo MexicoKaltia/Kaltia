@@ -8,9 +8,18 @@ hr {
   height: 1px;
   color: red;
 }
+#headerSeccionArray5.nav-overlay{
+	position: fixed;
+	padding: 0 0;
+	heigth:50px !important;
+	 z-index:10100;
+}
+.headerSeccion1{
+/* 	color:red; */
+}
 
 .edicion:hover{
-	 background-color: yellow;
+	 background-color: red;
 	}
 
 .labelModal{

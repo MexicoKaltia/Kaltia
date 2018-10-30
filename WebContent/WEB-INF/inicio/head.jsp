@@ -2,7 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<html lang="">
+<html lang="es">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <meta charset="utf-8">
@@ -12,9 +12,9 @@
 
 <link href="<%=request.getContextPath()%>/layout/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="<%=request.getContextPath()%>/layout/css/edicion.css" rel="stylesheet" type="text/css" media="all">
+<%-- <link href="<%=request.getContextPath()%>/layout/css/complemento.css" rel="stylesheet" type="text/css" media="all"> --%>
 <link href="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <%-- <link href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/css/complemento.css" rel="stylesheet" type="text/css" media="all"> --%>
 
 
 </head>
-</html>

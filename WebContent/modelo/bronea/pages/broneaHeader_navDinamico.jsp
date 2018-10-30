@@ -5,7 +5,7 @@
 
 
 
-<html lang="es">
+<html lang="">
 <!-- ################################################################################################ -->
 <body id="top">
 
@@ -19,7 +19,7 @@
 						<li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
 						<s:iterator value='header.headerSeccion1' var="menu2Value">
 							<li><a
-								<%--    Identificando secciones
+<%--    Identificando secciones
  							    	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
 									data-toggle="modal" data-target="#modal<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
 									<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
@@ -27,7 +27,6 @@
 						</s:iterator>
 					</ul>
 				</div>
-				
 				<div class="fl_right headerSeccion2">
 					<ul class="nospace">
 						<li><i class="fa fa-phone"></i> <s:property value='header.headerSeccion2.get(0)' /></li>
@@ -37,31 +36,56 @@
 			</div>
 		</div>
 <!-- ################################################################################################ -->
-		<div class="wrapper row1 headerSeccionArray5 " id="headerSeccionArray5"> 
-	    <header id="header" class="hoc clear">
+		<div class="wrapper row1 headerSeccion3">
+			<header id="header" class="hoc clear">
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
 <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
-						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.objetoVO.get(3)'/>?v=1" alt="">
+						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
 			           <s:property value='header.idEmpresa'/>
 			      	</a></h1>     
 				</div>
+				<s:set var="idEmpresa" value="header.idEmpresa" />
+
 				<nav id="mainav" class="fl_right">
-				<ul class="clear">
-		          <li class="active"><a href="#">Home</a></li>
-		          <s:set var="seccion" value="1" />
-		            <s:subset source="header.headerSeccionArray5" start="1">  
-    				<s:iterator  var ="headerSeccionArray5">
-    				<s:iterator  value ="#headerSeccionArray5.objetoVO">
-		         	 <li><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
-		         	 <s:set var="seccion" value="#seccion+1" />
-		         	 </s:iterator>
-		            </s:iterator>
-          			</s:subset>
-		        </ul>
+					<ul class="clear">
+						<li class="active"><a href="<%=request.getContextPath() + "/"%><s:property value='identidadVO.action'/>"><s:property value="#idEmpresa" /></a></li>
+						<s:iterator value='header.headerMenu.menu' var="menuValue">
+<%--    Identificar secciones
+ 							<li><a class="drop" href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuValue.substring(#menuValue.lastIndexOf(".")+1,#menuValue.length())'/>"> --%>
+							<li><a class="drop" href="<s:property value='identidadVO.idAction'/><s:property value='#menuValue.substring(#menuValue.lastIndexOf(".")+1,#menuValue.length())'/>"> 
+							<s:property value='#menuValue.substring(0,#menuValue.indexOf("."))' /></a>
+								<ul>
+									<s:iterator value='header.headerMenu.subMenu' var="menuValueSub">
+										<s:if test="#menuValue == #menuValueSub.menu">
+											<s:iterator value='#menuValueSub.subMenu' var="menuSub">
+<%--  Identificar secciones
+												<li><a class="drop" href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuSub.substring(#menuSub.lastIndexOf(".")+1,#menuSub.length())'/>"> --%>
+												<li><a class="drop" href="<s:property value='identidadVO.idAction'/><s:property value='#menuSub.substring(#menuSub.lastIndexOf(".")+1,#menuSub.length())'/>"> 
+												<s:property value ='#menuSub.substring(0,#menuSub.indexOf("."))'/></a>
+													<ul>
+													<s:iterator value="header.headerMenu.subSubMenu" var="menuValueSubSub">
+															<s:if test="#menuSub == #menuValueSubSub.menuSub">
+																<s:iterator value="#menuValueSubSub.subSubMenu" var="menuSubSub">
+<%-- Identificar secciones
+																	<li><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuSubSub.substring(#menuSubSub.lastIndexOf(".")+1,#menuSubSub.length())'/>"> --%>
+																	<li><a href="<s:property value='identidadVO.idAction'/><s:property value='#menuSubSub.substring(#menuSubSub.lastIndexOf(".")+1,#menuSubSub.length())'/>">
+																	<s:property value ='#menuSubSub.substring(0,#menuSubSub.indexOf("."))'/></a></li>
+																</s:iterator>
+															</s:if>
+														</s:iterator>
+
+													</ul>
+												</li>
+											</s:iterator>
+										</s:if>
+									</s:iterator>
+								</ul></li>
+						</s:iterator>
+					</ul>
 				</nav>
 			</header>
-  </div>
+		</div>
 		<!-- ################################################################################################ -->
 		<div class="wrapper">
 		<a  id="seccion1"></a>
@@ -96,4 +120,6 @@
 		</div>
 	</div>
 </body>
+
+
 </html>
