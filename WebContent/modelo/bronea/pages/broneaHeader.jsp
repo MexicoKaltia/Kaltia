@@ -11,7 +11,7 @@
 
 	<!-- Top Background Image Wrapper -->
 <%-- 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> --%>
-	<div class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(4)'/>?v=1');">
+	<div class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
 				<div class="fl_left headerSeccion1">
@@ -42,7 +42,7 @@
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
 <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
-						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.objetoVO.get(3)'/>?v=1" alt="">
+						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="">
 			           <s:property value='header.idEmpresa'/>
 			      	</a></h1>     
 				</div>
@@ -84,10 +84,10 @@
 			          <ul class="nospace inline pushright">
 <%-- Identificar Secciones
 			            <li><a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
-						<li><a class="btn inverse" href="<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li>
+						<li><a class="btn inverse" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li>
 <%-- Identificar Secciones
 			            <li><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li> --%>
-			            <li><a class="btn" href="<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li>
+			            <li><a class="btn" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li>
 			          </ul>
 		        </footer>
 

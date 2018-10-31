@@ -614,7 +614,7 @@
 	
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
-		console.log(seccionEmpresa);
+//		console.log(seccionEmpresa);
 //		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
@@ -623,7 +623,7 @@
 		if(contaObjeto > 0){
 			for(campo in seccionEmpresa){
 //				console.log(campo)
-				if(campo.includes("imagen")){
+				if(campo.includes("imagex")){
 					var nombre = $("#upload-file-inputBody").val().split('\\');
 //					console.log(nombre[nombre.length-1])
 					valoresString = valoresString + nombre[nombre.length-1] + "&&"
@@ -650,7 +650,7 @@
 		}else{
 			for(campo in seccionEmpresa){
 //				console.log(campo)
-				if(campo.includes("imagen")){
+				if(campo.includes("imagex")){
 					var nombre = $("#upload-file-inputBody").val().split('\\');
 //					console.log(nombre[nombre.length-1])
 					valoresString = valoresString + nombre[nombre.length-1] + "++"
@@ -702,10 +702,9 @@
 				});
 		}
 		
-		$('#upload-file-inputBody').on('change', function(){
-			/*
+		
+			/***********************************************************************************************************************************
 			 * toogle para activar el control de formulario de carga de imagen
-			 * 
 			 * 
 			 		<form id="upload-file-form">
 						<div class="alerta_file">
@@ -716,12 +715,18 @@
 					</form>
 			 * 
 			 */
-				console.log("envio imagenBody");
+		
+		//  $('#upload-file-inputBody').on('change', function(){ enviaImagen(idImagenForm)});  <--Ejemplo de funcion que hace llamado a la carga de imagen desde edicionSecciones.js
+		
+		function enviaImagen(idImagenForm){
+				console.log("Comineza envio imagenBody");
+				var alerta="";
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
-					  url: "http://31.220.60.92:8011/fileUpload/"+$.idEmpresa,
+    				url: "http://31.220.60.92:8011/fileUpload/"+$.idEmpresa,
 				    type: "POST",
-				    data: new FormData($("#upload-file-form")[0]),
+//				    data: new FormData($("#upload-file-form")[0]),
+				    data: new FormData($("#"+idImagenForm)[0]),
 				    enctype: 'multipart/form-data',
 				    processData: false,
 				    contentType: false,
@@ -729,17 +734,17 @@
 				    success: 	function(data){
 				    	if(data.codigo==="00"){
 						  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alertaBody_inFile'));
+						  $(alerta).insertAfter($('.'+idImagenForm));
+						  console.log("envio ok");
 				    	}else{
 				    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alertaBody_inFile'));
-				    	}
-//							console.log("imagen enviada:"+tipo);
-						},
+				    		console.log("envio Nok");
+				    	} },
 				    error: function () {
 				    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
-						$(alerta).insertAfter($('.alertaBody_inFile'));
+				    	console.log("envio error");
 				    }
 				  });
-		});
+				  $(alerta).insertAfter($('.'+idImagenForm));
+		}
 	

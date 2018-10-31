@@ -12,8 +12,8 @@ $(document).ready(function() {
 			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoHeaderSeccion1);
-				console.log(valoresFinales)
-				var headerSeccion1Array = "";
+//				console.log(valoresFinales)
+//				var headerSeccion1Array = "";
 				var tmp = valoresFinales.split("\++"); 
 				for(i=0; i<tmp.length;i++){
 					valoresFinales = valoresFinales.replace("&&", ".")
@@ -114,12 +114,27 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
+	
+	/*
+	 *  Funciones de carga Imagenes 
+	 */
 	$('.headerSeccionArray5').click(function(){
 		if(validaParam()){
 			
 			$.seccionCampos = cargaModal("headerSeccionArray5",$.modelo);
+			
+			$('#iconoHSA5').on('change', function(){ enviaImagen("iconoHSA5Form") });
+			$('#logoHSA5').on('change', function(){ enviaImagen("logoHSA5Form") });
+			$('#fondoHeaderHSA5').on('change', function(){ enviaImagen("fondoHeaderHSA5Form") });
+
 			$('#modalEdicionHeaderSeccionArray5_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 6);
+				valoresFinales = dataEdicion($.seccionCampos, 6);  // <-- son seis secciones en el modelo bronea
+				
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+				
+				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "headerSeccionArray5",
@@ -137,9 +152,35 @@ $(document).ready(function() {
 	$('.bodySeccionArray1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccionArray1",$.modelo);
+			
+			$('#imagenBSA1').on('change', function(){ enviaImagen("imagenBSA1Form") });
+			
 			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
-				console.log($.action)
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+				//Ordena valoresFinales
+				var tmp0 = "";
+				var tmp1 = valoresFinales.split("\++");
+				valoresFinales = tmp1[0] + "\++"
+				for(i=1; i<tmp1.length;i++){
+					tmp0 = tmp1[i].split("\&&")
+					if(i===1){	
+						tmp0[0] = "one_half first";
+						tmp0[1] = "#";
+						tmp0[2] = "btmspace-30 fa fa-4x fa-joomla";
+					}
+					else{
+						tmp0[0] = "one_half";
+						tmp0[1] = "#";
+						tmp0[2] = "btmspace-30 fa fa-4x fa-institution";
+					}
+					valoresFinales = valoresFinales+tmp0[0]+"\&&"+tmp0[1]+"\&&"+tmp0[2]+"\&&"+tmp0[3]+"\&&"+tmp0[4]+"\++"
+				}
+				valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)
+				
+//				console.log(valoresFinales)
 				finalJson = { action : $.action,
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "bodySeccionArray1",

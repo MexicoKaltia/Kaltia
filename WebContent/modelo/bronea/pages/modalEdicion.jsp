@@ -44,13 +44,13 @@
 								</s:else>
 										<li>
 										    <div class="row">
-									          <span class="col-md-2 col-md-offset-2 text-left">Titulo</span>
+									          <span class="col-md-4 col-md-offset-4 text-left">Titulo</span>
 									          <div class="col-md-8">
 									            <input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />"/>
 									          </div>
 									        </div>
 									        <div class="row">
-									          <span class="col-md-2 col-md-offset-2 text-left">Referencia</span>
+									          <span class="col-md-4 col-md-offset-4 text-left">Referencia</span>
 									          <div class="col-md-8">
 											<select class="form-control" id="enlaceObjetoHS1<s:property value='#conta'/>">
 												  <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
@@ -109,13 +109,13 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 				    <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-phone"></i>Telefono</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Telefono</span>
 			          <div class="col-md-8">
 						<input type="number" id="telefonoHS2" value="<s:property value='header.headerSeccion2.get(0)' />"/> 
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Correo</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Correo</span>
 			          <div class="col-md-8">
 						<input type="email" id="emailHS2" value="<s:property value='header.headerSeccion2.get(1)' />"/>
 			          </div>
@@ -134,7 +134,7 @@
 <!--**********************************************************************************-->
 <!-- modalheaderSeccionArray5 -->
 <div class="modal fade" id="modalEdicion_headerSeccionArray5Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccionArray5</h5>
@@ -149,57 +149,49 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 				    <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-phone"></i>Titulo Pagina</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Titulo Pagina</span>
 			          <div class="col-md-8">
 						<input type="text" id="tituloHSA5" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(0)' />"/> 
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Icono</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Icono</span>
 			          <div class="col-md-8">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(1)' />" alt="<s:property value='header.headerSeccion3.get(1)' />">
-	    				<form id="upload-file-form">
-							<div class="alertaBody_file">
-								<hiden class="alertaBody_inFile"></hiden>
-							</div>
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />">
+<!-- 	    				<form id="upload-file-form"> -->
+							<form id="iconoHSA5Form">
+							<hiden class="iconoHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="upload-file-inputBody" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="iconoHSA5" type="file" name="uploadfile" accept="image/jpeg" />
 		    			</form>
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Logotipo</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Logotipo</span>
 			          <div class="col-md-8">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(1)' />" alt="<s:property value='header.headerSeccion3.get(3)' />">
-	    				<form id="upload-file-form">
-							<div class="alertaBody_file">
-								<hiden class="alertaBody_inFile"></hiden>
-							</div>
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />">
+	    				<form id="logoHSA5Form">
+							<hiden class="logoHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="upload-file-inputBody" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="logoHSA5" type="file" name="uploadfile" accept="image/jpeg" />
 		    			</form>
 
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Imagen Fondo</span>
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen Fondo</span>
 			          <div class="col-md-8">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccion3.get(1)' />" alt="<s:property value='header.headerSeccion3.get(4)' />">
-	    				<form id="upload-file-form">
-							<div class="alertaBody_file">
-								<hiden class="alertaBody_inFile"></hiden>
-							</div>
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />">
+	    				<form id="fondoHeaderHSA5Form">
+								<hiden class="fondoHeaderHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="upload-file-inputBody" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="fondoHeaderHSA5" type="file" name="uploadfile" accept="image/jpeg" />
 		    			</form>
 
 			          </div>
 			        </div>
 			        <div class="row">
-			          <span class="col-md-2 col-md-offset-2 text-left"><i class="fa fa-envelope-o"></i>Titulo Secciones Separar por | </span>
-<!-- 			          <div class="col-md-8"> -->
-<!--						<textarea class="form-control" id="variosHS3" name="variosHS3" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"><s:property value='header.headerSeccion3.get(2)' /></textarea> -->
-<!-- 			          </div> -->
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Titulo Secciones Separar por | </span>
  					  <div class="col-md-8">				
 						<s:set var="seccion" value="0" />
 			            <s:subset source="header.headerSeccionArray5" start="1">  
@@ -341,24 +333,38 @@
 				</div>
 			</div>
  			<!--**********************************************************************************-->
- 			<main class="hoc container clear"> 
 			    <!-- main body -->
-			    <div class="sectiontitle">
-			      <h6 class="heading"><input type="text" id="tituloBSA1" value=<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)' /> /></h6>
-			      <p><input type="text" id="subTituloBSA1" value="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(1)'/>" /></p>
-			    </div>
+			<div class="modal-body">
+			    	<div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Titulo Seccion</span>
+			          <div class="col-md-8">
+						<input type="text" id="tituloBSA1" value=<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)' /> />
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Subtitulo Seccion</span>
+			          <div class="col-md-8">
+						<input type="text" id="subTituloBSA1" value="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(1)'/>" />
+			          </div>
+			        </div>
+			    
 			    <div class="group">
-			      <div class="one_half first">
-			        <p><textarea class='form-control' id="descripcion1BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></textarea></p>
-			        <p class="btmspace-50"><textarea class='form-control' id="descripcion2BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(3)' /></textarea></p>
-			        <!-- carrusel -->
-			        <div id="carouselExampleIndicators2" class="carousel slide">
-						  <ol class="carousel-indicators">
-						    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-						    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-						    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-						  </ol>	  
-						  <div class="carousel-inner">
+			      
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Descripcion 1</span>
+			          <div class="col-md-8">
+						<textarea class='form-control' id="descripcion1BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></textarea>
+			          </div>
+			        </div>
+			          <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Descripcion 2</span>
+			          <div class="col-md-8">
+						<textarea class='form-control' id="descripcion2BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(3)' /></textarea>
+			          </div>
+			        </div>
+			        			        <!-- carrusel -->
+			        <div id="carouselExampleIndicators2" class="carousel slide" data-interval="false">
+			        	<div class="carousel-inner container">
        						    <s:set var="conta" value="0" />
 						        <s:subset source="body.bodySeccionArray1" start="1">  
     							<s:iterator  var ="bodySeccionArray1">			  
@@ -368,42 +374,59 @@
 								<s:else>
    									<div class="carousel-item">
 								</s:else>
-									<article>
-										<a href="#">
-											<i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
-										<h6 class="heading font-x1"><input type="text" id="tituloObjetoBSA1<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
-										<p><textarea class='form-control' id="descripcionObjetoBSA1<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
-									</article>
-									</div>
-									
+								<section>
+						        <div class="row">
+						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Icono</span>
+						          <div class="col-md-8">
+									<i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i>
+						          </div>
+						        </div>
+						        <div class="row">
+						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Titulo Objeto</span>
+						          <div class="col-md-8">
+									<input type="text" id="tituloObjetoBSA1<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/>
+						          </div>
+						        </div>
+						        <div class="row">
+						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Descripcion Objeto</span>
+						          <div class="col-md-8">
+									<textarea class='form-control' id="descripcionObjetoBSA1<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea>
+						          </div>
+						        </div>
+						        </section>
+						   	</div>
 								<s:set var="conta" value="#conta+1" />
 				      			</s:iterator>
 				      			</s:subset>
 				      			<script type="text/javascript">var contaObjetoBodySeccionArray1 = <s:property value='#conta'/></script>
-						  <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Previous</span>
-						  </a>
-						  <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Next</span>
-						  </a>
+				      	</div>
+				      	<div class="controls-top">	
+						  <a class="btn-floating" href="#carouselExampleIndicators2"  data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+						  <a class="btn-floating" href="#carouselExampleIndicators2"  data-slide="next"><i class="fa fa-chevron-right"></i></a>
 						</div>
-    			       </div>
-	    		      </div>
-			      <!-- fin carrusel -->
-			      <div class="one_half">
-			      <img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
-    				<form id="upload-file-form">
-						<div class="alertaBody_file">
-							<hiden class="alertaBody_inFile"></hiden>
-						</div>
-						<label for="upload-file-input">Actualiza imagen:</label> 
-						<input id="upload-file-inputBody" type="file" name="uploadfile" accept="image/jpeg" />
-	    			</form>
-			      </div>
-			    </div>
-			  </main> 			
+						  <ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+						  </ol>	  
+   			       </div> 	<!-- fin carrusel -->
+
+			      <br />
+			      <br />
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
+			          <div class="col-md-8">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(5)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(5)' />">
+						<form id="imagenBSA1Form">
+							<hiden class="imagenBSA1Form"></hiden>
+							<label for="imagenBSA1">Actualiza imagen:</label> 
+							<input id="imagenBSA1" type="file" name="uploadfile" accept="image/jpeg" />
+		    			</form>
+			          </div>
+			        </div>
+			      
+
+		  </div>	<!-- end bodymodal -->	
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"
