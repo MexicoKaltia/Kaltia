@@ -157,30 +157,11 @@ $(document).ready(function() {
 			
 			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
-				while(valoresFinales.includes("C:\\fakepath\\") ){
-					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
-				}
-				//Ordena valoresFinales
-				var tmp0 = "";
-				var tmp1 = valoresFinales.split("\++");
-				valoresFinales = tmp1[0] + "\++"
-				for(i=1; i<tmp1.length;i++){
-					tmp0 = tmp1[i].split("\&&")
-					if(i===1){	
-						tmp0[0] = "one_half first";
-						tmp0[1] = "#";
-						tmp0[2] = "btmspace-30 fa fa-4x fa-joomla";
-					}
-					else{
-						tmp0[0] = "one_half";
-						tmp0[1] = "#";
-						tmp0[2] = "btmspace-30 fa fa-4x fa-institution";
-					}
-					valoresFinales = valoresFinales+tmp0[0]+"\&&"+tmp0[1]+"\&&"+tmp0[2]+"\&&"+tmp0[3]+"\&&"+tmp0[4]+"\++"
-				}
-				valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)
+				valorColumnas = 2;
+				valorPosicion = 0;
+				valorIniciaObjeto =1;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
 				
-//				console.log(valoresFinales)
 				finalJson = { action : $.action,
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "bodySeccionArray1",
@@ -200,12 +181,19 @@ $(document).ready(function() {
 			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
 			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
+				valorColumnas = 3;
+				valorPosicion = 0;
+				valorIniciaObjeto =0;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+				
+				//genera el finalJson
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray2",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
+				//envia POST finalJson
 				enviaDataEdicion(finalJson)
 				
 			});
@@ -219,6 +207,11 @@ $(document).ready(function() {
 			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
+				valorColumnas = 3;
+				valorPosicion = 0;
+				valorIniciaObjeto = 1;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray3",
@@ -250,11 +243,17 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
+	
 	$('.bodySeccionArray4').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccionArray4",$.modelo);
 			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray4);
+				valorColumnas = 3;
+				valorPosicion = 0;
+				valorIniciaObjeto = 1;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray4",

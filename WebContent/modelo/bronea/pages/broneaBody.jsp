@@ -67,7 +67,7 @@
       <!-- inicio Categorias-->
      <s:subset start="1" source ="body.bodySeccionArray3">
       <s:iterator var="bodySeccionArray3">
-       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/>">
+       	<li class="<s:property value='#bodySeccionArray3.objetoVO.get(0)'/> btmspace-30">
         	<article class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1');">
 <%-- identificar secciones
           		<h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>"> --%>
@@ -107,8 +107,8 @@
        	<article class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
 <%-- identificar Secciones
        	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
-       	<a href="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
-       	<img class="btmspace-30" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>"></a>
+       	<a href="<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>">
+       	<img class="btmspace-30" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>" alt="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"></a>
         	<h3 class="heading"><s:property value='#bodySeccionArray4.objetoVO.get(3)'/></h3>
         	<p><s:property value='#bodySeccionArray4.objetoVO.get(4)'/>&hellip;</p>
         <footer class="nospace"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">

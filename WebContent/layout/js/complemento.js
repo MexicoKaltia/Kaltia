@@ -567,29 +567,29 @@
 	
 	
 	function cargaModal(seccion, modelo){
-		$.seccionCampos="";
-			
-		console.log("cargarModal : "+seccion+modelo);
+		$.seccionCampos="";	
+//		console.log("cargarModal paso 1: "+seccion+modelo);
 		$.seccionCampos = estructuraSeccion(seccion+modelo);
+//		console.log("cargarModal paso 2 : "+$.seccionCampos);
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
 		$("div.alertaBody_file > div").remove();
-		
+//		console.log("cargarModal paso 3 : #modalEdicion_"+seccion+modelo);
 		return $.seccionCampos; 
 	}
 	
 	function estructuraSeccion(seccion){
 		var camposModelo = {
-				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "enlaceObjetoHS1" :"text"  }},
+				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
 				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
-				"headerSeccion4Bronea"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "referencia1HS4" : "text",  "boton1HS4" : "text",  "referencia2HS4" : "text",  "boton2HS4" : "text"},
+				"headerSeccion4Bronea"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
 				"headerSeccionArray5Bronea":{"tituloHSA5":"text",  "iconoHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
 				"bodySeccion1Bronea"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "referenciaBS1":"text",  "botonBS1":"text"},
 				"bodySeccionArray1Bronea":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
 				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
 				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "referenciaObjetoBSA4" : "text",      "imagenObjetoBSA4" : "img",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonBSA4":"text"  }},
+				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
 				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text"},
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "objetoFS2" : {    "tituloObjetoFS2" :"text", "enlaceObjetoFS2" :"text"  }},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text",  "objetoFS3" : {    "tituloObjetoFS3" :"text", "enlaceObjetoFS3" :"text"  }},
@@ -622,11 +622,10 @@
 		var finalJson ="";
 		if(contaObjeto > 0){
 			for(campo in seccionEmpresa){
-//				console.log(campo)
-				if(campo.includes("imagex")){
-					var nombre = $("#upload-file-inputBody").val().split('\\');
-//					console.log(nombre[nombre.length-1])
-					valoresString = valoresString + nombre[nombre.length-1] + "&&"
+				if(campo.includes("referencia")){
+					valoresString = valoresString + "#"+"&&";
+				}else if(campo.includes("icono")){
+					valoresString = valoresString + "btmspace-30 fa fa-4x fa-institution" + "&&";
 				}else if (campo.includes("objeto")){				
 					if(valoresString.length > 0){
 					valoresString = valoresString.slice(0,valoresString.length-2)
@@ -634,8 +633,15 @@
 					}
 					for(var i = 0 ; i < contaObjeto; i++){
 						for(campoObjeto in seccionEmpresa.objeto){
-//							console.log(campoObjeto+i +" : "+$("#"+campoObjeto+i).val())
-							valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
+//							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
+							if(campoObjeto.includes("referencia")){
+								valorStringObjeto = valorStringObjeto + "#"+"&&";
+							}else if(campoObjeto.includes("icono")){
+								valorStringObjeto = valorStringObjeto + "btmspace-30 fa fa-4x fa-joomla"+"&&";
+							}else{
+								valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
+							}
+//							console.log(valorStringObjeto);
 						}
 						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
 						valorStringObjeto = valorStringObjeto + "++";
@@ -643,29 +649,67 @@
 					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
 					valoresString = valoresString + valorStringObjeto ;
 				}else{
-//					console.log($("#"+campo).val())
 					valoresString = valoresString + $("#"+campo).val() + "&&" 
 				}
 			}	
 		}else{
 			for(campo in seccionEmpresa){
-//				console.log(campo)
-				if(campo.includes("imagex")){
-					var nombre = $("#upload-file-inputBody").val().split('\\');
-//					console.log(nombre[nombre.length-1])
-					valoresString = valoresString + nombre[nombre.length-1] + "++"
-				}else{
-//					console.log($("#"+campo).val())
+				if(campo.includes("referencia")){
+					valoresString = valoresString + "#" + "++";
+					}else if(campo.includes("icono")){
+						valoresString = valoresString + "btmspace-30 fa fa-4x fa-institution" + "++";
+					}else{
 					valoresString = valoresString + $("#"+campo).val() + "++" 
 				}
 			}
 			valoresString = valoresString.slice(0,valoresString.length-2)
 		}
-		
-//		console.log(valoresString);
 		return valoresString ;
-		
 	}
+	
+	function ordenaValoresFinales(valoresFinales, valorColumnas, valorPosicion, valorIniciaObjeto){
+		while(valoresFinales.includes("C:\\fakepath\\") ){
+			valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+		}
+		
+		//Ordena valoresFinales
+//		console.log("antes:"+valoresFinales);
+		var tmp0 = "";
+		var tmp1 = valoresFinales.split("\++");
+		var posicion ="";
+		var conteoPosicion = valorColumnas;
+		switch (valorColumnas) { 
+		case 2: posicion="one_half"; break;
+		case 3: posicion="one_third"; break;
+		case 4: posicion="one_quarter"; break;
+		}
+//		console.log(tmp1.length)
+		if(valorIniciaObjeto>0){
+			valoresFinales = tmp1[0] + "\++";
+		}else{
+			valoresFinales = "";
+		}
+		
+		for(i=valorIniciaObjeto; i<tmp1.length;i++){
+			tmp0 = tmp1[i].split("\&&");		
+			modula = conteoPosicion % valorColumnas;
+			if(modula===0){
+				tmp0[valorPosicion] = posicion+" first";
+			}else{
+				tmp0[valorPosicion] = posicion;
+			}
+			conteoPosicion = conteoPosicion + 1;
+			for(e=0; e<tmp0.length;e++){
+				valoresFinales = valoresFinales+tmp0[e]+"\&&";					
+			}
+			valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)
+			valoresFinales = valoresFinales+"\++";
+		}
+		valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)				
+//		console.log("despues:"+valoresFinales);
+		return valoresFinales;
+	}
+
 			
 		function enviaDataEdicion(finalJson){
 			var context = "";
