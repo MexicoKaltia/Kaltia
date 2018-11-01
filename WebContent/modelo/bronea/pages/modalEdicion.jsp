@@ -656,6 +656,17 @@
 	    				</select>
 				  </div>
 				</div>
+				<div class="row">
+		         <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
+		         <div class="col-md-8">
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.BodySeccion1.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion1.get(0)'/>">
+					<form id="imagenBS1Form">
+						<hiden class="imagenBS1Form"></hiden>
+						<label for="imagenBS1">Actualiza imagen:</label> 
+						<input id="imagenBS1" type="file" name="uploadfile" accept="image/jpeg" />
+					</form>
+			      </div>
+			    </div>
 				
 				
 				

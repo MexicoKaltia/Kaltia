@@ -228,8 +228,14 @@ $(document).ready(function() {
 	$('.bodySeccion1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
+			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
+		
 			$('#modalEdicionBodySeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccion1",
