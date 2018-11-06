@@ -6,8 +6,8 @@
 
 <!-- modal -->
 <head>
-
-<%-- <link href="<%=request.getContextPath()%>/layout/css/complementoModal.css" rel="stylesheet" type="text/css" media="all"> --%>
+  
+   
 </head>
 <!-- modal Edicion -->
 <!--**********************************************************************************-->
@@ -413,7 +413,7 @@
 			        <div class="row">
 			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
 			          <div class="col-md-8">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(5)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(5)' />">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
 						<form id="imagenBSA1Form">
 							<hiden class="imagenBSA1Form"></hiden>
 							<label for="imagenBSA1">Actualiza imagen:</label> 
@@ -1032,7 +1032,7 @@
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">
-		        CITA
+		        <p>Date: <input type="text" id="datepicker" size="30"><i class="fa fa-calendar"></i></p>
 		    </div>
 		    <!--**********************************************************************************-->
 			<div class="modal-footer">

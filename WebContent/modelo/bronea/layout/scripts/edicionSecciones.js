@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+	
+	$( "#datepicker" ).datepicker();
 	 $.modelo = "Bronea";	
 /////////////
 	/*
@@ -7,7 +8,7 @@ $(document).ready(function() {
 	 */
 /////////////
 	$('.headerSeccion1').click(function(){
-		console.log("idEmpresa:"+idEmpresa);
+//		console.log("idEmpresa:"+idEmpresa);
 		if(validaParam()){
 			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){

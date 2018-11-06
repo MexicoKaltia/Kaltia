@@ -8,17 +8,19 @@
 			<!-- JAVASCRIPTS -->
 	<script src="<%=request.getContextPath()%>/layout/js/jquery-3.2.1.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/prefixfree.min.js"></script>
-
+	
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.backtotop.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.mobilemenu.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.flexslider-min.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/sss/sss.min.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.easypiechart.min.js"></script>
-<%-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> --%>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	
+	
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 	<!-- ################################################################################################ -->
 <input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />

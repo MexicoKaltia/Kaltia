@@ -15,6 +15,8 @@
 <%-- <link href="<%=request.getContextPath()%>/layout/css/complemento.css" rel="stylesheet" type="text/css" media="all"> --%>
 <link href="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <%-- <link href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/css/complemento.css" rel="stylesheet" type="text/css" media="all"> --%>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 
 
 </head>
