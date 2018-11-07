@@ -759,6 +759,13 @@
 			 */
 		
 		//  $('#upload-file-inputBody').on('change', function(){ enviaImagen(idImagenForm)});  <--Ejemplo de funcion que hace llamado a la carga de imagen desde edicionSecciones.js
+		$(".imagenArrayForm").click(function(){
+			var imgArrayForm = $(this).attr('id'); 
+			var imgArrayInput =$(this).children("input").attr('id');
+			console.log(imgArrayForm);
+			console.log(imgArrayInput);
+			$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
+		})
 		
 		function enviaImagen(idImagenForm){
 				console.log("Comineza envio imagenBody:"+idImagenForm);

@@ -559,11 +559,11 @@
 						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
 						          <div class="col-md-8">
 							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
-									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenBSA3Form<s:property value='#conta'/>" count="<s:property value='#conta'/>">
+									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
-										<label for="imagenBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
-										<input id="imagenBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
-										<script type="text/javascript">var contaImagenBodySeccionArray3 = <s:property value='#conta'/></script>
+										<label for="imagenObjetoBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
+										<input id="imagenObjetoBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
+<%-- 										<script type="text/javascript">var contaImagenBodySeccionArray3 = <s:property value='#conta'/></script> --%>
 					    			</form>
 						          </div>
 						        </div>
@@ -730,10 +730,10 @@
 						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
 						          <div class="col-md-8">
 							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
-									<form id="imagenBSA4Form">
+									<form id="imagenBSA4Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA4Form<s:property value='#conta'/>"></hiden>
-										<label for="imagenBSA4<s:property value='#conta'/>">Actualiza imagen:</label> 
-										<input id="imagenBSA4<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
+										<label for="imagenObjetoBSA4<s:property value='#conta'/>">Actualiza imagen:</label> 
+										<input id="imagenObjetoBSA4<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
 					    			</form>
 						          </div>
 						        </div>

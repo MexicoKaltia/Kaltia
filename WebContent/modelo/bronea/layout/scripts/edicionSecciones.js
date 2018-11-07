@@ -203,34 +203,11 @@ $(document).ready(function() {
 		}
 	});
 	
+	
+	
 	$('.bodySeccionArray3').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);
-			
-			console.log(contaObjetoBodySeccionArray3);
-			var i=0
-			while( i<contaObjetoBodySeccionArray3){
-				
-				//$('#imagenBSA3'+i).on('change', function(){console.log(i); enviaImagen("imagenBSA3Form"+i); });
-			var imagenArray="";
-			console.log("contaImagenBodySeccionArray3:"+contaImagenBodySeccionArray3);
-			i++;
-			}
-			
-			$(".imagenBSA3Form"+contaImagenBodySeccionArray3).click(function(){
-				imagenArray = $(".imagenBSA3Form"+contaImagenBodySeccionArray3).attr('id')
-				console.log(imagenArray);
-				console.log("contaImagenBodySeccionArray3:"+contaImagenBodySeccionArray3);
-//				$('#imagenArray'+1).on('change', function(){enviaImagen(imagenArray); });
-			});
-			
-//			$('#imagenBSA30').on('change', function(){ enviaImagen("imagenBSA3Form0") });
-//			$('#imagenBSA31').on('change', function(){ enviaImagen("imagenBSA3Form1") });
-//			$('#imagenBSA32').on('change', function(){ enviaImagen("imagenBSA3Form2") });
-//			$('#imagenBSA33').on('change', function(){ enviaImagen("imagenBSA3Form3") });
-//			$('#imagenBSA34').on('change', function(){ enviaImagen("imagenBSA3Form4") });
-//			$('#imagenBSA35').on('change', function(){ enviaImagen("imagenBSA3Form5") });
-			
+			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);	
 			
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
