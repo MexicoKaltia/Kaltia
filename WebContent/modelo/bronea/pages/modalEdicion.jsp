@@ -559,10 +559,11 @@
 						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-envelope-o"></i>Imagen</span>
 						          <div class="col-md-8">
 							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
-									<form id="imagenBSA3Form">
+									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenBSA3Form<s:property value='#conta'/>" count="<s:property value='#conta'/>">
 										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
 										<label for="imagenBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
 										<input id="imagenBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
+										<script type="text/javascript">var contaImagenBodySeccionArray3 = <s:property value='#conta'/></script>
 					    			</form>
 						          </div>
 						        </div>

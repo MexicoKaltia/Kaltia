@@ -66,7 +66,9 @@
 	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
+//		var results = new RegExp('[\?&]tipo=([^&#]*)').exec(window.location.href);
 		console.log(window.location.href);
+//		console.log(results)
 		urlAction = window.location.href;
 		action = urlAction.split("\/");
 		
@@ -759,7 +761,7 @@
 		//  $('#upload-file-inputBody').on('change', function(){ enviaImagen(idImagenForm)});  <--Ejemplo de funcion que hace llamado a la carga de imagen desde edicionSecciones.js
 		
 		function enviaImagen(idImagenForm){
-				console.log("Comineza envio imagenBody");
+				console.log("Comineza envio imagenBody:"+idImagenForm);
 				var alerta="";
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
@@ -778,10 +780,12 @@
 						  console.log("envio ok");
 				    	}else{
 				    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+							  $(alerta).insertAfter($('.'+idImagenForm));
 				    		console.log("envio Nok");
 				    	} },
 				    error: function () {
 				    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
+						  $(alerta).insertAfter($('.'+idImagenForm));
 				    	console.log("envio error");
 				    }
 				  });
