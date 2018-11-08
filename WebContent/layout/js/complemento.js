@@ -798,4 +798,12 @@
 				  });
 				  $(alerta).insertAfter($('.'+idImagenForm));
 		}
+		
+		$('.iconoObjetoMapa').click(function(){
+		      var iconoObj = $(this).children('span').attr('id');
+		      console.log(iconoObj);
+		      $("#modalEdicion_IconoObjeto .close").click();
+		      $("#iconoObjeto").attr('class', iconoObj);
+		  });
+
 	
