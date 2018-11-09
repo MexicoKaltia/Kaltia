@@ -375,8 +375,8 @@
 						        <div class="row">
 						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Icono</span>
 						          <div class="col-md-8">
-									<a data-toggle="modal" href="#modalEdicion_IconoObjeto">
-									<i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />" id="iconoObjeto<s:property value='#conta'/>"></i></a>
+									<a data-toggle="modal" href="#modalEdicion_IconoObjeto" class="iconoForm">
+									<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray1.objetoVO.get(2)' />" id="iconoObjetoBSA1<s:property value='#conta'/>"></i></a>
 									<label for="iconoObjetoBSA1" ><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></label> 
 						          </div>
 						        </div>
@@ -470,7 +470,9 @@
 						  	    <div class="row">
 						          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Icono</span>
 						          <div class="col-md-8">
-									<i class="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
+									<a data-toggle="modal" href="#modalEdicion_IconoObjeto" class="iconoForm">
+									<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray2.objetoVO.get(1)' />" id="iconoObjetoBSA2<s:property value='#conta'/>"></i></a>
+									<label for="iconoObjetoBSA2" ><s:property value='#bodySeccionArray2.objetoVO.get(1)' /></label>
 						          </div>
 						        </div>
 						        <div class="row">
@@ -792,7 +794,7 @@
 <!--**********************************************************************************-->
 <!-- modalFooterSeccion1 -->
 <div class="modal fade" id="modalEdicion_footerSeccion1Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-fluid" role="document">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion1</h5>
@@ -807,18 +809,42 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 			
-			      <h6 class="heading"><input type="text" id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/></h6>
-			      <p class="btmspace-30"><input type="text" id="subtituloFS1" value="<s:property value='footer.footerSeccion1.get(1)' />"/></p>
-			      <ul class="nospace linklist contact">
-			        <li><i class="fa fa-map-marker"></i>
-			          <address>
-			          <input type="text" id="domicilioFS1" value="<s:property value='footer.footerSeccion1.get(2)' />"/>
-			          </address>
-			        </li>
-			        <li><i class="fa fa-phone"></i><input type="text" id="telefonoFS1" value="<s:property value='footer.footerSeccion1.get(3)' />"/></li>
-			        <li><i class="fa fa-envelope-o"></i><input type="text" id="correoFS1" value="<s:property value='footer.footerSeccion1.get(4)' />"/></li>
-			        <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-				  </ul>
+			    	<div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Titulo </span>
+			          <div class="col-md-8">
+						<input type="text" id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>sub Titulo </span>
+			          <div class="col-md-8">
+						<input type="text" id="subtituloFS1" value="<s:property value='footer.footerSeccion1.get(1)' />"/>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Domicilio</span>
+			          <div class="col-md-8">
+						<input type="text" id="domicilioFS1" value="<s:property value='footer.footerSeccion1.get(2)' />"/>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Telefono</span>
+			          <div class="col-md-8">
+						</i><input type="text" id="telefonoFS1" value="<s:property value='footer.footerSeccion1.get(3)' />"/>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Correo</span>
+			          <div class="col-md-8">
+						<input type="text" id="correoFS1" value="<s:property value='footer.footerSeccion1.get(4)' />"/>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Ubicacion</span>
+			          <div class="col-md-8">
+						<input type="text" id="correoFS1" value="<s:property value='footer.footerVarios' />"/>
+			          </div>
+			        </div>
 				  
 			</div>
  			<!--**********************************************************************************-->
@@ -831,6 +857,52 @@
 </div>
 <!-- fin modalFooterSeccion1 -->
 <!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!-- modalFooterSeccion2 -->
+<div class="modal fade" id="modalEdicion_footerSeccion2Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion2</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+			<div class="modal-body">
+			
+			    	<div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Redes Sociales</span>
+			          <div class="col-md-8">
+						<input type="text" id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
+			          </div>
+			        </div>
+			        
+			          <ul class="faico clear">
+				        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+				        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+				        <li><a class="faicon-fa-youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+				        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+				        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+				        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+				      </ul>
+			        
+			        				  
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion2_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalFooterSeccion2 -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalFile -->

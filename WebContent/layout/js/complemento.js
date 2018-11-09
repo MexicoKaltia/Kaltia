@@ -623,7 +623,9 @@
 				if(campo.includes("referencia")){
 					valoresString = valoresString + "#"+"&&";
 				}else if(campo.includes("icono")){
-					valoresString = valoresString + "btmspace-30 fa fa-4x fa-institution" + "&&";
+					var iconoClases = $("#"+campoObjeto+i).attr('class')
+					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
+					valoresString = valoresString + iconoClase + "&&";
 				}else if (campo.includes("objeto")){				
 					if(valoresString.length > 0){
 					valoresString = valoresString.slice(0,valoresString.length-2)
@@ -635,7 +637,9 @@
 							if(campoObjeto.includes("referencia")){
 								valorStringObjeto = valorStringObjeto + "#"+"&&";
 							}else if(campoObjeto.includes("icono")){
-								valorStringObjeto = valorStringObjeto + "btmspace-30 fa fa-4x fa-joomla"+"&&";
+								var iconoClases = $("#"+campoObjeto+i).attr('class');
+								var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","");
+								valorStringObjeto = valorStringObjeto + iconoClase + "&&";
 							}else{
 								valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
 							}
@@ -655,7 +659,9 @@
 				if(campo.includes("referencia")){
 					valoresString = valoresString + "#" + "++";
 					}else if(campo.includes("icono")){
-						valoresString = valoresString + "btmspace-30 fa fa-4x fa-institution" + "++";
+						var iconoClases = $("#"+campoObjeto+i).attr('class')
+						var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
+						valoresString = valoresString + iconoClase + "++";
 					}else{
 					valoresString = valoresString + $("#"+campo).val() + "++" 
 				}
@@ -664,6 +670,8 @@
 		}
 		return valoresString ;
 	}
+	
+
 	
 	function ordenaValoresFinales(valoresFinales, valorColumnas, valorPosicion, valorIniciaObjeto){
 		while(valoresFinales.includes("C:\\fakepath\\") ){
@@ -676,7 +684,8 @@
 		var tmp1 = valoresFinales.split("\++");
 		var posicion ="";
 		var conteoPosicion = valorColumnas;
-		switch (valorColumnas) { 
+		switch (valorColumnas) {
+		case 1: break;
 		case 2: posicion="one_half"; break;
 		case 3: posicion="one_third"; break;
 		case 4: posicion="one_quarter"; break;
@@ -759,6 +768,21 @@
 			 */
 		
 		//  $('#upload-file-inputBody').on('change', function(){ enviaImagen(idImagenForm)});  <--Ejemplo de funcion que hace llamado a la carga de imagen desde edicionSecciones.js
+		
+		$('.iconoForm').click(function(){
+			$.iconoArrayInput =$(this).children("i").attr('id');
+		})
+		
+//		function organizaIcono(iconoArrayInput){
+			$('.iconoObjetoMapa').click(function(){
+				var iconoObj = $(this).children('span').attr('id');
+//			      console.log("iconoObj:"+iconoObj);
+			      $("#modalEdicion_IconoObjeto .close").click();
+//					console.log("iconoArrayInput:"+$.iconoArrayInput);
+			      $("#"+$.iconoArrayInput).attr('class', "btmspace-30 fa fa-4x "+iconoObj);
+			  });
+//		}
+
 		$(".imagenArrayForm").click(function(){
 			var imgArrayForm = $(this).attr('id'); 
 			var imgArrayInput =$(this).children("input").attr('id');
@@ -768,6 +792,7 @@
 		})
 		
 		function enviaImagen(idImagenForm){
+		
 				console.log("Comineza envio imagenBody:"+idImagenForm);
 				var alerta="";
 				  $.ajax({
@@ -799,11 +824,5 @@
 				  $(alerta).insertAfter($('.'+idImagenForm));
 		}
 		
-		$('.iconoObjetoMapa').click(function(){
-		      var iconoObj = $(this).children('span').attr('id');
-		      console.log(iconoObj);
-		      $("#modalEdicion_IconoObjeto .close").click();
-		      $("#iconoObjeto").attr('class', iconoObj);
-		  });
 
 	

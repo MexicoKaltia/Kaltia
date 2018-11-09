@@ -21,7 +21,7 @@
     	<s:iterator  var ="bodySeccionArray1">
           <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />">
             <article><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)' />">
-            <i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
+            <i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
               <h6 class="heading font-x1"><s:property value='#bodySeccionArray1.objetoVO.get(3)' /></h6>
               <p><s:property value='#bodySeccionArray1.objetoVO.get(4)' />&hellip;</p>
             </article>
@@ -46,7 +46,7 @@
     <ul class="nospace group cta">
       <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
       <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
-        <article><i class="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
+        <article><i class="fa <s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
           <h6 class="heading font-x1"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray2.objetoVO.get(2)' />"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></a></h6>
           <p><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></p>
         </article>

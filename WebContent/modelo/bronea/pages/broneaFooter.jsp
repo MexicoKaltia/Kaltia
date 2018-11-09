@@ -22,7 +22,7 @@
 		</ul>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter">
+    <div class="one_quarter footerSeccion2">
       <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
       <ul class="nospace linklist">
         <s:subset start="1" source ="footer.footerSeccion2">
@@ -36,14 +36,24 @@
       </ul>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter">
+    <div class="one_quarter footerSeccion3">
       <h6 class="heading"><s:property value='footer.footerSeccion3.get(0)' /></h6>
       <ul class="nospace linklist">
-        <s:subset start="1" source ="footer.footerSeccion3">
-        <s:iterator>
-          		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li>
-         </s:iterator>
-         </s:subset>
+      		 <s:set var="seccion" value="1" />
+		     <s:subset source="header.headerSeccionArray5" start="1">  
+    		 <s:iterator  var ="headerSeccionArray5">
+    		 <s:iterator  value ="#headerSeccionArray5.objetoVO">
+		     	 <li><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+		     <s:set var="seccion" value="#seccion+1" />
+		     </s:iterator>
+		     </s:iterator>
+          	 </s:subset>
+      
+<%--         <s:subset start="1" source ="footer.footerSeccion3"> --%>
+<%--         <s:iterator> --%>
+<%--           		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%>
+<%--          </s:iterator> --%>
+<%--          </s:subset> --%>
         
       </ul>
     </div>
