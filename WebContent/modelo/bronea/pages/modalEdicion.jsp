@@ -159,10 +159,10 @@
 			          <div class="col-md-8">
 				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />">
 <!-- 	    				<form id="upload-file-form"> -->
-							<form id="iconoHSA5Form">
-							<hiden class="iconoHSA5Form"></hiden>
+							<form id="faviconHSA5Form">
+							<hiden class="faviconHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="iconoHSA5" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="faviconHSA5" type="file" name="uploadfile" accept="image/jpeg" />
 		    			</form>
 			          </div>
 			        </div>
@@ -904,6 +904,43 @@
 </div>
 <!-- fin modalFooterSeccion2 -->
 <!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!--**********************************************************************************-->
+<!-- modalFooterSeccion3 -->
+<div class="modal fade" id="modalEdicion_footerSeccion3Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion2</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+			<div class="modal-body">
+			
+			    	<div class="row">
+			          <span class="col-md-4 col-md-offset-4 text-left"><i class="fa fa-phone"></i>Titulo secciones</span>
+			          <div class="col-md-8">
+						<input type="text" id="tituloFS3" value="<s:property value='footer.footerSeccion3.get(0)' />"/>
+			          </div>
+			        </div>
+			        
+			        				  
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion3_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalFooterSeccion3 -->
 <!--**********************************************************************************-->
 <!-- modalFile -->
 <div class="modal fade" id="modalFile">

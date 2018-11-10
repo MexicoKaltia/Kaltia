@@ -124,7 +124,7 @@ $(document).ready(function() {
 			
 			$.seccionCampos = cargaModal("headerSeccionArray5",$.modelo);
 			
-			$('#iconoHSA5').on('change', function(){ enviaImagen("iconoHSA5Form") });
+			$('#faviconHSA5').on('change', function(){ enviaImagen("faviconHSA5Form") });
 			$('#logoHSA5').on('change', function(){ enviaImagen("logoHSA5Form") });
 			$('#fondoHeaderHSA5').on('change', function(){ enviaImagen("fondoHeaderHSA5Form") });
 
@@ -324,6 +324,28 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.footerSeccion3').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccion3",$.modelo);
+			
+			$('#modalEdicionFooterSeccion3_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+//				console.log(valoresFinales);
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+//				console.log(valoresFinales);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccion3",
+						 valoresFinales : valoresFinales }
+//				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
 	
 	
 	
