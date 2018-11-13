@@ -882,16 +882,72 @@
 						<input type="text" id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
 			          </div>
 			        </div>
-			        
-			          <ul class="faico clear">
-				        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-				        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-				        <li><a class="faicon-fa-youtube" href="#"><i class="fa fa-youtube"></i></a></li>
-				        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-				        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-				        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
-				      </ul>
-			        
+			        <br><br>
+			        <div class="row ">
+				      <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></span>
+				      <div class="col-md-8">
+				      <div class="input-group grupoRS">
+						  <div class="input-group-prepend ">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="facebookFS2">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(1)' />" id="textFFS2" readonly>
+						</div>
+				      </div>
+				    </div>
+			        <div class="row ">
+				      <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></span>
+				      <div class="col-md-8">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="twitterFS2">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(2)' />" id="textTFS2" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="row ">
+				      <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></span>
+				      <div class="col-md-8">
+				      <div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="youtubeFS2">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(3)' />" id="textYFS2" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="row ">
+				      <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></span>
+				      <div class="col-md-8">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="linkedinFS2">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(4)' />" id="textLFS2" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="row ">
+				      <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></span>
+				      <div class="col-md-8">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="googleFS2">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(5)' />" id="textGFS2" readonly>
+						</div>
+				      </div>
+				    </div>		      
 			        				  
 			</div>
  			<!--**********************************************************************************-->
@@ -1084,39 +1140,42 @@
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">
-		        <div class="container">
-		          <div class="row">
-		            <div class="col-md-12">
-		              <div class="well well-sm">
-		              	<label><s:property value='identidadVO.empresa'/> - Contacto</label>
-		                <form class="form-horizontal" method="post">
-		                  <fieldset>
-		                    <legend class="text-center header"><label><s:property value='identidadVO.empresa'/> - Contacto</label></legend>
-		                    <div class="row">
-							<h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
-							  <p class="btmspace-30"><s:property value='footer.footerSeccion1.get(1)' /></p>
-							  <ul class="nospace linklist contact">
-							  <li><i class="fa fa-map-marker"></i>
-							  <address>
-							    <s:property value='footer.footerSeccion1.get(2)' />
-							 </address>
-							 </li>
-							 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion1.get(3)' /></li>
-							 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion1.get(4)' /></li>
-							 </ul>
-							 </div>
-		                    <div class="row">
-		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-		                      <div class="col-md-8">
-		                        <textarea class="form-control" id="message" name="message" placeholder="Captura tu mensaje, en breve un asesor se pondrá en contacto. Gracias" rows="7"></textarea>
-		                      </div>
-		                    </div>		
-		                </fieldset>
-		              </form>
-		            </div>
+			
+			   <div class="row">
+		          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-circle-o bigicon"></i></span>
+		          <div class="col-md-8">
+		              <s:property value='footer.footerSeccion1.get(1)' />
+<!-- 		              <input id="phone" name="phone" type="text" placeholder="Num Telefono" class="form-control"> -->
 		          </div>
-		        </div>
-		      </div>
+		       </div>
+		       <div class="row">
+		          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-map-marker bigicon"></i></span>
+		          <div class="col-md-8">
+		              <s:property value='footer.footerSeccion1.get(2)' />
+<!-- 		              <input id="phone" name="phone" type="text" placeholder="Num Telefono" class="form-control"> -->
+		          </div>
+		       </div>
+		       <div class="row">
+		          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+		          <div class="col-md-8">
+		              <s:property value='footer.footerSeccion1.get(3)' />
+<!-- 		              <input id="phone" name="phone" type="text" placeholder="Num Telefono" class="form-control"> -->
+		          </div>
+		       </div>
+		       <div class="row">
+		          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+		          <div class="col-md-8">
+		              <s:property value='footer.footerSeccion1.get(4)' />
+<!-- 		              <input id="phone" name="phone" type="text" placeholder="Num Telefono" class="form-control"> -->
+		          </div>
+		       </div>
+               <div class="row">
+                  <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                  <div class="col-md-8">
+                     <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                   </div>
+               </div>		
+
 		      </div>
 		      <!--**********************************************************************************-->
 			<div class="modal-footer">

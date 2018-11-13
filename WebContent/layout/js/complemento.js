@@ -589,7 +589,7 @@
 				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
 				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
 				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text"},
-				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "objetoFS2" : {    "tituloObjetoFS2" :"text", "enlaceObjetoFS2" :"text"  }},
+				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text" },
 				}
 		seccion = seccion;
@@ -824,5 +824,14 @@
 				  $(alerta).insertAfter($('.'+idImagenForm));
 		}
 		
-
+		$('.grupoRS').click(function(){
+			var rsInput =$(this).children("input").attr('id');
+			var rsCheck =$(this).children("div").children("div").children("input").attr('id');
+			console.log(rsCheck);
+			console.log(rsInput);
+			if($('#'+rsCheck).prop('checked')){
+				$('#'+rsInput).prop('readonly', false);
+			}
+			
+		});
 	

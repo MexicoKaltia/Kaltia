@@ -25,13 +25,18 @@
     <div class="one_quarter footerSeccion2">
       <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
       <ul class="nospace linklist">
-        <s:subset start="1" source ="footer.footerSeccion2">
-        <s:iterator>
-<%--identificar Secciones
-           		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%>
-           		<li><a href="#seccion4"><s:property/></a></li>
-         </s:iterator>
-         </s:subset>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+<%--         <s:subset start="1" source ="footer.footerSeccion2"> --%>
+<%--         <s:iterator> --%>
+<%-- <%--identificar Secciones --%>
+<%--            		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%> 
+<%--            		<li><a href="#seccion4"><s:property/></a></li> --%>
+<%--          </s:iterator> --%>
+<%--          </s:subset> --%>
         
       </ul>
     </div>

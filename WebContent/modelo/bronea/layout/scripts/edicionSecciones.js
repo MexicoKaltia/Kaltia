@@ -236,7 +236,9 @@ $(document).ready(function() {
 		
 			$('#modalEdicionBodySeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 				
 				finalJson = { action : $.action,
