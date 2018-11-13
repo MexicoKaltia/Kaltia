@@ -12,6 +12,11 @@
 <tiles:insertAttribute name="right" />
 <tiles:insertAttribute name="footer" />
 <tiles:insertAttribute name="modalEdicion" />
+<tiles:insertAttribute name="modalIngresa" />
+<tiles:insertAttribute name="modalRegistro" />
+<tiles:insertAttribute name="modalContacto" />
+<tiles:insertAttribute name="modalCita" />
+<tiles:insertAttribute name="modalIconoObjeto" />
 <tiles:insertAttribute name="foot" />
 
 </html>

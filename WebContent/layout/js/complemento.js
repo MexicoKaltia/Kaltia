@@ -588,7 +588,7 @@
 				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
 				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
 				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text"},
+				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text" },
 				}
@@ -777,7 +777,7 @@
 			$('.iconoObjetoMapa').click(function(){
 				var iconoObj = $(this).children('span').attr('id');
 //			      console.log("iconoObj:"+iconoObj);
-			      $("#modalEdicion_IconoObjeto .close").click();
+			      $("#modalIconoObjeto .close").click();
 //					console.log("iconoArrayInput:"+$.iconoArrayInput);
 			      $("#"+$.iconoArrayInput).attr('class', "btmspace-30 fa fa-4x "+iconoObj);
 			  });
@@ -835,3 +835,72 @@
 			
 		});
 	
+		$('#btnSaveRegistro').click(function(){
+			
+			valoresRegistro = $('#nombreRegistro').val()+"++"+$('#apellidoRegistro').val()+"++"+$('#emailRegistro').val()+"++"+$('#telefonoRegistro').val()+"++"+$('#usuarioRegistro').val()+"++"+$('#passRegistro1').val()+"++"+$('#messageRegistro').val();
+			 
+				registroJson = { action : $.action,
+					 idEmpresa : $.idEmpresa,	
+//					 seccion : "bodySeccionArray1",
+					 valoresFinales : valoresRegistro}
+				console.log(registroJson);
+
+			$.ajax({
+			   	  url: url +"registroUser/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			      dataType: 'json',
+				  type: 'POST',
+				  contentType: "application/json",
+				  data: JSON.stringify(registroJson),
+				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
+				  crossDomain: true,
+				  success: 	function(data){					  
+					  console.log(data);
+					  if(data.codigo===0){
+					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+					  }else{
+						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+							$(alerta).insertAfter($('.alerta_in'));
+					  }
+					},
+				  error: function(){
+					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+				  }
+				});
+		});
+		
+		$('#btnSaveIngresa').click(function(){
+			
+			valoresIngresa = $('#usuarioIngresa').val()+"++"+$('#passIngresa').val();
+			 
+			ingresaJson = { action : $.action,
+					 idEmpresa : $.idEmpresa,	
+//					 seccion : "bodySeccionArray1",
+					 valoresFinales : valoresIngresa}
+				console.log(ingresaJson);
+
+			$.ajax({
+			   	  url: url +"ingresaUser/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			      dataType: 'json',
+				  type: 'POST',
+				  contentType: "application/json",
+				  data: JSON.stringify(ingresaJson),
+				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
+				  crossDomain: true,
+				  success: 	function(data){					  
+					  console.log(data);
+					  if(data.codigo===0){
+					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+					  }else{
+						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+							$(alerta).insertAfter($('.alerta_in'));
+					  }
+					},
+				  error: function(){
+					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
+						$(alerta).insertAfter($('.alerta_in'));
+				  }
+				});
+		});

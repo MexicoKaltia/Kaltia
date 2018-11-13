@@ -7,27 +7,31 @@
 <tiles-definitions>
 	<definition name="baseInicio" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="title" value="tituloBaseinicio" cascade="true" />
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="header" value="/WEB-INF/inicio/header.jsp" />
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="css" expression="/css/inicio.css" cascade="true" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+<!-- 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" /> -->
 	</definition>
 
-	<definition name="bronea" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/bronea/pages/broneaHeader.jsp" cascade="true" />
-		<put-attribute name="left" value="/modelo/bronea/pages/broneaLeft.jsp" cascade="true" />
-		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp" cascade="true" />
+	<definition name="bronea" extends="baseInicio">
+		<put-attribute name="header" value="/modelo/bronea/pages/broneaHeader.jsp" />
+		<put-attribute name="left" value="/modelo/bronea/pages/broneaLeft.jsp"  />
+		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp"  />
 		<put-attribute name="right" value="/modelo/bronea/pages/broneaRight.jsp" />
 		<put-attribute name="footer" value="/modelo/bronea/pages/broneaFooter.jsp" />
-		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+<!-- 		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" /> -->
 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
+	
 	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/carinary/pages/carinaryHeader.jsp" />
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />

@@ -1,31 +1,5 @@
-.modal-fluid{
-	width:90% !important;
-	max-width:90% !important;
-	heigth:70% !important
-	}
-
-hr {
-  height: 1px;
-  color: red;
-}
-#headerSeccionArray5.nav-overlay{
-	position: fixed;
-	padding: 0 0;
-	heigth:50px !important;
-	 z-index:10100;
-}
-.headerSeccion1{
-/* 	color:red; */
-}
-
 .edicion:hover{
 	 background-color: red;
 	}
-
-.labelModal{
-	text-align: left;
-	text-transform: capitalize;
-	text-color: #00FFFF;
-	font-size:12px;
-}
+	
 

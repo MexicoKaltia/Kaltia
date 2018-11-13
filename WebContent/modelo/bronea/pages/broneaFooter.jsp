@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<html>
+
+<html lang="es">
 <body> 
 <!-- ################################################################################################ -->
 <div class="wrapper row4">
