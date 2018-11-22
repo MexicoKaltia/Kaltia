@@ -1,27 +1,27 @@
 
 					
-	/*    Funciones de ingreso login 
-	 *  en la pagina principal de Kaltia 
-	 */
-	$('#ingresar').click(function() {
-		var nuevo = $('#elemento').load("bronea/pages/Ingresar.html");
-		nuevo.slideToggle("slow");
-	})
-	//************
-	$('.goIngresar').click(function() {
-		$('.goIngresarForm').submit();
-	});
-	//*************
-	$('#registrar').click(function() {
-		var nuevo = $('#elemento').html(
-		"<form action='registrar' class='goRegistrarForm'><p><label for='user'>User</label><input type='text'></p><p><label for='pass'>Password</label><input type='pass'></p><p><label for='email'>Email</label><input type='email'></p><p><button class='goRegistrar'>registrar</button></p></form>");
-		nuevo.slideToggle("slow");
-	})
-	//************
-	$('.goRegistrar').click(function() {	
-		$('.goRegistrarForm').submit();
-	});			
-	/*    FIN  login en la pagina principal de Kaltia */
+//	/*    Funciones de ingreso login 
+//	 *  en la pagina principal de Kaltia 
+//	 */
+//	$('#ingresar').click(function() {
+//		var nuevo = $('#elemento').load("bronea/pages/Ingresar.html");
+//		nuevo.slideToggle("slow");
+//	})
+//	//************
+//	$('.goIngresar').click(function() {
+//		$('.goIngresarForm').submit();
+//	});
+//	//*************
+//	$('#registrar').click(function() {
+//		var nuevo = $('#elemento').html(
+//		"<form action='registrar' class='goRegistrarForm'><p><label for='user'>User</label><input type='text'></p><p><label for='pass'>Password</label><input type='pass'></p><p><label for='email'>Email</label><input type='email'></p><p><button class='goRegistrar'>registrar</button></p></form>");
+//		nuevo.slideToggle("slow");
+//	})
+//	//************
+//	$('.goRegistrar').click(function() {	
+//		$('.goRegistrarForm').submit();
+//	});			
+//	/*    FIN  login en la pagina principal de Kaltia */
 	
 	
 	/***********************************************************************************************************************************************************/
@@ -542,7 +542,7 @@
 		
 		$('#btnSaveCita').click(function(){
 			
-			valoresCita = $('#datepicker').val();
+			valoresCita = $('#datepickerHGRC').val();
 			 console.log($.idUsuarioEmpresa);
 			 console.log(valoresCita);
 			citaJson = { action : $.action,
@@ -574,8 +574,24 @@
 						$(alerta).insertAfter($('.alerta_in'));
 				  }
 				});
-
-			
-			
-			
 		});
+		
+		var myEvents = [
+		      {
+		        date: '<a href="https://www.jqueryscript.net/time-clock/">Q1 - 2017</a>',
+		        content: 'Lorem ipsum dolor sit amet'
+		      },{
+		        date: 'Q2 - 2017',
+		        content: 'Lorem ipsum dolor sit amet'
+		      },{
+		        date: 'Q3 - 2017',
+		        content: 'Lorem ipsum dolor sit amet'
+		      },
+		      // ...
+		      {
+		        date: 'Q3 - 2018',
+		        content: 'Lorem ipsum dolor sit amet'
+		      }
+		  ];  
+		
+

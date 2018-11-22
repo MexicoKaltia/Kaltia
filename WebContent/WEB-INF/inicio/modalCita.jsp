@@ -17,8 +17,9 @@
 			<div class="modal-body">
 				
 				<div id="divUsuarioEmpresa">
-					<p>Ingresa tu Fecha <script type="text/javascript">$.usuarioEmpresa.val()</script>: </p>
-		        	<input type="text" id="datepicker" size="30"><i class="fa fa-calendar"></i>
+					<p>Ingresa tu Fecha <script type="text/javascript"></script>: </p>
+		        	<input type="text" id="datepickerHGRC" size="30"><i class="fa fa-calendar"></i>
+		        	<div id="my-timeline">hola</div>
 		        </div>
 		        <div id="divBotonUsuarioEmpresa">
 		        	<a class="btn inverse" data-dismiss="modal" data-toggle="modal" data-target="#modalIngresa">Ingresa</a>  

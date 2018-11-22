@@ -1,6 +1,17 @@
 $(document).ready(function() {
 	
-	$( "#datepicker" ).datepicker();
+	  
+	  $('#my-timeline').roadmap(myEvents);
+	  
+	  
+	  
+	  $( "#datepickerHGRC" ).datepicker({
+		    minDate: 0,
+		    maxDate: "+1m +1w",
+		    regional: "es"
+		  });
+	
+
 	 $.modelo = "Bronea";	
 /////////////
 	/*
