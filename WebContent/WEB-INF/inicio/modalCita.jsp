@@ -2,7 +2,7 @@
 <!--**********************************************************************************-->
 <!-- modalCita -->
 <div class="modal fade" id="modalCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
 			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
 			<div class="modal-header">
@@ -19,7 +19,7 @@
 				<div id="divUsuarioEmpresa">
 					<p>Ingresa tu Fecha <script type="text/javascript"></script>: </p>
 		        	<input type="text" id="datepickerHGRC" size="30"><i class="fa fa-calendar"></i>
-		        	<div id="my-timeline">hola</div>
+		        	<div id="my-timeline"></div>
 		        </div>
 		        <div id="divBotonUsuarioEmpresa">
 		        	<a class="btn inverse" data-dismiss="modal" data-toggle="modal" data-target="#modalIngresa">Ingresa</a>  

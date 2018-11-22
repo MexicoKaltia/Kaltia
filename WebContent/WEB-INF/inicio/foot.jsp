@@ -15,13 +15,6 @@
 	<!-- JAVASCRIPTS Plugins-->
 	<script src="<%=request.getContextPath()%>/layout/js/jquery.roadmap.min.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/datepicker-es.js"></script>
-	
-	<!-- JAVASCRIPTS Mis Metodos-->
-	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>	
-	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
-	
-	
-		
 	<!-- JAVASCRIPTS Plugins Modelo-->
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.backtotop.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.mobilemenu.js"></script>
@@ -29,7 +22,14 @@
 <%-- 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.flexslider-min.js"></script> --%>
 <%-- 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/sss/sss.min.js"></script> --%>
 <%-- 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.easypiechart.min.js"></script> --%>
-
+	
+	<!-- JAVASCRIPTS Mis Metodos-->
+	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>	
+	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+	
+	
+		
+	
 			
 	
 	<!-- ################################################################################################ -->
