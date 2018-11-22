@@ -19,13 +19,13 @@
 			<div class="modal-body">
 		         
 		      <div class="row">
-				<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-address-book bigicon"></i></span>
+				<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-address-book bigicon"></i></span>
 				<div class="col-md-8">
 					<input type="text" id="usuarioIngresa" value="" placeholder="Digita Usuario" class="form-control">
 				</div>
 			  </div>
 			  <div class="row">
-			    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-circle bigicon"></i></span>
+			    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-circle bigicon"></i></span>
 			    <div class="col-md-8">
 			    	<input type="password" id="passIngresa" value="" placeholder="Password" class="form-control">
 				</div>

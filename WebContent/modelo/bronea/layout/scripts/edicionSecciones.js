@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	  
-	  $('#my-timeline').roadmap(myEvents);
+//	  $('#my-timeline').roadmap(myEvents);
 	  
 	  
 	  
@@ -10,6 +10,34 @@ $(document).ready(function() {
 		    maxDate: "+1m +1w",
 		    regional: "es"
 		  });
+	  
+	  $('#consultaHorario').click(function(){
+		    
+//		    console.log("hola:"+myEvents);
+		    var myEvents2 = []; 
+		      for(hora in horario){
+		      valor = horario[hora];
+		      //console.log(hora);
+		      //console.log(valor);
+		      if(valor.user==="disponible")
+		      {
+		        elemento =  {date: hora ,content:'disponible'};
+		        myEvents2.push(elemento);
+		      } 
+		      
+		    }
+		    // myEvents2 = myEvents2.slice(0,myEvents2.length-1) + "]";
+		    console.log(myEvents2);
+		    myEvents = myEvents2;
+		    aparece(myEvents);
+		  
+		  });
+
+		function aparece (){
+		  console.log(myEvents);
+
+		 $('#my-timeline').roadmap(myEvents)
+		}
 	
 
 	 $.modelo = "Bronea";	

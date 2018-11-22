@@ -481,7 +481,7 @@
 				return response.ip;
 			}, "jsonp");
 //			resp = JSON.stringify(resp);
-			console.log(resp);
+//			console.log(resp);
 			ip="ip";
 			valoresIngresa = $('#usuarioIngresa').val()+"++"+$('#passIngresa').val()+"++"+ip+"-"+ d.getFullYear()+(d.getMonth()+1)+d.getDate()+"-"+d.getHours()+d.getMinutes()+d.getSeconds();
 			 
@@ -576,22 +576,18 @@
 				});
 		});
 		
-		var myEvents = [
-		      {
-		        date: '<a href="https://www.jqueryscript.net/time-clock/">Q1 - 2017</a>',
-		        content: 'Lorem ipsum dolor sit amet'
-		      },{
-		        date: 'Q2 - 2017',
-		        content: 'Lorem ipsum dolor sit amet'
-		      },{
-		        date: 'Q3 - 2017',
-		        content: 'Lorem ipsum dolor sit amet'
-		      },
-		      // ...
-		      {
-		        date: 'Q3 - 2018',
-		        content: 'Lorem ipsum dolor sit amet'
-		      }
-		  ];  
+		var  myEvents;
+		
+		 var horario = {
+				  130:{user:"disponible", mensaje:""},
+				  100:{user:"disponible", mensaje:""},
+				  200:{user:"disponible", mensaje:""},
+				  230:{user:"disponible", mensaje:""},
+				  300:{user:"disponible", mensaje:""},
+				  330:{user:"disponible", mensaje:""},
+				  400:{user:"disponible", mensaje:""},
+				  430:{user:"disponible", mensaje:""},
+				  500:{user:"disponible", mensaje:""}
+				};
 		
 

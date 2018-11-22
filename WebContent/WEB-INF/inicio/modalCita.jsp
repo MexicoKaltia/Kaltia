@@ -18,7 +18,13 @@
 				
 				<div id="divUsuarioEmpresa">
 					<p>Ingresa tu Fecha <script type="text/javascript"></script>: </p>
-		        	<input type="text" id="datepickerHGRC" size="30"><i class="fa fa-calendar"></i>
+					<div class="row">
+						<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-calendar bigicon"></i></span>
+						<div class="col-md-8">
+							<input type="text" id="datepickerHGRC" size="15">
+							<button type="button" class="btn btn-secondary" id="consultaHorario">Consulta Horarios</button>
+						</div>
+					  </div>
 		        	<div id="my-timeline"></div>
 		        </div>
 		        <div id="divBotonUsuarioEmpresa">
