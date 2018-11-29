@@ -11,7 +11,7 @@ $(document).ready(function() {
 		    regional: "es"
 		  });
 	  
-	  $('#consultaHorario').click(function(){
+	  $('#consultaHorarios').click(function(){
 		    
 //		    console.log("hola:"+myEvents);
 		    var myEvents2 = []; 
