@@ -1,7 +1,7 @@
 package com.kaltia.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,11 +16,11 @@ import javax.sql.DataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.kaltia.infra.BaseInfra;
-import com.mysql.jdbc.Statement;
-
-//import com.mysql.jdbc.ResultSetMetaData;
-import java.sql.ResultSetMetaData;
+//import com.kaltia.infra.BaseInfra;
+//import com.mysql.jdbc.Statement;
+//
+////import com.mysql.jdbc.ResultSetMetaData;
+//import java.sql.ResultSetMetaData;
 
 public class ConexionDao {
 

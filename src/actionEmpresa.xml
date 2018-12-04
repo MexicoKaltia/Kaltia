@@ -11,66 +11,66 @@
     <constant name="struts.devMode" value="false"/>
     <constant name="struts.enable.SlashesInActionNames" value="true"/>
     <constant name="struts.strictMethodInvocation.methodRegex" value="([a-zA-Z]*)"/>
-    <constant name="struts.multipart.saveDir" value="/tmp/files/" />
+<!--     <constant name="struts.multipart.saveDir" value="/tmp/files/" /> -->
 
-     <package name="kaltia" namespace="/kaltia" extends=" struts-default, tiles-default" strict-method-invocation="false">
-     	<result-types>
-            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
-    	</result-types>
-    	<action name="maquetas" class="com.kaltia.action.ActionBase" method="maquetasKaltia">
-    		<result name="kaltiaMaquetas" type="tiles">kaltiaMaquetas</result>
-    	</action>
-        <action name ="ingresar" class="com.kaltia.action.ActionBase" method="logginUser">
-        	<param name="actionInicial">kaltia</param>
-        	<result name="perfilAdmin1" type="tiles">perfilAdmin1</result>
-        	<result name="error">/WEB-INF/inicio/error.jsp</result>
-        	<result name="success">/WEB-INF/inicio/success.jsp</result>
-        </action>
+<!--      <package name="kaltia" namespace="/kaltia" extends=" struts-default, tiles-default" strict-method-invocation="false"> -->
+<!--      	<result-types> -->
+<!--             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/> -->
+<!--     	</result-types> -->
+<!--     	<action name="maquetas" class="com.kaltia.action.ActionBase" method="maquetasKaltia"> -->
+<!--     		<result name="kaltiaMaquetas" type="tiles">kaltiaMaquetas</result> -->
+<!--     	</action> -->
+<!--         <action name ="ingresar" class="com.kaltia.action.ActionBase" method="logginUser"> -->
+<!--         	<param name="actionInicial">kaltia</param> -->
+<!--         	<result name="perfilAdmin1" type="tiles">perfilAdmin1</result> -->
+<!--         	<result name="error">/WEB-INF/inicio/error.jsp</result> -->
+<!--         	<result name="success">/WEB-INF/inicio/success.jsp</result> -->
+<!--         </action> -->
         <!-- action name ="/alta_*" class="com.kaltia.action.ActionBase" method="{1}"-->
-        <action name ="/alta*" class="com.kaltia.action.ActionBase" method="altaElemento">
-        	<result name="success" type="tiles">perfilAdmin1</result>
-        	<result name="error">/WEB-INF/inicio/error.jsp</result>
-        </action>
-        <action name ="fileUpload" class="com.kaltia.action.FileUploadAction" ><!-- method="fileUpload"> -->
-        	<param name="filesPath">myfiles</param>
-        	<result name="success" >/WEB-INF/inicio/resultTest.jsp</result>
-        	<result name="error">/WEB-INF/inicio/error.jsp</result>
-        	<interceptor-ref name="exception"/>
-            <interceptor-ref name="i18n"/>
-            <interceptor-ref name="fileUpload">
-       			<param name="allowedTypes">text/*</param>
-       			<param name="maximumSize">10240</param>
-  	    	</interceptor-ref>
-  	    	<interceptor-ref name="basicStack"/>
-        </action>
-    </package>
+<!--         <action name ="/alta*" class="com.kaltia.action.ActionBase" method="altaElemento"> -->
+<!--         	<result name="success" type="tiles">perfilAdmin1</result> -->
+<!--         	<result name="error">/WEB-INF/inicio/error.jsp</result> -->
+<!--         </action> -->
+<!--         <action name ="fileUpload" class="com.kaltia.action.FileUploadAction" >method="fileUpload"> -->
+<!--         	<param name="filesPath">myfiles</param> -->
+<!--         	<result name="success" >/WEB-INF/inicio/resultTest.jsp</result> -->
+<!--         	<result name="error">/WEB-INF/inicio/error.jsp</result> -->
+<!--         	<interceptor-ref name="exception"/> -->
+<!--             <interceptor-ref name="i18n"/> -->
+<!--             <interceptor-ref name="fileUpload"> -->
+<!--        			<param name="allowedTypes">text/*</param> -->
+<!--        			<param name="maximumSize">10240</param> -->
+<!--   	    	</interceptor-ref> -->
+<!--   	    	<interceptor-ref name="basicStack"/> -->
+<!--         </action> -->
+<!--     </package> -->
     
-    <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default">
-    <result-types>
-            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
-    </result-types>
-        <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento">
-            <param name="actionInicial">menuA</param>
-            <result name="contacto" type="tiles">contacto</result>
-			<result name="nosotros" type="tiles">nosotros</result>
-            <result name="ingresar" type="tiles">ingresar</result>
-            <result name="registrar" type="tiles">registrar</result>
-            <result name="error">/WEB-INF/inicio/error.jsp</result>
-        </action>
-    </package>
+<!--     <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default"> -->
+<!--     <result-types> -->
+<!--             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/> -->
+<!--     </result-types> -->
+<!--         <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento"> -->
+<!--             <param name="actionInicial">menuA</param> -->
+<!--             <result name="contacto" type="tiles">contacto</result> -->
+<!-- 			<result name="nosotros" type="tiles">nosotros</result> -->
+<!--             <result name="ingresar" type="tiles">ingresar</result> -->
+<!--             <result name="registrar" type="tiles">registrar</result> -->
+<!--             <result name="error">/WEB-INF/inicio/error.jsp</result> -->
+<!--         </action> -->
+<!--     </package> -->
     
-    <package name="test" namespace="/test" extends="default, struts-default, tiles-default">
-    <result-types>
-            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
-    </result-types>
-        <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento">
-            <!-- <param name="name">Chain from A to B</param> -->
-            <result name="contacto" type="tiles">contacto</result>
-			<result name="nosotros" type="tiles">nosotros</result>
-			<result name="ingresar" type="tiles">ingresar</result>
-			<result name="ingresarAction" type="tiles">ingresarAction</result>
-		</action>
-    </package>
+<!--     <package name="test" namespace="/test" extends="default, struts-default, tiles-default"> -->
+<!--     <result-types> -->
+<!--             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/> -->
+<!--     </result-types> -->
+<!--         <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento"> -->
+<!--             <param name="name">Chain from A to B</param> -->
+<!--             <result name="contacto" type="tiles">contacto</result> -->
+<!-- 			<result name="nosotros" type="tiles">nosotros</result> -->
+<!-- 			<result name="ingresar" type="tiles">ingresar</result> -->
+<!-- 			<result name="ingresarAction" type="tiles">ingresarAction</result> -->
+<!-- 		</action> -->
+<!--     </package> -->
     <!-- Add addition packages and configuration here. -->
 </struts>
     

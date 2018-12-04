@@ -8,10 +8,10 @@
 	<definition name="kaltia" extends="viral">
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 	</definition>
-	<definition name="perfilAdmin1" extends="kaltia">
-		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
-		<put-attribute name="body" value="/modelo/viral/pages/accesoControl1.jsp" />
-	</definition>
+<!-- 	<definition name="perfilAdmin1" extends="kaltia"> -->
+<!-- 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/viral/pages/accesoControl1.jsp" /> -->
+<!-- 	</definition> -->
 	<definition name="kaltiaMaquetas" extends="kaltia">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
 		<put-attribute name="body" value="/empresa/kaltia/pages/kaltiaMaquetas.jsp" />
@@ -24,68 +24,19 @@
 		<put-attribute name="empresa" value="Mazda" cascade="true" />
 	</definition>	
 	
-	
-	<definition name="bebedero" extends="skaxis">
-		<put-attribute name="empresa" value="Bebedero" cascade="true" />
-	</definition>	
-
-	
-	
-	<definition name="actionA" extends="bronea">
-		<put-attribute name="title" value="actionA" cascade="true" />
-	</definition>
-	<definition name="hermes" extends="carinary">
-		<put-attribute name="css" expression="/css/inicio.css"
-			cascade="true" />
-	</definition>
-	
-	<definition name="menuA" extends="bronea">
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-		<!-- <put-attribute name="body" value="/tiles/inicio/Kaltia1.jsp"/> -->
-	</definition>
-	
-	<definition name="test" extends="bronea">
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-	</definition>
-	<definition name="hambur" extends="skaxis">
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		
-	</definition>
-	<definition name="PuroCuero" extends="skaxis">
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-	</definition>
+<!-- 	<definition name="menuA" extends="bronea"> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" /> -->
 
-
-
-
-	<definition name="nosotros" extends="bronea">
-		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="body" value="/modelo/bronea/pages/nosotros.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-	</definition>
-	<definition name="contacto" extends="bronea">
-		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
-		<!-- <put-attribute name="body" value="/bronea/pages/contacto.jsp" />  -->
-		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-	</definition>
-	<definition name="registrar" extends="bronea">
-		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="body" value="/modelo/bronea/pages/registrar.jsp" />
-	</definition>
-	<definition name="ingresar" extends="bronea">
-		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="body" value="/modelo/bronea/pages/ingresar.jsp" />
-	</definition>
-	<definition name="ingresarAction" extends="bronea">
-		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" />
-		<put-attribute name="body" value="/modelo/bronea/pages/ingresarAction.jsp" />
-	</definition>
-
+<!-- 	</definition> -->
+	
+	
+<!-- 	<definition name="nosotros" extends="bronea"> -->
+<!-- 		<put-attribute name="header" value="/modelo/bronea/pages/headerInterno.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/bronea/pages/nosotros.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 	</definition> -->
 </tiles-definitions>
