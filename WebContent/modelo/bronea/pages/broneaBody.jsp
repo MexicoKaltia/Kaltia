@@ -92,7 +92,7 @@
       <h6 class="heading"><s:property value='body.BodySeccion1.get(1)'/></h6>
       <p><s:property value='body.BodySeccion1.get(2)'/></p>
     </div>
-    <p><a class="btn inverse" data-toggle="modal" data-target="#modal<s:property value='body.BodySeccion1.get(3)'/>"><s:property value='body.BodySeccion1.get(4)'/></a></p>
+    <p><a class="btn inverse validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.BodySeccion1.get(3)'/>"><s:property value='body.BodySeccion1.get(4)'/></a></p>
     						
   </article>
 </div>

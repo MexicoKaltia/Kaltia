@@ -685,7 +685,8 @@
 		      'resizeDuration': 200,
 		      'wrapAround': true,
 		      'albumLabel':	"Imagen %1 de %2",
-		      'fitImagesInViewport':false
+		      'fitImagesInViewport':true
+//		      'disableScrolling':true
 		    })
 		    
    		function aparece (){
