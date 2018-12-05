@@ -543,12 +543,7 @@
 			}
 		});
 		
-		  $( "#datepickerHGRC" ).datepicker({
-			    minDate: 0,
-			    maxDate: "+1m +1w",
-			    regional: "es"
-			  });
-
+		
 		
 		$('#consultaHorario').click(function(){
 			
@@ -583,7 +578,7 @@
 			
 
 			if(diaSel<5){
-				console.log("semana");
+				tipoDia ="semana";
 			for(hora in mesHorario){
 				var hr = hora;
 				hr=hr*1;
@@ -597,7 +592,7 @@
 				}
 			}
 			}else{
-				console.log("sabado");
+				tipoDia ="sabado";
 				for(hora in mesHorario){
 					var hr = hora;
 					hr=hr*1;
@@ -625,23 +620,17 @@
 		    }
 		      myEvents = "";
 		   myEvents = myEvents2;
-		   console.log(myEvents)
-		    aparece(setMyEvents(myEvents));
+//		   console.log(myEvents)
+		   // resetear los valores de myEvents, en el programa de roadmap.js
+			   aparece(myEvents);
+		      
+		    
 		  
 		  });
 		
 		var  myEvents ="";
-		function getMyEvents() {
-			return myEvents;
-		}
-		function setMyEvents(myEvents) {
-			this.myEvents = myEvents;
-		}
+		
 
-		function aparece (){
-//		  console.log(myEvents);
-		 $('#my-timeline').roadmap(getMyEvents())
-		}
 		
 		
 		$('#btnSaveCita').click(function(){
@@ -683,4 +672,26 @@
 		
 		
 		 		
+/*
+ *       plugins
+ */
+		  $( "#datepickerHGRC" ).datepicker({
+			    minDate: 0,
+			    maxDate: "+1m +1w",
+			    regional: "es"
+			  });
+		  
+		  lightbox.option({
+		      'resizeDuration': 200,
+		      'wrapAround': true,
+		      'albumLabel':	"Imagen %1 de %2",
+		      'fitImagesInViewport':false
+		    })
+		    
+   		function aparece (){
+//		  console.log(myEvents);
+		 $('#my-timeline').roadmap(myEvents)
+		}
+		  
+
 

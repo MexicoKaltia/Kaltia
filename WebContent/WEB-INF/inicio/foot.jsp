@@ -13,8 +13,9 @@
 	<script src="<%=request.getContextPath()%>/layout/js/bootstrap.min.js"></script>
 	
 	<!-- JAVASCRIPTS Plugins-->
-	<script src="<%=request.getContextPath()%>/layout/js/jquery.roadmap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/jquery.roadmap.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/datepicker-es.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/lightbox.js"></script>
 	<!-- JAVASCRIPTS Plugins Modelo-->
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.backtotop.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.mobilemenu.js"></script>
