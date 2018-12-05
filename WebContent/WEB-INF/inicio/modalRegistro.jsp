@@ -3,7 +3,7 @@
 <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/modalImagenFondo.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Registro Cliente</h5>
 				<br>

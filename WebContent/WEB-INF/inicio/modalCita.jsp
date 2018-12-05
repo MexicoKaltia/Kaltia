@@ -4,7 +4,7 @@
 <div class="modal fade" id="modalCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
-			style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/modalImagenFondo.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/>Cita</h5>
 				<br>

@@ -8,7 +8,7 @@
 
 	<!-- Top Background Image Wrapper -->
 <%-- 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> --%>
-	<div class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
+	<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
 				<div class="fl_left headerSeccion1">
