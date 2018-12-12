@@ -30,6 +30,6 @@ $("#mainav select").change(function(){
 		}
 	});
 
-$('<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon">hola2</span></button>').appendTo("#mainav");
+//$('<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon">hola2</span></button>').appendTo("#mainav");
 //$('<span class="navbar-toggler-icon">hola</span>').appendTo("#mainav button");
 //$('<div class="collapse navbar-collapse" id="collapsibleNavbar1"></div>').appendTo('#mainav');

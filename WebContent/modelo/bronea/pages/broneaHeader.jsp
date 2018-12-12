@@ -57,32 +57,28 @@
            			</s:subset>
 		        </ul>
 				</nav>
-<!-- 			<nav class="navbar navbar-expand-lg bg-inherent navbar-dark"> -->
-<!-- 			  <div id="logo" class="fl_left "> -->
-<%-- 			    <h4><a class="navbar-brand" href="#"><s:property value='header.idEmpresa'/></a></h4> --%>
-<!-- 			  </div> -->
-<!-- 			  <div id="mainav" class="fl_right"> -->
-<!-- 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
-<%-- 			    <span class="navbar-toggler-icon"></span> --%>
-<!-- 			  </button> -->
-<!-- 			  <div class="collapse navbar-collapse" id="collapsibleNavbar"> -->
-<!-- 			    <ul class="navbar-nav"> -->
-<!-- 			      <li class="nav-item"> -->
-<!-- 			        <a class="nav-link" href="#">Link</a> -->
-<!-- 			      </li> -->
-<!-- 			      <li class="nav-item"> -->
-<!-- 			        <a class="nav-link" href="#">Link</a> -->
-<!-- 			      </li> -->
-<!-- 			      <li class="nav-item"> -->
-<!-- 			        <a class="nav-link" href="#">Link</a> -->
-<!-- 			      </li>     -->
-<!-- 			    </ul> -->
-<!-- 			  </div>   -->
-<!-- 			  </div> -->
-<!-- 			</nav> -->
-			
-
-			</header>
+				<div id="navInterno" class="fl_right">
+				<nav  class="navbar navbar-inverse">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="fa fa-superpowers">B</span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Home</a></li>
+				          <s:set var="seccion" value="1" />
+				            <s:subset source="header.headerSeccionArray5" start="1">  
+		    				<s:iterator  var ="headerSeccionArray5">
+		    				<s:iterator  value ="#headerSeccionArray5.objetoVO">
+				         	 <li><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+				         	 <s:set var="seccion" value="#seccion+1" />
+				         	 </s:iterator>
+				            </s:iterator>
+		           			</s:subset>
+						</ul>
+					</div>
+				</nav>
+			</div>				
+		</header>
   </div>
 		<!-- ################################################################################################ -->
 		<div class="wrapper">

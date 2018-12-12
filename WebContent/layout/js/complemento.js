@@ -713,7 +713,8 @@
 	   	  function aparece (){
 		    console.log(myEvents);
 		   $('#my-timeline').roadmap(myEvents,{
-		    eventsPerSlide: 10 // default: 6
+			   orientation: 'vertical',   
+		    eventsPerSlide: 16 // default: 6
 		  });
 		   			
 		  }

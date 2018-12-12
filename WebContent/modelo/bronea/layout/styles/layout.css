@@ -155,6 +155,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav ul li:hover > ul{visibility:visible; opacity:1;}
 
 #mainav button{display:none; margin:0; padding:0;}
+#navInterno{display:none; margin:0; padding:0;}
 #mainav form{display:none; margin:0; padding:0;}
 #mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
 #mainav form select{width:100%; padding:5px; border:none;}
@@ -248,6 +249,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#D01818;}
 
 /* Header */
 #header #logo h1 a{color:inherit; background-color:inherit;}
+#header #navInterno h1 a{color:inherit; background-color:inherit;}
 
 
 /* Content Area */
@@ -270,6 +272,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#D01818;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(37,37,37,.5);/* #252525 */ border-color:rgba(0,0,0,.6);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#D01818;}
 #mainav form select{color:#FFFFFF; background-color:#141414;}
+#navInterno{color:#FFFFFF; background-color:#141414;}
 
 #breadcrumb ul{border-color:rgba(255,255,255,.1);}
 #breadcrumb a{color:inherit; background-color:inherit;}
@@ -319,12 +322,12 @@ table a, #comments a{background-color:inherit;}
 
 	#topbar{}
 
-	#header{padding:30px 0;}
+	#header{padding:0 0;}
 	#header #logo{margin:0;}
 
 	#mainav{}
 	#mainav ul{display:none;}
- 	#mainav button{display:block; margin-top:5px;} 
+ 	#navInterno{display:inline-block; margin-top:5px;text-align:right;} 
 
 	#breadcrumb{}
 
@@ -341,15 +344,16 @@ table a, #comments a{background-color:inherit;}
 
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
-	.fl_left, .fl_right{display:block; float:none;}
+/* 	.fl_left, .fl_right{display:inline-block; float:none;} */
 	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}/* Experimental - Needs more testing in different situations, stops double margin when stacking */
 	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
 
 	#topbar{padding-top:15px; text-align:center;}
 	#topbar ul{margin:0 0 15px 0; line-height:normal;}
 
-	#header{text-align:center;}
-	#header #logo{margin:0 0 30px 0;}
+/* 	#header{text-align:center;} */
+	#header #logo{margin:0 0 0px 0;}
+/* 	#navInterno{ margin-top:5px;text-align:right;} */
 
 	#mainav form{margin-top:0;}
 
