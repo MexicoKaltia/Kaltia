@@ -38,13 +38,13 @@
 	    <header id="header" class="hoc clear">
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
-<%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
+<%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="">
 			           <s:property value='header.idEmpresa'/>
 			      	</a></h1>     
 				</div>
 				<nav id="mainav" class="fl_right">
-				<ul class="clear">
+				<ul class="clear" >
 		          <li class="active"><a href="#">Home</a></li>
 		          <s:set var="seccion" value="1" />
 		            <s:subset source="header.headerSeccionArray5" start="1">  
@@ -54,9 +54,34 @@
 		         	 <s:set var="seccion" value="#seccion+1" />
 		         	 </s:iterator>
 		            </s:iterator>
-          			</s:subset>
+           			</s:subset>
 		        </ul>
 				</nav>
+<!-- 			<nav class="navbar navbar-expand-lg bg-inherent navbar-dark"> -->
+<!-- 			  <div id="logo" class="fl_left "> -->
+<%-- 			    <h4><a class="navbar-brand" href="#"><s:property value='header.idEmpresa'/></a></h4> --%>
+<!-- 			  </div> -->
+<!-- 			  <div id="mainav" class="fl_right"> -->
+<!-- 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
+<%-- 			    <span class="navbar-toggler-icon"></span> --%>
+<!-- 			  </button> -->
+<!-- 			  <div class="collapse navbar-collapse" id="collapsibleNavbar"> -->
+<!-- 			    <ul class="navbar-nav"> -->
+<!-- 			      <li class="nav-item"> -->
+<!-- 			        <a class="nav-link" href="#">Link</a> -->
+<!-- 			      </li> -->
+<!-- 			      <li class="nav-item"> -->
+<!-- 			        <a class="nav-link" href="#">Link</a> -->
+<!-- 			      </li> -->
+<!-- 			      <li class="nav-item"> -->
+<!-- 			        <a class="nav-link" href="#">Link</a> -->
+<!-- 			      </li>     -->
+<!-- 			    </ul> -->
+<!-- 			  </div>   -->
+<!-- 			  </div> -->
+<!-- 			</nav> -->
+			
+
 			</header>
   </div>
 		<!-- ################################################################################################ -->
@@ -80,7 +105,7 @@
 				 <footer>
 			          <ul class="nospace inline pushright">
 <%-- Identificar Secciones
-			            <li><a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
+			            <li><a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li>
 						<li><a class="btn inverse validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li>
 <%-- Identificar Secciones  
 			            <li><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li> --%>
