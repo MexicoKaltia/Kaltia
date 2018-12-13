@@ -60,7 +60,7 @@
 				<div id="navInterno" class="fl_right">
 				<nav  class="navbar navbar-inverse">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-						<span class="fa fa-superpowers">B</span>
+						<span class="fa fa-3x fa-align-justify bigicon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="collapsibleNavbar">
 						<ul class="nav navbar-nav">

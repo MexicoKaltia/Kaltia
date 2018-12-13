@@ -21,7 +21,7 @@
 					<div class="row">
 						<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-calendar bigicon"></i></span>
 						<div class="col-md-8">
-							<input type="text" id="datepickerHGRC" size="15">
+							<input type="text" id="datepickerHGRC" size="15">:<input type="text" id="horaCita" size="15" readonly>
 							<button type="button" class="btn btn-secondary" id="consultaHorario">Consulta Horarios</button>
 						</div>
 					  </div>

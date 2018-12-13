@@ -1,15 +1,4 @@
-/*
-Template Name: Bronea
-Author: <a href="http://www.os-templates.com/">OS Templates</a>
-Author URI: http://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: http://www.os-templates.com/template-terms
-File: Mobile Menu JS
 
-Thanks to:
-"Convert a Menu to a Dropdown for Small Screens" from Chris Collier - http://css-tricks.com/convert-menu-to-dropdown/
-"Submenu's with a dash" Daryn St. Pierre - http://jsfiddle.net/bloqhead/Kq43X/
-*/
 
 $('<form action="#"><select /></form>').appendTo("#mainav");
 $("<option />",{selected:"selected",value:"",text:"MENU"}).appendTo("#mainav select");
