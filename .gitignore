@@ -10,3 +10,4 @@
 WebContent/modelo/bronea/layout/scripts/jquery.mobilemenu.js
 .settings/org.eclipse.wst.common.project.facet.core.xml
 .classpath
+WebContent/layout/js/complemento.js

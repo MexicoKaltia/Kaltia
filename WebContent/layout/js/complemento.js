@@ -61,8 +61,10 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-	var url = "http://31.220.60.92:8010/";
-//	var url = "http://localhost:8010/";
+//	var url = "http://31.220.60.92:8010/";
+	var url = "http://localhost:8010/";
+//	var urlCita = "http://31.220.60.92:8012/";
+	var urlCita = "http://localhost:8012/";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -674,7 +676,7 @@
 				console.log(citaJson);
 
 			$.ajax({
-			   	  url: url +"citaUser/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			   	  url: urlCita +"mail/prueba",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
