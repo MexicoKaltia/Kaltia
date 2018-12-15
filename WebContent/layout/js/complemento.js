@@ -61,10 +61,10 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-//	var url = "http://31.220.60.92:8010/";
-	var url = "http://localhost:8010/";
-//	var urlCita = "http://31.220.60.92:8012/";
-	var urlCita = "http://localhost:8012/";
+	var url = "http://31.220.60.92:8010/";
+//	var url = "http://localhost:8010/";
+	var urlCita = "http://31.220.60.92:8012/";
+//	var urlCita = "http://localhost:8012/";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
