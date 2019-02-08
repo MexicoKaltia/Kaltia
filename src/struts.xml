@@ -22,18 +22,18 @@
         <action name="*" class="com.kaltia.action.InitAction">
             <!-- <param name="name">Chain from A to B</param> -->
             <result name="kaltia" type="tiles">kaltia</result>            
-<!--             <result name="carinary" type="tiles">carinary</result> -->
-<!--             <result name="vortex" type="tiles">vortex</result>  -->
-<!--             <result name="abele" type="tiles">abele</result>  -->
-<!--             <result name="appsea" type="tiles">appsea</result> -->
-<!--             <result name="arialogic" type="tiles">arialogic</result> -->
-<!--             <result name="artland" type="tiles">artland</result> -->
-<!--             <result name="aerogem" type="tiles">aerogem</result> -->
-<!--             <result name="algenius" type="tiles">algenius</result> -->
-<!--             <result name="arrival" type="tiles">arrival</result> -->
+            <result name="carinary" type="tiles">carinary</result>
+            <result name="vortex" type="tiles">vortex</result> 
+            <result name="abele" type="tiles">abele</result> 
+            <result name="appsea" type="tiles">appsea</result>
+            <result name="arialogic" type="tiles">arialogic</result>
+            <result name="artland" type="tiles">artland</result>
+            <result name="aerogem" type="tiles">aerogem</result>
+            <result name="algenius" type="tiles">algenius</result>
+            <result name="arrival" type="tiles">arrival</result>
             <result name="bronea" type="tiles">bronea</result>
-<!--             <result name="skaxis" type="tiles">skaxis</result> -->
-<!--             <result name="viral" type="tiles">viral</result> -->
+            <result name="skaxis" type="tiles">skaxis</result>
+            <result name="viral" type="tiles">viral</result>
             <result name="error">/WEB-INF/inicio/error.jsp</result>
         </action>
      </package>
