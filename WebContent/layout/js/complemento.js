@@ -61,9 +61,9 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-	var url = "http://31.220.60.92:8010/";
+	var url = "http://31.220.63.183:8010/";
 //	var url = "http://localhost:8010/";
-	var urlCita = "http://31.220.60.92:8012/";
+	var urlCita = "http://31.220.63.183:8012/";
 //	var urlCita = "http://localhost:8012/";
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
@@ -76,18 +76,23 @@
 		urlAction = window.location.href;
 		action = urlAction.split("\/");
 		
-		//actionProd -- para pruebas locales comentar las siguientes lineas
-		urlAction = "http://kaltia.xyz/bronea?tipo=AAA"
-		action = urlAction.split("\/");
-		actionProd = action[3].split("\?");
-		action[3] = actionProd[0]
+		//actionProd -- para pruebas locales DESCOMENTAR , es decir trabajar con las siguientes lineas
+//		urlAction = "http://kaltia.xyz/bronea?tipo=AAA"
+//		action = urlAction.split("\/");
+//		actionProd = action[3].split("\?");
+//		action[3] = actionProd[0]
 		// fin actionProd
 		
-		$.action = action[3];
-		console.log("Action:"+action[3]);
+		//actionBD -- actualmente asigna el Action que esta grabado en base de datos, cambiar IdEmpresa === isAction en alta empresa.
+//		$.action = action[3];
+//		console.log("Action:"+action[3]);
+		//fin actionBD
 		
-		$.idEmpresa = $("#idEmpresa").val()
+		$.idEmpresa = $("#idEmpresa").val();
+		$.action = $.idEmpresa; 
 		console.log("idEmpresa:"+$.idEmpresa);
+		console.log("Action:"+$.idEmpresa);
+		console.log("Modelo:"+$.modelo);
 		
 		if (results == null){
 			_desactiveSeccionEdicion();
@@ -440,6 +445,21 @@
 			}
 			
 		});
+		
+		$('.validaUsuarioEmpresa').click(function(){
+			var tipoAcceso = $(this).attr('data-target')
+//			console.log($.usuarioEmpresa);
+			if($.usuarioEmpresa ==="" && tipoAcceso === "#modalCita"){
+				$('#divUsuarioEmpresa').hide();//.prop('readonly', false);
+				$('#divBotonUsuarioEmpresa').show();	
+				$('div.alertaUsuarioEmpresa').show();
+			}else{
+				$('#divUsuarioEmpresa').show();//.prop('readonly', false);
+				$('#divBotonUsuarioEmpresa').hide();
+				$("div.alertaUsuarioEmpresa").hide();
+			}
+		});
+		
 	
 		$('#btnSaveRegistro').click(function(){
 			
@@ -531,20 +551,6 @@
 		
 		
 		
-		$('.validaUsuarioEmpresa').click(function(){
-			var tipoAcceso = $(this).attr('data-target')
-//			console.log($.usuarioEmpresa);
-			if($.usuarioEmpresa ==="" && tipoAcceso === "#modalCita"){
-				$('#divUsuarioEmpresa').hide();//.prop('readonly', false);
-				$('#divBotonUsuarioEmpresa').show();	
-				$('div.alertaUsuarioEmpresa').show();
-			}else{
-				$('#divUsuarioEmpresa').show();//.prop('readonly', false);
-				$('#divBotonUsuarioEmpresa').hide();
-				$("div.alertaUsuarioEmpresa").hide();
-			}
-		});
-		
 		
 		
 	    $('#consultaHorario').click(function(){
@@ -552,8 +558,8 @@
 	        var mesHorario = {30:{user:"disponible"},100:{user:"disponible"},130:{user:"disponible"},200:{user:"disponible"},230:{user:"disponible"},300:{user:"disponible"},330:{user:"disponible"},400:{user:"disponible"},430:{user:"disponible"},500:{user:"disponible"},530:{user:"disponible"},600:{user:"disponible"},630:{user:"disponible"},700:{user:"disponible"},730:{user:"disponible"},800:{user:"disponible"},830:{user:"disponible"},900:{user:"disponible"},930:{user:"disponible"},1000:{user:"disponible"},1030:{user:"disponible"},1100:{user:"disponible"},1130:{user:"disponible"},1200:{user:"disponible"},1230:{user:"disponible"},1300:{user:"disponible"},1330:{user:"disponible"},1400:{user:"disponible"},1430:{user:"disponible"},1500:{user:"disponible"},1530:{user:"disponible"},1600:{user:"disponible"},1630:{user:"disponible"},1700:{user:"disponible"},1730:{user:"disponible"},1800:{user:"disponible"},1830:{user:"disponible"},1900:{user:"disponible"},1930:{user:"disponible"},2000:{user:"disponible"},2030:{user:"disponible"},2100:{user:"disponible"},2130:{user:"disponible"},2200:{user:"disponible"},2230:{user:"disponible"},2300:{user:"disponible"},2330:{user:"disponible"},2400:{user:"disponible"}};
 	        
 	        var condiciones = JSON.parse($.condiciones);//{dias1: "0-4", dias2: "5", horario11in: "900", horario11out: "1400", horario12in: "1500",  horario12out: "1800", horario21in: "1000", horario21out: "1300", horario22in: "1400",  horario22out: "1500"};//;//
-	        var mesActual = JSON.parse($.mesActual); //{28:[900,1000],29:[930,1030]}; //
-	        var mesMas =  JSON.parse($.mesMas); //{28:[930,1030]};
+	        var mesActual =   JSON.parse($.mesActual);//{28:[900,1000],29:[930,1030]};
+	        var mesMas =   JSON.parse($.mesMas);//{28:[930,1030]};
 	        var fechaSel = $("#datepickerHGRC").val().split("\/");
 	        var fechaSeleccion = fechaSel[2]+"-"+fechaSel[1]+"-"+fechaSel[0];  
 	        var dH = new Date(fechaSeleccion);
@@ -628,7 +634,7 @@
 	          console.log(tipoDia);
 	          organiza(myEvents1, tipoDia);
 	         }     
-	        });
+        });
 	      
 	      var  myEvents ="";
 
@@ -651,13 +657,9 @@
 	          aparece(myEvents);
 	          
 				$('.horaCita').click(function(){
-					
 //					alert($(this).attr("id"));
 					$('#horaCita').val($(this).attr("id"));
 				});
-				
-
-	         
 	        }
 
 		

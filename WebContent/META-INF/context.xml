@@ -4,6 +4,6 @@
     <Resource name="jdbc/kaltiaConexion" auth="Container" type="javax.sql.DataSource"
         maxActive="20" maxIdle="10" maxWait="5000"
         username="root" password="H00W6odR" driverClassName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306/kaltiadb"/>
+        url="jdbc:mysql://31.220.60.92:3306/kaltiadb"/>
 
 </Context>

@@ -10,6 +10,9 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
+					<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
 			</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">

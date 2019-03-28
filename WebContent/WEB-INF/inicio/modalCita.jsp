@@ -13,11 +13,14 @@
 			<div class="alertaUsuarioEmpresa">
 				<div class='alert alert-warning' role='alert'>Ingresa con tu Usuario para agendar Cita</div>
 			</div>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
 			<!--**********************************************************************************-->
 			<div class="modal-body">
 				
 				<div id="divUsuarioEmpresa">
-					<p>Ingresa tu Fecha <script type="text/javascript"></script>: </p>
+					<p>Ingresa tu Fecha : </p>
 					<div class="row">
 						<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-calendar bigicon"></i></span>
 						<div class="col-md-8">
