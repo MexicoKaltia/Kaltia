@@ -33,9 +33,8 @@
    			     </div>	<!-- end bodymodal -->	
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"
-					id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="btnSaveIngresa">Ingresa</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="btnSaveIngresa" >Ingresa</button>
 			</div>
 		</div>
 	</div>

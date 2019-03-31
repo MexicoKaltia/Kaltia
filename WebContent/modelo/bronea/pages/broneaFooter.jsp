@@ -19,7 +19,7 @@
 		 </li>
 		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion1.get(3)' /></li>
 		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion1.get(4)' /></li>
-		 <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		 <iframe src="<s:property value='footer.footerSeccion1.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</ul>
     </div>
     <!-- ################################################################################################ -->
@@ -27,10 +27,10 @@
       <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
       <ul class="nospace linklist">
 	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(2)' />"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(3)' />"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(4)' />"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(5)' />"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
 <%--         <s:subset start="1" source ="footer.footerSeccion2"> --%>
 <%--         <s:iterator> --%>
 <%-- <%--identificar Secciones --%>

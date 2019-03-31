@@ -60,7 +60,6 @@
 		      <!--**********************************************************************************-->
 			<div class="modal-footer">
 				<a href="#" data-dismiss="modal" class="btn" id="modal_btnClose">Cerrar</a>
-				<a href="#" class="btn btn-primary" id="btnSaveContacto">Guardar</a>
 			</div>
 		</div>
 	</div>

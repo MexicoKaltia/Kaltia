@@ -162,7 +162,7 @@
 							<form id="faviconHSA5Form">
 							<hiden class="faviconHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="faviconHSA5" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="faviconHSA5" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />"/>
 		    			</form>
 			          </div>
 			        </div>
@@ -173,7 +173,7 @@
 	    				<form id="logoHSA5Form">
 							<hiden class="logoHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="logoHSA5" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="logoHSA5" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />"/>
 		    			</form>
 
 			          </div>
@@ -185,7 +185,7 @@
 	    				<form id="fondoHeaderHSA5Form">
 								<hiden class="fondoHeaderHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
-							<input id="fondoHeaderHSA5" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="fondoHeaderHSA5" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />"/>
 		    			</form>
 
 			          </div>
@@ -419,7 +419,7 @@
 						<form id="imagenBSA1Form">
 							<hiden class="imagenBSA1Form"></hiden>
 							<label for="imagenBSA1">Actualiza imagen:</label> 
-							<input id="imagenBSA1" type="file" name="uploadfile" accept="image/jpeg" />
+							<input id="imagenBSA1" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)'/>"/>
 		    			</form>
 			          </div>
 			        </div>
@@ -566,7 +566,7 @@
 									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
 										<label for="imagenObjetoBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
-										<input id="imagenObjetoBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
+										<input id="imagenObjetoBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>"/>
 <%-- 										<script type="text/javascript">var contaImagenBodySeccionArray3 = <s:property value='#conta'/></script> --%>
 					    			</form>
 						          </div>
@@ -668,7 +668,7 @@
 					<form id="imagenBS1Form">
 						<hiden class="imagenBS1Form"></hiden>
 						<label for="imagenBS1">Actualiza imagen:</label> 
-						<input id="imagenBS1" type="file" name="uploadfile" accept="image/jpeg" />
+						<input id="imagenBS1" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='body.BodySeccion1.get(0)'/>"/>
 					</form>
 			      </div>
 			    </div>
@@ -737,7 +737,7 @@
 									<form id="imagenBSA4Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA4Form<s:property value='#conta'/>"></hiden>
 										<label for="imagenObjetoBSA4<s:property value='#conta'/>">Actualiza imagen:</label> 
-										<input id="imagenObjetoBSA4<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" />
+										<input id="imagenObjetoBSA4<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"/>
 					    			</form>
 						          </div>
 						        </div>
@@ -842,7 +842,7 @@
 			        <div class="row">
 			          <span class="col-md-4 col-md-offset-4 text-left"><i class="btmspace-30 fa fa-4x fa-circle-o"></i>Ubicacion</span>
 			          <div class="col-md-8">
-						<input type="text" id="ubicacionFS1" value="<s:property value='footer.footerVarios' />"/>
+						<input type="text" id="ubicacionFS1" value="<s:property value='footer.footerSeccion1.get(5)' />"/>
 			          </div>
 			        </div>
 				  

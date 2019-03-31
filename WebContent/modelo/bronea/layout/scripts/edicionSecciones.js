@@ -18,7 +18,8 @@ $(document).ready(function() {
 	 */
 /////////////
 	$('.headerSeccion1').click(function(){
-//		console.log("idEmpresa:"+idEmpresa);
+		//$('#modalEdicionHeaderSeccion1_btnSave').attr("disabled", false);
+		
 		if(validaParam()){
 			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
@@ -319,9 +320,7 @@ $(document).ready(function() {
 			
 			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				console.log(valoresFinales);
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				console.log(valoresFinales);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "footerSeccion2",

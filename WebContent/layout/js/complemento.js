@@ -237,6 +237,12 @@
 					var iconoClases = $("#"+campoObjeto+i).attr('class')
 					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
 					valoresString = valoresString + iconoClase + "&&";
+				}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
+					if($("#"+campo).val()==null || $("#"+campo).val()==""){
+						valoresString = valoresString + $("#"+campo).attr('value') + "&&"
+					}else{
+						valoresString = valoresString + $("#"+campo).val() + "&&"
+					}
 				}else if (campo.includes("objeto")){				
 					if(valoresString.length > 0){
 					valoresString = valoresString.slice(0,valoresString.length-2)
@@ -251,6 +257,12 @@
 								var iconoClases = $("#"+campoObjeto+i).attr('class');
 								var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","");
 								valorStringObjeto = valorStringObjeto + iconoClase + "&&";
+							}else if (campoObjeto.includes("imagen") || campoObjeto.includes("logo") || campoObjeto.includes("favicon") || campoObjeto.includes("fondo")){
+								if($("#"+campoObjeto+i).val()==null || $("#"+campoObjeto+i).val()==""){
+									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).attr('value') + "&&"
+								}else{
+									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&"
+								}
 							}else{
 								valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
 							}
@@ -273,6 +285,12 @@
 						var iconoClases = $("#"+campoObjeto+i).attr('class')
 						var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
 						valoresString = valoresString + iconoClase + "++";
+					}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
+						if($("#"+campo).val()==null || $("#"+campo).val()==""){
+							valoresString = valoresString + $("#"+campo).attr('value') + "++"
+						}else{
+							valoresString = valoresString + $("#"+campo).val() + "++"
+						}
 					}else{
 					valoresString = valoresString + $("#"+campo).val() + "++" 
 				}
@@ -327,9 +345,38 @@
 //		console.log("despues:"+valoresFinales);
 		return valoresFinales;
 	}
+	
+	function limpiaAlerta(){
+		$( "div" ).remove( "#limpiaAlerta" );
+	}
+	
+	function avisaAlerta(data){
+		 if(data.codigo===0){
+			  validaUsuarioEmpresa(data.mensaje);
+			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+			  $(alerta).insertAfter($('.alerta_in'));
+		  }else{
+			  alerta="<div id='limpiaAlerta' class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+				$(alerta).insertAfter($('.alerta_in'));
+		  }
+	}
+	
+	function avisaAlertaImagen(data){
+		
+	}
+	
+	function errorAlerta(){
+		alerta="<div id='limpiaAlerta' class='alert alert-danger' role='alert'>Error de Enlace</div>";
+		$(alerta).insertAfter($('.alerta_in'));
+	}
+	
+	function errorAlertaImagen(){
+		
+	}
 
 			
 		function enviaDataEdicion(finalJson){
+			limpiaAlerta();
 			var context = "";
 			for(campo in finalJson){
 				if(campo === "action")
@@ -350,16 +397,10 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  if(data.codigo===0){
-					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-						$(alerta).insertAfter($('.alerta_in'));
-					  }else{
-						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alerta_in'));
-					  }
+						  avisaAlerta(data);}
 					},
 				  error: function(){
-					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
-						$(alerta).insertAfter($('.alerta_in'));
+					  errorAlerta();
 				  }
 				});
 		}
@@ -403,7 +444,8 @@
 		})
 		
 		function enviaImagen(idImagenForm){
-		
+			
+			limpiaAlerta(),
 				console.log("Comineza envio imagenBody:"+idImagenForm);
 				var alerta="";
 				  $.ajax({
@@ -418,21 +460,24 @@
 				    cache: false,
 				    success: 	function(data){
 				    	if(data.codigo==="00"){
-						  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
-						  $(alerta).insertAfter($('.'+idImagenForm));
-						  console.log("envio ok");
-				    	}else{
-				    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
-							  $(alerta).insertAfter($('.'+idImagenForm));
-				    		console.log("envio Nok");
-				    	} },
+				    		if(data.codigo==="00"){
+				  			  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+				  			  $(alerta).insertAfter($('.'+idImagenForm));
+				  			  console.log("envio ok");
+				  	    	}else{
+				  	    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
+				  				  $(alerta).insertAfter($('.'+idImagenForm));
+				  	    		console.log("envio Nok");
+				  	    	}
+				    	  } 
+				    	},
 				    error: function () {
 				    	alerta="<div class='alert alert-danger' role='alert'>error de carga de imagen</div>";
 						  $(alerta).insertAfter($('.'+idImagenForm));
-				    	console.log("envio error");
+				  	console.log("envio error");
 				    }
 				  });
-				  $(alerta).insertAfter($('.'+idImagenForm));
+				  //$(alerta).insertAfter($('.'+idImagenForm));
 		}
 		
 		$('.grupoRS').click(function(){
@@ -462,7 +507,7 @@
 		
 	
 		$('#btnSaveRegistro').click(function(){
-			
+			limpiaAlerta();
 			valoresRegistro = $('#nombreRegistro').val()+"++"+$('#apellidoRegistro').val()+"++"+$('#emailRegistro').val()+"++"+$('#telefonoRegistro').val()+"++"+$('#usuarioRegistro').val()+"++"+$('#passRegistro1').val()+"++"+$('#messageRegistro').val();
 			 
 				registroJson = { action : $.action,
@@ -482,21 +527,19 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  if(data.codigo===0){
-					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-						$(alerta).insertAfter($('.alerta_in'));
-					  }else{
-						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alerta_in'));
-					  }
+						  avisaAlerta(data);}
 					},
 				  error: function(){
-					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
-						$(alerta).insertAfter($('.alerta_in'));
+					  errorAlerta();
 				  }
 				});
 		});
 		
+		
+		
 		$('#btnSaveIngresa').click(function(){
+			limpiaAlerta();
+//			$(this).attr("disabled", true);
 			d = new Date();
 			resp = $.getJSON("http://ipinfo.io", function(response){
 				console.log(response.ip)
@@ -523,19 +566,10 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-					  if(data.codigo===0){
-						  validaUsuarioEmpresa(data.mensaje);
-						  alerta="<div class='alert alert-success' role='alert'>Bienvenido "+$.usuarioEmpresa+"</div>";
-						  $(alerta).insertAfter($('.alerta_in'));
-						
-					  }else{
-						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alerta_in'));
-					  }
+					  avisaAlerta(data);
 					},
-				  error: function(){
-					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
-						$(alerta).insertAfter($('.alerta_in'));
+				  error: function(data){
+					  errorAlerta(data);
 				  }
 				});
 		});
@@ -667,7 +701,7 @@
 		
 		
 		$('#btnSaveCita').click(function(){
-			
+			limpiaAlerta();
 			valoresCita = $('#datepickerHGRC').val()+"|"+$('#horaCita').val();
 			 console.log($.idUsuarioEmpresa);
 			 console.log(valoresCita);
@@ -688,16 +722,10 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  if(data.codigo===0){
-					  alerta="<div class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-						$(alerta).insertAfter($('.alerta_in'));
-					  }else{
-						  alerta="<div class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-							$(alerta).insertAfter($('.alerta_in'));
-					  }
+					  avisaAlerta(data);}
 					},
 				  error: function(){
-					  alerta="<div class='alert alert-danger' role='alert'>Error de Enlace</div>";
-						$(alerta).insertAfter($('.alerta_in'));
+					  errorAlerta();
 				  }
 				});
 		});
