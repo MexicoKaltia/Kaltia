@@ -352,7 +352,7 @@
 	
 	function avisaAlerta(data){
 		 if(data.codigo===0){
-			  validaUsuarioEmpresa(data.mensaje);
+			  validaUsuarioEmpresa(data.mensajeArray);
 			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
 			  $(alerta).insertAfter($('.alerta_in'));
 		  }else{
@@ -575,12 +575,12 @@
 		});
 		
 		function validaUsuarioEmpresa(mensajeArray){
-			nombreUsuario = mensajeArray[0].split("\++");
-			$.idUsuarioEmpresa = nombreUsuario[0];
-			$.usuarioEmpresa = nombreUsuario[1];
-			$.condiciones = mensajeArray[1];
-			$.mesActual = mensajeArray[2];
-			$.mesMas = mensajeArray[3];
+			//nombreUsuario = mensajeArray[0].split("\++");
+			$.idUsuarioEmpresa = mensajeArray[0];
+			$.usuarioEmpresa = mensajeArray[1];
+			$.condiciones = mensajeArray[2];
+			$.mesActual = mensajeArray[3];
+			$.mesMas = mensajeArray[4];
 		}
 		
 		
@@ -650,8 +650,8 @@
 	            }
 	          }
 	        }
-	        console.log(tipoDia);
-	        organiza(myEvents1, tipoDia);
+//	          console.log(myEvents1);
+//	          $("#horaCita").html(myEvents1).fadeIn();
 	        }else{
 	          tipoDia ="sabado";
 	          for(hora in mesHorario){
@@ -665,24 +665,25 @@
 	             }
 	            }
 	          }
-	          console.log(tipoDia);
-	          organiza(myEvents1, tipoDia);
-	         }     
+//	          console.log(myEvents1);
+//	          $.each(myEvents1, function(disp){
+//	        	  $("#horaCita select").append('<option value="'+disp+'">'+dis+'</option>');
+//	        	      });
+	          //organiza(myEvents1, tipoDia);
+	         }
+	        organiza(myEvents1, tipoDia);
         });
 	      
 	      var  myEvents ="";
 
 	      function organiza(myEvents1, tipoDia){
-	      var horario = myEvents1;//JSON.stringify(myEvents1);
-	        /*
-	         */
-	      //   console.log(myEvents1)
+	      var horario = myEvents1;
 	          var myEvents2 = []; 
 	          for(hora in horario){
 	            var valor = horario[hora].split("\:");;
 	            if(valor[1]==="disponible")
 	            {
-	             var elemento =  {date: '<a class="horaCita" id='+valor[0]+'>'+valor[0]+'</a>' ,content:''};
+	             var elemento =  {date: '<a class="horaCita" href="#topCita" id='+valor[0]+'>'+valor[0]+'</a>' ,content:''};
 	              myEvents2.push(elemento);
 	            } 
 	          }
@@ -693,6 +694,7 @@
 				$('.horaCita').click(function(){
 //					alert($(this).attr("id"));
 					$('#horaCita').val($(this).attr("id"));
+					$('#btnSaveCita').prop('disabled', false);
 				});
 	        }
 
@@ -712,7 +714,7 @@
 				console.log(citaJson);
 
 			$.ajax({
-			   	  url: urlCita +"mail/prueba",//+ context,//+finalJson.action+"/"+finalJson[1],
+			   	  url: url +"cita1",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
@@ -740,7 +742,7 @@
 			    minDate: 0,
 			    maxDate: "+1m +1w",
 			    regional: "es"
-			  });
+			    });
 		  
 		  lightbox.option({
 		      'resizeDuration': 200,
