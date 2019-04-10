@@ -1,5 +1,7 @@
 package com.kaltia.action;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -27,12 +29,14 @@ public class InitAction extends ActionSupport {
 	protected HeaderVO header;
 	protected BodyVO body;
 	protected FooterVO footer;
-	
 	protected IdentidadVO identidadVO; // = new IdentidadVO();
+	
+	private InetAddress address;
+	
 	static final Logger logger = LogManager.getLogger(InitAction.class.getName());
 
 	@Override
-	public String execute() {
+	public String execute() throws UnknownHostException {
 
 		String actionName = ActionContext.getContext().getName();
 		ServletContext context = (ServletContext) ServletActionContext.getServletContext();
@@ -45,6 +49,11 @@ public class InitAction extends ActionSupport {
 		 * System.out.println("Context context " + context.getServletContextName());
 		 */
 		
+		
+		address = InetAddress.getLocalHost();
+		String userMachine=address.getHostName();
+		logger.info("hola"+userMachine);
+		logger.info("hola"+address);
 				
 
 		Identidad identidad = new Identidad();

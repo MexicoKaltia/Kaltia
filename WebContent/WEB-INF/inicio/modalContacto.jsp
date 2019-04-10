@@ -52,7 +52,7 @@
                <div class="row">
                   <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                   <div class="col-md-8">
-                     <iframe src="<s:property value='footer.footerVarios'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                     <iframe src="<s:property value='footer.footerSeccion1.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                    </div>
                </div>		
 
