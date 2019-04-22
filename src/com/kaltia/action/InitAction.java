@@ -52,8 +52,8 @@ public class InitAction extends ActionSupport {
 		
 		address = InetAddress.getLocalHost();
 		String userMachine=address.getHostName();
-		logger.info("hola"+userMachine);
-		logger.info("hola"+address);
+		logger.info("hola:"+userMachine);
+		logger.info("hola:"+address);
 				
 
 		Identidad identidad = new Identidad();

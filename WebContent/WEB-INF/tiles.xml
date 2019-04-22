@@ -13,11 +13,6 @@
 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
-		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 <!-- 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" /> -->
 	</definition>
@@ -31,6 +26,11 @@
 <!-- 		<put-attribute name="modalContacto" value="/modelo/bronea/pages/modalContacto.jsp" /> -->
 <!-- 		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" /> -->
 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
 	</definition>
 	
 	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp">
@@ -61,7 +61,12 @@
 		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+		<put-attribute name="modalEdicion" value="/WEB-INF/inicio/modalEdicionVacio.jsp" />
+		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresaVacio.jsp" />
+		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistroVacio.jsp" />
+		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCitaVacio.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContactoVacio.jsp" />
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjetoVacio.jsp" />
 	</definition>
 		<definition name="vortex" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/vortex/pages/vortexHeader.jsp" />

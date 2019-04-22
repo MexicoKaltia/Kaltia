@@ -69,7 +69,7 @@
   </header>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row2 bgded" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccionArray2.get(0).objetoVO.get(0)' />');">
+<div class="wrapper row2 bgded" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(3)'/>');">
   <div class="overlay">
     <div id="breadcrumb" class="clear"> 
 

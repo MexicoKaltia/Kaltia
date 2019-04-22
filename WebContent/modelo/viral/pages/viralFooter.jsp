@@ -24,7 +24,7 @@
       <ul class="nospace linklist">
         <s:subset start="1" source ="footer.footerSeccion2">
         <s:iterator>
-          		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li>
+          		<li><a href="<s:property/>"><s:property/></a></li>
          </s:iterator>
          </s:subset>
 
@@ -35,7 +35,7 @@
     <div class="one_quarter">
       <h6 class="title"><s:property value='footer.footerSeccion3.get(0)' /></h6>
       <article>
-        <h2 class="nospace"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='footer.footerSeccion3.get(1)' />">
+        <h2 class="nospace"><a href="<s:property value='footer.footerSeccion3.get(1)' />">
         <s:property value='footer.footerSeccion3.get(2)' /></a></h2>
         <time class="smallfont" datetime="2045-04-06"><s:property value='footer.footerSeccion3.get(3)' /></time>
         <p><s:property value='footer.footerSeccion3.get(4)' /></p>
@@ -45,7 +45,8 @@
     <div class="one_quarter">
       <h6 class="title"><s:property value='footer.footerSeccion5.get(0)' /></h6>
       <p><s:property value='footer.footerSeccion5.get(1)' /></p>
-      <form method="post" action="<s:property value='identidadVO.idAction'/>/<s:property value='footer.footerSeccion5.get(2)' />">
+<%--       <form method="post" action="<s:property value='identidadVO.idAction'/>/<s:property value='footer.footerSeccion5.get(2)' />"> --%>
+		<form method="post" action="<s:property value='footer.footerSeccion5.get(2)' />">
         <fieldset>
           <legend>Newsletter:</legend>
           <input class="btmspace-15" type="text" value="" placeholder="Name">

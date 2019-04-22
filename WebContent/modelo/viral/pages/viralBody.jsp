@@ -52,7 +52,8 @@
             <s:subset start="1" source ="body.bodySeccionArray1">
 		    <s:iterator var="bodySeccionArray1">
         	  <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)'/>">
-            	<h6 class="nospace btmspace-10"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)'/>">
+<%--             	<h6 class="nospace btmspace-10"><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)'/>"> --%>
+				<h6 class="nospace btmspace-10"><a href="<s:property value='#bodySeccionArray1.objetoVO.get(1)'/>">
             	<i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)'/>"></i>
             	<s:property value='#bodySeccionArray1.objetoVO.get(3)'/></a></h6>
             	<p class="nospace"><s:property value='#bodySeccionArray1.objetoVO.get(4)'/>&hellip;</p>

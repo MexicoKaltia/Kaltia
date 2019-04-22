@@ -63,8 +63,11 @@
 	
 	var url = "http://31.220.63.183:8010/";
 //	var url = "http://localhost:8010/";
+	var urlUpload= "http://31.220.63.183:8011/";
 	var urlCita = "http://31.220.63.183:8012/";
 //	var urlCita = "http://localhost:8012/";
+	
+	
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
@@ -352,7 +355,7 @@
 	
 	function avisaAlerta(data){
 		 if(data.codigo===0){
-			  validaUsuarioEmpresa(data.mensajeArray);
+//			  validaUsuarioEmpresa(data.mensajeArray);
 			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
 			  $(alerta).insertAfter($('.alerta_in'));
 		  }else{
@@ -450,7 +453,7 @@
 				var alerta="";
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
-    				url: "http://31.220.60.92:8011/fileUpload/"+$.idEmpresa,
+    				url: urlUpload+"fileUpload/"+$.idEmpresa,
 				    type: "POST",
 //				    data: new FormData($("#upload-file-form")[0]),
 				    data: new FormData($("#"+idImagenForm)[0]),
@@ -567,6 +570,7 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  avisaAlerta(data);
+					  validaUsuarioEmpresa(data.mensajeArray);
 					},
 				  error: function(data){
 					  errorAlerta(data);

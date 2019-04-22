@@ -30,6 +30,7 @@ public class Identidad {
 
 		HashMap<String, Object> hashIdentidad = new HashMap<String, Object>();
 		IdentidadVO identidadVO = (IdentidadVO)identidadDao.qryEmpresa(action);
+		logger.info(identidadVO.getCodigoVO());
 		if(identidadVO.getCodigoVO().equals("00")) {
 			if(identidadVO.getActionPrincipal().equals("99")) {		
 				hashIdentidad.put("identidadVO", identidadVO);
