@@ -40,14 +40,14 @@
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="emailRegistro" name="email" type="text" placeholder="Email" class="form-control">
+		                        <input id="emailRegistro" name="email" type="email" placeholder="Email" class="form-control">
 		                      </div>
 		                    </div>
 		
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="telefonoRegistro" name="phone" type="text" placeholder="Num Telefono" class="form-control">
+		                        <input id="telefonoRegistro" name="phone" type="tel" placeholder="Num Telefono" class="form-control">
 		                      </div>
 		                    </div>
 		                    <div class="row">

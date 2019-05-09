@@ -2,6 +2,8 @@ package com.kaltia.vo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class IdentidadVO extends BaseVO implements Serializable {
 	

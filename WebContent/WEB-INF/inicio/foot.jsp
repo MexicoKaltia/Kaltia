@@ -35,6 +35,7 @@
 	
 	<!-- ################################################################################################ -->
 <input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
+<input type="hidden" id="idAction" value="<s:property value='identidadVO.action'/>" />
 
 </body>
 </html>

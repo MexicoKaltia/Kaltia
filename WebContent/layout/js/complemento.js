@@ -27,22 +27,6 @@
 	/***********************************************************************************************************************************************************/
 	//funciones de Nav Scroll
 //	var slider = $("#slider").height();
-	var valorFijo = $("#headerSeccionArray5").offset().top
-	$(window).scroll(function(){
-		var scroll = $(window).scrollTop();
-//		console.log("header3 oofset top:"+valorFijo)
-		
-		if (scroll >= valorFijo ) {
-			$('#headerSeccionArray5').addClass('sticky-top');
-			$('#headerSeccionArray5').addClass('nav-overlay');
-//			console.log("activo:"+scroll);
-		} else {
-			$('#headerSeccionArray5').removeClass('sticky-top');
-			$('#headerSeccionArray5').removeClass('nav-overlay');
-//			console.log("fuera:"+scroll);
-		}
-	});
-	$(window).scroll();
 	
 
 	
@@ -92,7 +76,7 @@
 		//fin actionBD
 		
 		$.idEmpresa = $("#idEmpresa").val();
-		$.action = $.idEmpresa; 
+		$.action = $("#idAction").val();
 		console.log("idEmpresa:"+$.idEmpresa);
 		console.log("Action:"+$.idEmpresa);
 		console.log("Modelo:"+$.modelo);
@@ -453,7 +437,7 @@
 				var alerta="";
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
-    				url: urlUpload+"fileUpload/"+$.idEmpresa,
+    				url: urlUpload+"fileUpload/"+$.action,
 				    type: "POST",
 //				    data: new FormData($("#upload-file-form")[0]),
 				    data: new FormData($("#"+idImagenForm)[0]),
