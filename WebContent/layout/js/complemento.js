@@ -591,6 +591,8 @@
 	        console.log("dH:"+dH);
 	        console.log("diaSel:"+diaSel);
 	        console.log("mes:"+dH.getMonth());
+	        
+	        $('#horaCita').val("");
 
 	        var hrConfirmado =[];
 	        if(mesActual[fechaSel[0]] == null){
@@ -678,10 +680,12 @@
 	          myEvents = "";
 	          myEvents = myEvents2;
 	          aparece(myEvents);
+	          $('#btnSaveCita').prop('disabled', true);
 	          
 				$('.horaCita').click(function(){
-//					alert($(this).attr("id"));
 					$('#horaCita').val($(this).attr("id"));
+					
+					alert("aqui tengo q habilitar el siguiente modal o esconder la linea de tiempo, para agregar los campos de textArea Descripcion y FileUpload para archivos.");
 					$('#btnSaveCita').prop('disabled', false);
 				});
 	        }
