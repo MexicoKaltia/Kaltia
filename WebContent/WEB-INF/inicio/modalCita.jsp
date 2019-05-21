@@ -32,11 +32,15 @@
 							</div>
 							<select name="horaCita" id="horaCita" multiple></select> -->
 							<button type="button" class="btn btn-secondary" id="consultaHorario">Consulta Horarios</button>
-							<button type="button" class="btn btn-secondary" id="btnSaveCita" disabled="true">Cita </button>
+<!-- 							<button type="button" class="btn btn-secondary" id="btnSaveCita" disabled="true">Cita </button> -->
 						</div>
 					  </div>
 		        	<div id="my-timeline"></div>
 		        </div>
+		        <div id="descripcionCita">
+		        	<textarea class="form-control" id="descrCita" name="descrCita" placeholder="Captura la descripcion de tu Cita, en breve un asesor se pondrá en contacto. Gracias" rows="7"></textarea>
+		        </div>
+		        
 		        <div id="divBotonUsuarioEmpresa">
 		        	<a class="btn inverse" data-dismiss="modal" data-toggle="modal" data-target="#modalIngresa">Ingresa</a>  
 		        	<a class="btn" data-dismiss="modal" data-toggle="modal" data-target="#modalRegistro">Registro</a>
@@ -45,7 +49,7 @@
 		    <!--**********************************************************************************-->
 			<div class="modal-footer">
 				<a href="#" data-dismiss="modal" class="btn" id="modal_btnClose">Cerrar</a>
-				<!-- <a href="#" class="btn btn-primary" id="btnSaveCita" disabled="true">Cita</a> -->
+				<button type="button" class="btn btn-secondary" id="btnSaveCita" disabled="true">Cita </button>
 			</div>
 		</div>
 	</div>

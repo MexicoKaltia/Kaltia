@@ -362,35 +362,7 @@
 	}
 
 			
-		function enviaDataEdicion(finalJson){
-			limpiaAlerta();
-			var context = "";
-			for(campo in finalJson){
-				if(campo === "action")
-					context = context + finalJson.action +"/"
-				else{
-					context = context + campo +"/"
-				}
-			}
-//			console.log(url + context)
-			$.ajax({
-			   	  url: url +"edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
-			      dataType: 'json',
-				  type: 'POST',
-				  contentType: "application/json",
-				  data: JSON.stringify(finalJson),
-				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
-				  crossDomain: true,
-				  success: 	function(data){					  
-					  console.log(data);
-					  if(data.codigo===0){
-						  avisaAlerta(data);}
-					},
-				  error: function(){
-					  errorAlerta();
-				  }
-				});
-		}
+		
 		
 		
 			/***********************************************************************************************************************************
@@ -428,7 +400,202 @@
 			console.log(imgArrayForm);
 			console.log(imgArrayInput);
 			$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
-		})
+		});
+		
+		$('.grupoRS').click(function(){
+			var rsInput =$(this).children("input").attr('id');
+			var rsCheck =$(this).children("div").children("div").children("input").attr('id');
+			console.log(rsCheck);
+			console.log(rsInput);
+			if($('#'+rsCheck).prop('checked')){
+				$('#'+rsInput).prop('readonly', false);
+			}
+			
+		});
+		
+		$('.validaUsuarioEmpresa').click(function(){
+			var tipoAcceso = $(this).attr('data-target')
+//			console.log($.usuarioEmpresa);
+			if($.usuarioEmpresa ==="" && tipoAcceso === "#modalCita"){
+				$('#divUsuarioEmpresa').hide();//.prop('readonly', false);
+				$('#divBotonUsuarioEmpresa').show();	
+				$('div.alertaUsuarioEmpresa').show();
+				$('#descripcionCita').hide();
+			}else{
+				$('#divUsuarioEmpresa').show();//.prop('readonly', false);
+				$('#divBotonUsuarioEmpresa').hide();
+				$("div.alertaUsuarioEmpresa").hide();
+				
+			}
+		});
+		
+		function validaUsuarioEmpresa(mensajeArray){
+			//nombreUsuario = mensajeArray[0].split("\++");
+			$.idUsuarioEmpresa = mensajeArray[0];
+			$.usuarioEmpresa = mensajeArray[1];
+			$.condiciones = mensajeArray[2];
+			$.mesActual = mensajeArray[3];
+			$.mesMas = mensajeArray[4];
+		}
+		
+		$('#consultaHorario').click(function(){
+	    	$('#my-timeline').show();
+	    	$('#descripcionCita').hide();
+	    	$('#horaCita').val("");
+	    	
+	        var mesHorario = {30:{user:"disponible"},100:{user:"disponible"},130:{user:"disponible"},200:{user:"disponible"},230:{user:"disponible"},300:{user:"disponible"},330:{user:"disponible"},400:{user:"disponible"},430:{user:"disponible"},500:{user:"disponible"},530:{user:"disponible"},600:{user:"disponible"},630:{user:"disponible"},700:{user:"disponible"},730:{user:"disponible"},800:{user:"disponible"},830:{user:"disponible"},900:{user:"disponible"},930:{user:"disponible"},1000:{user:"disponible"},1030:{user:"disponible"},1100:{user:"disponible"},1130:{user:"disponible"},1200:{user:"disponible"},1230:{user:"disponible"},1300:{user:"disponible"},1330:{user:"disponible"},1400:{user:"disponible"},1430:{user:"disponible"},1500:{user:"disponible"},1530:{user:"disponible"},1600:{user:"disponible"},1630:{user:"disponible"},1700:{user:"disponible"},1730:{user:"disponible"},1800:{user:"disponible"},1830:{user:"disponible"},1900:{user:"disponible"},1930:{user:"disponible"},2000:{user:"disponible"},2030:{user:"disponible"},2100:{user:"disponible"},2130:{user:"disponible"},2200:{user:"disponible"},2230:{user:"disponible"},2300:{user:"disponible"},2330:{user:"disponible"},2400:{user:"disponible"}};
+	        var condiciones = JSON.parse($.condiciones);//{dias1: "0-4", dias2: "5", horario11in: "900", horario11out: "1400", horario12in: "1500",  horario12out: "1800", horario21in: "1000", horario21out: "1300", horario22in: "1400",  horario22out: "1500"};//;//
+	        var mesActual =   JSON.parse($.mesActual);//{28:[900,1000],29:[930,1030]};
+	        var mesMas =   JSON.parse($.mesMas);//{28:[930,1030]};
+	        var fechaSel = $("#datepickerHGRC").val().split("\/");
+	        var diaSeleccion = (fechaSel[0]*1+1);
+	        var fechaSeleccion = fechaSel[2]+"-"+fechaSel[1]+"-"+diaSeleccion;  
+	        var dH = new Date(fechaSeleccion);
+	        var diaSel = dH.getDay();
+	        console.log("fechaSel:"+fechaSel);
+	        console.log("fechaSeleccion:"+fechaSeleccion);
+	        console.log("dH:"+dH);
+	        console.log("diaSel:"+diaSel);
+	        console.log("mes:"+dH.getMonth());     	   
+	        console.log("MES:"+ mesActual[fechaSel[0]]);
+//	        console.log("MESJSON:"+ $.mesActual.(fechaSel[0]*1));
+
+	        var hrConfirmado;
+	        if(mesActual[fechaSel[0]] != null){
+	        	if((fechaSel[1]*1) === (dH.getMonth()*1+1)){
+			          hrConfirmado = mesActual[fechaSel[0]];
+			    }else if((fechaSel[1]*1) === (dH.getMonth()*1+2)){
+			          hrConfirmado = mesMas[fechaSel[0]];
+			    }
+        	}else{
+        		console.log("no hay citas programadas para el dia:"+fechaSel[0])
+        		hrConfirmado = {00: {descripcionCita: "", userEmpresa: ""}}
+        	}
+	        console.log(hrConfirmado);
+
+	        var myEvents1 =[];
+	        var entrada1 = condiciones.horario11in;
+	        entrada1 = entrada1-1;
+	        var salida1 = condiciones.horario11out;
+	        salida1 = salida1-1;
+	        var entrada2 = condiciones.horario12in;
+	        entrada2 = entrada2-1;
+	        var salida2 = condiciones.horario12out;
+	        salida2 = salida2-1;
+	        
+	        var entradaF1 = condiciones.horario21in; //
+	        entradaF1 = entradaF1-1;
+	        var salidaF1 = condiciones.horario21out;
+	        salidaF1 = salidaF1-1;
+	        var entradaF2 = condiciones.horario22in; 
+	        entradaF2 = entradaF2-1;
+	        var salidaF2 = condiciones.horario22out; //
+	        salidaF2 = salidaF2-1;
+	        
+	        if(0 < diaSel && diaSel < 6){
+	          tipoDia ="semana";
+	          console.log(tipoDia)
+	        for(hora in mesHorario){
+	          var hr = hora;
+	          hr=hr*1;
+	          if((hr > entrada1 && salida1 > hr) || (hr> entrada2 && salida2 > hr)){
+	            if(hrConfirmado[hr]==null){
+	              //console.log("hr:"+hr);
+	             var hor = hora+":disponible";
+	             myEvents1.push(hor); 
+	            }
+	          }
+	        }
+//	          console.log(myEvents1);
+//	          $("#horaCita").html(myEvents1).fadeIn();
+	        }else{
+	          tipoDia ="sabado";
+	          for(hora in mesHorario){
+	            var hr = hora;
+	            hr=hr*1;
+	            if((hr > entradaF1 && salidaF2 > hr) || (hr > entradaF2 && salidaF1 > hr)){ // El sabado solo tiene una configuracion Entrada y Salida (STANDAR) -- || (hr > entradaF2 && salidaF2 > hr)
+	              if(hrConfirmado[hr]==null){
+	              //console.log("hr:"+hr);
+	              var hor = hora+":disponible";
+	              myEvents1.push(hor); 
+	             }
+	            }
+	          }
+//	          console.log(myEvents1);
+//	          $.each(myEvents1, function(disp){
+//	        	  $("#horaCita select").append('<option value="'+disp+'">'+dis+'</option>');
+//	        	      });
+	          //organiza(myEvents1, tipoDia);
+	         }
+	        organiza(myEvents1, tipoDia);
+        });
+	      
+	      var  myEvents ="";
+
+	      function organiza(myEvents1, tipoDia){
+	      var horario = myEvents1;
+	          var myEvents2 = []; 
+	          for(hora in horario){
+	            var valor = horario[hora].split("\:");;
+	            if(valor[1]==="disponible")
+	            {
+	             var elemento =  {date: '<a class="horaCita" href="#topCita" id='+valor[0]+'>'+valor[0]+'</a>' ,content:''};
+	              myEvents2.push(elemento);
+	            } 
+	          }
+	          myEvents = "";
+	          myEvents = myEvents2;
+	          aparece(myEvents);
+	          $('#btnSaveCita').prop('disabled', true);
+	          
+				$('.horaCita').click(function(){
+					$('#horaCita').val($(this).attr("id"));
+//					alert("aqui tengo q habilitar el siguiente modal o esconder la linea de tiempo, para agregar los campos de textArea Descripcion y FileUpload para archivos.");
+					$('#my-timeline').hide();
+					$('#descripcionCita').show();
+					$('#btnSaveCita').prop('disabled', false);
+				});
+	        }
+
+		
+		var  myEvents ="";
+
+		
+		
+		
+	/*
+	 *  FUNCIONES  REST AJAX
+	 */	
+			
+		function enviaDataEdicion(finalJson){
+			limpiaAlerta();
+			var context = "";
+			for(campo in finalJson){
+				if(campo === "action")
+					context = context + finalJson.action +"/"
+				else{
+					context = context + campo +"/"
+				}
+			}
+//			console.log(url + context)
+			$.ajax({
+			   	  url: url +"edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			      dataType: 'json',
+				  type: 'POST',
+				  contentType: "application/json",
+				  data: JSON.stringify(finalJson),
+				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
+				  crossDomain: true,
+				  success: 	function(data){					  
+					  console.log(data);
+					  if(data.codigo===0){
+						  avisaAlerta(data);}
+					},
+				  error: function(){
+					  errorAlerta();
+				  }
+				});
+		}
 		
 		function enviaImagen(idImagenForm){
 			
@@ -467,32 +634,6 @@
 				  //$(alerta).insertAfter($('.'+idImagenForm));
 		}
 		
-		$('.grupoRS').click(function(){
-			var rsInput =$(this).children("input").attr('id');
-			var rsCheck =$(this).children("div").children("div").children("input").attr('id');
-			console.log(rsCheck);
-			console.log(rsInput);
-			if($('#'+rsCheck).prop('checked')){
-				$('#'+rsInput).prop('readonly', false);
-			}
-			
-		});
-		
-		$('.validaUsuarioEmpresa').click(function(){
-			var tipoAcceso = $(this).attr('data-target')
-//			console.log($.usuarioEmpresa);
-			if($.usuarioEmpresa ==="" && tipoAcceso === "#modalCita"){
-				$('#divUsuarioEmpresa').hide();//.prop('readonly', false);
-				$('#divBotonUsuarioEmpresa').show();	
-				$('div.alertaUsuarioEmpresa').show();
-			}else{
-				$('#divUsuarioEmpresa').show();//.prop('readonly', false);
-				$('#divBotonUsuarioEmpresa').hide();
-				$("div.alertaUsuarioEmpresa").hide();
-			}
-		});
-		
-	
 		$('#btnSaveRegistro').click(function(){
 			limpiaAlerta();
 			valoresRegistro = $('#nombreRegistro').val()+"++"+$('#apellidoRegistro').val()+"++"+$('#emailRegistro').val()+"++"+$('#telefonoRegistro').val()+"++"+$('#usuarioRegistro').val()+"++"+$('#passRegistro1').val()+"++"+$('#messageRegistro').val();
@@ -562,141 +703,9 @@
 				});
 		});
 		
-		function validaUsuarioEmpresa(mensajeArray){
-			//nombreUsuario = mensajeArray[0].split("\++");
-			$.idUsuarioEmpresa = mensajeArray[0];
-			$.usuarioEmpresa = mensajeArray[1];
-			$.condiciones = mensajeArray[2];
-			$.mesActual = mensajeArray[3];
-			$.mesMas = mensajeArray[4];
-		}
-		
-		
-		
-		
-		
-	    $('#consultaHorario').click(function(){
-	        
-	        var mesHorario = {30:{user:"disponible"},100:{user:"disponible"},130:{user:"disponible"},200:{user:"disponible"},230:{user:"disponible"},300:{user:"disponible"},330:{user:"disponible"},400:{user:"disponible"},430:{user:"disponible"},500:{user:"disponible"},530:{user:"disponible"},600:{user:"disponible"},630:{user:"disponible"},700:{user:"disponible"},730:{user:"disponible"},800:{user:"disponible"},830:{user:"disponible"},900:{user:"disponible"},930:{user:"disponible"},1000:{user:"disponible"},1030:{user:"disponible"},1100:{user:"disponible"},1130:{user:"disponible"},1200:{user:"disponible"},1230:{user:"disponible"},1300:{user:"disponible"},1330:{user:"disponible"},1400:{user:"disponible"},1430:{user:"disponible"},1500:{user:"disponible"},1530:{user:"disponible"},1600:{user:"disponible"},1630:{user:"disponible"},1700:{user:"disponible"},1730:{user:"disponible"},1800:{user:"disponible"},1830:{user:"disponible"},1900:{user:"disponible"},1930:{user:"disponible"},2000:{user:"disponible"},2030:{user:"disponible"},2100:{user:"disponible"},2130:{user:"disponible"},2200:{user:"disponible"},2230:{user:"disponible"},2300:{user:"disponible"},2330:{user:"disponible"},2400:{user:"disponible"}};
-	        
-	        var condiciones = JSON.parse($.condiciones);//{dias1: "0-4", dias2: "5", horario11in: "900", horario11out: "1400", horario12in: "1500",  horario12out: "1800", horario21in: "1000", horario21out: "1300", horario22in: "1400",  horario22out: "1500"};//;//
-	        var mesActual =   JSON.parse($.mesActual);//{28:[900,1000],29:[930,1030]};
-	        var mesMas =   JSON.parse($.mesMas);//{28:[930,1030]};
-	        var fechaSel = $("#datepickerHGRC").val().split("\/");
-	        var fechaSeleccion = fechaSel[2]+"-"+fechaSel[1]+"-"+fechaSel[0];  
-	        var dH = new Date(fechaSeleccion);
-	        var diaSel = dH.getDay();
-	        console.log("fechaSel:"+fechaSel);
-	        console.log("fechaSeleccion:"+fechaSeleccion);
-	        console.log("dH:"+dH);
-	        console.log("diaSel:"+diaSel);
-	        console.log("mes:"+dH.getMonth());
-	        
-	        $('#horaCita').val("");
-
-	        var hrConfirmado =[];
-	        if(mesActual[fechaSel[0]] == null){
-        		hrConfirmado.push(30);
-        	}else{
-		        if(fechaSel[1].toString() === (dH.getMonth()+1).toString()){
-		          hrConfirmado = mesActual[fechaSel[0]];
-		        }
-		        else if(fechaSel[1].toString() === (dH.getMonth()+2).toString()){
-		          hrConfirmado = mesMas[fechaSel[0]];
-		          console.log(hrConfirmado);
-		        }
-        	}
-	        
-
-	        var myEvents1 =[];
-	        var entrada1 = condiciones.horario11in;
-	        entrada1 = entrada1-1;
-	        var salida1 = condiciones.horario11out;
-	        salida1 = salida1-1;
-	        var entrada2 = condiciones.horario12in;
-	        entrada2 = entrada2-1;
-	        var salida2 = condiciones.horario12out;
-	        salida2 = salida2-1;
-	        
-	        var entradaF1 = condiciones.horario21in;
-	        entradaF1 = entradaF1-1;
-	        var salidaF1 = condiciones.horario21out;
-	        salidaF1 = salidaF1-1;
-	        var entradaF2 = condiciones.horario22in;
-	        entradaF2 = entradaF2-1;
-	        var salidaF2 = condiciones.horario22out;
-	        salidaF2 = salidaF2-1;
-	        
-	        if(diaSel<5){
-	          tipoDia ="semana";
-	        for(hora in mesHorario){
-	          var hr = hora;
-	          hr=hr*1;
-	          if((hr > entrada1 && salida1 > hr) || (hr> entrada2 && salida2 > hr)){
-	            if(!hrConfirmado.includes(hr)){
-	              //console.log("hr:"+hr);
-	             var hor = hora+":disponible";
-	             myEvents1.push(hor); 
-	            }
-	          }
-	        }
-//	          console.log(myEvents1);
-//	          $("#horaCita").html(myEvents1).fadeIn();
-	        }else{
-	          tipoDia ="sabado";
-	          for(hora in mesHorario){
-	            var hr = hora;
-	            hr=hr*1;
-	            if((hr > entradaF1 && salidaF1 > hr) || (hr> entradaF2 && salidaF2 > hr)){
-	             if(!hrConfirmado.includes(hr)){
-	              //console.log("hr:"+hr);
-	              var hor = hora+":disponible";
-	              myEvents1.push(hor); 
-	             }
-	            }
-	          }
-//	          console.log(myEvents1);
-//	          $.each(myEvents1, function(disp){
-//	        	  $("#horaCita select").append('<option value="'+disp+'">'+dis+'</option>');
-//	        	      });
-	          //organiza(myEvents1, tipoDia);
-	         }
-	        organiza(myEvents1, tipoDia);
-        });
-	      
-	      var  myEvents ="";
-
-	      function organiza(myEvents1, tipoDia){
-	      var horario = myEvents1;
-	          var myEvents2 = []; 
-	          for(hora in horario){
-	            var valor = horario[hora].split("\:");;
-	            if(valor[1]==="disponible")
-	            {
-	             var elemento =  {date: '<a class="horaCita" href="#topCita" id='+valor[0]+'>'+valor[0]+'</a>' ,content:''};
-	              myEvents2.push(elemento);
-	            } 
-	          }
-	          myEvents = "";
-	          myEvents = myEvents2;
-	          aparece(myEvents);
-	          $('#btnSaveCita').prop('disabled', true);
-	          
-				$('.horaCita').click(function(){
-					$('#horaCita').val($(this).attr("id"));
-					
-					alert("aqui tengo q habilitar el siguiente modal o esconder la linea de tiempo, para agregar los campos de textArea Descripcion y FileUpload para archivos.");
-					$('#btnSaveCita').prop('disabled', false);
-				});
-	        }
-
-		
-		var  myEvents ="";
-		
-		
 		$('#btnSaveCita').click(function(){
 			limpiaAlerta();
-			valoresCita = $('#datepickerHGRC').val()+"|"+$('#horaCita').val();
+			valoresCita = $('#datepickerHGRC').val()+"|"+$('#horaCita').val()+"|"+$('#descrCita').val();
 			 console.log($.idUsuarioEmpresa);
 			 console.log(valoresCita);
 			citaJson = { action : $.action,
@@ -715,8 +724,8 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-					  if(data.codigo===0){
-					  avisaAlerta(data);}
+//					  if(data.codigo===0){}
+					  avisaAlerta(data);
 					},
 				  error: function(){
 					  errorAlerta();

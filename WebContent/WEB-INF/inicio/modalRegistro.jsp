@@ -27,45 +27,45 @@
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="nombreRegistro" name="name" type="text" placeholder="Nombre(s)" class="form-control">
+		                        <input id="nombreRegistro" name="name" type="text" placeholder="Nombre(s)" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="apellidoRegistro" name="name" type="text" placeholder="Apellidos" class="form-control">
+		                        <input id="apellidoRegistro" name="name" type="text" placeholder="Apellidos" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="emailRegistro" name="email" type="email" placeholder="Email" class="form-control">
+		                        <input id="emailRegistro" name="email" type="email" placeholder="Email" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		
 		                    <div class="row">
 		                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
 		                      <div class="col-md-8">
-		                        <input id="telefonoRegistro" name="phone" type="tel" placeholder="Num Telefono" class="form-control">
+		                        <input id="telefonoRegistro" name="phone" type="tel" placeholder="Num Telefono" class="form-control" maxlength="20">
 		                      </div>
 		                    </div>
 		                    <div class="row">
 					          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-address-book bigicon"></i></span>
 					          <div class="col-md-8">
-								<input type="text" id="usuarioRegistro" value="" placeholder="Digita Usuario" class="form-control">
+								<input type="text" id="usuarioRegistro" value="" placeholder="Digita Usuario" class="form-control" maxlength="11">
 					          </div>
 					        </div>
 					        <div class="row">
 					          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-circle bigicon"></i></span>
 					          <div class="col-md-8">
-								<input type="password" id="passRegistro1" value="" placeholder="Password" class="form-control">
+								<input type="password" id="passRegistro1" value="" placeholder="Password" class="form-control" maxlength="20">
 					          </div>
 					        </div>
 					        <div class="row">
 					          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-circle bigicon"></i></span>
 					          <div class="col-md-8">
-								<input type="password" id="passRegistro2" value="" placeholder="Confirma Password" class="form-control">
+								<input type="password" id="passRegistro2" value="" placeholder="Confirma Password" class="form-control" maxlength="20">
 					          </div>
 					        </div>
 				
