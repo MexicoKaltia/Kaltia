@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalCita -->
 <div class="modal fade" id="modalCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
-			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/modalImagenFondo.jpg?v=1');">
+			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header" id="topCita">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/>Cita</h5>
 				<br>
@@ -20,25 +26,34 @@
 			<div class="modal-body">
 				
 				<div id="divUsuarioEmpresa">
-					<p>Ingresa tu Fecha : </p>
-					<div class="row">
-						<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-3x fa-calendar bigicon"></i></span>
-						<div class="col-md-8" >
-							<input type="text" id="datepickerHGRC" size="15">:
-							<input type="text" id="horaCita" size="15" readonly>
-								 
+					<p class="colorLabel sizeEtiqueta">Ingresa tu Fecha : </p><br>
+					<div class="form-group row">
+						<span class="col-sm-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-calendar bigicon"></i></span>
+						<div class="col-sm-3" >
+							<input type="text" class="form-control" id="datepickerHGRC" size="15" readonly>
+						</div>:
+						<div class="col-sm-3" >
+							<input type="text" class="form-control" id="horaCita" size="15" readonly>
+						</div>
+					
+						<div class="col-sm-2" >		 
 							<!-- <div id="horaCita">
 							    <select></select>    
 							</div>
 							<select name="horaCita" id="horaCita" multiple></select> -->
 							<button type="button" class="btn btn-secondary" id="consultaHorario">Consulta Horarios</button>
-<!-- 							<button type="button" class="btn btn-secondary" id="btnSaveCita" disabled="true">Cita </button> -->
 						</div>
-					  </div>
+					</div>  
 		        	<div id="my-timeline"></div>
 		        </div>
 		        <div id="descripcionCita">
-		        	<textarea class="form-control" id="descrCita" name="descrCita" placeholder="Captura la descripcion de tu Cita, en breve un asesor se pondrá en contacto. Gracias" rows="7"></textarea>
+		        <br>
+		        	<div class="form-group row">
+					<span class="col-sm-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-pencil-square-o bigicon"></i></span>
+					<div class="col-sm-6">
+		        		<textarea class="form-control" id="descrCita" name="descrCita" placeholder="Captura la descripcion de tu Cita, en breve un asesor se pondrÃ¡ en contacto. Gracias" rows="4"></textarea>
+		        	</div>
+		        	</div>
 		        </div>
 		        
 		        <div id="divBotonUsuarioEmpresa">

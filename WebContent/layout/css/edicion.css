@@ -2,6 +2,15 @@
 	 background-color: red;
 	}
 	
+.colorLabel{
+	color:white;
+}
+
+.sizeEtiqueta{
+	font-size:20px;
+	text-align: justify;
+	 text-transform: capitalize;
+}
 
 .parallax {
     background-attachment: fixed;

@@ -452,12 +452,12 @@
 	        var fechaSeleccion = fechaSel[2]+"-"+fechaSel[1]+"-"+diaSeleccion;  
 	        var dH = new Date(fechaSeleccion);
 	        var diaSel = dH.getDay();
-	        console.log("fechaSel:"+fechaSel);
-	        console.log("fechaSeleccion:"+fechaSeleccion);
-	        console.log("dH:"+dH);
-	        console.log("diaSel:"+diaSel);
-	        console.log("mes:"+dH.getMonth());     	   
-	        console.log("MES:"+ mesActual[fechaSel[0]]);
+//	        console.log("fechaSel:"+fechaSel);
+//	        console.log("fechaSeleccion:"+fechaSeleccion);
+//	        console.log("dH:"+dH);
+//	        console.log("diaSel:"+diaSel);
+//	        console.log("mes:"+dH.getMonth());     	   
+//	        console.log("MES:"+ mesActual[fechaSel[0]]);
 //	        console.log("MESJSON:"+ $.mesActual.(fechaSel[0]*1));
 
 	        var hrConfirmado;
@@ -468,7 +468,7 @@
 			          hrConfirmado = mesMas[fechaSel[0]];
 			    }
         	}else{
-        		console.log("no hay citas programadas para el dia:"+fechaSel[0])
+//        		console.log("no hay citas programadas para el dia:"+fechaSel[0])
         		hrConfirmado = {00: {descripcionCita: "", userEmpresa: ""}}
         	}
 	        console.log(hrConfirmado);
@@ -494,7 +494,7 @@
 	        
 	        if(0 < diaSel && diaSel < 6){
 	          tipoDia ="semana";
-	          console.log(tipoDia)
+//	          console.log(tipoDia)
 	        for(hora in mesHorario){
 	          var hr = hora;
 	          hr=hr*1;
