@@ -23,9 +23,24 @@ public class IdentidadVO extends BaseVO implements Serializable {
 	private ArrayList<String> actionSeccion1;
 	private ArrayList<String> actionSeccion2;
 	private String ambiente;
+	private String modulo;
+	private ArrayList<String> moduloNombre;
+
 	
 	
-	
+	public String getModulo() {
+		return modulo;
+	}
+	public void setModulo(String modulo) {
+		this.modulo = modulo;
+	}
+	public ArrayList<String> getModuloNombre() {
+		return moduloNombre;
+	}
+	public void setModuloNombre(ArrayList<String> moduloNombre) {
+		this.moduloNombre = moduloNombre;
+	}
+
 	public String getAmbiente() {
 		return ambiente;
 	}

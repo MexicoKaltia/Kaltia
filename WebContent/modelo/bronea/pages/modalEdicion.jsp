@@ -82,11 +82,12 @@
 									            <div class="col-sm-7">
 									              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
 									              <!-- <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> -->
-									              <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option>
-									              <option value="Ingresa">Ingresa</option>
-									              <option value="Cita">Cita</option>
-									              <option value="Contacto">Contacto</option>
-									              <option value="Registro">Registro</option>
+									              <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
+									              <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option>
+									              <s:iterator value='identidadVO.moduloNombre'>
+									              	<option value='<s:property/>'><s:property/></option>
+									              </s:iterator>
+									              
 									            </select>
 									            </div>
 									          </div>
@@ -296,12 +297,12 @@
   						<%-- Identificar Secciones <a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
             			<select class="custom-select form-control" id="seleccion1HS4">
 <%--               			  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> --%>
- 						  <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option>
-        				  <option value="Ingresa">Ingresa</option>
-              			  <option value="Cita">Cita</option>
-              			  <option value="Contacto">Contacto</option>
-              			  <option value="Registro">Registro</option>
-              		    </select> 
+						  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected><s:property value='header.headerSeccion4.get(3)'/></option>
+ 						  <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
+              				<s:iterator value='identidadVO.moduloNombre'>
+							  	<option value='<s:property/>'><s:property/></option>
+							</s:iterator>              		   
+						 </select> 
   			          </div>
   			    </div>
   			    <div class="form-group row">
@@ -309,11 +310,10 @@
   			          <div class="col-sm-7">
   						<input type="text" class="form-control" id="boton2HS4" value="<s:property value='header.headerSeccion4.get(6)'/>"/>
 						<select class="custom-select form-control" id="seleccion2HS4">
-						<option selected>Selecciona una Opcion del Menú con los Modulos Activos</option>
-						  <option value="Ingresa">Ingresa</option>
-					      <option value="Cita">Cita</option>
-					      <option value="Contacto">Contacto</option>
-					      <option value="Registro">Registro</option>
+						<option value="<s:property value='header.headerSeccion4.get(5)'/>" selected><s:property value='header.headerSeccion4.get(5)'/></option>
+              				<s:iterator value='identidadVO.moduloNombre'>
+							  	<option value='<s:property/>'><s:property/></option>
+							</s:iterator>              		   
 						 </select> 
   			          </div>
   			    </div>
@@ -683,10 +683,9 @@
 				  <div class="col-sm-7">
 					    <select class="custom-select form-control" id="seleccionBS1">
 						  <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option>		
-						  <option value="Ingresa">Ingresa</option>
-					      <option value="Cita">Cita</option>
-					      <option value="Contacto">Contacto</option>
-					      <option value="Registro">Registro</option>
+              				<s:iterator value='identidadVO.moduloNombre'>
+							  	<option value='<s:property/>'><s:property/></option>
+							</s:iterator>              		   
 	    				</select>
 				  </div>
 				</div>

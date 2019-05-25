@@ -29,52 +29,52 @@
 		                  <fieldset>
 <!-- 		                    <legend class="text-center header"><label><s:property value='identidadVO.empresa'/> - Registo Cliente</label></legend> -->
 		                    <div class="form-group row">
-		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-user bigicon"></i></span>
+		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-user bigicon"></i></span>
 		                      <div class="col-sm-7">
 		                        <input id="nombreRegistro"  name="name" type="text" placeholder="Nombre(s)" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		                    <div class="form-group row">
-		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-user bigicon"></i></span>
+		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-user bigicon"></i></span>
 		                      <div class="col-sm-7">
 		                        <input id="apellidoRegistro" name="name" type="text" placeholder="Apellidos" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		
 		                    <div class="form-group row">
-		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-envelope-o bigicon"></i></span>
+		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-envelope-o bigicon"></i></span>
 		                      <div class="col-sm-7">
 		                        <input id="emailRegistro" name="email" type="email" placeholder="Email" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
 		
 		                    <div class="form-group row">
-		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-phone-square bigicon"></i></span>
+		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-phone-square bigicon"></i></span>
 		                      <div class="col-sm-7">
 		                        <input id="telefonoRegistro" name="phone" type="tel" placeholder="Num Telefono" class="form-control" maxlength="20">
 		                      </div>
 		                    </div>
 		                    <div class="form-group row">
-					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-address-book bigicon"></i></span>
+					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-address-book bigicon"></i></span>
 					          <div class="col-sm-7">
 								<input type="text" id="usuarioRegistro" value="" placeholder="Digita Usuario" class="form-control" maxlength="11">
 					          </div>
 					        </div>
 					        <div class="form-group row">
-					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-circle bigicon"></i></span>
+					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-circle bigicon"></i></span>
 					          <div class="col-sm-7">
 								<input type="password" id="passRegistro1" value="" placeholder="Password" class="form-control" maxlength="20">
 					          </div>
 					        </div>
 					        <div class="form-group row">
-					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-circle bigicon"></i></span>
+					          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-circle bigicon"></i></span>
 					          <div class="col-sm-7">
 								<input type="password" id="passRegistro2" value="" placeholder="Confirma Password" class="form-control" maxlength="20">
 					          </div>
 					        </div>
 				
 		                    <div class="form-group row">
-		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-pencil-square-o bigicon"></i></span>
+		                      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-pencil-square-o bigicon"></i></span>
 		                      <div class="col-sm-7">
 		                        <textarea class="form-control" id="messageRegistro" name="message" placeholder="Captura tu mensaje, en breve un asesor se pondrá en contacto. Gracias" rows="4"></textarea>
 		                      </div>

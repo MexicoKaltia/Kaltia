@@ -15,6 +15,7 @@ import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.MenuVO;
+import com.kaltia.vo.ModulosVO;
 import com.kaltia.vo.resource.ObjetoVO;
 
 public class IdentidadDao {
@@ -26,7 +27,7 @@ public class IdentidadDao {
 	}
 	
 	//private IdentidadVO identidadVO ;
-	private static ArrayList<Object> returnDAO = new ArrayList<Object>();
+//	private static ArrayList<Object> returnDAO = new ArrayList<Object>();
 	
 	//private ArrayList<Object> arrReturnDAO = new ArrayList<Object>();
 	static final Logger logger = LogManager.getLogger(IdentidadDao.class.getName());
@@ -46,13 +47,14 @@ public class IdentidadDao {
 		 * 
 		 * return codigoInicioEm; }
 		 */
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
 		IdentidadVO identidadVO = new IdentidadVO();
 		List<String> complemento = new ArrayList<String>();
 		complemento.add(action);
 
 		String sql = "SELECT idAction, idEmpresa, actionEstilo,"
 				+ "headerRequerido, bodyRequerido, leftRequerido, rigthRequerido, footerRequerido, "
-				+ "actionPrincipal , actionSeccion1, actionSeccion2, actionPrincipal, ambiente" +
+				+ "actionPrincipal , actionSeccion1, actionSeccion2, actionPrincipal, ambiente, actionModulos" +
 				"  FROM tc_action  " +
 				" WHERE idAction = ? ";
 
@@ -71,7 +73,8 @@ public class IdentidadDao {
 				identidadVO.setActionSeccion1(returnDAO.get(9) != null ? ComunResolution.arrayUno(returnDAO.get(9).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				identidadVO.setActionSeccion2(returnDAO.get(10) != null ? ComunResolution.arrayUno(returnDAO.get(9).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				identidadVO.setActionPrincipal(returnDAO.get(11) != null ? returnDAO.get(11).toString() : "01");
-				identidadVO.setAmbiente(returnDAO.get(12) != null ? returnDAO.get(12).toString() : "NA"); 
+				identidadVO.setAmbiente(returnDAO.get(12) != null ? returnDAO.get(12).toString() : "NA");
+				identidadVO.setModulo(returnDAO.get(13) != null ? returnDAO.get(13).toString() : "");
 				identidadVO.setIdAction(action);
 				identidadVO.setCodigoVO("00");
 				//instIdentidadDao.setIdAction(instIdentidadDao.getAction());
@@ -94,7 +97,8 @@ public class IdentidadDao {
 	}
 
 	public HeaderVO qryElementoHeader(String action) throws SQLException {
-
+		
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
 		HeaderVO headerVO = new HeaderVO();
 		List<String> complemento = new ArrayList<String>();
 		complemento.add(action);
@@ -154,6 +158,7 @@ public class IdentidadDao {
 
 	public BodyVO qryElementoBody(String action, String elementoPagina) throws SQLException {
 
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
 		BodyVO bodyVO = new BodyVO();
 		List<String> complemento = new ArrayList<String>();
 		complemento.add(action);
@@ -220,6 +225,7 @@ public class IdentidadDao {
 
 	public FooterVO qryElementoFooter(String action) throws SQLException {
 
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
 		FooterVO footerVO = new FooterVO();
 		
 		List<String> complemento = new ArrayList<String>();
@@ -273,5 +279,43 @@ public class IdentidadDao {
 		return footerVO;
 	}
 	
+	public ArrayList<ModulosVO>  qryModulos() {
+		
+		ArrayList<ModulosVO> modulosVOArray = new ArrayList<ModulosVO>();
+		String sql = "SELECT tc_modulos.idModulo, tc_modulos.moduloNombre"+
+					" from tc_modulos";
+		
+		try {	
+			ArrayList<Object> arrReturnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, null);
+			
+			if (arrReturnDAO != null && arrReturnDAO.size() > 0) {		
+				for(int i = 0; i < arrReturnDAO.size(); i++) {
+					ModulosVO moduloVO = new ModulosVO() ;
+					moduloVO.setIdModulo(arrReturnDAO.get(i) != null ? arrReturnDAO.get(i).toString() : "");
+					moduloVO.setModuloNombre(arrReturnDAO.get(i+1) != null ? arrReturnDAO.get(i+1).toString() : "");
+					i++;
+					moduloVO.setCodigoVO("00");
+					modulosVOArray.add(moduloVO);
+//					logger.info("DAO:"+moduloVO.getIdModulo()+"-"+moduloVO.getModuloNombre());
+				}	
+			}else {
+				ModulosVO moduloVO = new ModulosVO() ;
+				moduloVO.setCodigoVO("02");
+				moduloVO.setMensajeVO("Modulos Vacio:"+PROPS.getProperty("error.02"));
+				modulosVOArray.add(moduloVO);
+			}
+		}catch (Exception e) {
+			ModulosVO moduloVO = new ModulosVO() ;
+			moduloVO.setCodigoVO("03");
+			moduloVO.setMensajeVO("Modulos Corrupto:"+PROPS.getProperty("error.03"));
+			modulosVOArray.add(moduloVO);
+			logger.info("elemento mal recuperado de base de datos"+ PROPS.getProperty("error.03")+"\tarticulo:");
+			e.printStackTrace();
+			}
+		
+		return modulosVOArray;
+	}
 	
-}
+	
+	
+} //fin de clase

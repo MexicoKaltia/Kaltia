@@ -78,7 +78,7 @@
 		$.idEmpresa = $("#idEmpresa").val();
 		$.action = $("#idAction").val();
 		console.log("idEmpresa:"+$.idEmpresa);
-		console.log("Action:"+$.idEmpresa);
+		console.log("Action:"+$.action);
 		console.log("Modelo:"+$.modelo);
 		
 		if (results == null){
@@ -469,7 +469,7 @@
 			    }
         	}else{
 //        		console.log("no hay citas programadas para el dia:"+fechaSel[0])
-        		hrConfirmado = {00: {descripcionCita: "", userEmpresa: ""}}
+        		hrConfirmado = {00: {descripcionCita: "", userEmpresa: "", status: "pendiente"}}
         	}
 	        console.log(hrConfirmado);
 

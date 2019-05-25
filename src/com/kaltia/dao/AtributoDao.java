@@ -40,7 +40,6 @@ public class AtributoDao {
 			
 			if (arrReturnDAO != null && arrReturnDAO.size() > 0) {
 				maquetas = new String[arrReturnDAO.size()] ;		
-				//int i = 0;
 				for(int i = 0; i < arrReturnDAO.size(); i++) {
 			  		maquetas[i]= arrReturnDAO.get(i).toString().substring(1, arrReturnDAO.get(i).toString().length()-1);
 			  		logger.info("action:"+arrReturnDAO.get(i).toString());

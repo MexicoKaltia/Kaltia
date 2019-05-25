@@ -47,19 +47,16 @@ public class ConexionDao {
 			if(qry.startsWith("SELECT") || qry.startsWith("select")){
 				Object rise = (ResultSet)conectar(qry, complemento);
 				rs = (ResultSet)rise;
-			
-			
-			int columnas = rs.getMetaData().getColumnCount();
-			
-			if (rs != null) {
-				while (rs.next()) {
-					for (int i = 1; i <= columnas; i++) {
-						resultSet.add(i - 1, rs.getString(i));
+				int columnas = rs.getMetaData().getColumnCount();
+				if (rs != null) {
+					while (rs.next()) {
+						for (int i = 1; i <= columnas; i++) {
+							resultSet.add(i - 1, rs.getString(i));
+						}
+	
 					}
-
-				}
-			} else
-				return null;
+				} else
+					return null;
 			}else{
 				Integer rise = (Integer)conectar(qry, complemento);
 				logger.info("Result Insert:"+rise);
@@ -119,8 +116,11 @@ public class ConexionDao {
 		 * DriverManager.getConnection(URL, "hgrc", "hgrc");
 		 */
 		//logger.info("complemento:"+ complemento.size());
+		ArrayList<String> complementos = new ArrayList<String>();
+		if(complemento !=null) {
+			complementos = (ArrayList)complemento;
+		}
 		
-		ArrayList<String> complementos = (ArrayList)complemento;
 		
 		try {
 			
