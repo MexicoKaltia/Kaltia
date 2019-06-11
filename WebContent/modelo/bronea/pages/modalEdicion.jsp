@@ -199,7 +199,7 @@
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Icono</span>
 			          <div class="col-7">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />">
 <!-- 	    				<form id="upload-file-form"> -->
 							<form id="faviconHSA5Form">
 							<hiden class="faviconHSA5Form"></hiden>
@@ -211,7 +211,7 @@
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Logotipo</span>
 			          <div class="col-7">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />">
 	    				<form id="logoHSA5Form">
 							<hiden class="logoHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
@@ -222,7 +222,7 @@
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen Fondo</span>
 			          <div class="col-7">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />">
 	    				<form id="fondoHeaderHSA5Form">
 								<hiden class="fondoHeaderHSA5Form"></hiden>
 							<label for="upload-file-input">Actualiza imagen:</label> 
@@ -381,7 +381,7 @@
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen</span>
 			          <div class="col-7">
-				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
+				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
 						<form id="imagenBSA1Form">
 							<hiden class="imagenBSA1Form"></hiden>
 							<label for="imagenBSA1">Actualiza imagen:</label> 
@@ -588,7 +588,7 @@
 						        <div class="form-group row">
 						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
 						          <div class="col-7">
-							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
+							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
 									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
 										<label for="imagenObjetoBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
@@ -692,7 +692,7 @@
 				<div class="form-group row">
 		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
 		         <div class="col-7">
-			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='body.BodySeccion1.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion1.get(0)'/>">
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion1.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion1.get(0)'/>">
 					<form id="imagenBS1Form">
 						<hiden class="imagenBS1Form"></hiden>
 						<label for="imagenBS1">Actualiza imagen:</label> 
@@ -761,7 +761,7 @@
 						        <div class="form-group row">
 						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
 						          <div class="col-7">
-							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.empresa'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
+							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
 									<form id="imagenBSA4Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA4Form<s:property value='#conta'/>"></hiden>
 										<label for="imagenObjetoBSA4<s:property value='#conta'/>">Actualiza imagen:</label> 
