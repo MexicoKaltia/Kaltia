@@ -8,7 +8,7 @@
 
 	<!-- Top Background Image Wrapper -->
 <%-- 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> --%>
-	<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
+	<div class="bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
 				<div class="fl_left headerSeccion1">
@@ -34,15 +34,32 @@
 			</div>
 		</div>
 <!-- ################################################################################################ -->
-		<div class="wrapper row1 headerSeccionArray5 " id="headerSeccionArray5"> 
+		<div class="wrapper row1 headerSeccionArray5 " id="headerSeccionArray5">
+		
 	    <header id="header" class="hoc clear">
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
 <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
 			           <s:property value='header.idEmpresa'/>
-			      	</a></h1>     
+			      	</a></h1>
+			      	<div class="collapse navbar-collapse menuInterno" style="color:white" id="collapsibleNavbar">
+					<ul class="list-group">
+<!-- 						<li><a href="#">Home</a></li> -->
+				         <s:set var="seccion" value="1" />
+				           <s:subset source="header.headerSeccionArray5" start="1">  
+		    			<s:iterator  var ="headerSeccionArray5">
+		    			<s:iterator  value ="#headerSeccionArray5.objetoVO">
+					       	<li class="navbar" ><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+				       	 <s:set var="seccion" value="#seccion+1" />
+				       	 </s:iterator>
+				           </s:iterator>
+		           		</s:subset>
+					</ul>
+				</div>     
 				</div>
+
+				<div>
 				<nav id="mainav" class="fl_right">
 				<ul class="clear" >
 		          <li class="active"><a href="#">Home</a></li>
@@ -57,6 +74,8 @@
            			</s:subset>
 		        </ul>
 				</nav>
+				</div>
+				
 				<div id="navInterno" class="fl_right">
 				<nav  class="navbar-inverse">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -64,20 +83,8 @@
 					</button>
 				</nav>
 				</div>
-					<div class="collapse navbar-collapse menuInterno" id="collapsibleNavbar">
-						<ul class="list-group">
-<!-- 							<li><a href="#">Home</a></li> -->
-				          <s:set var="seccion" value="1" />
-				            <s:subset source="header.headerSeccionArray5" start="1">  
-		    				<s:iterator  var ="headerSeccionArray5">
-		    				<s:iterator  value ="#headerSeccionArray5.objetoVO">
-				         	<li class="navbar" ><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
-				         	 <s:set var="seccion" value="#seccion+1" />
-				         	 </s:iterator>
-				            </s:iterator>
-		           			</s:subset>
-						</ul>
-					</div>
+				
+			
 		</header>		
 							
 		

@@ -47,7 +47,7 @@ $(document).ready(function() {
 //			console.log("activo:"+scroll);
 		}
 		if (scroll >= (bs1) ) {
-			$('#bodySeccion1').addClass('animated');
+			$('#bodySeccion1').addClass('');
 			$('#bodySeccion1').addClass('zoomInDown');
 			$('#bodySeccion1').addClass('slow');
 //			console.log("activo:"+scroll);
