@@ -58,27 +58,29 @@
 		        </ul>
 				</nav>
 				<div id="navInterno" class="fl_right">
-				<nav  class="navbar navbar-inverse">
+				<nav  class="navbar-inverse">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-						<span class="fa fa-3x fa-align-justify bigicon"></span>
+						<span class="fa fa-3x fa-angle-double-down"></span>
 					</button>
-					<div class="collapse navbar-collapse" id="collapsibleNavbar">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>
+				</nav>
+				</div>
+					<div class="collapse navbar-collapse menuInterno" id="collapsibleNavbar">
+						<ul class="list-group">
+<!-- 							<li><a href="#">Home</a></li> -->
 				          <s:set var="seccion" value="1" />
 				            <s:subset source="header.headerSeccionArray5" start="1">  
 		    				<s:iterator  var ="headerSeccionArray5">
 		    				<s:iterator  value ="#headerSeccionArray5.objetoVO">
-				         	 <li><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+				         	<li class="navbar" ><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
 				         	 <s:set var="seccion" value="#seccion+1" />
 				         	 </s:iterator>
 				            </s:iterator>
 		           			</s:subset>
 						</ul>
 					</div>
-				</nav>
-			</div>				
-		</header>
+		</header>		
+							
+		
   </div>
 		<!-- ################################################################################################ -->
 		<div class="wrapper">

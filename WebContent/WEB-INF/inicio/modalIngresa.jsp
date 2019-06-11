@@ -19,14 +19,14 @@
 			<div class="modal-body">
 		         
 		      <div class="form-group row">
-				<span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-3x fa-address-book bigicon"></i></span>
-				<div class="col-sm-7">
+				<span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-3x fa-address-book bigicon"></i></span>
+				<div class="col-7">
 					<input type="text" class="form-control" id="usuarioIngresa" value="" placeholder="Digita Usuario" class="form-control">
 				</div>
 			  </div>
 			  <div class="form-group row">
-			    <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-3x fa-circle bigicon"></i></span>
-			    <div class="col-sm-7">
+			    <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-3x fa-circle bigicon"></i></span>
+			    <div class="col-7">
 			    	<input type="password" class="form-control" id="passIngresa" value="" placeholder="Password" class="form-control">
 				</div>
 			  </div>
