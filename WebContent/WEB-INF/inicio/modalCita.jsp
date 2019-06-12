@@ -28,20 +28,20 @@
 				<div id="divUsuarioEmpresa">
 					<p class="colorLabel sizeEtiqueta">Ingresa tu Fecha : </p><br>
 					<div class="form-group row">
-						<span class="col-sm-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-calendar bigicon"></i></span>
-						<div class="col-sm-3" >
+						<span class="col-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-calendar bigicon"></i></span>
+						<div class="col-3" >
 							<input type="text" class="form-control" id="datepickerHGRC" size="15" readonly>
 						</div>:
-						<div class="col-sm-3" >
+						<div class="col-3" >
 							<input type="text" class="form-control" id="horaCita" size="15" readonly>
 						</div>
 					
-						<div class="col-sm-2" >		 
+						<div class="col-2" >		 
 							<!-- <div id="horaCita">
 							    <select></select>    
 							</div>
 							<select name="horaCita" id="horaCita" multiple></select> -->
-							<button type="button" class="btn btn-secondary" id="consultaHorario">Consulta Horarios</button>
+							<button type="button" class="btn btn-secondary" id="consultaHorario">Horarios</button>
 						</div>
 					</div>  
 		        	<div id="my-timeline"></div>
@@ -49,8 +49,8 @@
 		        <div id="descripcionCita">
 		        <br>
 		        	<div class="form-group row">
-					<span class="col-sm-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-pencil-square-o bigicon"></i></span>
-					<div class="col-sm-6">
+					<span class="col-2 col-form-label text-right colorLabel"><i class="fa fa-3x fa-pencil-square-o bigicon"></i></span>
+					<div class="col-6">
 		        		<textarea class="form-control" id="descrCita" name="descrCita" placeholder="Captura la descripcion de tu Cita, en breve un asesor se pondrá en contacto. Gracias" rows="4"></textarea>
 		        	</div>
 		        	</div>

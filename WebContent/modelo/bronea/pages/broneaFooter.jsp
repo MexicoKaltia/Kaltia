@@ -26,11 +26,11 @@
     <div class="one_quarter footerSeccion2">
       <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
       <ul class="nospace linklist">
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(2)' />"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(3)' />"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(4)' />"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(5)' />"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion2.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
 <%--         <s:subset start="1" source ="footer.footerSeccion2"> --%>
 <%--         <s:iterator> --%>
 <%-- <%--identificar Secciones --%>

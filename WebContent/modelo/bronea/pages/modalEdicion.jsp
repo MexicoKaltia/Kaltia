@@ -64,22 +64,22 @@
 								<s:iterator value='header.headerSeccion1' var="menu2Value">	
 						  
 							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-sm-12 text-center">
+    								<div class="carousel-item active col-12 text-center">
 								</s:if>
 								<s:else>
-   									<div class="carousel-item col-sm-12 text-center">
+   									<div class="carousel-item col-12 text-center">
 								</s:else>
 										<li>
 											
 									          <div class="form-group row">
-									            <span class="col-sm-3 col-form-label text-right colorLabel">Titulo</span>
-									            <div class="col-sm-7">
+									            <span class="col-3 col-form-label text-right colorLabel">Titulo</span>
+									            <div class="col-7">
 									              <input type="text" class="form-control" id="tituloObjetoHS1<s:property value='#conta'/>" value="<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />" required />
 									            </div>
 									          </div>
 									          <div class="form-group row">
-									            <span class="col-sm-3 col-form-label text-right colorLabel">Referencia</span>
-									            <div class="col-sm-7">
+									            <span class="col-3 col-form-label text-right colorLabel">Referencia</span>
+									            <div class="col-7">
 									              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
 									              <!-- <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> -->
 									              <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
@@ -150,14 +150,14 @@
 			<div class="modal-body">
 				<form>
 				    <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-phone"></i> Telefono</span>
-			          <div class="col-sm-8">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-phone"></i> Telefono</span>
+			          <div class="col-8">
 						<input type="number" class="form-control" id="telefonoHS2" value="<s:property value='header.headerSeccion2.get(0)' />" required/> 
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-envelope-o"></i> Correo</span>
-			          <div class="col-sm-8">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-envelope-o"></i> Correo</span>
+			          <div class="col-8">
 						<input type="email" class="form-control" id="emailHS2" value="<s:property value='header.headerSeccion2.get(1)' />" required/>
 			          </div>
 			        </div>
@@ -191,14 +191,14 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 				    <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Pagina</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Pagina</span>
+			          <div class="col-7">
 						<input type="text" class="form-control" id="tituloHSA5" value="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(0)' />"/> 
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Icono</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Icono</span>
+			          <div class="col-7">
 				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(1)' />">
 <!-- 	    				<form id="upload-file-form"> -->
 							<form id="faviconHSA5Form">
@@ -209,8 +209,8 @@
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Logotipo</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Logotipo</span>
+			          <div class="col-7">
 				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)' />">
 	    				<form id="logoHSA5Form">
 							<hiden class="logoHSA5Form"></hiden>
@@ -220,8 +220,8 @@
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen Fondo</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen Fondo</span>
+			          <div class="col-7">
 				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />" alt="<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)' />">
 	    				<form id="fondoHeaderHSA5Form">
 								<hiden class="fondoHeaderHSA5Form"></hiden>
@@ -232,8 +232,8 @@
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Secciones Separar por | </span>
- 					  <div class="col-sm-7">				
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Secciones Separar por | </span>
+ 					  <div class="col-7">				
 						<s:set var="seccion" value="0" />
 			            <s:subset source="header.headerSeccionArray5" start="1">  
 	    				<s:iterator  var ="headerSeccionArray5">
@@ -273,26 +273,26 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 				<div class="form-group row">
-  			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Subtitulo</span>
-  			          <div class="col-sm-7">
+  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Subtitulo</span>
+  			          <div class="col-7">
   						<input type="text" class="form-control" id="subtituloHS4" value="<s:property value='header.headerSeccion4.get(0)'/>"/> 
   			          </div>
   			    </div>
   			    <div class="form-group row">
-  			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo</span>
-  			          <div class="col-sm-7">
+  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo</span>
+  			          <div class="col-7">
   						<input type="text" class="form-control" id="tituloHS4" value="<s:property value='header.headerSeccion4.get(1)'/>"/> 
   			          </div>
   			    </div>
   			    <div class="form-group row">
-  			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion</span>
-  			          <div class="col-sm-7">
+  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion</span>
+  			          <div class="col-7">
   						<textarea class='form-control' id="descripcionHS4" rows="5"><s:property value='header.headerSeccion4.get(2)'/></textarea> 
   			          </div>
   			    </div>
   			    <div class="form-group row">
-  			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 1</span>
-  			          <div class="col-sm-7">
+  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 1</span>
+  			          <div class="col-7">
   						<input type="text" class="form-control" id="boton1HS4" value="<s:property value='header.headerSeccion4.get(4)'/>"/>
   						<%-- Identificar Secciones <a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
             			<select class="custom-select form-control" id="seleccion1HS4">
@@ -306,8 +306,8 @@
   			          </div>
   			    </div>
   			    <div class="form-group row">
-  			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 2</span>
-  			          <div class="col-sm-7">
+  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 2</span>
+  			          <div class="col-7">
   						<input type="text" class="form-control" id="boton2HS4" value="<s:property value='header.headerSeccion4.get(6)'/>"/>
 						<select class="custom-select form-control" id="seleccion2HS4">
 						<option value="<s:property value='header.headerSeccion4.get(5)'/>" selected><s:property value='header.headerSeccion4.get(5)'/></option>
@@ -354,33 +354,33 @@
 		    <!-- main body -->
 			<div class="modal-body">
 			    	<div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Seccion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Seccion</span>
+			          <div class="col-7">
 						<input type="text" class="form-control" id="tituloBSA1" value=<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)' /> />
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Subtitulo Seccion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Subtitulo Seccion</span>
+			          <div class="col-7">
 						<input type="text" class="form-control" id="subTituloBSA1" value="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(1)'/>" />
 			          </div>
 			        </div>
 		      
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 1</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 1</span>
+			          <div class="col-7">
 						<textarea class='form-control' class="form-control" id="descripcion1BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></textarea>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 2</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 2</span>
+			          <div class="col-7">
 						<textarea class='form-control' class="form-control" id="descripcion2BSA1"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(3)' /></textarea>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen</span>
+			          <div class="col-7">
 				      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />" alt="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(4)' />">
 						<form id="imagenBSA1Form">
 							<hiden class="imagenBSA1Form"></hiden>
@@ -397,29 +397,29 @@
 						        <s:subset source="body.bodySeccionArray1" start="1">  
     							<s:iterator  var ="bodySeccionArray1">			  
 							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-sm-12 text-center">
+    								<div class="carousel-item active col-12 text-center">
 								</s:if>
 								<s:else>
-   									<div class="carousel-item col-sm-12 text-center">
+   									<div class="carousel-item col-12 text-center">
 								</s:else>
 								<section>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Icono</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Icono</span>
+						          <div class="col-7">
 									<a data-toggle="modal" href="#modalIconoObjeto" class="iconoForm">
 									<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray1.objetoVO.get(2)' />" id="iconoObjetoBSA1<s:property value='#conta'/>"></i></a>
 									<label for="iconoObjetoBSA1" ><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></label> 
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
+						          <div class="col-7">
 									<input type="text" class="form-control" id="tituloObjetoBSA1<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
+						          <div class="col-7">
 									<textarea class='form-control' id="descripcionObjetoBSA1<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea>
 						          </div>
 						        </div>
@@ -483,29 +483,29 @@
 						        <s:subset source="body.bodySeccionArray2" start="0">  
     							<s:iterator  var ="bodySeccionArray2">			  
 							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-sm-12 text-center">
+    								<div class="carousel-item active col-12 text-center">
 								</s:if>
 								<s:else>
-   									<div class="carousel-item col-sm-12 text-center">
+   									<div class="carousel-item col-12 text-center">
 								</s:else>
 								<section>
 						  	    <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Icono</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Icono</span>
+						          <div class="col-7">
 									<a data-toggle="modal" href="#modalIconoObjeto" class="iconoForm">
 									<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray2.objetoVO.get(1)' />" id="iconoObjetoBSA2<s:property value='#conta'/>"></i></a>
 									<label for="iconoObjetoBSA2" ><s:property value='#bodySeccionArray2.objetoVO.get(1)' /></label>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
+						          <div class="col-7">
 									<input type="text" class='form-control' id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)' />"/>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
+						          <div class="col-7">
 									<textarea class='form-control' id="descripcionObjetoBSA2<s:property value='#conta'/>"><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></textarea>
 						          </div>
 						        </div>
@@ -561,14 +561,14 @@
  		    <!-- main body -->
 			<div class="modal-body">
 			    	<div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="tituloBSA3" value="<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion</span>
+			          <div class="col-7">
 						<textarea class='form-control' id="descripcionBSA3"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></textarea>
 			          </div>
 			        </div>
@@ -579,15 +579,15 @@
 						        <s:subset source="body.bodySeccionArray3" start="1">  
     							<s:iterator  var ="bodySeccionArray3">			  
 							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-sm-12 text-center">
+    								<div class="carousel-item active col-12 text-center">
 								</s:if>
 								<s:else>
-   									<div class="carousel-item col-sm-12 text-center">
+   									<div class="carousel-item col-12 text-center">
 								</s:else>
 								<section>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+						          <div class="col-7">
 							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
 									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
@@ -598,14 +598,14 @@
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
+						          <div class="col-7">
 									<input type="text" class='form-control' id="tituloObjetoBSA3<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
+						          <div class="col-7">
 									<textarea class='form-control' id="descripcionObjetoBSA3<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea>
 						          </div>
 						        </div>
@@ -661,26 +661,26 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 				<div class="form-group row">
-				  <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
-				  <div class="col-sm-7">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
+				  <div class="col-7">
 					<input type="text" class='form-control' id="tituloBS1" value="<s:property value='body.BodySeccion1.get(1)'/>"/>
 				  </div>
 				</div>
 				<div class="form-group row">
-				  <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Seccion</span>
-				  <div class="col-sm-7">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Seccion</span>
+				  <div class="col-7">
 					<textarea class='form-control' id="descripcionBS1" rows="5"><s:property value='body.BodySeccion1.get(2)'/></textarea>
 				  </div>
 				</div>
 				<div class="form-group row">
-				  <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Seccion</span>
-				  <div class="col-sm-7">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Seccion</span>
+				  <div class="col-7">
 					<input type="text" class='form-control' id="botonBS1" value="<s:property value='body.BodySeccion1.get(4)'/>"/>
 				  </div>
 				</div>
 				<div class="form-group row">
-				  <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
-				  <div class="col-sm-7">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
+				  <div class="col-7">
 					    <select class="custom-select form-control" id="seleccionBS1">
 						  <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option>		
               				<s:iterator value='identidadVO.moduloNombre'>
@@ -690,8 +690,8 @@
 				  </div>
 				</div>
 				<div class="form-group row">
-		         <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
-		         <div class="col-sm-7">
+		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+		         <div class="col-7">
 			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion1.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion1.get(0)'/>">
 					<form id="imagenBS1Form">
 						<hiden class="imagenBS1Form"></hiden>
@@ -734,14 +734,14 @@
  		    <!-- main body -->
 			<div class="modal-body">
 			    	<div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="tituloBSA4" value="<s:property value='body.bodySeccionArray4.get(0).objetoVO.get(0)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion</span>
+			          <div class="col-7">
 						<textarea class='form-control' id="descripcionBSA4"><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(1)' /></textarea>
 			          </div>
 			        </div>
@@ -752,15 +752,15 @@
 						        <s:subset source="body.bodySeccionArray4" start="1">  
     							<s:iterator  var ="bodySeccionArray4">			  
 							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-sm-12 text-center">
+    								<div class="carousel-item active col-12 text-center">
 								</s:if>
 								<s:else>
-   									<div class="carousel-item col-sm-12 text-center">
+   									<div class="carousel-item col-12 text-center">
 								</s:else>
 								<section>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+						          <div class="col-7">
 							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
 									<form id="imagenBSA4Form<s:property value='#conta'/>" class="imagenArrayForm">
 										<hiden class="imagenBSA4Form<s:property value='#conta'/>"></hiden>
@@ -770,20 +770,20 @@
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
+						          <div class="col-7">
 									<input type="text" class='form-control' id="tituloObjetoBSA4<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray4.objetoVO.get(3)'/>"/>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
+						          <div class="col-7">
 									<textarea class='form-control' id="descripcionObjetoBSA4<s:property value='#conta'/>"><s:property value='#bodySeccionArray4.objetoVO.get(4)'/></textarea>
 						          </div>
 						        </div>
 						        <div class="form-group row">
-						          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Objeto</span>
-						          <div class="col-sm-7">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Objeto</span>
+						          <div class="col-7">
 									<input type="text" class='form-control' id="botonObjetoBSA4<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray4.objetoVO.get(5)'/>"/>
 						          </div>
 						        </div>
@@ -842,38 +842,38 @@
 			<div class="modal-body">
 			
 			    	<div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo </span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo </span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>sub Titulo </span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>sub Titulo </span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="subtituloFS1" value="<s:property value='footer.footerSeccion1.get(1)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Domicilio</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Domicilio</span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="domicilioFS1" value="<s:property value='footer.footerSeccion1.get(2)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Telefono</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Telefono</span>
+			          <div class="col-7">
 						</i><input type="text" class='form-control' id="telefonoFS1" value="<s:property value='footer.footerSeccion1.get(3)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Correo</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Correo</span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="correoFS1" value="<s:property value='footer.footerSeccion1.get(4)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Ubicacion</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Ubicacion</span>
+			          <div class="col-7">
 						<input type="text" class='form-control' id="ubicacionFS1" value="<s:property value='footer.footerSeccion1.get(5)' />"/>
 			          </div>
 			        </div>
@@ -909,15 +909,15 @@
 			<div class="modal-body">
 			
 			    	<div class="form-group row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
+			          <div class="col-7">
 						<input type="text" class="form-control" id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
 			          </div>
 			        </div>
 			        <br><br>
 			        <div class="form-group row ">
-				      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-facebook" ></i></span>
-				      <div class="col-sm-7">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-facebook" ></i></span>
+				      <div class="col-7">
 				      <div class="input-group grupoRS">
 						  <div class="input-group-prepend ">
 						    <div class="input-group-text">
@@ -929,8 +929,8 @@
 				      </div>
 				    </div>
 			        <div class="form-group row ">
-				      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-twitter" ></i></span>
-				      <div class="col-sm-7">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-twitter" ></i></span>
+				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
@@ -942,8 +942,8 @@
 				      </div>
 				    </div>
 				    <div class="form-group row ">
-				      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-youtube" ></i></span>
-				      <div class="col-sm-7">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-youtube" ></i></span>
+				      <div class="col-7">
 				      <div class="input-group grupoRS">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
@@ -955,8 +955,8 @@
 				      </div>
 				    </div>
 				    <div class="form-group row ">
-				      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-linkedin" ></i></span>
-				      <div class="col-sm-7">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-linkedin" ></i></span>
+				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
@@ -968,8 +968,8 @@
 				      </div>
 				    </div>
 				    <div class="form-group row ">
-				      <span class="col-sm-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-google-plus" ></i></span>
-				      <div class="col-sm-7">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-google-plus" ></i></span>
+				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
@@ -1012,8 +1012,8 @@
 			<div class="modal-body">
 			
 			    	<div class="row">
-			          <span class="col-sm-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo secciones</span>
-			          <div class="col-sm-7">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo secciones</span>
+			          <div class="col-7">
 						<input type="text" class="form-control" id="tituloFS3" value="<s:property value='footer.footerSeccion3.get(0)' />"/>
 			          </div>
 			        </div>

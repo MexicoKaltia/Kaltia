@@ -429,13 +429,22 @@
 			}
 		});
 		
-		function validaUsuarioEmpresa(mensajeArray){
-			//nombreUsuario = mensajeArray[0].split("\++");
+		function validaUsuarioEmpresa(mensajeArray,codigo){
+//			console.log("codigo:"+codigo);
+			if(codigo === 0){
 			$.idUsuarioEmpresa = mensajeArray[0];
 			$.usuarioEmpresa = mensajeArray[1];
 			$.condiciones = mensajeArray[2];
 			$.mesActual = mensajeArray[3];
 			$.mesMas = mensajeArray[4];
+			console.log(mensajeArray);
+			}else{
+				$.idUsuarioEmpresa = "";
+				$.usuarioEmpresa = "";
+				$.condiciones = "";
+				$.mesActual = "";
+				$.mesMas = "";
+			}
 		}
 		
 		$('#consultaHorario').click(function(){
@@ -695,7 +704,7 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  avisaAlerta(data);
-					  validaUsuarioEmpresa(data.mensajeArray);
+					  validaUsuarioEmpresa(data.mensajeArray, data.codigo);
 					},
 				  error: function(data){
 					  errorAlerta(data);
@@ -705,9 +714,9 @@
 		
 		$('#btnSaveCita').click(function(){
 			limpiaAlerta();
-			valoresCita = $('#datepickerHGRC').val()+"|"+$('#horaCita').val()+"|"+$('#descrCita').val();
-			 console.log($.idUsuarioEmpresa);
-			 console.log(valoresCita);
+			valoresCita = $('#datepickerHGRC').val()+"|"+$('#horaCita').val()+"|"+$('#descrCita').val()+"|pendiente";
+//			 console.log($.idUsuarioEmpresa);
+//			 console.log(valoresCita);
 			citaJson = { action : $.action,
 					 idEmpresa : $.idUsuarioEmpresa,	
 //					 seccion : "bodySeccionArray1",
