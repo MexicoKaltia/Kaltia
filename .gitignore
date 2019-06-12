@@ -13,3 +13,8 @@ WebContent/modelo/bronea/layout/scripts/jquery.mobilemenu.js
 WebContent/layout/js/complemento.js
 *.class
 *.class
+.classpath
+.settings/org.eclipse.wst.common.project.facet.core.xml
+build/classes/com/kaltia/dao/IdentidadDao.class
+build/classes/com/kaltia/service/Identidad.class
+build/classes/com/kaltia/vo/IdentidadVO.class
