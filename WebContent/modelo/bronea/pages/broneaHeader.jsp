@@ -35,7 +35,6 @@
 		</div>
 <!-- ################################################################################################ -->
 		<div class="wrapper row1 headerSeccionArray5 " id="headerSeccionArray5">
-		
 	    <header id="header" class="hoc clear">
 				<div id="logo" class="fl_left ">			
 					<h1><a href="<s:property value='identidadVO.idAction'/>">
@@ -83,8 +82,6 @@
 					</button>
 				</nav>
 				</div>
-				
-			
 		</header>		
 							
 		
