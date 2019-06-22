@@ -24,7 +24,7 @@
 						</s:iterator>
 					</ul>
 				</div>
-				
+<!-- ################################################################################################ -->				
 				<div class="fl_right headerSeccion2">
 					<ul class="nospace">
 						<li><i class="fa fa-phone"></i> <s:property value='header.headerSeccion2.get(0)' /></li>
