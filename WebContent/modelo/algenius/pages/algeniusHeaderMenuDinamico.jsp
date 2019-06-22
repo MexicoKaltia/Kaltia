@@ -32,8 +32,7 @@
 	  <header id="header" class="hoc clear"> 
 	    <div id="logo" class="fl_left">
 		  	  <h1><a href="<s:property value='identidadVO.idAction'/>">
-<%-- 	          <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
-			  <img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
+	          <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">
 	          <s:property value='header.idEmpresa'/>
 	      	  </a></h1>    
 	    </div>
@@ -86,7 +85,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="headerSeccion4" id="headerSeccion4" >
-	<div class="wrapper bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
+	<div class="wrapper bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<a  id="seccion1"></a>
 	  <article id="pageintro" class="hoc clear"> 
 	    

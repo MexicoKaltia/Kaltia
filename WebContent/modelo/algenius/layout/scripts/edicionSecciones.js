@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	
+
+	 $.modelo = "Algenius";	
+
+	
 	function cargaModal(seccion, modelo){
 		$.seccionCampos="";	
 //		console.log("cargarModal paso 1: "+seccion+modelo);
@@ -8,7 +12,7 @@ $(document).ready(function() {
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
 		$("div.alertaBody_file > div").remove();
-//		console.log("cargarModal paso 3 : #modalEdicion_"+seccion+modelo);
+		console.log("cargarModal paso 3 : #modalEdicion_"+seccion+modelo);
 		return $.seccionCampos; 
 	}
 
@@ -18,99 +22,92 @@ $(document).ready(function() {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
 				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
-				"headerSeccion4Bronea"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
-				"headerSeccionArray5Bronea":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-				"bodySeccion1Bronea"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
-				"bodySeccionArray1Bronea":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Bronea"   :{  "tituloFS3" : "text" },
+				"headerSeccion4Algenius"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
+				"headerSeccionArray5Algenius":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
+				"bodySeccion1Algenius"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
+				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
+				"bodySeccionArray2Algenius":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
+				"bodySeccionArray3Algenius":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
+				"bodySeccionArray4Algenius":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
+				"footerSeccion1Algenius"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+				"footerSeccion2Algenius"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+				"footerSeccion3Algenius"   :{  "tituloFS3" : "text" },
 				}
 		seccion = seccion;
 		switch (seccion) { 
 		case "headerSeccion1": return camposModelo.headerSeccion1; break;
 		case "headerSeccion2": return camposModelo.headerSeccion2; break;
 		case "headerSeccion3": return camposModelo.headerSeccion3; break;
-		case "headerSeccion4Bronea": return camposModelo.headerSeccion4Bronea; break;
-		case "headerSeccionArray5Bronea": return camposModelo.headerSeccionArray5Bronea; break;
-		case "bodySeccion1Bronea": return camposModelo.bodySeccion1Bronea; break;
-		case "bodySeccionArray1Bronea": return camposModelo.bodySeccionArray1Bronea; break;
-		case "bodySeccionArray2Bronea": return camposModelo.bodySeccionArray2Bronea; break;
-		case "bodySeccionArray3Bronea": return camposModelo.bodySeccionArray3Bronea; break;
-		case "bodySeccionArray4Bronea": return camposModelo.bodySeccionArray4Bronea; break;
-		case "footerSeccion1Bronea": return camposModelo.footerSeccion1Bronea; break;   
-		case "footerSeccion2Bronea": return camposModelo.footerSeccion2Bronea; break;   
-		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
+		case "headerSeccion4Algenius": return camposModelo.headerSeccion4Algenius; break;
+		case "headerSeccionArray5Algenius": return camposModelo.headerSeccionArray5Algenius; break;
+		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
+		case "bodySeccionArray1Algenius": return camposModelo.bodySeccionArray1Algenius; break;
+		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
+		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
+		case "bodySeccionArray4Algenius": return camposModelo.bodySeccionArray4Algenius; break;
+		case "footerSeccion1Algenius": return camposModelo.footerSeccion1Algenius; break;   
+		case "footerSeccion2Algenius": return camposModelo.footerSeccion2Algenius; break;   
+		case "footerSeccion3Algenius": return camposModelo.footerSeccion3Algenius; break;   
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
 	/////////////////////////////////////////////////////////////////////////
 	/*
 	 * funciones scroll
 	 */
 	
-	var valorFijo = $("#headerSeccionArray5").offset().top
-	var bsa1 = $(".bodySeccionArray1").offset().top
-	var bsa2 = $(".bodySeccionArray2").offset().top
-	var bsa3 = $(".bodySeccionArray3").offset().top
-	var bsa4 = $(".bodySeccionArray4").offset().top
-	
-	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
-	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
-	
-	$(window).scroll(function(){
-		var scroll = $(window).scrollTop();
-//		console.log(" 	scroll:"+scroll)
-		
-		if (scroll >= valorFijo ) {
-			$('#headerSeccionArray5').addClass('sticky-top');
-			$('#headerSeccionArray5').addClass('nav-overlay');
-//			console.log("activo:"+scroll);
-		} else {
-			$('#headerSeccionArray5').removeClass('sticky-top');
-			$('#headerSeccionArray5').removeClass('nav-overlay');
-//			console.log("fuera:"+scroll);
-		}
-		
-		if (scroll >= bsa1/2 ) {
-			$('#bodySeccionArray1').addClass('animated');
-			$('#bodySeccionArray1').addClass('rollIn');
-			$('#bodySeccionArray1').addClass('slow');
-//			console.log("activo:"+scroll);
-		} 
-//		else {
-//			$('.bodySeccionArray1').removeClass('animated');
-//			$('.bodySeccionArray1').removeClass('rollIn');
-//			$('.bodySeccionArray1').removeClass('slow');
-//			console.log("fuera:"+scroll);
+//	var valorFijo = $("#headerSeccionArray5").offset().top
+//	var bsa1 = $(".bodySeccionArray1").offset().top
+//	var bsa2 = $(".bodySeccionArray2").offset().top
+//	var bsa3 = $(".bodySeccionArray3").offset().top
+//	var bsa4 = $(".bodySeccionArray4").offset().top
+//	
+//	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
+//	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
+//	
+//	$(window).scroll(function(){
+//		var scroll = $(window).scrollTop();
+////		console.log(" 	scroll:"+scroll)
+//		
+//		if (scroll >= valorFijo ) {
+//			$('#headerSeccionArray5').addClass('sticky-top');
+//			$('#headerSeccionArray5').addClass('nav-overlay');
+////			console.log("activo:"+scroll);
+//		} else {
+//			$('#headerSeccionArray5').removeClass('sticky-top');
+//			$('#headerSeccionArray5').removeClass('nav-overlay');
+////			console.log("fuera:"+scroll);
 //		}
-		if (scroll >= (bsa2/2) ) {
-			$('#bodySeccionArray2').addClass('animated');
-			$('#bodySeccionArray2').addClass('jackInTheBox');
-			$('#bodySeccionArray2').addClass('slow');
-//			console.log("activo:"+scroll);
-		}
-		if (scroll >= (bs1) ) {
-			$('#bodySeccion1').addClass('');
-			$('#bodySeccion1').addClass('zoomInDown');
-			$('#bodySeccion1').addClass('slow');
-//			console.log("activo:"+scroll);
-		}
-		
-	});
-	$(window).scroll();
+//		
+//		if (scroll >= bsa1/2 ) {
+//			$('#bodySeccionArray1').addClass('animated');
+//			$('#bodySeccionArray1').addClass('rollIn');
+//			$('#bodySeccionArray1').addClass('slow');
+////			console.log("activo:"+scroll);
+//		} 
+////		else {
+////			$('.bodySeccionArray1').removeClass('animated');
+////			$('.bodySeccionArray1').removeClass('rollIn');
+////			$('.bodySeccionArray1').removeClass('slow');
+////			console.log("fuera:"+scroll);
+////		}
+//		if (scroll >= (bsa2/2) ) {
+//			$('#bodySeccionArray2').addClass('animated');
+//			$('#bodySeccionArray2').addClass('jackInTheBox');
+//			$('#bodySeccionArray2').addClass('slow');
+////			console.log("activo:"+scroll);
+//		}
+//		if (scroll >= (bs1) ) {
+//			$('#bodySeccion1').addClass('');
+//			$('#bodySeccion1').addClass('zoomInDown');
+//			$('#bodySeccion1').addClass('slow');
+////			console.log("activo:"+scroll);
+//		}
+//		
+//	});
+//	$(window).scroll();
 
 	
 	
@@ -125,8 +122,6 @@ $(document).ready(function() {
 	  
 
 	
-
-	 $.modelo = "Bronea";	
 /////////////
 	/*
 	 *   Secciones   *
@@ -134,7 +129,7 @@ $(document).ready(function() {
 /////////////
 	$('.headerSeccion1').click(function(){
 		//$('#modalEdicionHeaderSeccion1_btnSave').attr("disabled", false);
-		
+//		console.log('headeSeccion1');
 		if(validaParam()){
 			$.seccionCampos = cargaModal("headerSeccion1", "");
 			$('#modalEdicionHeaderSeccion1_btnSave').click(function(){
@@ -255,7 +250,7 @@ $(document).ready(function() {
 			$('#fondoHeaderHSA5').on('change', function(){ enviaImagen("fondoHeaderHSA5Form") });
 
 			$('#modalEdicionHeaderSeccionArray5_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 6);  // <-- son seis secciones en el modelo bronea
+				valoresFinales = dataEdicion($.seccionCampos, 6);  // <-- son seis secciones en el modelo Algenius
 				
 				while(valoresFinales.includes("C:\\fakepath\\") ){
 					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
