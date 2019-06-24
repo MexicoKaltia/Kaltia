@@ -5,56 +5,56 @@ $(document).ready(function() {
 	 * funciones scroll
 	 */
 	
-	var valorFijo = $("#headerSeccionArray5").offset().top
-	var bsa1 = $(".bodySeccionArray1").offset().top
-	var bsa2 = $(".bodySeccionArray2").offset().top
-	var bsa3 = $(".bodySeccionArray3").offset().top
-	var bsa4 = $(".bodySeccionArray4").offset().top
-	
-	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
-	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
-	
-	$(window).scroll(function(){
-		var scroll = $(window).scrollTop();
-//		console.log(" 	scroll:"+scroll)
-		
-		if (scroll >= valorFijo ) {
-			$('#headerSeccionArray5').addClass('sticky-top');
-			$('#headerSeccionArray5').addClass('nav-overlay');
-//			console.log("activo:"+scroll);
-		} else {
-			$('#headerSeccionArray5').removeClass('sticky-top');
-			$('#headerSeccionArray5').removeClass('nav-overlay');
-//			console.log("fuera:"+scroll);
-		}
-		
-		if (scroll >= bsa1/2 ) {
-			$('#bodySeccionArray1').addClass('animated');
-			$('#bodySeccionArray1').addClass('rollIn');
-			$('#bodySeccionArray1').addClass('slow');
-//			console.log("activo:"+scroll);
-		} 
-//		else {
-//			$('.bodySeccionArray1').removeClass('animated');
-//			$('.bodySeccionArray1').removeClass('rollIn');
-//			$('.bodySeccionArray1').removeClass('slow');
-//			console.log("fuera:"+scroll);
+//	var valorFijo = $("#headerSeccionArray5").offset().top
+//	var bsa1 = $(".bodySeccionArray1").offset().top
+//	var bsa2 = $(".bodySeccionArray2").offset().top
+//	var bsa3 = $(".bodySeccionArray3").offset().top
+//	var bsa4 = $(".bodySeccionArray4").offset().top
+//	
+//	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
+//	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
+//	
+//	$(window).scroll(function(){
+//		var scroll = $(window).scrollTop();
+////		console.log(" 	scroll:"+scroll)
+//		
+//		if (scroll >= valorFijo ) {
+//			$('#headerSeccionArray5').addClass('sticky-top');
+//			$('#headerSeccionArray5').addClass('nav-overlay');
+////			console.log("activo:"+scroll);
+//		} else {
+//			$('#headerSeccionArray5').removeClass('sticky-top');
+//			$('#headerSeccionArray5').removeClass('nav-overlay');
+////			console.log("fuera:"+scroll);
 //		}
-		if (scroll >= (bsa2/2) ) {
-			$('#bodySeccionArray2').addClass('animated');
-			$('#bodySeccionArray2').addClass('jackInTheBox');
-			$('#bodySeccionArray2').addClass('slow');
-//			console.log("activo:"+scroll);
-		}
-		if (scroll >= (bs1) ) {
-			$('#bodySeccion1').addClass('');
-			$('#bodySeccion1').addClass('zoomInDown');
-			$('#bodySeccion1').addClass('slow');
-//			console.log("activo:"+scroll);
-		}
-		
-	});
-	$(window).scroll();
+//		
+//		if (scroll >= bsa1/2 ) {
+//			$('#bodySeccionArray1').addClass('animated');
+//			$('#bodySeccionArray1').addClass('rollIn');
+//			$('#bodySeccionArray1').addClass('slow');
+////			console.log("activo:"+scroll);
+//		} 
+////		else {
+////			$('.bodySeccionArray1').removeClass('animated');
+////			$('.bodySeccionArray1').removeClass('rollIn');
+////			$('.bodySeccionArray1').removeClass('slow');
+////			console.log("fuera:"+scroll);
+////		}
+//		if (scroll >= (bsa2/2) ) {
+//			$('#bodySeccionArray2').addClass('animated');
+//			$('#bodySeccionArray2').addClass('jackInTheBox');
+//			$('#bodySeccionArray2').addClass('slow');
+////			console.log("activo:"+scroll);
+//		}
+//		if (scroll >= (bs1) ) {
+//			$('#bodySeccion1').addClass('');
+//			$('#bodySeccion1').addClass('zoomInDown');
+//			$('#bodySeccion1').addClass('slow');
+////			console.log("activo:"+scroll);
+//		}
+//		
+//	});
+//	$(window).scroll();
 
 	
 	

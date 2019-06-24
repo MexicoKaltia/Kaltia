@@ -18,3 +18,5 @@ WebContent/layout/js/complemento.js
 build/classes/com/kaltia/dao/IdentidadDao.class
 build/classes/com/kaltia/service/Identidad.class
 build/classes/com/kaltia/vo/IdentidadVO.class
+*.prefs
+*.prefs

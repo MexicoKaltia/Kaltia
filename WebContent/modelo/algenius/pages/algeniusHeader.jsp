@@ -49,39 +49,44 @@
 	   </header>
 	</div>
 	
-	<div class="wrapper row2">
-	<s:set var="idEmpresa" value="header.idEmpresa" />
-	  <nav id="mainav" class="hoc clear"> 
-	    <ul class="clear">
-							<li class="active"><a href="<%=request.getContextPath() + "/"%><s:property value='identidadVO.idAction'/>"><s:property value="#idEmpresa" /></a></li>
-							<s:iterator value='header.headerMenu.menu' var="menuValue">
-								<li><a class="drop" href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuValue.substring(#menuValue.lastIndexOf(".")+1,#menuValue.length())'/>">
-								<s:property value='#menuValue.substring(0,#menuValue.indexOf("."))' /></a>
-									<ul>
-										<s:iterator value='header.headerMenu.subMenu' var="menuValueSub">
-											<s:if test="#menuValue == #menuValueSub.menu">
-												<s:iterator value='#menuValueSub.subMenu' var="menuSub">
-													<li><a class="drop" href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuSub.substring(#menuSub.lastIndexOf(".")+1,#menuSub.length())'/>">
-													<s:property value ='#menuSub.substring(0,#menuSub.indexOf("."))'/></a>
-														<ul>
-														<s:iterator value="header.headerMenu.subSubMenu" var="menuValueSubSub">
-																<s:if test="#menuSub == #menuValueSubSub.menuSub">
-																	<s:iterator value="#menuValueSubSub.subSubMenu" var="menuSubSub">
-																		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#menuSubSub.substring(#menuSubSub.lastIndexOf(".")+1,#menuSubSub.length())'/>">
-																		<s:property value ='#menuSubSub.substring(0,#menuSubSub.indexOf("."))'/></a></li>
-																	</s:iterator>
-																</s:if>
-															</s:iterator>
+        <nav class="navbar navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">       
+<%--             <h1><a class="navbar-brand" href="<s:property value='identidadVO.idAction'/>"> --%>
+<%-- <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%> 
+<%-- 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em"> --%>
+<%-- 			           <s:property value='header.idEmpresa'/> --%>
+<!-- 			      	</a></h1> -->
+			      	
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"><s:property value='header.idEmpresa'/><span class="navbar-toggler-icon"></span></button> 
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+				         <s:set var="seccion" value="1" />
+				           <s:subset source="header.headerSeccionArray5" start="1">  
+		    			<s:iterator  var ="headerSeccionArray5">
+		    			<s:iterator  value ="#headerSeccionArray5.objetoVO">
+					       	<li class="nav-item " ><a class="nav-link" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+				       	 <s:set var="seccion" value="#seccion+1" />
+				       	 </s:iterator>
+				           </s:iterator>
+		           		</s:subset>
+
+<!--                     <li class="nav-item dropdown"> -->
+<!--                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a> -->
+<!--                         <div class="dropdown-menu dropdown-menu-right"> -->
+<!--                             <a class="dropdown-item" href="#">Action</a> -->
+<!--                             <a class="dropdown-item" href="#">Another action</a> -->
+<!--                             <a class="dropdown-item" href="#">Something else here</a> -->
+<!--                             <div class="dropdown-divider"></div> -->
+<!--                             <a class="dropdown-item" href="#">Separated link</a> -->
+<!--                         </div> -->
+<!--                     </li> -->
+                </ul>
+            </div>
+        </nav>
+		
 	
-														</ul>
-													</li>
-												</s:iterator>
-											</s:if>
-										</s:iterator>
-									</ul></li>
-							</s:iterator>
-						</ul>
-	  </nav>
+	<div class="wrapper row2">
+	
+	
 	</div>
 </div>
 <!-- ################################################################################################ -->
