@@ -17,8 +17,7 @@
 						<s:iterator value='header.headerSeccion1' var="menu2Value">
 							<li><a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
 									<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
-									
-																	<%--    Identificando secciones
+									<%--    Identificando secciones
  							    	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
 							</a></li>
 						</s:iterator>

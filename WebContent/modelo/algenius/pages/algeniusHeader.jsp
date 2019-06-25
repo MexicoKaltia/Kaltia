@@ -18,10 +18,11 @@
       <ul>
         <li><a href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>"><i class="fa fa-lg fa-home"></i></a></li>
         <s:iterator value='header.headerSeccion1' var="menu2Value">
-		    <li><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
-			<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
-			</a></li>
-		</s:iterator>
+			<li><a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
+				<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
+				<%--    Identificando secciones
+ 			   	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
+			</a></li>		</s:iterator>
       </ul>
     </div>
   </div>
@@ -97,8 +98,12 @@
 	    	<s:property value='header.headerSeccion4.get(1)'/>
 	    </p>
 	    <footer>
-	    	<a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a>
-	    </footer>
+	        	<a class="btn inverse validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(2)'/>">
+	        		<s:property value='header.headerSeccion4.get(3)'/>
+	        	</a>
+	        		        		<%-- referencia a nuevo link	    	<a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a> --%>
+	        </footer>
+
 	  </article>
 	</div>
 </div>

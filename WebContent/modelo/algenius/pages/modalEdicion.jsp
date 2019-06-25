@@ -81,9 +81,9 @@
 									            <span class="col-3 col-form-label text-right colorLabel">Referencia</span>
 									            <div class="col-7">
 									              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
-									              <!-- <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> -->
+									              <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected ><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
 									              <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
-									              <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option>
+<%-- 									              <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option> --%>
 									              <s:iterator value='identidadVO.moduloNombre'>
 									              	<option value='<s:property/>'><s:property/></option>
 									              </s:iterator>

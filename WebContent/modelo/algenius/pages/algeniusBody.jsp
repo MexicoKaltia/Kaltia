@@ -24,22 +24,22 @@
   </main>
 </div>
 <!-- ################################################################################################ --> 
-<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto1.get(0)'/>');">
+<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccion1.get(0)'/>');">
   <section class="hoc container clear"> 
     <div class="sectiontitle">
-      <h6 class="heading"><s:property value='body.bodyTexto1.get(1)'/></h6>
+      <h6 class="heading"><s:property value='body.bodySeccion1.get(1)'/></h6>
     </div>
     <div class="group">
       <div class="one_half first">
-        <p><strong><s:property value='body.bodyTexto1.get(2)'/></strong></p>
-        <p><s:property value='body.bodyTexto1.get(3)'/></p>
-        <p class="btmspace-30"><s:property value='body.bodyTexto1.get(4)'/> [&hellip;]</p>
-        <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto1.get(5)'/>"><s:property value='body.bodyTexto1.get(6)'/> &raquo;</a></footer>
+        <p><strong><s:property value='body.bodySeccion1.get(2)'/></strong></p>
+        <p><s:property value='body.bodySeccion1.get(3)'/></p>
+        <p class="btmspace-30"><s:property value='body.bodySeccion1.get(4)'/> [&hellip;]</p>
+        <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><s:property value='body.bodySeccion1.get(6)'/> &raquo;</a></footer>
       </div>
       <div class="one_half">
-        <p><strong><s:property value='body.bodyTexto1.get(7)'/></strong></p>
-        <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto1.get(5)'/>"><img src="<s:property value='body.bodyTexto1.get(8)'/>" alt=""></a>
-        <p><s:property value='body.bodyTexto1.get(9)'/></p>
+        <p><strong><s:property value='body.bodySeccion1.get(7)'/></strong></p>
+        <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><img src="<s:property value='body.bodySeccion1.get(8)'/>" alt=""></a>
+        <p><s:property value='body.bodySeccion1.get(9)'/></p>
       </div>
     </div> 
   </section>

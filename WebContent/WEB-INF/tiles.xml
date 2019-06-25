@@ -122,13 +122,12 @@
 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 	</definition>
 	<definition name="aerogem" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 		<put-attribute name="header" value="/modelo/aerogem/pages/aerogemHeader.jsp" />
-		<put-attribute name="body" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="modalEdicion" value="/WEB-INF/inicio/right.jsp" />		
-<!-- 		<put-attribute name="body" value="/modelo/aerogem/pages/aerogemBody.jsp" /> -->
-<!-- 		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" /> -->		
-<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+		<put-attribute name="body" value="/modelo/aerogem/pages/aerogemBody.jsp" />
+		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" />		
+		<put-attribute name="modalEdicion" value="/modelo/aerogem/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
@@ -137,23 +136,22 @@
 		
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 	</definition>
 	<definition name="algenius" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/algenius/pages/algeniusHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/algenius/pages/algeniusBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+		<put-attribute name="header" value="/modelo/algenius/pages/algeniusHeader.jsp" />
+		<put-attribute name="body" value="/modelo/algenius/pages/algeniusBody.jsp" />
+		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/algenius/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
+		
+		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
 	</definition>
 	<definition name="arrival" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/arrival/pages/arrivalHeader.jsp" />
