@@ -55,6 +55,8 @@
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
+	console.log(window.navigator.userAgent);
+	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
 //		var results = new RegExp('[\?&]tipo=([^&#]*)').exec(window.location.href);
@@ -770,6 +772,12 @@
 		  });
 		   			
 		  }
+		  
+		  var options = {
+				    animateThreshold: 100,
+				    scrollPollInterval: 20
+				}
+				$('.aniview').AniView(options);
 
 		  
 

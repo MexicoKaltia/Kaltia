@@ -5,7 +5,7 @@
 <html lang="">
 <body>
 <div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
+  <div id="topbar" class="hoc clear aniview reallyslow" data-av-animation="slideInLeft"> 
     <!-- ################################################################################################ -->
     <div class="fl_left" id="headerSeccion2">
       <ul class="nospace">
@@ -30,7 +30,7 @@
 <!-- Top Background Image Wrapper -->
 <!-- **RECONFIGURAR EL MENU EN BASE A headerSeccionArray5 -->
 <div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');" > 
-  <div class="wrapper row1" id="headerArraySeccion5">
+  <div class="wrapper row1 aniview slow" id="headerArraySeccion5"  data-av-animation="fadeIn">
     <header id="header" class="hoc clear">
 	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">
             <h1><a class="navbar-brand" style="font-size:1.3em;" href="<s:property value='identidadVO.idAction'/>">
@@ -67,7 +67,7 @@
         </nav>
 			</header>
     <!-- ################################################################################################ -->
-    <div id="pageintro" class="hoc clear">
+    <div id="pageintro" class="hoc clear aniview reallyslow" data-av-animation="slideInRight" >
       <article>
         <h2 class="heading"><s:property value='header.headerSeccion4.get(0)'/></h2>
         <p><s:property value='header.headerSeccion4.get(1)'/></p>

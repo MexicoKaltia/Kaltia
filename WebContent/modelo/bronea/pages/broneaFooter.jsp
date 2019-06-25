@@ -6,7 +6,7 @@
 <html lang="es">
 <body> 
 <!-- ################################################################################################ -->
-<div class="wrapper row4">
+<div class="wrapper row4 aniview reallyslow" data-av-animation="rubberBand">
   <footer id="footer" class="hoc clear"> 
     <div class="one_half first footerSeccion1">
       	<h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>

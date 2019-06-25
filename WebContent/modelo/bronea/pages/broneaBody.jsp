@@ -59,7 +59,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row3 bodySeccionArray3">
+<div class="wrapper row3 bodySeccionArray3 aniview reallyslow" data-av-animation="slideInRight">
 <a  id="seccion4"></a>
   <div class="hoc container clear"> 
     <div class="sectiontitle">
@@ -87,7 +87,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay parallax bodySeccion1" id="bodySeccion1" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion1.get(0)'/>');">
+<div class="wrapper bgded overlay parallax bodySeccion1 aniview reallyslow" data-av-animation="fadeIn" id="bodySeccion1" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion1.get(0)'/>');">
 <a  id="seccion5"></a>
   <article class="hoc container clear center"> 
     <div class="sectiontitle" style="margin-bottom:30px;">

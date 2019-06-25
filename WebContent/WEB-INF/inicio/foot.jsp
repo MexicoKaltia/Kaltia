@@ -16,6 +16,8 @@
 	<script src="<%=request.getContextPath()%>/layout/js/jquery.roadmap.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/datepicker-es.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/lightbox.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/jquery.aniview.js"></script>
+	
 	<!-- JAVASCRIPTS Plugins Modelo-->
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.backtotop.js"></script>
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/jquery.mobilemenu.js"></script>

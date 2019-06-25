@@ -77,7 +77,7 @@
 		<!-- ################################################################################################ -->
 		<div class="wrapper">
 		<a  id="seccion1"></a>
-			<div id="pageintro" class="hoc clear headerSeccion4">
+			<div id="pageintro" class="hoc clear headerSeccion4 aniview reallyslow" data-av-animation="fadeIn">
 				<article>
 					<div>
 						<p class="heading">

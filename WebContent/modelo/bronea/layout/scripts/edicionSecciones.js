@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	console.log(window.navigator.userAgent);
 	
 	function cargaModal(seccion, modelo){
 		$.seccionCampos="";	
@@ -86,7 +88,7 @@ $(document).ready(function() {
 		
 		if (scroll >= bsa1/2 ) {
 			$('#bodySeccionArray1').addClass('animated');
-			$('#bodySeccionArray1').addClass('rollIn');
+			$('#bodySeccionArray1').addClass('shake');
 			$('#bodySeccionArray1').addClass('slow');
 //			console.log("activo:"+scroll);
 		} 
@@ -103,8 +105,8 @@ $(document).ready(function() {
 //			console.log("activo:"+scroll);
 		}
 		if (scroll >= (bs1) ) {
-			$('#bodySeccion1').addClass('');
-			$('#bodySeccion1').addClass('zoomInDown');
+			$('#bodySeccion1').addClass('animated');
+			$('#bodySeccion1').addClass('rollin');
 			$('#bodySeccion1').addClass('slow');
 //			console.log("activo:"+scroll);
 		}
