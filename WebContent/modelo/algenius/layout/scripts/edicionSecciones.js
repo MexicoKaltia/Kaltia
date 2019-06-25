@@ -21,8 +21,8 @@ $(document).ready(function() {
 		var camposModelo = {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
-				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
-				"headerSeccion4Algenius"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
+//				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
+				"headerSeccion4Algenius"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5Algenius":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
 				"bodySeccion1Algenius"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
 				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
@@ -174,49 +174,49 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
-	$('.headerSeccion3').click(function(){
-		if(validaParam()){
-			
-			$.seccionCampos = cargaModal("headerSeccion3", "");
-			$('#modalEdicionHeaderSeccion3_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "headerSeccion3",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
-			});
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-	$('.headerSeccion33').click(function(){
-		if(validaParam()){
-//			console.log("param:"+$.param)
-			action = "action";
-			seccion = "seccion";
-			
-			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
-			valores = valoresSeccion("headerSeccion3_valores");
-			
-			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-			 
-			$('.headerSeccion3').attr("data-toggle","modal");
-			$('.headerSeccion3').attr("data-target","#modalEdicion");
-			$('.soloLectura').html("</>")
-			$("div.soloLectura > div").remove();
-			$("div.alerta > div").remove();
-			$("div.alerta_file > div").remove();
-			$('.alerta_file').html("</>")
-			elementosCampos($.valoresOriginal);
-			
-		}else{
-			console.log("param:Nulo");
-		}
-	});
+//	$('.headerSeccion3').click(function(){
+//		if(validaParam()){
+//			
+//			$.seccionCampos = cargaModal("headerSeccion3", "");
+//			$('#modalEdicionHeaderSeccion3_btnSave').click(function(){
+//				valoresFinales = dataEdicion($.seccionCampos, 0);
+//				finalJson = { action : $.action,
+//						 idEmpresa : $.idEmpresa,	
+//						 seccion : "headerSeccion3",
+//						 valoresFinales : valoresFinales }
+//				console.log(finalJson);
+//				
+//				enviaDataEdicion(finalJson)
+//				
+//			});
+//		}else{
+//			console.log("param:Nulo");
+//		}
+//	});
+//	$('.headerSeccion33').click(function(){
+//		if(validaParam()){
+////			console.log("param:"+$.param)
+//			action = "action";
+//			seccion = "seccion";
+//			
+//			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
+//			valores = valoresSeccion("headerSeccion3_valores");
+//			
+//			$.valoresOriginal = ajusteJson(jsonCampos, valores);
+//			 
+//			$('.headerSeccion3').attr("data-toggle","modal");
+//			$('.headerSeccion3').attr("data-target","#modalEdicion");
+//			$('.soloLectura').html("</>")
+//			$("div.soloLectura > div").remove();
+//			$("div.alerta > div").remove();
+//			$("div.alerta_file > div").remove();
+//			$('.alerta_file').html("</>")
+//			elementosCampos($.valoresOriginal);
+//			
+//		}else{
+//			console.log("param:Nulo");
+//		}
+//	});
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
 			

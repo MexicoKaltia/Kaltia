@@ -8,17 +8,23 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
+    <div class="bodySeccion1" id="bodySeccion1">
     <article class="group btmspace-80">
-      <div class="one_half first"><img class="inspace-10 borderedbox" src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto1.get(0)' />" alt="<s:property value='identidadVO.idAction'/>"></div>
+      <div class="one_half first"><img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccion1.get(0)' />" alt="<s:property value='identidadVO.idAction'/>"></div>
       <div class="one_half">
-        <p class="nospace font-xs"><s:property value='body.bodyTexto1.get(1)' /></p>
-        <h3 class="heading"><s:property value='body.bodyTexto1.get(2)' /></h3>
-        <p><s:property value='body.bodyTexto1.get(3)' /></p>
-        <blockquote><s:property value='body.bodyTexto1.get(4)' /></blockquote>
-        <p><s:property value='body.bodyTexto1.get(5)' /></p>
-        <footer><a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto1.get(6)' />"><s:property value='body.bodyTexto1.get(7)' /> &raquo;</a></footer>
+        <p class="nospace font-xs"><s:property value='body.bodySeccion1.get(1)' /></p>
+        <h3 class="heading"><s:property value='body.bodySeccion1.get(2)' /></h3>
+        <p><s:property value='body.bodySeccion1.get(3)' /></p>
+        <blockquote><s:property value='body.bodySeccion1.get(4)' /></blockquote>
+        <p><s:property value='body.bodySeccion1.get(5)' /></p>
+        <footer>
+<%--  referencia click       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(6)' />"><s:property value='body.bodySeccion1.get(7)' /> &raquo;</a> --%>
+			<a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.BodySeccion1.get(6)'/>"><s:property value='body.BodySeccion1.get(7)'/></a>
+        	
+        </footer>
       </div>
     </article>
+    </div>
     <!-- ################################################################################################ -->
     <hr class="btmspace-80">
     <div class="center btmspace-80">
@@ -46,13 +52,13 @@
   </main>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodyTexto2.get(0)'/>');">
+<div class="wrapper bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccion2.get(0)'/>');">
   <article class="hoc container clear"> 
     <div class="three_quarter first">
-      <h6 class="nospace"><s:property value='body.bodyTexto2.get(1)'/></h6>
-      <p class="nospace"><s:property value='body.bodyTexto2.get(2)'/></p>
+      <h6 class="nospace"><s:property value='body.bodySeccion2.get(1)'/></h6>
+      <p class="nospace"><s:property value='body.bodySeccion2.get(2)'/></p>
     </div>
-    <footer class="one_quarter"><a class="btn medium" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodyTexto2.get(3)'/>"><s:property value='body.bodyTexto2.get(4)'/> &raquo;</a></footer>
+    <footer class="one_quarter"><a class="btn medium" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion2.get(3)'/>"><s:property value='body.bodySeccion2.get(4)'/> &raquo;</a></footer>
   </article>
 </div>
 <!-- ################################################################################################ -->
@@ -67,7 +73,7 @@
       <s:iterator  var="bodySeccionArray2">
       <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
         <article>
-          <figure><a href="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"><img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(2)' />" alt="<s:property value='identidadVO.idAction'/>" ></a>
+          <figure><a href="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"><img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(2)' />" alt="<s:property value='identidadVO.idAction'/>" ></a>
             <figcaption class="group">
               <time datetime="2045-04-06"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></time>
               <span>by <a href="<s:property value='#bodySeccionArray2.objetoVO.get(1)' />"><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></a></span> </figcaption>

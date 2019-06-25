@@ -283,7 +283,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#562351;}
 /* Rows */
 .row0, .row0 a{color:#A8A7A6; background-color:#222222;}
 .row1{color:#474747; background-color:#FFFFFF;}
-.row2{color:#474747; background-color:#F1F1F1;}
+.row2{color:#562351; background-color:#F1F1F1;}
 .row3{color:#474747; background-color:#FFFFFF;}
 .row4{color:#A8A7A6; background-color:#222222;}
 .row4 a{color:#9E4195;}
@@ -413,6 +413,8 @@ table a, #comments a{background-color:inherit;}
 	#header #logo{margin:0 0 30px 0;}
 
 	#pageintro .heading{font-size:2rem;}
+	.navbar-dark .navbar-brand {color: #fff;}
+}
 }
 
 

@@ -18,17 +18,17 @@
       <ul>
         <li><a href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>"><i class="fa fa-lg fa-home"></i></a></li>
         <s:iterator value='header.headerSeccion1' var="menu2Value">
-		    <li><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
-			<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
-			</a></li>
-		</s:iterator>
+			<li><a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
+				<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
+				<%--    Identificando secciones
+ 			   	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
+			</a></li>		</s:iterator>
       </ul>
     </div>
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div id="headerSeccionArray5" class="headerSeccionArray5">
-	<div class="wrapper row1">
+<div class="wrapper row1">
 	  <header id="header" class="hoc clear"> 
 	    <div id="logo" class="fl_left">
 		  	  <h1><a href="<s:property value='identidadVO.idAction'/>">
@@ -40,23 +40,24 @@
 	    <div id="quickinfo" class="fl_right">
 	      <ul class="nospace inline">
 	      <s:iterator value='header.headerSeccionArray4' var="headerSeccionArray4">
-	        <li><strong><s:property value='#headerSeccionArray4.objetoVO.get(0)' /></strong><br>
-	          <s:property value='#headerSeccionArray4.objetoVO.get(1)' /><br>
-	          <s:property value='#headerSeccionArray4.objetoVO.get(2)' /></li>
+	        <li><strong><s:property value='#headerSeccionArray4.objetoVO.get(0)' /></strong></li>
+	          <li><s:property value='#headerSeccionArray4.objetoVO.get(1)' /></li><br>
+	          <li><s:property value='#headerSeccionArray4.objetoVO.get(2)' /></li>
 	      </s:iterator>
 	      </ul>
 	    </div>
 	   </header>
-	</div>
-	
-        <nav class="navbar navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">       
+</div>
+<!-- ################################################################################################ -->
+<div  class="wrapper row2 headerSeccionArray5" id="headerSeccionArray5">	
+        <nav class="navbar navbar-expand-md" style="font-size:1.25em;text-transform:uppercase;">       
 <%--             <h1><a class="navbar-brand" href="<s:property value='identidadVO.idAction'/>"> --%>
 <%-- <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%> 
 <%-- 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em"> --%>
 <%-- 			           <s:property value='header.idEmpresa'/> --%>
 <!-- 			      	</a></h1> -->
 			      	
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"><s:property value='header.idEmpresa'/><span class="navbar-toggler-icon"></span></button> 
+            <button class="navbar-toggler navbar-brand navbar-dark" type="button" data-toggle="collapse" data-target="#navbar-collapse" style="text-transform:uppercase;"><span class="fa fa-2x fa-navicon" style="color:#562351;text-transform:uppercase;"></span>     <s:property value='header.idEmpresa'/></button> 
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav ml-auto">
 				         <s:set var="seccion" value="1" />
@@ -82,19 +83,12 @@
                 </ul>
             </div>
         </nav>
-		
-	
-	<div class="wrapper row2">
-	
-	
-	</div>
-</div>
-<!-- ################################################################################################ -->
+</div>		
+<!-- ################################################################################################ -->	
 <div class="headerSeccion4" id="headerSeccion4" >
 	<div class="wrapper bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<a  id="seccion1"></a>
-	  <article id="pageintro" class="hoc clear"> 
-	    
+	  <article id="pageintro" class="hoc clear">  
 	    <h3 class="heading">
 	    	<s:property value='header.headerSeccion4.get(0)'/>
 	    </h3>
@@ -102,7 +96,10 @@
 	    	<s:property value='header.headerSeccion4.get(1)'/>
 	    </p>
 	    <footer>
-	    	<a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a>
+	        	<a class="btn inverse validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(2)'/>">
+	        		<s:property value='header.headerSeccion4.get(3)'/>
+	        	</a>
+<%-- referencia a nuevo link	    	<a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a> --%>
 	    </footer>
 	  </article>
 	</div>
