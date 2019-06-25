@@ -30,62 +30,41 @@
 <!-- Top Background Image Wrapper -->
 <!-- **RECONFIGURAR EL MENU EN BASE A headerSeccionArray5 -->
 <div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');" > 
-  <div class="wrapper row1">
-	  <div class="headerArraySeccion5" id="headerArraySeccion5">
-	    <header id="header" class="hoc clear">
-					<div id="logo" class="fl_left ">
-						<h1>
-							<a href="<s:property value='identidadVO.idAction'/>"> 
-	<%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
-								<img
-								src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1"
-								alt="" style="max-width: 3.0em; max-height: 3.0em"> <s:property
-									value='header.idEmpresa' />
-							</a>
-						</h1>
-						<div class="collapse navbar-collapse menuInterno"
-							style="color: white" id="collapsibleNavbar">
-							<ul class="list-group">
-								<!-- 						<li><a href="#">Home</a></li> -->
-								<s:set var="seccion" value="1" />
-								<s:subset source="header.headerSeccionArray5" start="1">
-									<s:iterator var="headerSeccionArray5">
-										<s:iterator value="#headerSeccionArray5.objetoVO">
-											<li class="navbar"><a
-												href="#seccion<s:property value="#seccion"/>"><s:property /></a></li>
-											<s:set var="seccion" value="#seccion+1" />
-										</s:iterator>
-									</s:iterator>
-								</s:subset>
-							</ul>
-						</div>
-					</div>
-	
-					<div>
-						<nav id="mainav" class="fl_right">
-							<ul class="clear">
-								<li class="active"><a href="#">Home</a></li>
-								<s:set var="seccion" value="1" />
-								<s:subset source="header.headerSeccionArray5" start="1">
-									<s:iterator var="headerSeccionArray5">
-										<s:iterator value="#headerSeccionArray5.objetoVO">
-											<li><a href="#seccion<s:property value="#seccion"/>"><s:property /></a></li>
-											<s:set var="seccion" value="#seccion+1" />
-										</s:iterator>
-									</s:iterator>
-								</s:subset>
-							</ul>
-						</nav>
-					</div>
-					<div id="navInterno" class="fl_right">
-						<nav class="navbar-inverse">
-							<button class="navbar-toggler" type="button"
-								data-toggle="collapse" data-target="#collapsibleNavbar">
-								<span class="fa fa-3x fa-angle-double-down"></span>
-							</button>
-						</nav>
-					</div>
+  <div class="wrapper row1" id="headerArraySeccion5">
+    <header id="header" class="hoc clear">
+	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">
+            <h1><a class="navbar-brand" style="font-size:1.3em;" href="<s:property value='identidadVO.idAction'/>">
+<%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
+						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
+			           <s:property value='header.idEmpresa'/>
+			      	</a></h1>
+			      	
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"><span class="navbar-toggler-icon"></span></button> 
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+                         <s:set var="seccion" value="1" />
+				           <s:subset source="header.headerSeccionArray5" start="1">  
+		    			<s:iterator  var ="headerSeccionArray5">
+		    			<s:iterator  value ="#headerSeccionArray5.objetoVO">
+					       	<li class="nav-item " ><a class="nav-link" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+				       	 <s:set var="seccion" value="#seccion+1" />
+				       	 </s:iterator>
+				           </s:iterator>
+		           		</s:subset>
 
+<!--                     <li class="nav-item dropdown"> -->
+<!--                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a> -->
+<!--                         <div class="dropdown-menu dropdown-menu-right"> -->
+<!--                             <a class="dropdown-item" href="#">Action</a> -->
+<!--                             <a class="dropdown-item" href="#">Another action</a> -->
+<!--                             <a class="dropdown-item" href="#">Something else here</a> -->
+<!--                             <div class="dropdown-divider"></div> -->
+<!--                             <a class="dropdown-item" href="#">Separated link</a> -->
+<!--                         </div> -->
+<!--                     </li> -->
+                </ul>
+            </div>
+        </nav>
 			</header>
 		</div>	
     <!-- ################################################################################################ -->
