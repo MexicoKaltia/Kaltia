@@ -29,10 +29,11 @@
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
 <!-- **RECONFIGURAR EL MENU EN BASE A headerSeccionArray5 -->
-<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');" > 
-  <div class="wrapper row1 aniview slow" id="headerArraySeccion5"  data-av-animation="fadeIn">
+<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');"> 
+  <div class="wrapper row1" >
+  	<div class="headerSeccionArray5" id="headerSeccionArray5">
     <header id="header" class="hoc clear">
-	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">
+	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.0em;text-transform:uppercase;">
             <h1><a class="navbar-brand" style="font-size:1.3em;" href="<s:property value='identidadVO.idAction'/>">
 <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
@@ -46,7 +47,7 @@
 				           <s:subset source="header.headerSeccionArray5" start="1">  
 		    			<s:iterator  var ="headerSeccionArray5">
 		    			<s:iterator  value ="#headerSeccionArray5.objetoVO">
-					       	<li class="nav-item " ><a class="nav-link" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+					       	<li class="nav-item " ><a class="nav-link" style="color:white" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
 				       	 <s:set var="seccion" value="#seccion+1" />
 				       	 </s:iterator>
 				           </s:iterator>
@@ -65,25 +66,27 @@
                 </ul>
             </div>
         </nav>
-			</header>
-		</div>	
+	</header>
+	</div>
+		
     <!-- ################################################################################################ -->
-	    <div class="headerSeccion4"> 
-	    <div id="pageintro" class="hoc clear">
-	      <article>
-	        <h2 class="heading"><s:property value='header.headerSeccion4.get(0)'/></h2>
-	        <p><s:property value='header.headerSeccion4.get(1)'/></p>
-	        <footer>
-	        	<a class="btn inverse validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(2)'/>">
-	        		<s:property value='header.headerSeccion4.get(3)'/>
-	        	</a>
-	        </footer>
-	      </article>
+		<div class="headerSeccion4"> <a  id="seccion1"></a>
+		    <div id="pageintro" class="hoc clear aniview reallyslow" data-av-animation="slideInRight">
+		      <article>
+		        <h2 class="heading"><s:property value='header.headerSeccion4.get(0)'/></h2>
+		        <p><s:property value='header.headerSeccion4.get(1)'/></p>
+		        <footer>
+		        	<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(2)'/>">
+		        		<s:property value='header.headerSeccion4.get(3)'/>
+		        	</a>
+		        </footer>
+		      </article>
+		    </div>
 	    </div>
-	    </div>
-    </div>
+    </div>	
+</div>
     <!-- ################################################################################################ -->
   
-</div>
+
 </body>
 </html>

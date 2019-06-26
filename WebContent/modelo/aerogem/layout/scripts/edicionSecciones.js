@@ -25,13 +25,13 @@ $(document).ready(function() {
 				"headerSeccion4Aerogem"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5Aerogem":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
 				"bodySeccion1Aerogem"     :{  "imagenBS1" :"img",  "minitituloBS1" :"text", "tituloBS1" :"text",  "descripcion1BS1":"lorem", "descripcion2BS1":"lorem", "descripcion3BS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
-				"bodySeccionArray1Aerogem":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-				"bodySeccionArray2Aerogem":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-				"bodySeccionArray3Aerogem":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-				"bodySeccionArray4Aerogem":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-				"footerSeccion1Aerogem"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Aerogem"   :{  "tituloFS3" : "text" },
+				"bodySeccionArray1Aerogem":{  "tituloBSA1":"text",  "descripcion1BSA1":"lorem",  "objeto" :{"posicionObjetoBSA1" :"text", "iconoObjetoBSA1" : "text", "tituloObjetoBSA1" :"text", "descripcionObjetoBSA1" :"lorem", "seleccionObjetoBSA1" : "text", "botonObjetoBSA1":"text"}},
+				"bodySeccion2Aerogem":{  "imagenBS2" :"img",  "tituloBS2" :"text",  "descripcionBS2":"lorem",  "seleccionBS2":"text",  "botonBS2":"text"},
+				"bodySeccionArray2Aerogem":{  "tituloBSA2" :"text",  "descripcionBSA2" : "lorem",  "objeto" : { "posicionObjetoBSA2" :"text", "seleccionObjetoBSA2":"text", "imagenObjetoBSA2" :"img", "fechaObjetoBSA2":"text", "textoObjetoBSA2":"text", "tituloObjetoBSA2" :"text", "descripcionObjetoBSA2" :"lorem" }},
+//				"bodySeccionArray4Aerogem":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",  "botonObjetoBSA4":"text"  }},
+//				"footerSeccion1Aerogem"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+//				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+//				"footerSeccion3Aerogem"   :{  "tituloFS3" : "text" },
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -42,12 +42,12 @@ $(document).ready(function() {
 		case "headerSeccionArray5Aerogem": return camposModelo.headerSeccionArray5Aerogem; break;
 		case "bodySeccion1Aerogem": return camposModelo.bodySeccion1Aerogem; break;
 		case "bodySeccionArray1Aerogem": return camposModelo.bodySeccionArray1Aerogem; break;
+		case "bodySeccion2Aerogem": return camposModelo.bodySeccion2Aerogem; break;
 		case "bodySeccionArray2Aerogem": return camposModelo.bodySeccionArray2Aerogem; break;
-		case "bodySeccionArray3Aerogem": return camposModelo.bodySeccionArray3Aerogem; break;
-		case "bodySeccionArray4Aerogem": return camposModelo.bodySeccionArray4Aerogem; break;
-		case "footerSeccion1Aerogem": return camposModelo.footerSeccion1Aerogem; break;   
-		case "footerSeccion2Aerogem": return camposModelo.footerSeccion2Aerogem; break;   
-		case "footerSeccion3Aerogem": return camposModelo.footerSeccion3Aerogem; break;   
+//		case "bodySeccionArray4Aerogem": return camposModelo.bodySeccionArray4Aerogem; break;
+//		case "footerSeccion1Aerogem": return camposModelo.footerSeccion1Aerogem; break;   
+//		case "footerSeccion2Aerogem": return camposModelo.footerSeccion2Aerogem; break;   
+//		case "footerSeccion3Aerogem": return camposModelo.footerSeccion3Aerogem; break;   
 		}
 	}
 
@@ -55,73 +55,26 @@ $(document).ready(function() {
 
 	/////////////////////////////////////////////////////////////////////////
 	/*
-	 * funciones scroll
+	 * funciones scroll  Nav Fixed
 	 */
 	
-//	var valorFijo = $("#headerSeccionArray5").offset().top
-//	var bsa1 = $(".bodySeccionArray1").offset().top
-//	var bsa2 = $(".bodySeccionArray2").offset().top
-//	var bsa3 = $(".bodySeccionArray3").offset().top
-//	var bsa4 = $(".bodySeccionArray4").offset().top
-//	
-//	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
-//	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
-//	
-//	$(window).scroll(function(){
-//		var scroll = $(window).scrollTop();
-////		console.log(" 	scroll:"+scroll)
-//		
-//		if (scroll >= valorFijo ) {
-//			$('#headerSeccionArray5').addClass('sticky-top');
-//			$('#headerSeccionArray5').addClass('nav-overlay');
-////			console.log("activo:"+scroll);
-//		} else {
-//			$('#headerSeccionArray5').removeClass('sticky-top');
-//			$('#headerSeccionArray5').removeClass('nav-overlay');
-////			console.log("fuera:"+scroll);
-//		}
-//		
-//		if (scroll >= bsa1/2 ) {
-//			$('#bodySeccionArray1').addClass('animated');
-//			$('#bodySeccionArray1').addClass('rollIn');
-//			$('#bodySeccionArray1').addClass('slow');
-////			console.log("activo:"+scroll);
-//		} 
-////		else {
-////			$('.bodySeccionArray1').removeClass('animated');
-////			$('.bodySeccionArray1').removeClass('rollIn');
-////			$('.bodySeccionArray1').removeClass('slow');
-////			console.log("fuera:"+scroll);
-////		}
-//		if (scroll >= (bsa2/2) ) {
-//			$('#bodySeccionArray2').addClass('animated');
-//			$('#bodySeccionArray2').addClass('jackInTheBox');
-//			$('#bodySeccionArray2').addClass('slow');
-////			console.log("activo:"+scroll);
-//		}
-//		if (scroll >= (bs1) ) {
-//			$('#bodySeccion1').addClass('');
-//			$('#bodySeccion1').addClass('zoomInDown');
-//			$('#bodySeccion1').addClass('slow');
-////			console.log("activo:"+scroll);
-//		}
-//		
-//	});
-//	$(window).scroll();
-
-	
-	
+	var valorFijo = $("#headerSeccionArray5").offset().top
+	$(window).scroll(function(){
+		var scroll = $(window).scrollTop();
+//		console.log(" 	scroll:"+scroll)
+		
+		if (scroll >= valorFijo ) {
+			$('#headerSeccionArray5').addClass('sticky-top');
+			$('#headerSeccionArray5').addClass('nav-overlay');
+		} else {
+			$('#headerSeccionArray5').removeClass('sticky-top');
+			$('#headerSeccionArray5').removeClass('nav-overlay');
+		}
+		
+	});
+	$(window).scroll();
 	// fin funciones scroll
 	  
-	  
-//	  $( "#datepickerHGRC" ).datepicker({
-//		    minDate: 0,
-//		    maxDate: "+1m +1w",
-//		    regional: "es"
-//		  });
-	  
-
-	
 /////////////
 	/*
 	 *   Secciones   *
@@ -174,49 +127,7 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
-//	$('.headerSeccion3').click(function(){
-//		if(validaParam()){
-//			
-//			$.seccionCampos = cargaModal("headerSeccion3", "");
-//			$('#modalEdicionHeaderSeccion3_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "headerSeccion3",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	$('.headerSeccion33').click(function(){
-//		if(validaParam()){
-////			console.log("param:"+$.param)
-//			action = "action";
-//			seccion = "seccion";
-//			
-//			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
-//			valores = valoresSeccion("headerSeccion3_valores");
-//			
-//			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-//			 
-//			$('.headerSeccion3').attr("data-toggle","modal");
-//			$('.headerSeccion3').attr("data-target","#modalEdicion");
-//			$('.soloLectura').html("</>")
-//			$("div.soloLectura > div").remove();
-//			$("div.alerta > div").remove();
-//			$("div.alerta_file > div").remove();
-//			$('.alerta_file').html("</>")
-//			elementosCampos($.valoresOriginal);
-//			
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
+
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
 			
@@ -237,9 +148,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	/*
-	 *  Funciones de carga Imagenes 
-	 */
+	
 	$('.headerSeccionArray5').click(function(){
 		if(validaParam()){
 			
@@ -274,20 +183,19 @@ $(document).ready(function() {
 	$('.bodySeccion1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
-			
 			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
-			
+		
 			$('#modalEdicionBodySeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-				valorColumnas = 2;
-				valorPosicion = 0;
-				valorIniciaObjeto =1;
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 				
 				finalJson = { action : $.action,
-							 idEmpresa : $.idEmpresa,	
-							 seccion : "bodySeccion1",
-							 valoresFinales : valoresFinales }
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccion1",
+						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
 				enviaDataEdicion(finalJson)
@@ -298,31 +206,84 @@ $(document).ready(function() {
 		}
 	});
 	
-//	$('.bodySeccionArray2').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
-//			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
-//				valorColumnas = 3;
-//				valorPosicion = 0;
-//				valorIniciaObjeto =0;
-//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
-//				
-//				//genera el finalJson
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "bodySeccionArray2",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				//envia POST finalJson
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
+	$('.bodySeccionArray1').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodySeccionArray1",$.modelo);
+			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
+				valorColumnas = 3;
+				valorPosicion = 0;
+				valorIniciaObjeto =1;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+				
+				//genera el finalJson
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray1",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				//envia POST finalJson
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	$('.bodySeccion2').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodySeccion2",$.modelo);
+			$('#imagenBS2').on('change', function(){ enviaImagen("imagenBS2Form") });
+		
+			$('#modalEdicionBodySeccion2_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccion2",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	
+	$('.bodySeccionArray2').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
+			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
+				valorColumnas = 3;
+				valorPosicion = 0;
+				valorIniciaObjeto = 1;
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray2",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
+
 //	
 //	
 //	

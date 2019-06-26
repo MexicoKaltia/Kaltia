@@ -212,7 +212,7 @@
 	
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
-//		console.log(seccionEmpresa);
+		console.log(seccionEmpresa);
 //		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
@@ -774,7 +774,7 @@
 		  }
 		  
 		  var options = {
-				    animateThreshold: 100,
+				    animateThreshold: 200,
 				    scrollPollInterval: 20
 				}
 				$('.aniview').AniView(options);

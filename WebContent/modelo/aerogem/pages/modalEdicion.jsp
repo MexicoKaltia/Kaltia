@@ -333,34 +333,50 @@
 			    	<div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>MiniTitulo Seccion</span>
 			          <div class="col-7">
-						<input type="text" class="form-control" id="minitituloBSA1" value=<s:property value='body.bodySeccion1.get(1)' /> />
+						<input type="text" class="form-control" id="minitituloBS1" value=<s:property value='body.bodySeccion1.get(1)' /> />
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo Seccion</span>
 			          <div class="col-7">
-						<input type="text" class="form-control" id="tituloBSA1" value=<s:property value='body.bodySeccion1.get(2)' /> />
+						<input type="text" class="form-control" id="tituloBS1" value=<s:property value='body.bodySeccion1.get(2)' /> />
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 1</span>
 			          <div class="col-7">
-						<textarea class='form-control' class="form-control" id="descripcion1BSA1"><s:property value='body.bodySeccion1.get(3)' /></textarea>
+						<textarea class='form-control' class="form-control" id="descripcion1BS1"><s:property value='body.bodySeccion1.get(3)' /></textarea>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 2</span>
 			          <div class="col-7">
-						<textarea class='form-control' class="form-control" id="descripcion2BSA1"><s:property value='body.bodySeccion1.get(4)' /></textarea>
+						<textarea class='form-control' class="form-control" id="descripcion2BS1"><s:property value='body.bodySeccion1.get(4)' /></textarea>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Descripcion 3</span>
 			          <div class="col-7">
-						<textarea class='form-control' class="form-control" id="descripcion3BSA1"><s:property value='body.bodySeccion1.get(5)' /></textarea>
+						<textarea class='form-control' class="form-control" id="descripcion3BS1"><s:property value='body.bodySeccion1.get(5)' /></textarea>
 			          </div>
 			        </div>
-			        
+			        <div class="form-group row">
+					  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Seccion</span>
+					  <div class="col-7">
+						<input type="text" class='form-control' id="botonBS1" value="<s:property value='body.BodySeccion1.get(7)'/>"/>
+					  </div>
+					</div>
+					<div class="form-group row">
+					  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
+					  <div class="col-7">
+						    <select class="custom-select form-control" id="seleccionBS1">
+							  <option value="<s:property value='body.BodySeccion1.get(6)'/>" selected><s:property value='body.BodySeccion1.get(6)'/></option>		
+	              				<s:iterator value='identidadVO.moduloNombre'>
+								  	<option value='<s:property/>'><s:property/></option>
+								</s:iterator>              		   
+		    				</select>
+					  </div>
+					</div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Imagen</span>
 			          <div class="col-7">
@@ -372,8 +388,6 @@
 		    			</form>
 			          </div>
 			        </div>
-			        
-
 			  </div>	<!-- end bodymodal -->	
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
@@ -384,6 +398,76 @@
 	</div>
 </div>
 <!-- fin modalEdicion -->
+<!--**********************************************************************************-->
+<!-- modalBodySeccion2 -->
+<div class="modal fade" id="modalEdicion_bodySeccion2Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccion2</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+		    <!-- main body -->
+						<div class="modal-body">
+				<div class="form-group row">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
+				  <div class="col-7">
+					<input type="text" class='form-control' id="tituloBS2" value="<s:property value='body.BodySeccion2.get(1)'/>"/>
+				  </div>
+				</div>
+				<div class="form-group row">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Seccion</span>
+				  <div class="col-7">
+					<textarea class='form-control' id="descripcionBS2" rows="5"><s:property value='body.BodySeccion2.get(2)'/></textarea>
+				  </div>
+				</div>
+				<div class="form-group row">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Seccion</span>
+				  <div class="col-7">
+					<input type="text" class='form-control' id="botonBS2" value="<s:property value='body.BodySeccion2.get(4)'/>"/>
+				  </div>
+				</div>
+				<div class="form-group row">
+				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
+				  <div class="col-7">
+					    <select class="custom-select form-control" id="seleccionBS2">
+						  <option value="<s:property value='body.BodySeccion2.get(3)'/>" selected><s:property value='body.BodySeccion2.get(3)'/></option>		
+              				<s:iterator value='identidadVO.moduloNombre'>
+							  	<option value='<s:property/>'><s:property/></option>
+							</s:iterator>              		   
+	    				</select>
+				  </div>
+				</div>
+				<div class="form-group row">
+		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+		         <div class="col-7">
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion2.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion2.get(0)'/>">
+					<form id="imagenBS2Form">
+						<hiden class="imagenBS2Form"></hiden>
+						<label for="imagenBS2">Actualiza imagen:</label> 
+						<input id="imagenBS2" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='body.BodySeccion2.get(0)'/>"/>
+					</form>
+			      </div>
+			    </div>
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccion2_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray2 -->
 <div class="modal fade" id="modalEdicion_bodySeccionArray2Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -401,110 +485,26 @@
 				</div>
 			</div>
  			<!--**********************************************************************************-->
- 						    <!-- main body -->
-			<div class="modal-body">
-  			        <!-- carrusel -->
-			        <div id="carouselbodySeccionArray2Aerogem" class="carousel slide" data-interval="false">
-			        	<div class="carousel-inner container">
-       						    <s:set var="conta" value="0" />
-						        <s:subset source="body.bodySeccionArray2" start="0">  
-    							<s:iterator  var ="bodySeccionArray2">			  
-							  	<s:if test="#conta == 0">
-    								<div class="carousel-item active col-12 text-center">
-								</s:if>
-								<s:else>
-   									<div class="carousel-item col-12 text-center">
-								</s:else>
-								<section>
-						  	    <div class="form-group row">
-						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Icono</span>
-						          <div class="col-7">
-									<a data-toggle="modal" href="#modalIconoObjeto" class="iconoForm">
-									<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray2.objetoVO.get(1)' />" id="iconoObjetoBSA2<s:property value='#conta'/>"></i></a>
-									<label for="iconoObjetoBSA2" ><s:property value='#bodySeccionArray2.objetoVO.get(1)' /></label>
-						          </div>
-						        </div>
-						        <div class="form-group row">
-						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
-						          <div class="col-7">
-									<input type="text" class='form-control' id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)' />"/>
-						          </div>
-						        </div>
-						        <div class="form-group row">
-						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
-						          <div class="col-7">
-									<textarea class='form-control' id="descripcionObjetoBSA2<s:property value='#conta'/>"><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></textarea>
-						          </div>
-						        </div>
-						        </section>
-						   	</div>
-								<s:set var="conta" value="#conta+1" />
-				      			</s:iterator>
-				      			</s:subset>
-				      			<script type="text/javascript">var contaObjetoBodySeccionArray2 = <s:property value='#conta'/></script>
-				      	</div>
-				      	  <a class="carousel-control-prev" href="#carouselbodySeccionArray2Aerogem" role="button" data-slide="prev">
-						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Previous</span>
-						  </a>
-						  <a class="carousel-control-next" href="#carouselbodySeccionArray2Aerogem" role="button" data-slide="next">
-						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-						    <span class="sr-only">Next</span>
-						  </a>
-						  <ol class="carousel-indicators">
-						    <li data-target="#carouselbodySeccionArray2Aerogem" data-slide-to="0" class="active"></li>
-						    <li data-target="#carouselbodySeccionArray2Aerogem" data-slide-to="1"></li>
-						    <li data-target="#carouselbodySeccionArray2Aerogem" data-slide-to="2"></li>
-						  </ol>	  
-   			       </div> 	<!-- fin carrusel -->
-			</div>
- 			<!--**********************************************************************************-->
- 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"
-					id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary"
-					id="modalEdicionBodySeccionArray2_btnSave">Guardar Cambios</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--**********************************************************************************-->
-<!-- modalBodySeccionArray3 -->
-<div class="modal fade" id="modalEdicion_bodySeccionArray3Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccionArray3</h5>
-				<br>
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close" id="modalEdicionBody_btnClose">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<div class="alerta">
-						<hiden class="alerta_in"></hiden>
-				</div>
-			</div>
- 			<!--**********************************************************************************-->
  		    <!-- main body -->
 			<div class="modal-body">
 			    	<div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="tituloBSA3" value="<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />"/>
+						<input type="text" class='form-control' id="tituloBSA2" value="<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion</span>
 			          <div class="col-7">
-						<textarea class='form-control' id="descripcionBSA3"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></textarea>
+						<textarea class='form-control' id="descripcionBSA2"><s:property value='body.bodySeccionArray2.get(0).objetoVO.get(1)' /></textarea>
 			          </div>
 			        </div>
 			        			        <!-- carrusel -->
-			        <div id="carousel_bodySeccionArray3" class="carousel slide" data-interval="false">
+			        <div id="carousel_bodySeccionArray2" class="carousel slide" data-interval="false">
 			        	<div class="carousel-inner container">
        						    <s:set var="conta" value="0" />
-						        <s:subset source="body.bodySeccionArray3" start="1">  
-    							<s:iterator  var ="bodySeccionArray3">			  
+						        <s:subset source="body.bodySeccionArray2" start="1">  
+    							<s:iterator  var ="bodySeccionArray2">			  
 							  	<s:if test="#conta == 0">
     								<div class="carousel-item active col-12 text-center">
 								</s:if>
@@ -515,25 +515,24 @@
 						        <div class="form-group row">
 						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
 						          <div class="col-7">
-							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?=v1" alt="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>">
-									<form id="imagenBSA3Form<s:property value='#conta'/>" class="imagenArrayForm">
-										<hiden class="imagenBSA3Form<s:property value='#conta'/>"></hiden>
-										<label for="imagenObjetoBSA3<s:property value='#conta'/>">Actualiza imagen:</label> 
-										<input id="imagenObjetoBSA3<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>"/>
-<%-- 										<script type="text/javascript">var contaImagenBodySeccionArray3 = <s:property value='#conta'/></script> --%>
+							      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>?=v1" alt="<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>">
+									<form id="imagenBSA2Form<s:property value='#conta'/>" class="imagenArrayForm">
+										<hiden class="imagenBSA2Form<s:property value='#conta'/>"></hiden>
+										<label for="imagenObjetoBSA2<s:property value='#conta'/>">Actualiza imagen:</label> 
+										<input id="imagenObjetoBSA2<s:property value='#conta'/>" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>"/>
 					    			</form>
 						          </div>
 						        </div>
 						        <div class="form-group row">
 						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
 						          <div class="col-7">
-									<input type="text" class='form-control' id="tituloObjetoBSA3<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>"/>
+									<input type="text" class='form-control' id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(5)'/>"/>
 						          </div>
 						        </div>
 						        <div class="form-group row">
 						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
 						          <div class="col-7">
-									<textarea class='form-control' id="descripcionObjetoBSA3<s:property value='#conta'/>"><s:property value='#bodySeccionArray3.objetoVO.get(4)'/></textarea>
+									<textarea class='form-control' id="descripcionObjetoBSA2<s:property value='#conta'/>"><s:property value='#bodySeccionArray2.objetoVO.get(6)'/></textarea>
 						          </div>
 						        </div>
 						        </section>
@@ -541,20 +540,20 @@
 								<s:set var="conta" value="#conta+1" />
 				      			</s:iterator>
 				      			</s:subset>
-				      			<script type="text/javascript">var contaObjetoBodySeccionArray3 = <s:property value='#conta'/></script>
+				      			<script type="text/javascript">var contaObjetoBodySeccionArray2 = <s:property value='#conta'/></script>
 				      	</div>
-				      	<a class="carousel-control-prev" href="#carousel_bodySeccionArray3" role="button" data-slide="prev">
+				      	<a class="carousel-control-prev" href="#carousel_bodySeccionArray2" role="button" data-slide="prev">
 						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						    <span class="sr-only">Previous</span>
 						  </a>
-						  <a class="carousel-control-next" href="#carousel_bodySeccionArray3" role="button" data-slide="next">
+						  <a class="carousel-control-next" href="#carousel_bodySeccionArray2" role="button" data-slide="next">
 						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 						    <span class="sr-only">Next</span>
 						  </a>
 						  <ol class="carousel-indicators">
-						    <li data-target="#carousel_bodySeccionArray3" data-slide-to="0" class="active"></li>
-						    <li data-target="#carousel_bodySeccionArray3" data-slide-to="1"></li>
-						    <li data-target="#carousel_bodySeccionArray3" data-slide-to="2"></li>
+						    <li data-target="#carousel_bodySeccionArray2" data-slide-to="0" class="active"></li>
+						    <li data-target="#carousel_bodySeccionArray2" data-slide-to="1"></li>
+						    <li data-target="#carousel_bodySeccionArray2" data-slide-to="2"></li>
 						  </ol>	  
    			       </div> 	<!-- fin carrusel -->
    			     </div>	<!-- end bodymodal -->	
@@ -563,7 +562,7 @@
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"
 					id="modalEdicionBody_btnClose">Cerrar</button>
 				<button type="submit" class="btn btn-primary"
-					id="modalEdicionBodySeccionArray3_btnSave">Guardar Cambios</button>
+					id="modalEdicionBodySeccionArray2_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
@@ -571,75 +570,6 @@
 <!-- fin modalEdicion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
-<!-- modalBodySeccion1 -->
-<div class="modal fade" id="modalEdicion_bodySeccion1AerogemX" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccion1</h5>
-				<br>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<div class="alerta">
-						<hiden class="alerta_in"></hiden>
-				</div>
-			</div>
- 			<!--**********************************************************************************-->
-			<div class="modal-body">
-				<div class="form-group row">
-				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
-				  <div class="col-7">
-					<input type="text" class='form-control' id="tituloBS1" value="<s:property value='body.BodySeccion1.get(1)'/>"/>
-				  </div>
-				</div>
-				<div class="form-group row">
-				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Seccion</span>
-				  <div class="col-7">
-					<textarea class='form-control' id="descripcionBS1" rows="5"><s:property value='body.BodySeccion1.get(2)'/></textarea>
-				  </div>
-				</div>
-				<div class="form-group row">
-				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Boton Seccion</span>
-				  <div class="col-7">
-					<input type="text" class='form-control' id="botonBS1" value="<s:property value='body.BodySeccion1.get(4)'/>"/>
-				  </div>
-				</div>
-				<div class="form-group row">
-				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
-				  <div class="col-7">
-					    <select class="custom-select form-control" id="seleccionBS1">
-						  <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option>		
-              				<s:iterator value='identidadVO.moduloNombre'>
-							  	<option value='<s:property/>'><s:property/></option>
-							</s:iterator>              		   
-	    				</select>
-				  </div>
-				</div>
-				<div class="form-group row">
-		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
-		         <div class="col-7">
-			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.BodySeccion1.get(0)'/>?=v1" alt="<s:property value='body.BodySeccion1.get(0)'/>">
-					<form id="imagenBS1Form">
-						<hiden class="imagenBS1Form"></hiden>
-						<label for="imagenBS1">Actualiza imagen:</label> 
-						<input id="imagenBS1" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='body.BodySeccion1.get(0)'/>"/>
-					</form>
-			      </div>
-			    </div>
-				
-				
-				
-			</div>
- 			<!--**********************************************************************************-->
- 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionBodySeccion1_btnSave">Guardar Cambios</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- fin modalEdicion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalBodySeccionArray4 -->

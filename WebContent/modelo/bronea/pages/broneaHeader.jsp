@@ -11,7 +11,7 @@
 	<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear" >
-				<div class="fl_left headerSeccion1">
+				<div class="fl_left headerSeccion1 aniview reallyslow" data-av-animation="slideInLeft">
 					<ul class="nospace">
 						<li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
 						<s:iterator value='header.headerSeccion1' var="menu2Value">
@@ -24,7 +24,7 @@
 					</ul>
 				</div>
 <!-- ################################################################################################ -->				
-				<div class="fl_right headerSeccion2">
+				<div class="fl_right headerSeccion2 aniview reallyslow" data-av-animation="slideInRight">
 					<ul class="nospace">
 						<li><i class="fa fa-phone"></i> <s:property value='header.headerSeccion2.get(0)' /></li>
 						<li><i class="fa fa-envelope-o"></i> <s:property value='header.headerSeccion2.get(1)' /></li>
@@ -33,9 +33,9 @@
 			</div>
 		</div>
 <!-- ################################################################################################ -->
-   <div class="wrapper row1 headerSeccionArray5 " id="headerSeccionArray5">
+   <div class="wrapper row1 headerSeccionArray5" id="headerSeccionArray5">
 	 <header id="header" class="hoc clear">
-	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.25em;text-transform:uppercase;">
+	    <nav class="navbar  navbar-expand-md navbar-dark" style="font-size:1.0em;text-transform:uppercase;">
             <h1><a class="navbar-brand" style="font-size:1.3em;" href="<s:property value='identidadVO.idAction'/>">
 <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%>
 						<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
@@ -49,7 +49,7 @@
 				           <s:subset source="header.headerSeccionArray5" start="1">  
 		    			<s:iterator  var ="headerSeccionArray5">
 		    			<s:iterator  value ="#headerSeccionArray5.objetoVO">
-					       	<li class="nav-item " ><a class="nav-link" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+					       	<li class="nav-item" ><a class="nav-link" style="color:white" href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
 				       	 <s:set var="seccion" value="#seccion+1" />
 				       	 </s:iterator>
 				           </s:iterator>
@@ -76,7 +76,7 @@
 		<!-- ################################################################################################ -->
 		<div class="wrapper">
 		<a  id="seccion1"></a>
-			<div id="pageintro" class="hoc clear headerSeccion4 aniview reallyslow" data-av-animation="fadeIn">
+			<div id="pageintro" class="hoc clear headerSeccion4 aniview reallyslow" data-av-animation="slideInDown">
 				<article>
 					<div>
 						<p class="heading">
