@@ -62,7 +62,8 @@
     </div>
     <footer class="one_quarter">
 		<%-- referencia     	<a class="btn medium" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion2.get(3)'/>"><s:property value='body.bodySeccion2.get(4)'/> &raquo;</a></footer> --%>
-		<a class="btn medium" class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion2.get(3)'/>"><s:property value='body.bodySeccion2.get(4)'/> &raquo;</a>
+		<a class="btn medium validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion2.get(3)'/>"><s:property value='body.bodySeccion2.get(4)'/> &raquo;</a>
+		
 	</footer>
   </article>
 </div>

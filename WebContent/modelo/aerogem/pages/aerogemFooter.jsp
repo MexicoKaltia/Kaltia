@@ -2,15 +2,28 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<html lang="">
+<html lang="es">
 <body>
-<div class="wrapper row4 bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='footer.footerSeccion1.get(0)' />');">
+<!-- ################################################################################################ -->
+<div class="wrapper row4 bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion1.get(6)' />');">
   <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div class="one_quarter first">
-      <h6 class="title"><s:property value='footer.footerSeccion1.get(1)' /></h6>
-      <p><s:property value='footer.footerSeccion1.get(2)' /></p>
-      <p><s:property value='footer.footerSeccion1.get(3)' /></p>
+    <div class="one_quarter first footerSeccion1">
+      <h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
+      <ul class="nospace linklist">
+	      <lo><a href="<s:property value='footer.footerSeccion1.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion1.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion1.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion1.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccion1.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+<%--         <s:subset start="1" source ="footer.footerSeccion1"> --%>
+<%--         <s:iterator> --%>
+<%-- <%--identificar Secciones --%>
+<%--            		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%> 
+<%--            		<li><a href="#seccion4"><s:property/></a></li> --%>
+<%--          </s:iterator> --%>
+<%--          </s:subset> --%>
+        
+      </ul>
     </div>
     <!-- ################################################################################################ -->
     <div class="one_quarter">

@@ -29,7 +29,7 @@ $(document).ready(function() {
 				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
 				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Bronea"   :{  "tituloFS3" : "text" },
+				"footerSeccion3Bronea"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -455,12 +455,17 @@ $(document).ready(function() {
 	$('.footerSeccion3').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccion3",$.modelo);
+			$('#imagenFS3').on('change', function(){ enviaImagen("imagenFS3Form") });
 			
 			$('#modalEdicionFooterSeccion3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 //				console.log(valoresFinales);
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 //				console.log(valoresFinales);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "footerSeccion3",

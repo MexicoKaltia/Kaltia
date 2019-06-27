@@ -906,7 +906,6 @@
 			</div>
  			<!--**********************************************************************************-->
 			<div class="modal-body">
-			
 			    	<div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
 			          <div class="col-7">
@@ -1016,6 +1015,17 @@
 						<input type="text" class="form-control" id="tituloFS3" value="<s:property value='footer.footerSeccion3.get(0)' />"/>
 			          </div>
 			        </div>
+			<div class="form-group row">
+		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+		         <div class="col-7">
+			      	<img class="inspace-30 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion3.get(1)'/>?=v3" alt="<s:property value='footer.FooterSeccion3.get(1)'/>">
+					<form id="imagenFS3Form">
+						<hiden class="imagenFS3Form"></hiden>
+						<label for="imagenFS3">Actualiza imagen:</label> 
+						<input id="imagenFS3" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSeccion3.get(1)'/>"/>
+					</form>
+			      </div>
+			 </div>		      
 			        
 			        				  
 			</div>

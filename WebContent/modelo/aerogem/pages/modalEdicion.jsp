@@ -714,44 +714,90 @@
 			</div>
  			<!--**********************************************************************************-->
 			<div class="modal-body">
-			
 			    	<div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo </span>
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/>
+						<input type="text" class="form-control" id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/>
 			          </div>
 			        </div>
-			        <div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>sub Titulo </span>
-			          <div class="col-7">
-						<input type="text" class='form-control' id="subtituloFS1" value="<s:property value='footer.footerSeccion1.get(1)' />"/>
-			          </div>
-			        </div>
-			        <div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Domicilio</span>
-			          <div class="col-7">
-						<input type="text" class='form-control' id="domicilioFS1" value="<s:property value='footer.footerSeccion1.get(2)' />"/>
-			          </div>
-			        </div>
-			        <div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Telefono</span>
-			          <div class="col-7">
-						</i><input type="text" class='form-control' id="telefonoFS1" value="<s:property value='footer.footerSeccion1.get(3)' />"/>
-			          </div>
-			        </div>
-			        <div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Correo</span>
-			          <div class="col-7">
-						<input type="text" class='form-control' id="correoFS1" value="<s:property value='footer.footerSeccion1.get(4)' />"/>
-			          </div>
-			        </div>
-			        <div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Ubicacion</span>
-			          <div class="col-7">
-						<input type="text" class='form-control' id="ubicacionFS1" value="<s:property value='footer.footerSeccion1.get(5)' />"/>
-			          </div>
-			        </div>
-				  
+			        <br><br>
+			        <div class="form-group row ">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-facebook" ></i></span>
+				      <div class="col-7">
+				      <div class="input-group grupoRS">
+						  <div class="input-group-prepend ">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="facebookFS1">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(1)' />" id="textFFS1" readonly>
+						</div>
+				      </div>
+				    </div>
+			        <div class="form-group row ">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-twitter" ></i></span>
+				      <div class="col-7">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="twitterFS1">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(2)' />" id="textTFS1" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="form-group row ">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-youtube" ></i></span>
+				      <div class="col-7">
+				      <div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="youtubeFS1">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(3)' />" id="textYFS1" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="form-group row ">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-linkedin" ></i></span>
+				      <div class="col-7">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="linkedinFS1">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(4)' />" id="textLFS1" readonly>
+						</div>
+				      </div>
+				    </div>
+				    <div class="form-group row ">
+				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-google-plus" ></i></span>
+				      <div class="col-7">
+						<div class="input-group grupoRS">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="checkbox" id="googleFS1">
+						    </div>
+						  </div>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(5)' />" id="textGFS1" readonly>
+						</div>
+				      </div>
+				    </div>
+				 <div class="form-group row">
+		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+		         <div class="col-7">
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion1.get(6)'/>?=v1" alt="<s:property value='footer.FooterSeccion1.get(6)'/>">
+					<form id="imagenFS1Form">
+						<hiden class="imagenFS1Form"></hiden>
+						<label for="imagenFS1">Actualiza imagen:</label> 
+						<input id="imagenFS1" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSeccion1.get(6)'/>"/>
+					</form>
+			      </div>
+			    </div>		      
+			        				  
 			</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">

@@ -407,8 +407,8 @@
 		$('.grupoRS').click(function(){
 			var rsInput =$(this).children("input").attr('id');
 			var rsCheck =$(this).children("div").children("div").children("input").attr('id');
-			console.log(rsCheck);
-			console.log(rsInput);
+//			console.log(rsCheck);
+//			console.log(rsInput);
 			if($('#'+rsCheck).prop('checked')){
 				$('#'+rsInput).prop('readonly', false);
 			}
