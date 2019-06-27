@@ -5,7 +5,8 @@
 <html lang="es">
 <body>
 <!-- ################################################################################################ -->
-<div class="wrapper row4 bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion1.get(6)' />');">
+<div class="wrapper row4 bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion3.get(1)' />');">
+<a id="seccion6"></a>
   <footer id="footer" class="hoc clear"> 
     <div class="one_quarter first footerSeccion1">
       <h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
@@ -24,44 +25,50 @@
 <%--          </s:subset> --%>
         
       </ul>
+      <br><br>
+      <iframe src="<s:property value='footer.footerSeccion2.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter">
-      <h6 class="title"><s:property value='footer.footerSeccion2.get(0)' /></h6>
-      <ul class="nospace linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address>
-          <s:property value='footer.footerSeccion2.get(1)' />, <s:property value='footer.footerSeccion2.get(2)' />
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion2.get(3)' /><br>
-          <s:property value='footer.footerSeccion2.get(4)' /></li>
-        <li><i class="fa fa-fax"></i><s:property value='footer.footerSeccion2.get(5)' /></li>
-        <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion2.get(6)' /></li>
-      </ul>
-    </div>
+	<div class="one_quarter footerSeccion2">
+      	<h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
+		  <p class="btmspace-30"><s:property value='footer.footerSeccion2.get(1)' /></p>
+		  <ul class="nospace linklist contact">
+		  <li><i class="fa fa-map-marker"></i>
+		  <address>
+		    <s:property value='footer.footerSeccion2.get(2)' />
+		 </address>
+		 </li>
+		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion2.get(3)' /></li>
+		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion2.get(4)' /></li>
+		 
+		</ul>
+    </div> 
     <!-- ################################################################################################ -->
-    <div class="one_quarter">
-      <h6 class="title"><s:property value='footer.footerSeccion3.get(0)' /></h6>
+    <div class="one_quarter footerSeccion3">
+      <h6 class="heading"><s:property value='footer.footerSeccion3.get(0)' /></h6>
       <ul class="nospace linklist">
-         <s:subset start="1" source ="footer.footerSeccion3">
-        <s:iterator >
-          		<li><a href="<s:property value='identidadVO.idAction'/>"><s:property/></a></li>
-         </s:iterator>
-         </s:subset>       
+          <s:set var="seccion" value="1" />
+		     <s:subset source="header.headerSeccionArray5" start="1">  
+    		 <s:iterator  var ="headerSeccionArray5">
+    		 <s:iterator  value ="#headerSeccionArray5.objetoVO">
+		     	 <li><a href="#seccion<s:property value="#seccion"/>"><s:property/></a></li>
+		     <s:set var="seccion" value="#seccion+1" />
+		     </s:iterator>
+		     </s:iterator>
+          	 </s:subset>       
       </ul>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter">
-      <h6 class="title"></i><s:property value='footer.footerSeccionArray1.get(0).objetoVO.get(0)' /></h6>
+    <div class="one_quarter footerSeccionArray1">
+      <h6 class="heading"></i><s:property value='footer.footerSeccionArray1.get(0).objetoVO.get(0)' /></h6>
       <ul class="nospace linklist">
       <s:subset start="1" source ="footer.footerSeccionArray1">
         <s:iterator var="footerSeccionArray1">
         <li>
           <article>
-            <h6 class="nospace font-x1"><a href="<s:property value='#footerSeccionArray1.objetoVO.get(0)' />"><s:property value='#footerSeccionArray1.objetoVO.get(1)' /></a></h6>
-            <time class="font-xs block btmspace-10" datetime="2045-04-06"><s:property value='#footerSeccionArray1.objetoVO.get(2)' /></time>
-            <p class="nospace"><s:property value='#footerSeccionArray1.objetoVO.get(3)' />&hellip;</p>
+            <h6 class="nospace font-x1"><a href="#"><s:property value='#footerSeccionArray1.objetoVO.get(0)' /></a></h6>
+            <time class="font-xs block btmspace-10" datetime="2045-04-06"><s:property value='#footerSeccionArray1.objetoVO.get(1)' /></time>
+            <p class="nospace"><s:property value='#footerSeccionArray1.objetoVO.get(2)' />&hellip;</p>
           </article>
         </li>
         </s:iterator>

@@ -21,18 +21,16 @@ $(document).ready(function() {
 		var camposModelo = {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
-//				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
 				"headerSeccion4Aerogem"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5Aerogem":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
 				"bodySeccion1Aerogem"     :{  "imagenBS1" :"img",  "minitituloBS1" :"text", "tituloBS1" :"text",  "descripcion1BS1":"lorem", "descripcion2BS1":"lorem", "descripcion3BS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
 				"bodySeccionArray1Aerogem":{  "tituloBSA1":"text",  "descripcionBSA1":"lorem",  "objeto" :{"posicionObjetoBSA1" :"text", "iconoObjetoBSA1" : "text", "tituloObjetoBSA1" :"text", "descripcionObjetoBSA1" :"lorem", "seleccionObjetoBSA1" : "text", "botonObjetoBSA1":"text"}},
 				"bodySeccion2Aerogem"	  :{  "imagenBS2" :"img",  "tituloBS2" :"text",  "descripcionBS2":"lorem",  "seleccionBS2":"text",  "botonBS2":"text"},
 				"bodySeccionArray2Aerogem":{  "tituloBSA2" :"text",  "descripcionBSA2" : "lorem",  "objeto" : { "posicionObjetoBSA2" :"text", "seleccionObjetoBSA2":"text", "imagenObjetoBSA2" :"img", "fechaObjetoBSA2":"text", "textoObjetoBSA2":"text", "tituloObjetoBSA2" :"text", "descripcionObjetoBSA2" :"lorem" }},
-				"footerSeccion1Aerogem"   :{   "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text", "imagenFS1" :"img"},
-//				"bodySeccionArray4Aerogem":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",  "botonObjetoBSA4":"text"  }},
-//				"footerSeccion1Aerogem"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-
-//				"footerSeccion3Aerogem"   :{  "tituloFS3" : "text" },
+				"footerSeccion1Aerogem"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
+				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
+				"footerSeccion3Aerogem"    :{  "tituloFS3" : "text", "imagenFS3":"img" },
+				"footerSeccionArray1Aerogem":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }}
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -46,8 +44,9 @@ $(document).ready(function() {
 		case "bodySeccion2Aerogem": return camposModelo.bodySeccion2Aerogem; break;
 		case "bodySeccionArray2Aerogem": return camposModelo.bodySeccionArray2Aerogem; break;
 		case "footerSeccion1Aerogem": return camposModelo.footerSeccion1Aerogem; break;   
-//		case "footerSeccion2Aerogem": return camposModelo.footerSeccion2Aerogem; break;   
-//		case "footerSeccion3Aerogem": return camposModelo.footerSeccion3Aerogem; break;   
+		case "footerSeccion2Aerogem": return camposModelo.footerSeccion2Aerogem; break;   
+		case "footerSeccion3Aerogem": return camposModelo.footerSeccion3Aerogem; break;   
+		case "footerSeccionArray1Aerogem": return camposModelo.footerSeccionArray1Aerogem; break;   
 		}
 	}
 
@@ -286,7 +285,7 @@ $(document).ready(function() {
 	$('.footerSeccion1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccion1",$.modelo);
-			$('#imagenFS1').on('change', function(){ enviaImagen("imagenFS1Form") });
+//			$('#imagenFS1').on('change', function(){ enviaImagen("imagenFS1Form") });
 		
 			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
@@ -309,131 +308,88 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
-
-//	
-//	$('.bodySeccionArray3').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);	
-//			
-//			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
-//				valorColumnas = 3;
-//				valorPosicion = 0;
-//				valorIniciaObjeto = 1;
-//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
-//				
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "bodySeccionArray3",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	$('.bodySeccion1').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
-//			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
-//		
-//			$('#modalEdicionBodySeccion1_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, 0);
+	
+	$('.footerSeccion2').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccion2",$.modelo);
+//			$('#imagenFS2').on('change', function(){ enviaImagen("imagenFS2Form") });
+		
+			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
 //				while(valoresFinales.includes("C:\\fakepath\\") ){
 //					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
 //				}
-////				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-//				
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "bodySeccion1",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	
-//	$('.bodySeccionArray4').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("bodySeccionArray4",$.modelo);
-//			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray4);
-//				valorColumnas = 3;
-//				valorPosicion = 0;
-//				valorIniciaObjeto = 1;
-//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
-//				
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "bodySeccionArray4",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	
-//	
-//
-//	$('.footerSeccion2').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("footerSeccion2",$.modelo);
-//			
-//			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, 0);
-////				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "footerSeccion2",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//
-//	$('.footerSeccion3').click(function(){
-//		if(validaParam()){
-//			$.seccionCampos = cargaModal("footerSeccion3",$.modelo);
-//			
-//			$('#modalEdicionFooterSeccion3_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, 0);
-////				console.log(valoresFinales);
-////				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-////				console.log(valoresFinales);
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "footerSeccion3",
-//						 valoresFinales : valoresFinales }
-////				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	
-//	
-//	
-//	
+
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccion2",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	$('.footerSeccion3').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccion3",$.modelo);
+			$('#imagenFS3').on('change', function(){ enviaImagen("imagenFS3Form") });
+		
+			$('#modalEdicionFooterSeccion3_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccion3",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
+
+	$('.footerSeccionArray1').click(function(){
+		if(validaParam()){
+			
+			$.seccionCampos = cargaModal("footerSeccionArray1",$.modelo);
+
+			$('#modalEdicionfooterSeccionArray1_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 3);  // <-- son seis secciones en el modelo Aerogem
+				
+//				while(valoresFinales.includes("C:\\fakepath\\") ){
+//					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+//				}
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccionArray1",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
 	
 	
 	});/*********  fin de documento *********/

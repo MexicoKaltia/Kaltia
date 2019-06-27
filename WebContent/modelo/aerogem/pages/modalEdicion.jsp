@@ -786,17 +786,6 @@
 						</div>
 				      </div>
 				    </div>
-				 <div class="form-group row">
-		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
-		         <div class="col-7">
-			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion1.get(6)'/>?=v1" alt="<s:property value='footer.FooterSeccion1.get(6)'/>">
-					<form id="imagenFS1Form">
-						<hiden class="imagenFS1Form"></hiden>
-						<label for="imagenFS1">Actualiza imagen:</label> 
-						<input id="imagenFS1" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSeccion1.get(6)'/>"/>
-					</form>
-			      </div>
-			    </div>		      
 			        				  
 			</div>
  			<!--**********************************************************************************-->
@@ -828,78 +817,46 @@
  			<!--**********************************************************************************-->
 			<div class="modal-body">
 			
+			<div class="modal-body">
+			
 			    	<div class="form-group row">
-			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo </span>
 			          <div class="col-7">
-						<input type="text" class="form-control" id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
+						<input type="text" class='form-control' id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
 			          </div>
 			        </div>
-			        <br><br>
-			        <div class="form-group row ">
-				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-facebook" ></i></span>
-				      <div class="col-7">
-				      <div class="input-group grupoRS">
-						  <div class="input-group-prepend ">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="facebookFS2">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(1)' />" id="textFFS2" readonly>
-						</div>
-				      </div>
-				    </div>
-			        <div class="form-group row ">
-				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-twitter" ></i></span>
-				      <div class="col-7">
-						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="twitterFS2">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(2)' />" id="textTFS2" readonly>
-						</div>
-				      </div>
-				    </div>
-				    <div class="form-group row ">
-				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-youtube" ></i></span>
-				      <div class="col-7">
-				      <div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="youtubeFS2">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(3)' />" id="textYFS2" readonly>
-						</div>
-				      </div>
-				    </div>
-				    <div class="form-group row ">
-				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-linkedin" ></i></span>
-				      <div class="col-7">
-						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="linkedinFS2">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(4)' />" id="textLFS2" readonly>
-						</div>
-				      </div>
-				    </div>
-				    <div class="form-group row ">
-				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-google-plus" ></i></span>
-				      <div class="col-7">
-						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="googleFS2">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion2.get(5)' />" id="textGFS2" readonly>
-						</div>
-				      </div>
-				    </div>		      
+			        <div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>sub Titulo </span>
+			          <div class="col-7">
+						<input type="text" class='form-control' id="subtituloFS2" value="<s:property value='footer.footerSeccion2.get(1)' />"/>
+			          </div>
+			        </div>
+			        <div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Domicilio</span>
+			          <div class="col-7">
+						<input type="text" class='form-control' id="domicilioFS2" value="<s:property value='footer.footerSeccion2.get(2)' />"/>
+			          </div>
+			        </div>
+			        <div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Telefono</span>
+			          <div class="col-7">
+						</i><input type="text" class='form-control' id="telefonoFS2" value="<s:property value='footer.footerSeccion2.get(3)' />"/>
+			          </div>
+			        </div>
+			        <div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Correo</span>
+			          <div class="col-7">
+						<input type="text" class='form-control' id="correoFS2" value="<s:property value='footer.footerSeccion2.get(4)' />"/>
+			          </div>
+			        </div>
+			        <div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Ubicacion</span>
+			          <div class="col-7">
+						<input type="text" class='form-control' id="ubicacionFS2" value="<s:property value='footer.footerSeccion2.get(5)' />"/>
+			          </div>
+			        </div>
+				  
+			</div>
 			        				  
 			</div>
  			<!--**********************************************************************************-->
@@ -937,7 +894,17 @@
 						<input type="text" class="form-control" id="tituloFS3" value="<s:property value='footer.footerSeccion3.get(0)' />"/>
 			          </div>
 			        </div>
-			        
+			     <div class="form-group row">
+		         <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
+		         <div class="col-7">
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion3.get(1)'/>?=v1" alt="<s:property value='footer.FooterSeccion3.get(1)'/>">
+					<form id="imagenFS3Form">
+						<hiden class="imagenFS3Form"></hiden>
+						<label for="imagenFS3">Actualiza imagen:</label> 
+						<input id="imagenFS3" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSeccion3.get(1)'/>"/>
+					</form>
+			      </div>
+			    </div>		      
 			        				  
 			</div>
  			<!--**********************************************************************************-->
@@ -950,3 +917,96 @@
 </div>
 <!-- fin modalFooterSeccion3 -->
 <!--**********************************************************************************-->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- modalfooterSeccionArray1 -->
+<div class="modal fade" id="modalEdicion_footerSeccionArray1Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccionArray1</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionfooter_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+ 		    <!-- main body -->
+			<div class="modal-body">
+			    	<div class="form-group row">
+			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Seccion</span>
+			          <div class="col-7">
+						<input type="text" class='form-control' id="tituloFSA1" value="<s:property value='footer.footerSeccionArray1.get(0).objetoVO.get(0)' />"/>
+			          </div>
+			        </div>
+
+			        			        <!-- carrusel -->
+			        <div id="carousel_footerSeccionArray1" class="carousel slide" data-interval="false">
+			        	<div class="carousel-inner container">
+       						    <s:set var="conta" value="0" />
+						        <s:subset source="footer.footerSeccionArray1" start="1">  
+    							<s:iterator  var ="footerSeccionArray1">			  
+							  	<s:if test="#conta == 0">
+    								<div class="carousel-item active col-12 text-center">
+								</s:if>
+								<s:else>
+   									<div class="carousel-item col-12 text-center">
+								</s:else>
+								<section>
+						        <div class="form-group row">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Objeto</span>
+						          <div class="col-7">
+									<input type="text" class='form-control' id="tituloObjetoFSA1<s:property value='#conta'/>" value="<s:property value='#footerSeccionArray1.objetoVO.get(0)'/>"/>
+						          </div>
+						        </div>
+						        <div class="form-group row">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Subtitulo Objeto</span>
+						          <div class="col-7">
+									<input type="text" class='form-control' id="subTituloObjetoFSA1<s:property value='#conta'/>" value="<s:property value='#footerSeccionArray1.objetoVO.get(1)'/>"/>
+						          </div>
+						        </div>
+						        
+						        <div class="form-group row">
+						          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>
+						          <div class="col-7">
+									<textarea class='form-control' id="descripcionObjetoFSA1<s:property value='#conta'/>"><s:property value='#footerSeccionArray1.objetoVO.get(2)'/></textarea>
+						          </div>
+						        </div>
+						        </section>
+						    	</div>
+								<s:set var="conta" value="#conta+1" />
+				      			</s:iterator>
+				      			</s:subset>
+				      			<script type="text/javascript">var contaObjetofooterSeccionArray1 = <s:property value='#conta'/></script>
+				      	</div>
+				      	<a class="carousel-control-prev" href="#carousel_footerSeccionArray1" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carousel_footerSeccionArray1" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						  <ol class="carousel-indicators">
+						    <li data-target="#carousel_footerSeccionArray1" data-slide-to="0" class="active"></li>
+						    <li data-target="#carousel_footerSeccionArray1" data-slide-to="1"></li>
+						    <li data-target="#carousel_footerSeccionArray1" data-slide-to="2"></li>
+						  </ol>	  
+   			       </div> 	<!-- fin carrusel -->
+   			     </div>	<!-- end footermodal -->	
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionfooter_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionfooterSeccionArray1_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicion -->
