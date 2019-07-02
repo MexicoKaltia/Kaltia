@@ -109,8 +109,9 @@ public class IdentidadDao {
 				+ "tw_header.headerSeccion1, tw_header.headerSeccion2, tw_header.headerSeccion3, tw_header.headerSeccion4, tw_header.headerSeccion5, "
 				+ "tw_header.headerAux1, tw_header.headerAux2, tw_header.headerAux3, tw_header.headerAux4, tw_header.headerAux5, "
 				+ "tw_header.headerVarios " 
-				+ " from tw_header LEFT JOIN tc_action "
-				+ "ON tw_header.idEmpresa = tc_action.idEmpresa" + " WHERE tc_action.idAction = ?";
+				+ " from tw_header "// LEFT JOIN tc_action "
+//				+ "ON tw_header.idEmpresa = tc_action.idEmpresa" 
+				+ " WHERE tw_header.idAction = ?";
 
 		try {
 			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
@@ -169,9 +170,9 @@ public class IdentidadDao {
 		String sql = "SELECT tw_body.idBody, tw_body.idEmpresa, tw_body.bodyFondo, "
 				+ " tw_body.bodySeccion1, tw_body.bodySeccion2, tw_body.bodySeccion3, tw_body.bodySeccion4, tw_body.bodySeccion5, tw_body.bodySeccion6, tw_body.bodySeccion7, tw_body.bodySeccion8, tw_body.bodySeccion9, tw_body.bodySeccion10, "
 				+ " tw_body.bodySeccionArray1, tw_body.bodySeccionArray2, tw_body.bodySeccionArray3, tw_body.bodySeccionArray4, tw_body.bodySeccionArray5, tw_body.bodySeccionArray6, tw_body.bodySeccionArray7" 
-				+ " from tw_body LEFT JOIN tc_action "
-				+ "ON tw_body.idEmpresa = tc_action.idEmpresa" 
-				+ " WHERE tc_action.idAction = ?";
+				+ " from tw_body "//LEFT JOIN tc_action "
+//				+ "ON tw_body.idEmpresa = tc_action.idEmpresa" 
+				+ " WHERE tw_body.idAction = ?";
 		try {
 			
 			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
@@ -235,8 +236,9 @@ public class IdentidadDao {
 				+ " tw_footer.footerSeccion1, tw_footer.footerSeccion2, tw_footer.footerSeccion3, tw_footer.footerSeccion4, tw_footer.footerSeccion5, "
 				+ " tw_footer.footerSeccionArray1, tw_footer.footerSeccionArray2,"
 				+ " tw_footer.footerAux1, tw_footer.footerAux2, tw_footer.footerVarios" 
-				+ " from tw_footer LEFT JOIN tc_action "
-				+ "ON tw_footer.idEmpresa = tc_action.idEmpresa" + " WHERE tc_action.idAction = ?";
+				+ " from tw_footer"// LEFT JOIN tc_action "
+//				+ "ON tw_footer.idEmpresa = tc_action.idEmpresa" 
+				+ " WHERE tw_footer.idAction = ?";
 
 		try {
 			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
