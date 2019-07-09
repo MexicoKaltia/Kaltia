@@ -3,7 +3,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Icono</h5>
+				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Icono</label>
 				<br>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close" id="modalEdicionBody_btnClose">

@@ -12,7 +12,7 @@
 		<div class="modal-content"
 			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header" id="topCita">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/>Cita</h5>
+				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Cita</label>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose"></button>
 			</div>
