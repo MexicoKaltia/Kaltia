@@ -45,8 +45,8 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-	var url = "http://31.220.63.183:8010/";
-//	var url = "http://localhost:8010/";
+//	var url = "http://31.220.63.183:8010/";
+	var url = "http://localhost:8010/";
 	var urlUpload= "http://31.220.63.183:8011/";
 	var urlCita = "http://31.220.63.183:8012/";
 //	var urlCita = "http://localhost:8012/";
@@ -121,6 +121,9 @@
 					$('div.footerSeccionArray3').addClass("edicion")
 					$('div.footerSeccionArray4').addClass("edicion")
 					$('div.footerSeccionArray5').addClass("edicion")
+					$('div.footerSecciones').addClass("edicion")
+					$('div.footerSeccionUbicacion').addClass("edicion")
+					$('div.footerSeccionRedes').addClass("edicion")
 		    	$.param = decodeURI(results[1]);
 //		    		console.log($.param);
 		    	return $.param;

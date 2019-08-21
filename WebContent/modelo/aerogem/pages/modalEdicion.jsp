@@ -800,12 +800,12 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
-<!-- modalFooterSeccion2 -->
-<div class="modal fade" id="modalEdicion_footerSeccion2Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- modalfooterSeccionUbicacion -->
+<div class="modal fade" id="modalEdicion_footerSeccionUbicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion2</h5>
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccionUbicacion</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
 					<span aria-hidden="true">&times;</span>
@@ -822,37 +822,37 @@
 			    	<div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo </span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="tituloFS2" value="<s:property value='footer.footerSeccion2.get(0)' />"/>
+						<input type="text" class='form-control' id="tituloFS2" value="<s:property value='footer.footerSeccionUbicacion.get(0)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>sub Titulo </span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="subtituloFS2" value="<s:property value='footer.footerSeccion2.get(1)' />"/>
+						<input type="text" class='form-control' id="subtituloFS2" value="<s:property value='footer.footerSeccionUbicacion.get(1)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Domicilio</span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="domicilioFS2" value="<s:property value='footer.footerSeccion2.get(2)' />"/>
+						<input type="text" class='form-control' id="domicilioFS2" value="<s:property value='footer.footerSeccionUbicacion.get(2)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Telefono</span>
 			          <div class="col-7">
-						</i><input type="text" class='form-control' id="telefonoFS2" value="<s:property value='footer.footerSeccion2.get(3)' />"/>
+						</i><input type="text" class='form-control' id="telefonoFS2" value="<s:property value='footer.footerSeccionUbicacion.get(3)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Correo</span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="correoFS2" value="<s:property value='footer.footerSeccion2.get(4)' />"/>
+						<input type="text" class='form-control' id="correoFS2" value="<s:property value='footer.footerSeccionUbicacion.get(4)' />"/>
 			          </div>
 			        </div>
 			        <div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Ubicacion</span>
 			          <div class="col-7">
-						<input type="text" class='form-control' id="ubicacionFS2" value="<s:property value='footer.footerSeccion2.get(5)' />"/>
+						<input type="text" class='form-control' id="ubicacionFS2" value="<s:property value='footer.footerSeccionUbicacion.get(5)' />"/>
 			          </div>
 			        </div>
 				  
@@ -862,12 +862,12 @@
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion2_btnSave">Guardar Cambios</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionfooterSeccionUbicacion_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- fin modalFooterSeccion2 -->
+<!-- fin modalfooterSeccionUbicacion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
@@ -876,7 +876,7 @@
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion2</h5>
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion3</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
 					<span aria-hidden="true">&times;</span>

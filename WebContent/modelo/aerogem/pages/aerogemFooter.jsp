@@ -26,20 +26,20 @@
         
       </ul>
       <br><br>
-      <iframe src="<s:property value='footer.footerSeccion2.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe src="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <!-- ################################################################################################ -->
-	<div class="one_quarter footerSeccion2">
-      	<h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
-		  <p class="btmspace-30"><s:property value='footer.footerSeccion2.get(1)' /></p>
+	<div class="one_quarter footerSeccionUbicacion">
+      	<h6 class="heading"><s:property value='footer.footerSeccionUbicacion.get(0)' /></h6>
+		  <p class="btmspace-30"><s:property value='footer.footerSeccionUbicacion.get(1)' /></p>
 		  <ul class="nospace linklist contact">
 		  <li><i class="fa fa-map-marker"></i>
 		  <address>
-		    <s:property value='footer.footerSeccion2.get(2)' />
+		    <s:property value='footer.footerSeccionUbicacion.get(2)' />
 		 </address>
 		 </li>
-		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion2.get(3)' /></li>
-		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion2.get(4)' /></li>
+		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccionUbicacion.get(3)' /></li>
+		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccionUbicacion.get(4)' /></li>
 		 
 		</ul>
     </div> 

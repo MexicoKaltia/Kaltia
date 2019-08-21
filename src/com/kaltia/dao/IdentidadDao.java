@@ -235,7 +235,8 @@ public class IdentidadDao {
 		String sql = "SELECT tw_footer.idFooter, tw_footer.idEmpresa, "
 				+ " tw_footer.footerSeccion1, tw_footer.footerSeccion2, tw_footer.footerSeccion3, tw_footer.footerSeccion4, tw_footer.footerSeccion5, "
 				+ " tw_footer.footerSeccionArray1, tw_footer.footerSeccionArray2,"
-				+ " tw_footer.footerAux1, tw_footer.footerAux2, tw_footer.footerVarios" 
+				+ " tw_footer.footerAux1, tw_footer.footerAux2, tw_footer.footerVarios,"
+				+ " tw_footer.footerSecciones, tw_footer.footerSeccionUbicacion , tw_footer.footerSeccionRedes"
 				+ " from tw_footer"// LEFT JOIN tc_action "
 //				+ "ON tw_footer.idEmpresa = tc_action.idEmpresa" 
 				+ " WHERE tw_footer.idAction = ?";
@@ -262,6 +263,9 @@ public class IdentidadDao {
 				footerVO.setFooterAux1(returnDAO.get(9) != null ? ComunResolution.arrayUno(returnDAO.get(8).toString(), ComunResolution.tokenUno) : new ArrayList<String>()); 
 				footerVO.setFooterAux2(returnDAO.get(10) != null ? ComunResolution.arrayUno(returnDAO.get(9).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				footerVO.setFooterVarios(returnDAO.get(11) != null ? returnDAO.get(11).toString() : "");
+				footerVO.setFooterSecciones(returnDAO.get(12) != null ? ComunResolution.arrayUno(returnDAO.get(12).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
+				footerVO.setFooterSeccionUbicacion(returnDAO.get(13) != null ? ComunResolution.arrayUno(returnDAO.get(13).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
+				footerVO.setFooterSeccionRedes(returnDAO.get(14) != null ? ComunResolution.arrayUno(returnDAO.get(14).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				//footerVO.setFooterRequerido(returnDAO.get(9) != null ? Integer.valueOf((String)returnDAO.get(9)) : 0);
 				
 				footerVO.setCodigoVO("00");

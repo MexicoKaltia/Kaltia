@@ -26,6 +26,31 @@ public class FooterVO extends BaseVO implements Serializable{
 	private ArrayList<String> footerAux1;
 	private ArrayList<String> footerAux2;
 	private String footerVarios;
+	private ArrayList<String> footerSecciones;
+	private ArrayList<String> footerSeccionUbicacion;
+	private ArrayList<String> footerSeccionRedes;
+	
+	
+	
+	public ArrayList<String> getFooterSecciones() {
+		return footerSecciones;
+	}
+	public void setFooterSecciones(ArrayList<String> footerSecciones) {
+		this.footerSecciones = footerSecciones;
+	}
+	public ArrayList<String> getFooterSeccionUbicacion() {
+		return footerSeccionUbicacion;
+	}
+	public void setFooterSeccionUbicacion(ArrayList<String> footerSeccionUbicacion) {
+		this.footerSeccionUbicacion = footerSeccionUbicacion;
+	}
+	public ArrayList<String> getFooterSeccionRedes() {
+		return footerSeccionRedes;
+	}
+	public void setFooterSeccionRedes(ArrayList<String> footerSeccionRedes) {
+		this.footerSeccionRedes = footerSeccionRedes;
+	}
+	
 	public String getIdFooter() {
 		return idFooter;
 	}

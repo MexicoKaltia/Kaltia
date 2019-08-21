@@ -30,7 +30,10 @@ $(document).ready(function() {
 				"footerSeccion1Aerogem"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
 				"footerSeccion3Aerogem"    :{  "tituloFS3" : "text", "imagenFS3":"img" },
-				"footerSeccionArray1Aerogem":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }}
+				"footerSeccionArray1Aerogem":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }},
+				"footerSecciones"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
+				"footerSeccionUbicacion"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
+				"footerRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"}
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -46,7 +49,10 @@ $(document).ready(function() {
 		case "footerSeccion1Aerogem": return camposModelo.footerSeccion1Aerogem; break;   
 		case "footerSeccion2Aerogem": return camposModelo.footerSeccion2Aerogem; break;   
 		case "footerSeccion3Aerogem": return camposModelo.footerSeccion3Aerogem; break;   
-		case "footerSeccionArray1Aerogem": return camposModelo.footerSeccionArray1Aerogem; break;   
+		case "footerSeccionArray1Aerogem": return camposModelo.footerSeccionArray1Aerogem; break;
+		case "footerSecciones": return camposModelo.footerSeccion1Aerogem; break;
+		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
+		case "footerSeccionRedes": return camposModelo.footerSeccion1Aerogem; break;
 		}
 	}
 
@@ -309,12 +315,13 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.footerSeccion2').click(function(){
+	$('.footerSeccionUbicacion').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion2",$.modelo);
+			$.seccionCampos = cargaModal("footerSeccionUbicacion","");
 //			$('#imagenFS2').on('change', function(){ enviaImagen("imagenFS2Form") });
-		
-			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
+			console.log("aloo");
+			$('#modalEdicionfooterSeccionUbicacion_btnSave').click(function(){
+				console.log($.seccionCampos);
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 //				while(valoresFinales.includes("C:\\fakepath\\") ){
 //					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
@@ -324,7 +331,7 @@ $(document).ready(function() {
 				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion2",
+						 seccion : "footerSeccionUbicacion",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				

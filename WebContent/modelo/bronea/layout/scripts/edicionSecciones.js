@@ -30,6 +30,10 @@ $(document).ready(function() {
 				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
+				"footerSecciones"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+				"footerRedes"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"}
+				
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -46,6 +50,9 @@ $(document).ready(function() {
 		case "footerSeccion1Bronea": return camposModelo.footerSeccion1Bronea; break;   
 		case "footerSeccion2Bronea": return camposModelo.footerSeccion2Bronea; break;   
 		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
+		case "footerSecciones": return camposModelo.footerSeccion1Bronea; break;   
+		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;   
+		case "footerSeccionredes": return camposModelo.footerSeccion1Bronea; break;   
 		}
 	}
 
@@ -407,19 +414,20 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.footerSeccion1').click(function(){
+	$('.footerSeccionUbicacion').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion1",$.modelo);
+			$.seccionCampos = cargaModal("footerSeccionUbicacion","");
+			console.log("aloo");
 //			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
 		
-			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
+			$('#modalEdicionfooterSeccionUbicacion_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion1",
+						 seccion : "footerSeccionUbicacion",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				

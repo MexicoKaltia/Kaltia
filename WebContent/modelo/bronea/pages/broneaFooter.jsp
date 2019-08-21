@@ -9,18 +9,18 @@
 <!-- <div class="wrapper row4 aniview reallyslow" data-av-animation="rubberBand"> -->
 <div class="wrapper row4 aniview reallyslow parallax" data-av-animation="rubberBand" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion3.get(1)' />');">
   <footer id="footer" class="hoc clear"> 
-    <div class="one_half first footerSeccion1">
-      	<h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
-		  <p class="btmspace-30"><s:property value='footer.footerSeccion1.get(1)' /></p>
+    <div class="one_half first footerSeccionUbicacion">
+      	<h6 class="heading"><s:property value='footer.footerSeccionUbicacion.get(0)' /></h6>
+		  <p class="btmspace-30"><s:property value='footer.footerSeccionUbicacion.get(1)' /></p>
 		  <ul class="nospace linklist contact">
 		  <li><i class="fa fa-map-marker"></i>
 		  <address>
-		    <s:property value='footer.footerSeccion1.get(2)' />
+		    <s:property value='footer.footerSeccionUbicacion.get(2)' />
 		 </address>
 		 </li>
-		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccion1.get(3)' /></li>
-		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccion1.get(4)' /></li>
-		 <iframe src="<s:property value='footer.footerSeccion1.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccionUbicacion.get(3)' /></li>
+		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccionUbicacion.get(4)' /></li>
+		 <iframe src="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</ul>
     </div>
     <!-- ################################################################################################ -->
