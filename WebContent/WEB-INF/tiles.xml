@@ -133,7 +133,6 @@
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
-		
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
 	</definition>
@@ -148,8 +147,7 @@
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
-		
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />		
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
 	</definition>

@@ -4,14 +4,17 @@
 
 <html lang="">
 <body>
-<div class="wrapper row4">
+<div class="wrapper row4 aniview reallyslow" data-av-animation="zoomIn"  style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion3.get(1)'/>?v=1');">
   <footer id="footer" class="hoc clear"> 
+  <div class="footerSeccion1" id="footerSeccion1">
     <div class="one_quarter first">
       <h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
       <p><s:property value='footer.footerSeccion1.get(1)' /></p>
       <p><s:property value='footer.footerSeccion1.get(2)' /></p>
     </div>
+    </div>
     <!-- ################################################################################################ -->
+    <div class="footerSeccion2" id="footerSeccion2">
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
       <nav>
@@ -35,7 +38,9 @@
         <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
       </ul>
     </div>
+    </div>
     <!-- ################################################################################################ -->
+    <div class="footerSeccion3" id="footerSeccion3">
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerSeccion3.get(0)' /></h6>
       <article>
@@ -44,7 +49,9 @@
         <p><s:property value='footer.footerSeccion3.get(4)' /> [&hellip;]</p>
       </article>
     </div>
+    </div>
     <!-- ################################################################################################ -->
+    <div class="footerSeccion4" id="footerSeccion4">
     <div class="one_quarter">
       <h6 class="heading"><s:property value='footer.footerSeccionArray1.get(0).objetoVO.get(0)' /></h6>
       <ul class="nospace linklist">
@@ -54,6 +61,7 @@
         </s:iterator>
         </s:subset>
       </ul>
+    </div>
     </div>
   </footer>
 </div>
