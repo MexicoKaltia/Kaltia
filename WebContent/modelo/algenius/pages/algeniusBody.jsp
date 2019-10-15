@@ -87,12 +87,13 @@
     <s:subset start="1" source ="body.bodySeccionArray3">
       <s:iterator  var="bodySeccionArray3">
       <figure class="<s:property value='#bodySeccionArray3.objetoVO.get(0)' />">
-      	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)' />">
-      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(2)'/>?v=1" alt="<s:property value='identidadVO.idAction'/>" ></a>
-
+<%--  REFERENCIA ACTION/SUBACTION     	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)' />"> --%>
+		<a href="#">
+      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?v=1" alt="<s:property value='identidadVO.idAction'/>" style="max-width: 15em; max-height: 15em" >
+      	</a>
         <figcaption>
-          <h6 class="heading"><s:property value='#bodySeccionArray3.objetoVO.get(3)' /></h6>
-          <em><s:property value='#bodySeccionArray3.objetoVO.get(4)' /></em>
+          <h6 class="heading"><s:property value='#bodySeccionArray3.objetoVO.get(2)' /></h6>
+          <em><s:property value='#bodySeccionArray3.objetoVO.get(3)' /></em>
           <footer>
             <ul class="faico clear">
               <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -119,9 +120,9 @@
     <ul class="nospace group logos">
     <s:iterator value="body.bodySeccionArray4" var="bodySeccionArray4">
       <li class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
-      	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
-      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>?v=1" >
-       		     		
+<%-- REFERENCIA ACTION/SUBACTION       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
+		<a href="#">
+      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?v=1" > 		
       	</a>
       </li>
      </s:iterator> 

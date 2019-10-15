@@ -33,7 +33,7 @@ $(document).ready(function() {
 				"footerSeccionArray1Aerogem":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }},
 				"footerSecciones"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
-				"footerRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"}
+				"footerSeccionRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"}
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		case "footerSeccionArray1Aerogem": return camposModelo.footerSeccionArray1Aerogem; break;
 		case "footerSecciones": return camposModelo.footerSeccion1Aerogem; break;
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
-		case "footerSeccionRedes": return camposModelo.footerSeccion1Aerogem; break;
+		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
 		}
 	}
 
@@ -288,12 +288,12 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.footerSeccion1').click(function(){
+	$('.footerSeccionRedes').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion1",$.modelo);
+			$.seccionCampos = cargaModal("footerSeccionRedes",$.modelo);
 //			$('#imagenFS1').on('change', function(){ enviaImagen("imagenFS1Form") });
 		
-			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
+			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				while(valoresFinales.includes("C:\\fakepath\\") ){
 					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
@@ -303,7 +303,7 @@ $(document).ready(function() {
 				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion1",
+						 seccion : "footerSeccionRedes",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
