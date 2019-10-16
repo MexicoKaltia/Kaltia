@@ -77,6 +77,10 @@ public class BaseAction extends InitAction  {
 		}
 	}
 
+public String modelosKaltia() {
+		
+		return "kaltiaModelos";
+	}
 
 
 

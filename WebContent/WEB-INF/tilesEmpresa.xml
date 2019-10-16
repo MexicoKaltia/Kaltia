@@ -16,6 +16,10 @@
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
 		<put-attribute name="body" value="/empresa/kaltia/pages/kaltiaMaquetas.jsp" />
 	</definition>
+	<definition name="kaltiaModelos" extends="kaltia">
+		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
+		<put-attribute name="body" value="/empresa/kaltia/pages/kaltiaModelos.jsp" />
+	</definition>
 	
 	<definition name="mazda" extends="bronea">
 		<put-attribute name="empresa" value="Mazda" cascade="true" />

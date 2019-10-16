@@ -18,7 +18,10 @@
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
     	</result-types>
     	<action name="maquetas" class="com.kaltia.action.BaseAction" method="maquetasKaltia">
-    		<result name="kaltiaMaquetas" type="tiles">kaltiaMaquetas</result>
+    		<result name="kaltiaMaquetas" type="tiles">kaltiaMaquetas</result>    		
+    	</action>
+    	<action name="modelos" class="com.kaltia.action.BaseAction" method="modelosKaltia">
+    		<result name="kaltiaModelos" type="tiles">kaltiaModelos</result>    		
     	</action>
 <!--         <action name ="ingresar" class="com.kaltia.action.ActionBase" method="logginUser"> -->
 <!--         	<param name="actionInicial">kaltia</param> -->
