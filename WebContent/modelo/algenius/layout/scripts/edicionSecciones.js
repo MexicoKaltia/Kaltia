@@ -31,7 +31,7 @@ $(document).ready(function() {
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccionRedes"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3Algenius"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
-				"footerSeccion4Algenius"    :{  "tituloFS4" : "text", "imagenFS4":"img" },
+				"footerSecciones"    :{  "imagenFSS":"img", "tituloFSS" : "text" },
 //				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
 //				"bodySeccionArray2Algenius":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
 //				"bodySeccionArray3Algenius":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
@@ -55,8 +55,8 @@ $(document).ready(function() {
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
 		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
 		case "footerSeccion3Algenius": return camposModelo.footerSeccion3Algenius; break;   
-		case "footerSeccion4Algenius": return camposModelo.footerSeccion4Algenius; break;   
-//		case "footerSeccionSecciones": return camposModelo.footerSeccionRedes; break;
+		case "footerSecciones": return camposModelo.footerSecciones; break;   
+//		case "footerSecciones": return camposModelo.footerSeccionRedes; break;
 //		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
 //		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
 //		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
@@ -461,13 +461,14 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.footerSeccion4').click(function(){
+	$('.footerSecciones').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion4",$.modelo);
-			$('#imagenFS4').on('change', function(){ enviaImagen("imagenFS4Form") });
-		
-			$('#modalEdicionFooterSeccion4_btnSave').click(function(){
+			$.seccionCampos = cargaModal("footerSecciones","");
+			$('#imagenFSS').on('change', function(){ enviaImagen("imagenFSSForm") });
+			console.log($.seccionCampos);
+			$('#modalEdicionFooterSecciones_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
+				console.log(valoresFinales);
 				while(valoresFinales.includes("C:\\fakepath\\") ){
 					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
 				}
@@ -476,7 +477,7 @@ $(document).ready(function() {
 				
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion4",
+						 seccion : "footerSecciones",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				

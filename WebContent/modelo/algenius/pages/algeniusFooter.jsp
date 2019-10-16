@@ -4,7 +4,7 @@
 
 <html lang="">
 <body>
-<div class="wrapper row4 aniview reallyslow" data-av-animation="zoomIn"  style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion3.get(1)'/>?v=1');">
+<div class="wrapper row4 aniview reallyslow" data-av-animation="zoomIn"  style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSecciones.get(0)'/>?v=1');">
   <footer id="footer" class="hoc clear"> 
     <div class="one_quarter first footerSeccionUbicacion">
       	<h6 class="heading"><s:property value='footer.footerSeccionUbicacion.get(0)' /></h6>
@@ -56,8 +56,8 @@
       </article>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter footerSeccion4" id="footerSeccion4">
-      <h6 class="heading"><s:property value='footer.footerSeccion4.get(0)' /></h6>
+    <div class="one_quarter footerSecciones" id="footerSecciones">
+      <h6 class="heading"><s:property value='footer.footerSecciones.get(1)' /></h6>
       <ul class="nospace linklist">
           <s:set var="seccion" value="1" />
 		     <s:subset source="header.headerSeccionArray5" start="1">  
@@ -76,8 +76,8 @@
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
     <div id="copyright" class="hoc clear"> 
-    <p class="fl_left"><a href="#"><s:property value='footer.footerSeccion4.get(0)' /><s:property value="footer.idEmpresa"/></a></p>
-    <p class="fl_right"><a href="kaltia.xyz"><s:property value='footer.footerSeccion4.get(1)' /></a></p>
+    <p class="fl_left"><a href="#"><s:property value='footer.footerSeccionFoot.get(0)' /><s:property value="footer.idEmpresa"/></a></p>
+    <p class="fl_right"><a href="kaltia.xyz"><s:property value='footer.footerSeccionFoot.get(1)' /></a></p>
   </div>
 </div>
 <!-- ################################################################################################ -->

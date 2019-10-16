@@ -45,8 +45,8 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-//	var url = "http://31.220.63.183:8010/";
-	var url = "http://localhost:8010/";
+	var url = "http://31.220.63.183:8010/";
+//	var url = "http://localhost:8010/";
 	var urlUpload= "http://31.220.63.183:8011/";
 	var urlCita = "http://31.220.63.183:8012/";
 //	var urlCita = "http://localhost:8012/";
@@ -124,6 +124,8 @@
 					$('div.footerSecciones').addClass("edicion")
 					$('div.footerSeccionUbicacion').addClass("edicion")
 					$('div.footerSeccionRedes').addClass("edicion")
+					$('div.footerSecciones').addClass("edicion")
+					
 		    	$.param = decodeURI(results[1]);
 //		    		console.log($.param);
 		    	return $.param;
@@ -141,7 +143,7 @@
 		$('div').removeClass("edicion bodySeccion1 bodySeccion2 bodySeccion3 bodySeccion4 bodySeccion5")
 		$('div').removeClass("edicion bodySeccionArray1 bodySeccionArray2 bodySeccionArray3 bodySeccionArray4 bodySeccionArray5")
 		$('div').removeClass("edicion footerSeccion1 footerSeccion2 footerSeccion3 footerSeccion4 footerSeccion5")
-		$('div').removeClass("edicion footerSeccionArray1 footerSeccionArray2 footerSeccionArray3 footerSeccionArray4 footerSeccionArray5")
+		$('div').removeClass("edicion footerSeccionArray1 footerSeccionArray2 footerSeccionArray3 footerSeccionArray4 footerSeccionArray5,footerSeccionUbicacion,footerSeccionRedes,footerSecciones")
 
 		$('nav').removeClass("edicion")
 	}

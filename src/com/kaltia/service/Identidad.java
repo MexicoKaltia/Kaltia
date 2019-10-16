@@ -87,6 +87,7 @@ public class Identidad {
 			hashIdentidad.put("footer", footerEm(action));
 			FooterVO footerVO = (FooterVO) hashIdentidad.get("footer");
 			identidadVO.setCodigoVO(footerVO.getCodigoVO());
+//			logger.info(footerVO.getFooterSeccionFoot());
 		//	valida(footerVO);
 			if (!footerVO.getCodigoVO().equals("00")) {
 				identidadVO.setCodigoVO(footerVO.getCodigoVO());

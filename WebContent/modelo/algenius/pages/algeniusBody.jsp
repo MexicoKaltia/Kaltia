@@ -77,7 +77,7 @@
 <!-- ################################################################################################ -->
 <div class="bodySeccionArray3 aniview reallyslow" data-av-animation="flip"  id="bodySeccionArray3">
 <a  id="seccion5"></a>
-<div class="wrapper bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)'/>?v=1');">
+<div class="wrapper bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)'/>?v=1');">
 																
   <section class="hoc container clear"> 
     <div class="sectiontitle">

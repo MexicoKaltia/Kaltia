@@ -1017,11 +1017,11 @@
 </div>
 <!-- fin modalFooterSeccion3 -->
 <!--**********************************************************************************-->
-<div class="modal fade" id="modalEdicion_footerSeccion4Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_footerSecciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion4</h5>
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSecciones</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
 					<span aria-hidden="true">&times;</span>
@@ -1036,26 +1036,25 @@
 			    	<div class="row">
 			          <span class="col-4 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo secciones</span>
 			          <div class="col-7">
-						<input type="text" class="form-control" id="tituloFS4" value="<s:property value='footer.footerSeccion4.get(0)' />"/>
+						<input type="text" class="form-control" id="tituloFSS" value="<s:property value='footer.footerSecciones.get(1)' />"/>
 			          </div>
 			        </div>
 			     <div class="form-group row">
 		         <span class="col-4 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>
 		         <div class="col-7">
-			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion4.get(1)'/>?=v1" alt="<s:property value='footer.FooterSeccion4.get(1)'/>">
-					<form id="imagenFS4Form">
-						<hiden class="imagenFS4Form"></hiden>
-						<label for="imagenFS4">Actualiza imagen:</label> 
-						<input id="imagenFS4" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSeccion4.get(1)'/>"/>
+			      	<img class="inspace-10 borderedbox" src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSecciones.get(0)'/>?=v1" alt="<s:property value='footer.FooterSecciones.get(0)'/>">
+					<form id="imagenFSSForm">
+						<hiden class="imagenFSSForm"></hiden>
+						<label for="imagenFSS">Actualiza imagen:</label> 
+						<input id="imagenFSS" type="file" name="uploadfile" accept="image/jpeg" value="<s:property value='footer.FooterSecciones.get(0)'/>"/>
 					</form>
 			      </div>
 			    </div>		      
-			        				  
 			</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion4_btnSave">Guardar Cambios</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSecciones_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>

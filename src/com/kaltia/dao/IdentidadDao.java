@@ -236,7 +236,7 @@ public class IdentidadDao {
 				+ " tw_footer.footerSeccion1, tw_footer.footerSeccion2, tw_footer.footerSeccion3, tw_footer.footerSeccion4, tw_footer.footerSeccion5, "
 				+ " tw_footer.footerSeccionArray1, tw_footer.footerSeccionArray2,"
 				+ " tw_footer.footerAux1, tw_footer.footerAux2, tw_footer.footerVarios,"
-				+ " tw_footer.footerSecciones, tw_footer.footerSeccionUbicacion , tw_footer.footerSeccionRedes"
+				+ " tw_footer.footerSecciones, tw_footer.footerSeccionUbicacion , tw_footer.footerSeccionRedes, tw_footer.footerSeccionFoot"
 				+ " from tw_footer"// LEFT JOIN tc_action "
 //				+ "ON tw_footer.idEmpresa = tc_action.idEmpresa" 
 				+ " WHERE tw_footer.idAction = ?";
@@ -266,8 +266,9 @@ public class IdentidadDao {
 				footerVO.setFooterSecciones(returnDAO.get(12) != null ? ComunResolution.arrayUno(returnDAO.get(12).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				footerVO.setFooterSeccionUbicacion(returnDAO.get(13) != null ? ComunResolution.arrayUno(returnDAO.get(13).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				footerVO.setFooterSeccionRedes(returnDAO.get(14) != null ? ComunResolution.arrayUno(returnDAO.get(14).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
+				footerVO.setFooterSeccionFoot(returnDAO.get(15) != null ? ComunResolution.arrayUno(returnDAO.get(15).toString(), ComunResolution.tokenUno) : new ArrayList<String>());
 				//footerVO.setFooterRequerido(returnDAO.get(9) != null ? Integer.valueOf((String)returnDAO.get(9)) : 0);
-				
+//				logger.info(footerVO.getFooterSeccionFoot());
 				footerVO.setCodigoVO("00");
 				}else {
 					footerVO.setCodigoVO("02");
