@@ -8,14 +8,14 @@
 <div class="wrapper row4 bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion3.get(1)' />');">
 <a id="seccion6"></a>
   <footer id="footer" class="hoc clear"> 
-    <div class="one_quarter first footerSeccion1">
-      <h6 class="heading"><s:property value='footer.footerSeccion1.get(0)' /></h6>
+    <div class="one_quarter first footerSeccionRedes">
+      <h6 class="heading"><s:property value='footer.footerSeccionRedes.get(0)' /></h6>
       <ul class="nospace linklist">
-	      <lo><a href="<s:property value='footer.footerSeccion1.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion1.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion1.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion1.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion1.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
 <%--         <s:subset start="1" source ="footer.footerSeccion1"> --%>
 <%--         <s:iterator> --%>
 <%-- <%--identificar Secciones --%>

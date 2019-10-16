@@ -29,7 +29,7 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-	  <header id="header" class="hoc clear"> 
+	  <header id="header" class="hoc clear aniview reallyslow" data-av-animation="bounceInUp" > 
 	    <div id="logo" class="fl_left">
 		  	  <h1><a href="<s:property value='identidadVO.idAction'/>">
 <%-- 	          <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt=""> --%>
@@ -49,7 +49,7 @@
 	   </header>
 </div>
 <!-- ################################################################################################ -->
-<div  class="wrapper row2 headerSeccionArray5" id="headerSeccionArray5">	
+<div  class="wrapper row2 headerSeccionArray5 aniview reallyslow" data-av-animation="bounceInRight"  id="headerSeccionArray5">	
         <nav class="navbar navbar-expand-md" style="font-size:1.25em;text-transform:uppercase;">       
 <%--             <h1><a class="navbar-brand" href="<s:property value='identidadVO.idAction'/>"> --%>
 <%-- <%-- 					   <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(3)'/>?v=1" alt="">  --%> 
@@ -85,7 +85,7 @@
         </nav>
 </div>		
 <!-- ################################################################################################ -->	
-<div class="headerSeccion4" id="headerSeccion4" >
+<div class="headerSeccion4 aniview reallyslow" data-av-animation="bounceInLeft" id="headerSeccion4" >
 	<div class="wrapper bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
 		<a  id="seccion1"></a>
 	  <article id="pageintro" class="hoc clear">  

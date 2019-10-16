@@ -21,17 +21,24 @@ $(document).ready(function() {
 		var camposModelo = {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
-//				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
 				"headerSeccion4Algenius"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5Algenius":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-				"bodySeccion1Algenius"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
-				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-				"bodySeccionArray2Algenius":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-				"bodySeccionArray3Algenius":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-				"bodySeccionArray4Algenius":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-				"footerSeccion1Algenius"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerSeccion2Algenius"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Algenius"   :{  "tituloFS3" : "text" },
+				"bodySeccionArray1Algenius"  :{  "objeto":{"posicionObjetoBSA1" :"text",    "iconoObjetoBSA1" :"text", "tituloObjetoBSA1" :"text",    "descripcionObjetoBSA1" :"lorem" , "botonObjetoBSA1" : "text", "referenciaObjetoBSA1":"text" }},
+				"bodySeccion1Algenius" 		   :{"imagenBS1":"img", "tituloBS1":"text", "subTituloBS1":"text" , "descripcionBS1" : "lorem", "descripcion2BS1" : "lorem", "referenciaBS1":"text", "botonBS1":"text", "subTitulo2BS1":"text" },
+				"bodySeccionArray2Algenius"  :{ "tituloBSA2":"text", "subTituloBSA2":"text" , "objeto":{"posicionObjetoBSA2" :"text","imagenObjetoBSA2" :"img", "descripcionObjetoBSA2" :"lorem", "tituloObjetoBSA2" :"text",    "subTituloObjetoBSA2" :"text"  }},
+				"bodySeccionArray3Algenius"  :{ "imagenBSA3":"img", "tituloBSA3":"text",  "objeto":{"posicionObjetoBSA3" :"text","imagenObjetoBSA3" :"img", "tituloObjetoBSA3" :"text", "descripcionObjetoBSA3" :"lorem"}},
+				"bodySeccionArray4Algenius"  :{  "objeto":{"posicionObjetoBSA4" :"text","imagenObjetoBSA4" :"img"}},
+				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+				"footerSeccionRedes"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+				"footerSeccion3Algenius"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
+				"footerSeccion4Algenius"    :{  "tituloFS4" : "text", "imagenFS4":"img" },
+//				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
+//				"bodySeccionArray2Algenius":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
+//				"bodySeccionArray3Algenius":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
+//				"bodySeccionArray4Algenius":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
+//				"footerSeccion1Algenius"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+//				"footerSeccion2Algenius"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -40,14 +47,23 @@ $(document).ready(function() {
 		case "headerSeccion3": return camposModelo.headerSeccion3; break;
 		case "headerSeccion4Algenius": return camposModelo.headerSeccion4Algenius; break;
 		case "headerSeccionArray5Algenius": return camposModelo.headerSeccionArray5Algenius; break;
-		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
 		case "bodySeccionArray1Algenius": return camposModelo.bodySeccionArray1Algenius; break;
+		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
 		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
 		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
 		case "bodySeccionArray4Algenius": return camposModelo.bodySeccionArray4Algenius; break;
-		case "footerSeccion1Algenius": return camposModelo.footerSeccion1Algenius; break;   
-		case "footerSeccion2Algenius": return camposModelo.footerSeccion2Algenius; break;   
+		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
+		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
 		case "footerSeccion3Algenius": return camposModelo.footerSeccion3Algenius; break;   
+		case "footerSeccion4Algenius": return camposModelo.footerSeccion4Algenius; break;   
+//		case "footerSeccionSecciones": return camposModelo.footerSeccionRedes; break;
+//		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
+//		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
+//		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
+//		case "bodySeccionArray4Algenius": return camposModelo.bodySeccionArray4Algenius; break;
+//		case "footerSeccion1Algenius": return camposModelo.footerSeccion1Algenius; break;   
+//		case "footerSeccion2Algenius": return camposModelo.footerSeccion2Algenius; break;   
+	
 		}
 	}
 
@@ -174,49 +190,7 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
-//	$('.headerSeccion3').click(function(){
-//		if(validaParam()){
-//			
-//			$.seccionCampos = cargaModal("headerSeccion3", "");
-//			$('#modalEdicionHeaderSeccion3_btnSave').click(function(){
-//				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				finalJson = { action : $.action,
-//						 idEmpresa : $.idEmpresa,	
-//						 seccion : "headerSeccion3",
-//						 valoresFinales : valoresFinales }
-//				console.log(finalJson);
-//				
-//				enviaDataEdicion(finalJson)
-//				
-//			});
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
-//	$('.headerSeccion33').click(function(){
-//		if(validaParam()){
-////			console.log("param:"+$.param)
-//			action = "action";
-//			seccion = "seccion";
-//			
-//			jsonCampos = {"titulo":"text",  "icono":"img",  "varios" : "lorem",  "logo":"img",  "fondoHeader":"img"}
-//			valores = valoresSeccion("headerSeccion3_valores");
-//			
-//			$.valoresOriginal = ajusteJson(jsonCampos, valores);
-//			 
-//			$('.headerSeccion3').attr("data-toggle","modal");
-//			$('.headerSeccion3').attr("data-target","#modalEdicion");
-//			$('.soloLectura').html("</>")
-//			$("div.soloLectura > div").remove();
-//			$("div.alerta > div").remove();
-//			$("div.alerta_file > div").remove();
-//			$('.alerta_file').html("</>")
-//			elementosCampos($.valoresOriginal);
-//			
-//		}else{
-//			console.log("param:Nulo");
-//		}
-//	});
+
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
 			
@@ -274,44 +248,20 @@ $(document).ready(function() {
 	$('.bodySeccionArray1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccionArray1",$.modelo);
-			
-			$('#imagenBSA1').on('change', function(){ enviaImagen("imagenBSA1Form") });
-			
+//			console.log($seccionCampos);
 			$('#modalEdicionBodySeccionArray1_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray1);
-				valorColumnas = 2;
-				valorPosicion = 0;
-				valorIniciaObjeto =1;
+//				console.log(valoresFinales);
+				valorColumnas = 3;  // cantidad de columnas que define el arreglo de Objetos
+				valorPosicion = 0; // valor donde se situa el campo posicionObjecto dentro del json Objeto
+				valorIniciaObjeto =0; // en que valor entero inicia el arreglo de Objetos
 				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
-				
-				finalJson = { action : $.action,
-							 idEmpresa : $.idEmpresa,	
-							 seccion : "bodySeccionArray1",
-							 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
-			});
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-	
-	$('.bodySeccionArray2').click(function(){
-		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
-			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
-				valorColumnas = 3;
-				valorPosicion = 0;
-				valorIniciaObjeto =0;
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+//				console.log(valoresFinales);
 				
 				//genera el finalJson
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "bodySeccionArray2",
+						 seccion : "bodySeccionArray1",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
@@ -325,31 +275,6 @@ $(document).ready(function() {
 	});
 	
 	
-	
-	$('.bodySeccionArray3').click(function(){
-		if(validaParam()){
-			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);	
-			
-			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
-				valorColumnas = 3;
-				valorPosicion = 0;
-				valorIniciaObjeto = 1;
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
-				
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "bodySeccionArray3",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
-			});
-		}else{
-			console.log("param:Nulo");
-		}
-	});
 	$('.bodySeccion1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
@@ -376,19 +301,132 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('.bodySeccionArray2').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodySeccionArray2",$.modelo);
+//			console.log($seccionCampos);
+//			$('#imagenObjetoBSA2').on('change', function(){ enviaImagen("imagenObjetoBSA2Form") });
+			
+			$('#modalEdicionBodySeccionArray2_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray2);
+//				console.log(valoresFinales);
+				valorColumnas = 2;  // cantidad de columnas que define el arreglo de Objetos
+				valorPosicion = 0; // valor donde se situa el campo posicionObjecto dentro del json Objeto
+				valorIniciaObjeto =1; // es que valor entero que marca la posicion del arreglo de Objetos
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+//				console.log(valoresFinales);
+				
+				//genera el finalJson
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray2",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				//envia POST finalJson
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
+	$('.bodySeccionArray3').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);
+			$('#imagenBSA3').on('change', function(){ enviaImagen("imagenBSA3Form") });
+			
+			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
+//				console.log(valoresFinales);
+				valorColumnas = 4;  // cantidad de columnas que define el arreglo de Objetos
+				valorPosicion = 0; // valor donde se situa el campo posicionObjecto dentro del json Objeto
+				valorIniciaObjeto =1; // es que valor entero que marca la posicion del arreglo de Objetos
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+//				console.log(valoresFinales);
+				
+				//genera el finalJson
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionArray3",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				//envia POST finalJson
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
 	$('.bodySeccionArray4').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccionArray4",$.modelo);
+//			$('#imagenBSA4').on('change', function(){ enviaImagen("imagenBSA4Form") });
 			$('#modalEdicionBodySeccionArray4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray4);
-				valorColumnas = 3;
-				valorPosicion = 0;
-				valorIniciaObjeto = 1;
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+				console.log(valoresFinales);
+				valorColumnas = 4;  // cantidad de columnas que define el arreglo de Objetos
+				valorPosicion = 0; // valor donde se situa el campo posicionObjecto dentro del json Objeto
+				valorIniciaObjeto =0; // es que valor entero que marca la posicion del arreglo de Objetos
+				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
+				console.log(valoresFinales);
 				
+				//genera el finalJson
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray4",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				//envia POST finalJson
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
+	
+	$('.footerSeccionUbicacion').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccionUbicacion","");
+			console.log("aloo");
+//			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
+		
+			$('#modalEdicionfooterSeccionUbicacion_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+				
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccionUbicacion",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
+	$('.footerSeccionRedes').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccionRedes","");
+//			console.log(			$.seccionCampos);
+			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccionRedes",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				
@@ -400,58 +438,13 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('.footerSeccion1').click(function(){
-		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion1",$.modelo);
-//			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
-		
-			$('#modalEdicionFooterSeccion1_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-				
-//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion1",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
-			});
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-
-	$('.footerSeccion2').click(function(){
-		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion2",$.modelo);
-			
-			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion2",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
-			});
-		}else{
-			console.log("param:Nulo");
-		}
-	});
-
 	$('.footerSeccion3').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccion3",$.modelo);
-			
+			console.log($.seccionCampos);
 			$('#modalEdicionFooterSeccion3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				console.log(valoresFinales);
+				console.log(valoresFinales);
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 //				console.log(valoresFinales);
 				finalJson = { action : $.action,
@@ -468,6 +461,33 @@ $(document).ready(function() {
 		}
 	});
 	
+	$('.footerSeccion4').click(function(){
+		if(validaParam()){
+			$.seccionCampos = cargaModal("footerSeccion4",$.modelo);
+			$('#imagenFS4').on('change', function(){ enviaImagen("imagenFS4Form") });
+		
+			$('#modalEdicionFooterSeccion4_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, 0);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+
+//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
+				
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "footerSeccion4",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+
 	
 	
 	

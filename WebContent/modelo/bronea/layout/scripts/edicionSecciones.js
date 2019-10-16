@@ -30,9 +30,9 @@ $(document).ready(function() {
 				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3Bronea"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
-				"footerSecciones"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+//				"footerSecciones"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerRedes"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"}
+//				"footerRedes"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"}
 				
 				}
 		seccion = seccion;
@@ -50,9 +50,9 @@ $(document).ready(function() {
 		case "footerSeccion1Bronea": return camposModelo.footerSeccion1Bronea; break;   
 		case "footerSeccion2Bronea": return camposModelo.footerSeccion2Bronea; break;   
 		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
-		case "footerSecciones": return camposModelo.footerSeccion1Bronea; break;   
+//		case "footerSecciones": return camposModelo.footerSeccion1Bronea; break;   
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;   
-		case "footerSeccionredes": return camposModelo.footerSeccion1Bronea; break;   
+//		case "footerSeccionredes": return camposModelo.footerSeccion1Bronea; break;   
 		}
 	}
 
@@ -364,6 +364,8 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
+	
+	
 	$('.bodySeccion1').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccion1",$.modelo);
@@ -439,16 +441,16 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.footerSeccion2').click(function(){
+	$('.footerSeccionRedes').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccion2",$.modelo);
+			$.seccionCampos = cargaModal("footerSeccionRedes",$.modelo);
 			
-			$('#modalEdicionFooterSeccion2_btnSave').click(function(){
+			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 //				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccion2",
+						 seccion : "footerSeccionRedes",
 						 valoresFinales : valoresFinales }
 				console.log(finalJson);
 				

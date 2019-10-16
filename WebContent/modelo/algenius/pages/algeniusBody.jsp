@@ -5,16 +5,18 @@
 <html lang="">
 <body>
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3 bodySeccionArray1 aniview reallyslow" data-av-animation="fadeInUp"  id="bodySeccionArray1">
+<a  id="seccion2"></a>
   <main class="hoc container clear"> 
     <!-- main body --> 
     <ul class="nospace group">
     <s:iterator value="body.bodySeccionArray1" var="bodySeccionArray1">
       <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)'/>">
-        <article><i class="<s:property value='#bodySeccionArray1.objetoVO.get(1)'/>"></i>
+        <article><i class="btmspace-30 fa fa-3x <s:property value='#bodySeccionArray1.objetoVO.get(1)'/>"></i>
           <h6 class="heading font-x1"><s:property value='#bodySeccionArray1.objetoVO.get(2)'/></h6>
           <p class="btmspace-30"><s:property value='#bodySeccionArray1.objetoVO.get(3)'/> [&hellip;]</p>
-          <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a></footer>
+<%--    REFERENCIA CON ACTION/SUBACTION       <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a></footer> --%>
+          <footer><a class="btn" href="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a></footer>
         </article>
       </li>
       </s:iterator>
@@ -24,7 +26,10 @@
   </main>
 </div>
 <!-- ################################################################################################ --> 
-<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccion1.get(0)'/>');">
+<div class="bodySeccion1 aniview reallyslow" data-av-animation="fadeInLeft"  id="bodySeccion1">
+<div class="wrapper bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccion1.get(0)'/>?v=1');">
+                                                                
+<a  id="seccion3"></a>
   <section class="hoc container clear"> 
     <div class="sectiontitle">
       <h6 class="heading"><s:property value='body.bodySeccion1.get(1)'/></h6>
@@ -44,7 +49,10 @@
     </div> 
   </section>
 </div>
-<!-- ################################################################################################ --> 
+</div>
+<!-- ################################################################################################ -->
+<div class="bodySeccionArray2 aniview reallyslow" data-av-animation="faceInLeft" id="bodySeccionArray2">
+<a  id="seccion4"></a> 
 <div class="wrapper row3">
   <section class="hoc container clear"> 
     <div class="sectiontitle">
@@ -56,7 +64,7 @@
     <s:subset start="1" source ="body.bodySeccionArray2">
       <s:iterator  var="bodySeccionArray2">
       <article class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
-       <img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(1)' />" alt="<s:property value='identidadVO.idAction'/>" >
+       <img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(1)'/>?v=1'" alt="<s:property value='identidadVO.idAction'/>" style="max-width: 9.0em; max-height: 9.0em">
         <blockquote><s:property value='#bodySeccionArray2.objetoVO.get(2)' /></blockquote>
         <h6 class="heading"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></h6>
         <em><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></em></article>
@@ -65,8 +73,12 @@
     </div> 
   </section>
 </div>
+</div>
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)' />');">
+<div class="bodySeccionArray3 aniview reallyslow" data-av-animation="flip"  id="bodySeccionArray3">
+<a  id="seccion5"></a>
+<div class="wrapper bgded overlay" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='body.bodySeccionArray3.get(0).objetoVO.get(0)'/>?v=1');">
+																
   <section class="hoc container clear"> 
     <div class="sectiontitle">
       <h6 class="heading"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(1)' /></h6>
@@ -75,11 +87,13 @@
     <s:subset start="1" source ="body.bodySeccionArray3">
       <s:iterator  var="bodySeccionArray3">
       <figure class="<s:property value='#bodySeccionArray3.objetoVO.get(0)' />">
-      	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)' />">
-      		<img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(2)' />" alt="<s:property value='identidadVO.idAction'/>" ></a>
+<%--  REFERENCIA ACTION/SUBACTION     	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)' />"> --%>
+		<a href="#">
+      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?v=1" alt="<s:property value='identidadVO.idAction'/>" style="max-width: 15em; max-height: 15em" >
+      	</a>
         <figcaption>
-          <h6 class="heading"><s:property value='#bodySeccionArray3.objetoVO.get(3)' /></h6>
-          <em><s:property value='#bodySeccionArray3.objetoVO.get(4)' /></em>
+          <h6 class="heading"><s:property value='#bodySeccionArray3.objetoVO.get(2)' /></h6>
+          <em><s:property value='#bodySeccionArray3.objetoVO.get(3)' /></em>
           <footer>
             <ul class="faico clear">
               <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -97,21 +111,26 @@
     <div class="clear"></div>
   </section>
 </div>
+</div>
    <!-- ################################################################################################ -->
+   <div class="bodySeccionArray4 aniview reallyslow" data-av-animation="slideInLeft"  id="bodySeccionArray4">
+   <a  id="seccion6"></a>
 <div class="wrapper row3">
   <figure class="hoc clear"> 
     <ul class="nospace group logos">
     <s:iterator value="body.bodySeccionArray4" var="bodySeccionArray4">
       <li class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
-      	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>">
-      		<img src="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>" alt="<s:property value='identidadVO.idAction'/>" >
+<%-- REFERENCIA ACTION/SUBACTION       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
+		<a href="#">
+      		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?v=1" > 		
       	</a>
       </li>
      </s:iterator> 
     </ul>
   </figure>
 </div>
-
+</div>
+<!-- ################################################################################################ -->
 
 </body>
 </html>

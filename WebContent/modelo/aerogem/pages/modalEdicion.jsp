@@ -699,11 +699,11 @@
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!-- modalFooterSeccion1 -->
-<div class="modal fade" id="modalEdicion_footerSeccion1Aerogem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdicion_footerSeccionRedes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion1</h5>
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccionRedes</h5>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modalEdicionBody_btnClose">
 					<span aria-hidden="true">&times;</span>
@@ -717,7 +717,7 @@
 			    	<div class="form-group row">
 			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Redes Sociales</span>
 			          <div class="col-7">
-						<input type="text" class="form-control" id="tituloFS1" value="<s:property value='footer.footerSeccion1.get(0)' />"/>
+						<input type="text" class="form-control" id="tituloFS1" value="<s:property value='footer.footerSeccionRedes.get(0)' />"/>
 			          </div>
 			        </div>
 			        <br><br>
@@ -730,7 +730,7 @@
 						      <input type="checkbox" id="facebookFS1">
 						    </div>
 						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(1)' />" id="textFFS1" readonly>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccionRedes.get(1)' />" id="textFFS1" readonly>
 						</div>
 				      </div>
 				    </div>
@@ -743,7 +743,7 @@
 						      <input type="checkbox" id="twitterFS1">
 						    </div>
 						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(2)' />" id="textTFS1" readonly>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccionRedes.get(2)' />" id="textTFS1" readonly>
 						</div>
 				      </div>
 				    </div>
@@ -756,7 +756,7 @@
 						      <input type="checkbox" id="youtubeFS1">
 						    </div>
 						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(3)' />" id="textYFS1" readonly>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccionRedes.get(3)' />" id="textYFS1" readonly>
 						</div>
 				      </div>
 				    </div>
@@ -769,7 +769,7 @@
 						      <input type="checkbox" id="linkedinFS1">
 						    </div>
 						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(4)' />" id="textLFS1" readonly>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccionRedes.get(4)' />" id="textLFS1" readonly>
 						</div>
 				      </div>
 				    </div>
@@ -782,7 +782,7 @@
 						      <input type="checkbox" id="googleFS1">
 						    </div>
 						  </div>
-						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccion1.get(5)' />" id="textGFS1" readonly>
+						  <input type="text" class="form-control" value="<s:property value='footer.footerSeccionRedes.get(5)' />" id="textGFS1" readonly>
 						</div>
 				      </div>
 				    </div>
@@ -791,12 +791,12 @@
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccion1_btnSave">Guardar Cambios</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionFooterSeccionRedes_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- fin modalFooterSeccion1 -->
+<!-- fin modalFooterSeccionRedes -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->

@@ -13,26 +13,22 @@
       	<h6 class="heading"><s:property value='footer.footerSeccionUbicacion.get(0)' /></h6>
 		  <p class="btmspace-30"><s:property value='footer.footerSeccionUbicacion.get(1)' /></p>
 		  <ul class="nospace linklist contact">
-		  <li><i class="fa fa-map-marker"></i>
-		  <address>
-		    <s:property value='footer.footerSeccionUbicacion.get(2)' />
-		 </address>
-		 </li>
+		  <li><i class="fa fa-map-marker"></i><address><s:property value='footer.footerSeccionUbicacion.get(2)' /></address></li>
 		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccionUbicacion.get(3)' /></li>
 		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccionUbicacion.get(4)' /></li>
 		 <iframe src="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</ul>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_quarter footerSeccion2">
-      <h6 class="heading"><s:property value='footer.footerSeccion2.get(0)' /></h6>
+    <div class="one_quarter footerSeccionRedes">
+      <h6 class="heading"><s:property value='footer.footerSeccionRedes.get(0)' /></h6>
       <ul class="nospace linklist">
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccion2.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
-<%--         <s:subset start="1" source ="footer.footerSeccion2"> --%>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
+	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
+<%--         <s:subset start="1" source ="footer.footerSeccionRedes"> --%>
 <%--         <s:iterator> --%>
 <%-- <%--identificar Secciones --%>
 <%--            		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%> 
