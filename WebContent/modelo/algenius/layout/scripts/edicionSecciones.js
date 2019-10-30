@@ -23,7 +23,7 @@ $(document).ready(function() {
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
 				"headerSeccion4Algenius"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5Algenius":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-				"bodySeccionArray1Algenius"  :{  "objeto":{"posicionObjetoBSA1" :"text",    "iconoObjetoBSA1" :"text", "tituloObjetoBSA1" :"text",    "descripcionObjetoBSA1" :"lorem" , "botonObjetoBSA1" : "text", "referenciaObjetoBSA1":"text" }},
+				"bodySeccionArray1Algenius"  :{  "objeto":{"posicionObjetoBSA1" :"text",    "iconoObjetoBSA1" :"text", "tituloObjetoBSA1" :"text",    "descripcionObjetoBSA1" :"lorem" ,  "referenciaObjetoBSA1":"text", "botonObjetoBSA1" : "text" }},
 				"bodySeccion1Algenius" 		   :{"imagenBS1":"img", "tituloBS1":"text", "subTituloBS1":"text" , "descripcionBS1" : "lorem", "descripcion2BS1" : "lorem", "referenciaBS1":"text", "botonBS1":"text", "subTitulo2BS1":"text" },
 				"bodySeccionArray2Algenius"  :{ "tituloBSA2":"text", "subTituloBSA2":"text" , "objeto":{"posicionObjetoBSA2" :"text","imagenObjetoBSA2" :"img", "descripcionObjetoBSA2" :"lorem", "tituloObjetoBSA2" :"text",    "subTituloObjetoBSA2" :"text"  }},
 				"bodySeccionArray3Algenius"  :{ "imagenBSA3":"img", "tituloBSA3":"text",  "objeto":{"posicionObjetoBSA3" :"text","imagenObjetoBSA3" :"img", "tituloObjetoBSA3" :"text", "descripcionObjetoBSA3" :"lorem"}},

@@ -24,7 +24,7 @@
 			<div class="modal-body">
 		        
 		              	
-		              	<br><hr>
+		              	<br>
 		                <form class="form-horizontal" method="post">
 		                	<fieldset>
 <!-- 		                    <legend class="text-center header"><label><s:property value='identidadVO.empresa'/> - Registo Cliente</label></legend> -->

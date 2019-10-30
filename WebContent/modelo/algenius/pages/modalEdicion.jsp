@@ -369,7 +369,7 @@
 						        <div class="form-group row">
 				  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 1</span>
 				  			          <div class="col-7">
-				  						<input type="text" class="form-control" id="botonObjetoBSA1<s:property value='#conta'/>" value="<s:property value='header.headerSeccion4.get(5)'/>"/>
+				  						<input type="text" class="form-control" id="botonObjetoBSA1<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(5)'/>"/>
 				            			<select class="custom-select form-control" id="referenciaObjetoBSA1">
 										  <option value="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>" selected><s:property value='#bodySeccionArray1.objetoVO.get(4)'/></option>
 				              				<s:iterator value='identidadVO.moduloNombre'>

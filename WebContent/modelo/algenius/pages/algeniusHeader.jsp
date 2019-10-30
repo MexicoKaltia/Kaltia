@@ -22,13 +22,14 @@
 				<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
 				<%--    Identificando secciones
  			   	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
-			</a></li>		</s:iterator>
+			</a></li>
+		</s:iterator>
       </ul>
     </div>
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
+<div class="wrapper row1 parallax">
 	  <header id="header" class="hoc clear aniview reallyslow" data-av-animation="bounceInUp" > 
 	    <div id="logo" class="fl_left">
 		  	  <h1><a href="<s:property value='identidadVO.idAction'/>">

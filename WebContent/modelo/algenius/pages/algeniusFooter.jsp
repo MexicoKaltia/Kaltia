@@ -22,12 +22,13 @@
       <nav>
         <ul class="nospace">
           <li><a href="<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>"><i class="fa fa-lg fa-home"></i></a></li>   
-          <s:iterator value='header.headerSeccion1' var="menu2Value">
-			<li><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
-				<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' /></a>
-			</li>
-		</s:iterator>
-        </ul>
+  		<s:iterator value='header.headerSeccion1' var="menu2Value">
+			<li><a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
+				<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />
+				<%--    Identificando secciones
+ 			   	href="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>"> --%>
+			</a></li>
+		</s:iterator>        </ul>
       </nav>
       <ul class="faico clear">
         <li><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="fa  fa-facebook" ></i></a></li>

@@ -6,7 +6,7 @@
 <body>
 <!-- ################################################################################################ -->
 <a id ="proyectos">
-<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(3)' />?v=1');">
+<div class="bgded overlay parallax aniview reallyslow" data-av-animation="pulse"  style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(3)' />?v=1');">
   <section id="info" class="clear"> 
     <div class="center btmspace-80">
       <h2 class="heading uppercase btmspace-30"><s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)' /></h2>
@@ -38,7 +38,7 @@
 </a>
 <!-- ################################################################################################ -->
 <a id="servicios">
-<div class="wrapper row3">
+<div class="wrapper row3 aniview reallyslow" data-av-animation="bounceInUp">
   <main class="container clear"> 
     <!-- main body -->
     

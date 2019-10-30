@@ -6,7 +6,7 @@
 <body id="top">
 <!-- ################################################################################################ -->
 <div class="wrapper row0">
-  <div id="topbar" class="clear"> 
+  <div id="topbar" class="clear aniview reallyslow" data-av-animation="bounceInUp" > 
     <div class="fl_left">
       <ul class="nospace inline">
         <li><i class="fa fa-phone"></i><s:property value='header.headerSeccion2.get(0)' /></li>
@@ -27,7 +27,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
+<div class="wrapper row1 aniview reallyslow" data-av-animation="bounceInLeft" >
   <header id="header" class="clear">
   
 <div id="logo" class="fl_left">
@@ -102,7 +102,7 @@
 </div>
 <!-- ################################################################################################ -->
 
-<div class="wrapper row2 bgded" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)'/>?v=1');">
+<div class="wrapper row2 bgded parallax" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)'/>?v=1');">
 <a id="nosotros">
   <div class="overlay">
     <section id="pageintro" class="clear"> 
