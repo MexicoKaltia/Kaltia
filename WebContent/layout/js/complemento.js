@@ -46,9 +46,11 @@
 	$.usuarioEmpresa="";
 	
 	var url = "http://31.220.63.183:8010/";
-//	var url = "http://localhost:8010/";
 	var urlUpload= "http://31.220.63.183:8011/";
 	var urlCita = "http://31.220.63.183:8012/";
+
+//	var url = "http://localhost:8010/";
+//	var urlUpload= "http://localhost:8011/";
 //	var urlCita = "http://localhost:8012/";
 	
 	
@@ -300,15 +302,34 @@
 	}
 	
 	function avisaAlerta(data){
+		limpiaAlerta();
 		 if(data.codigo===0){
 //			  validaUsuarioEmpresa(data.mensajeArray);
 			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-			  $(alerta).insertAfter($('.alerta_in'));
+			  $(alerta).insertAfter($('.alerta_in')).delay(2000);
+			  
+			  location.reload();
 		  }else{
 			  alerta="<div id='limpiaAlerta' class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
 				$(alerta).insertAfter($('.alerta_in'));
 		  }
 	}
+	
+	function avisaAlertaOutSession(data){
+		limpiaAlerta();
+		 if(data.codigo===0){
+//			  validaUsuarioEmpresa(data.mensajeArray);
+			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+			  $(alerta).insertAfter($('.alerta_in')).delay(4000).fadeOut();
+//			  window.setTimeout($("#modalIngresa .close").click(), 6000);
+			  $("#modalIngresa .close").click();//.wait(20000);
+		 }else{
+			  alerta="<div id='limpiaAlerta' class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+				$(alerta).insertAfter($('.alerta_in'));
+		  }
+		
+	}
+	
 	
 	function avisaAlertaImagen(data){
 		
@@ -616,7 +637,7 @@
 				console.log(registroJson);
 
 			$.ajax({
-			   	  url: url +"registroUser/",//+ context,//+finalJson.action+"/"+finalJson[1],
+			   	  url: url +"createUserEmpresa/",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
 				  type: 'POST',
 				  contentType: "application/json",
@@ -665,7 +686,7 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-					  avisaAlerta(data);
+					  avisaAlertaOutSession(data);
 					  validaUsuarioEmpresa(data.mensajeArray, data.codigo);
 					},
 				  error: function(data){
