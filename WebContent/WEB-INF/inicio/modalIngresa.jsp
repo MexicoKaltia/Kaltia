@@ -17,9 +17,9 @@
 					aria-label="Close" id="modalEdicionBody_btnClose">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<div class="alerta">
-						<hiden class="alerta_in"></hiden>
-				</div>
+<!-- 				<div class="alerta"> -->
+<!-- 						<hiden class="alerta_in"></hiden> -->
+<!-- 				</div> -->
 			</div>
  			<!--**********************************************************************************-->
  		    <!-- main body -->

@@ -297,42 +297,33 @@
 		return valoresFinales;
 	}
 	
+	
+	/*
+	 * ********* ALERTAS  ***********
+	 */
 	function limpiaAlerta(){
 		$( "div" ).remove( "#limpiaAlerta" );
+	}
+	
+	function avisaAlertaEdicion(data){
+		limpiaAlerta();
+		 if(data.codigo===0){
+			  location.reload();
+		  }
 	}
 	
 	function avisaAlerta(data){
 		limpiaAlerta();
 		 if(data.codigo===0){
-//			  validaUsuarioEmpresa(data.mensajeArray);
-			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-			  $(alerta).insertAfter($('.alerta_in')).delay(2000);
-			  
-			  location.reload();
-		  }else{
-			  alerta="<div id='limpiaAlerta' class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-				$(alerta).insertAfter($('.alerta_in'));
-		  }
-	}
-	
-	function avisaAlertaOutSession(data){
-		limpiaAlerta();
-		 if(data.codigo===0){
-//			  validaUsuarioEmpresa(data.mensajeArray);
-			  alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-			  $(alerta).insertAfter($('.alerta_in')).delay(4000).fadeOut();
-//			  window.setTimeout($("#modalIngresa .close").click(), 6000);
-			  $("#modalIngresa .close").click();//.wait(20000);
+			 modalClose();
+//			 $("#alerta").click();
+			 alerta="<div id='limpiaAlerta' class='alert alert-success' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
+			 alertaFade(alerta); 
 		 }else{
+			 modalClose();
 			  alerta="<div id='limpiaAlerta' class='alert alert-warning' role='alert'>"+data.codigo+" "+data.mensaje.toString()+"</div>";
-				$(alerta).insertAfter($('.alerta_in'));
+			  alertaFade(alerta); 
 		  }
-		
-	}
-	
-	
-	function avisaAlertaImagen(data){
-		
 	}
 	
 	function errorAlerta(){
@@ -340,6 +331,23 @@
 		$(alerta).insertAfter($('.alerta_in'));
 	}
 	
+	function modalClose(){
+		 $("#modalIngresa .close").click();
+		 $("#modalCita .close").click();
+		 $("#modalRegistro .close").click();
+		 $(".modal .close").click();
+	
+	}
+	function alertaFade(alerta){
+		$(alerta).insertAfter($('.alerta_in'));
+		  $('.alerta').fadeIn();
+		  $('.alerta').delay(2500).fadeOut();
+	}
+	
+	
+	function avisaAlertaImagen(data){
+		
+	}
 	function errorAlertaImagen(){
 		
 	}
@@ -581,7 +589,9 @@
 				  success: 	function(data){					  
 					  console.log(data);
 					  if(data.codigo===0){
-						  avisaAlerta(data);}
+						  avisaAlerta(data);
+						  avisaAlertaEdicion(data)
+						  }
 					},
 				  error: function(){
 					  errorAlerta();
@@ -686,7 +696,7 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-					  avisaAlertaOutSession(data);
+					  avisaAlerta(data);
 					  validaUsuarioEmpresa(data.mensajeArray, data.codigo);
 					},
 				  error: function(data){

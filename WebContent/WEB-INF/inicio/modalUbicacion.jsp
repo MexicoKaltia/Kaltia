@@ -6,13 +6,13 @@
 
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
-<!-- modalContacto -->
-<div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- modalUbicacion -->
+<div class="modal fade" id="modalUbicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
 			style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Contacto</label>
+				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Ubicacion</label>
 				<br>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal_btnClose">
 					<span aria-hidden="true">&times;</span>
@@ -64,6 +64,6 @@
 		</div>
 	</div>
 </div>
-<!-- modalContacto -->
+<!-- modalUbicacion -->
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->

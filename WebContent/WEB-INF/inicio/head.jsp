@@ -27,3 +27,6 @@
 <link href="<%=request.getContextPath()%>/layout/css/animate.css" rel="stylesheet" type="text/css" media="all">
 
 </head>
+<div class="alerta">
+		<hiden class="alerta_in"></hiden>
+	</div>

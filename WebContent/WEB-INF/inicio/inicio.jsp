@@ -14,7 +14,7 @@
 <tiles:insertAttribute name="modalEdicion" />
 <tiles:insertAttribute name="modalIngresa" />
 <tiles:insertAttribute name="modalRegistro" />
-<tiles:insertAttribute name="modalContacto" />
+<tiles:insertAttribute name="modalUbicacion" />
 <tiles:insertAttribute name="modalCita" />
 <tiles:insertAttribute name="modalIconoObjeto" />
 <tiles:insertAttribute name="foot" />

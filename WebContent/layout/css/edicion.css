@@ -18,3 +18,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+div.alerta2 {
+  width: 100%;
+  box-shadow:0 4px 8px 0 ;
+  text-align: center;
+}

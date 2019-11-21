@@ -5,7 +5,14 @@
 <html lang="es">
 <!-- ################################################################################################ -->
 <body id="top">
-
+	<div id="topAlert"></div>
+	<div class="alerta">
+		<hiden class="alerta_in"></hiden>
+	</div>
+	<div class="alerta3">
+		<hiden class="alerta_in3"></hiden>
+	</div>
+	
 	<!-- Top Background Image Wrapper -->
 <%-- 	<div class="bgded overlay" style="background-image:url('<%=request.getContextPath()%>/empresa/<s:property value='identidadVO.idAction'/>/images/<s:property value='header.headerSeccion3.get(4)' />?v=1');"> --%>
 	<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
