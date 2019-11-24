@@ -336,12 +336,17 @@
 		 $("#modalCita .close").click();
 		 $("#modalRegistro .close").click();
 		 $(".modal .close").click();
+		 $("body,html").animate({
+		        scrollTop: 0
+		    }, 600);
 	
 	}
 	function alertaFade(alerta){
 		$(alerta).insertAfter($('.alerta_in'));
 		  $('.alerta').fadeIn();
-		  $('.alerta').delay(2500).fadeOut();
+//		  $('.alerta').delay(5000).fadeOut();
+		  $('.alerta').fadeOut( 4000);
+//		 $('.alerta').hide( "drop", { direction: "down" }, "slow" );
 	}
 	
 	
@@ -588,10 +593,8 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-					  if(data.codigo===0){
-						  avisaAlerta(data);
+//						  avisaAlerta(data);
 						  avisaAlertaEdicion(data)
-						  }
 					},
 				  error: function(){
 					  errorAlerta();
@@ -655,9 +658,8 @@
 				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
 				  crossDomain: true,
 				  success: 	function(data){					  
-					  console.log(data);
-					  if(data.codigo===0){
-						  avisaAlerta(data);}
+						  avisaAlerta(data);
+						  console.log(data);
 					},
 				  error: function(){
 					  errorAlerta();
@@ -671,10 +673,10 @@
 			limpiaAlerta();
 //			$(this).attr("disabled", true);
 			d = new Date();
-			resp = $.getJSON("http://ipinfo.io", function(response){
-				console.log(response.ip)
-				return response.ip;
-			}, "jsonp");
+//			resp = $.getJSON("http://ipinfo.io", function(response){
+//				console.log(response.ip)
+//				return response.ip;
+//			}, "jsonp");
 //			resp = JSON.stringify(resp);
 //			console.log(resp);
 			ip="ip";
@@ -726,7 +728,6 @@
 				  crossDomain: true,
 				  success: 	function(data){					  
 					  console.log(data);
-//					  if(data.codigo===0){}
 					  avisaAlerta(data);
 					},
 				  error: function(){
