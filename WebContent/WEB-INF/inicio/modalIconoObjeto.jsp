@@ -1,7 +1,7 @@
 <!--**********************************************************************************-->
 <div class="modal fade" id="modalIconoObjeto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Icono</label>
 				<br>

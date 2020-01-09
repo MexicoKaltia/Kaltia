@@ -42,7 +42,7 @@
 <!-- modalHeaderSeccion1 -->
 <div class="modal fade" id="modalEdicion_headerSeccion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog  modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccion1</h5>
 				<br>
@@ -135,7 +135,7 @@
 <!-- modalHeaderSeccion2 -->
 <div class="modal fade" id="modalEdicion_headerSeccion2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccion2</h5>
 				<br>
@@ -177,7 +177,7 @@
 <!-- modalheaderSeccionArray5 -->
 <div class="modal fade" id="modalEdicion_headerSeccionArray5Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccionArray5</h5>
 				<br>
@@ -259,7 +259,7 @@
 <!-- modalHeaderSeccion4 -->
 <div class="modal fade" id="modalEdicion_headerSeccion4Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> headerSeccion4</h5>
 				<br>
@@ -318,7 +318,7 @@
 <!-- modalBodySeccionArray1 -->
 <div class="modal fade" id="modalEdicion_bodySeccionArray1Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccionArray1</h5>
 				<br>
@@ -417,7 +417,7 @@
 <!-- modalBodySeccion1 -->
 <div class="modal fade" id="modalEdicion_bodySeccion1Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccion1</h5>
 				<br>
@@ -497,7 +497,7 @@
 <!-- modalBodySeccionArray2 -->
 <div class="modal fade" id="modalEdicion_bodySeccionArray2Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccionArray2</h5>
 				<br>
@@ -604,7 +604,7 @@
 <!-- modalBodySeccionArray3 -->
 <div class="modal fade" id="modalEdicion_bodySeccionArray3Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> BodySeccionArray3</h5>
 				<br>
@@ -710,7 +710,7 @@
 <!-- modalBodySeccionArray4 -->
 <div class="modal fade" id="modalEdicion_bodySeccionArray4Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> BodySeccionArray4</h5>
 				<br>
@@ -794,7 +794,7 @@
 <!-- modalfooterSeccionUbicacion -->
 <div class="modal fade" id="modalEdicion_footerSeccionUbicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccionUbicacion</h5>
 				<br>
@@ -861,7 +861,7 @@
 <!-- modalFooterRedes -->
 <div class="modal fade" id="modalEdicion_footerSeccionRedes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerRedes</h5>
 				<br>
@@ -963,7 +963,7 @@
 <!-- modalFooterSeccion3 -->
 <div class="modal fade" id="modalEdicion_footerSeccion3Algenius" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSeccion3</h5>
 				<br>
@@ -1019,7 +1019,7 @@
 <!--**********************************************************************************-->
 <div class="modal fade" id="modalEdicion_footerSecciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> footerSecciones</h5>
 				<br>

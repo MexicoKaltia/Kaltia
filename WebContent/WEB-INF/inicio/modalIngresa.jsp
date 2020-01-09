@@ -9,7 +9,7 @@
 <!-- modalBodySeccionArray3 -->
 <div class="modal fade" id="modalIngresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
-		<div class="modal-content" style="background-image:url('http://kaltia-store.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+		<div class="modal-content" style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
 				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Ingresa</label>
 				<br>
