@@ -8,7 +8,7 @@
       <ul class="nospace linklist">
         <s:subset start="0" source ="maquetaskaltia">
         <s:iterator>
-          		<li><a href="http://www.kaltiaservicios.site/<s:property/>"  target="_blank">http://www.kaltiaservicios.site/<s:property/></a></li>
+          		<li><a href="http://www.kaltia.site/<s:property/>"  target="_blank">http://www.kaltia.site/<s:property/></a></li>
          </s:iterator>
          </s:subset>
 
