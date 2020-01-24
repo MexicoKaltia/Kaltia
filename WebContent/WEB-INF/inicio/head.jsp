@@ -28,5 +28,6 @@
 
 </head>
 <div class="alerta">
-		<hiden class="alerta_in">23012020</hiden>
+		<hiden class="alerta_in"></hiden>
+		<input type="hidden" id="idEmpresa" value="23012020" />
 	</div>
