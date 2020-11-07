@@ -33,26 +33,26 @@
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
 	</definition>
 	
-	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/carinary/pages/carinaryHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/carinary/pages/carinaryBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/carinary/pages/carinaryFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/carinary/pages/modalEdicion.jsp" />
-	</definition>
-	<definition name="skaxis" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/skaxis/pages/skaxisHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/skaxis/pages/skaxisBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/skaxis/pages/skaxisFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
+<!-- 	<definition name="carinary" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/carinary/pages/carinaryHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/carinary/pages/carinaryBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/carinary/pages/carinaryFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/carinary/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="skaxis" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/skaxis/pages/skaxisHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/skaxis/pages/skaxisBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/skaxis/pages/skaxisFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
 	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeader.jsp" />
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
@@ -68,59 +68,19 @@
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacionVacio.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjetoVacio.jsp" />
 	</definition>
-		<definition name="vortex" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/vortex/pages/vortexHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/vortex/pages/vortexBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/vortex/pages/vortexFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
+<!-- 	<definition name="vortex" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/vortex/pages/vortexHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/vortex/pages/vortexBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/vortex/pages/vortexFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
 	
 	<!-- segunda generacion -->
 	
-	<definition name="abele" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/abele/pages/abeleHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/abele/pages/abeleBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/abele/pages/abeleFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
-	<definition name="appsea" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/appsea/pages/appseaHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/appsea/pages/appseaBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/appsea/pages/appseaFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
-	<definition name="arialogic" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/arialogic/pages/arialogicHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/arialogic/pages/arialogicBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/arialogic/pages/arialogicFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
-	<definition name="artland" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/artland/pages/artlandHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/artland/pages/artlandBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/artland/pages/artlandFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-	</definition>
 	<definition name="aerogem" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
@@ -151,17 +111,81 @@
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
 	</definition>
-	<definition name="arrival" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="header" value="/modelo/arrival/pages/arrivalHeader.jsp" />
+<!-- 	<definition name="abele" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/abele/pages/abeleHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/abele/pages/abeleBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/abele/pages/abeleFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="appsea" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/appsea/pages/appseaHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/appsea/pages/appseaBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/appsea/pages/appseaFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" /> -->
+<!-- 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" /> -->
+<!-- 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" /> -->
+<!-- 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" /> -->
+<!-- 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="arialogic" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/arialogic/pages/arialogicHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/arialogic/pages/arialogicBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/arialogic/pages/arialogicFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="artland" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/artland/pages/artlandHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/artland/pages/artlandBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/artland/pages/artlandFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
+	
+<!-- 	<definition name="arrival" template="/WEB-INF/inicio/inicio.jsp"> -->
+<!-- 		<put-attribute name="header" value="/modelo/arrival/pages/arrivalHeader.jsp" /> -->
+<!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/arrival/pages/arrivalBody.jsp" /> -->
+<!-- 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" /> -->
+<!-- 		<put-attribute name="footer" value="/modelo/arrival/pages/arrivalFooter.jsp" /> -->
+<!-- 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" /> -->
+<!-- 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" /> -->
+<!-- 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" /> -->
+<!-- 	</definition> -->
+		
+		<!-- tercera generacion -->
+	
+	
+	<definition name="besloor" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/modelo/besloor/pages/besloorHeader.jsp" />
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="body" value="/modelo/arrival/pages/arrivalBody.jsp" />
+		<put-attribute name="body" value="/modelo/besloor/pages/besloorBody.jsp" />
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
-		<put-attribute name="footer" value="/modelo/arrival/pages/arrivalFooter.jsp" />
+		<put-attribute name="footer" value="/modelo/besloor/pages/besloorFooter.jsp" />
 		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/besloor/pages/modalEdicion.jsp" />
+		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
+		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
 	</definition>
-		
 	
 
 	

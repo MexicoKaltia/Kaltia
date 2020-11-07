@@ -38,8 +38,10 @@ public class IdentidadDao {
 		/*
 		 * Implementar un StoreProcedure, que verifique el status de la empresa
 		 * 
-		 * Metodo valida empresa con los siguientes atributos: 0.-exista la empresa
-		 * 1.-sincronia de datos generales 2.-licencia activa
+		 * Metodo valida empresa con los siguientes atributos: 
+		 * 0.-exista la empresa
+		 * 1.-sincronia de datos generales 
+		 * 2.-licencia activa
 		 * 
 		 * public String inicioEm(String action) {
 		 * 

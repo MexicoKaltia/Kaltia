@@ -53,7 +53,6 @@ public class Identidad {
 		identidadVO.setMensajeVO("No Requerido");
 		identidadVO.setIdAction(action);
 		
-		
 		if (identidadVO.getHeaderRequerido().equals("1")) {
 			hashIdentidad.put("header", headerEm(action,identidadVO.getActionEstilo()));
 			HeaderVO headerVO = (HeaderVO) hashIdentidad.get("header");

@@ -45,9 +45,9 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-	var url = "http://31.220.63.183:8010/";
-	var urlUpload= "http://31.220.63.183:8011/";
-	var urlCita = "http://31.220.63.183:8012/";
+	var url = 		"http://158.101.6.33:8010/";
+	var urlUpload= 	"http://129.146.252.2:8011/";
+	var urlCita = 	"http://158.101.6.33:8012/";
 
 //	var url = "http://localhost:8010/";
 //	var urlUpload= "http://localhost:8011/";
@@ -175,7 +175,7 @@
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
 		console.log(seccionEmpresa);
-//		console.log(contaObjeto);
+		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
 		var valorStringObjeto ="";
@@ -201,7 +201,7 @@
 					}
 					for(var i = 0 ; i < contaObjeto; i++){
 						for(campoObjeto in seccionEmpresa.objeto){
-//							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
+							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
 							if(campoObjeto.includes("referencia")){
 								valorStringObjeto = valorStringObjeto + "#"+"&&";
 							}else if(campoObjeto.includes("icono")){
@@ -260,15 +260,15 @@
 		
 		//Ordena valoresFinales
 //		console.log("antes:"+valoresFinales);
-		var tmp0 = "";
+		var tmp0 = new Array();
 		var tmp1 = valoresFinales.split("\++");
 		var posicion ="";
 		var conteoPosicion = valorColumnas;
 		switch (valorColumnas) {
-		case 1: break;
-		case 2: posicion="one_half"; break;
-		case 3: posicion="one_third"; break;
-		case 4: posicion="one_quarter"; break;
+			case 1: break;
+			case 2: posicion="one_half"; break;
+			case 3: posicion="one_third"; break;
+			case 4: posicion="one_quarter"; break;
 		}
 //		console.log(tmp1.length)
 		if(valorIniciaObjeto>0){
