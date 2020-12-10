@@ -3,7 +3,7 @@
 <Context>
     <Resource name="jdbc/kaltiaConexion" auth="Container" type="javax.sql.DataSource"
         maxActive="20" maxIdle="10" maxWait="5000"
-        username="root" password="H00W6odR" driverClassName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://31.220.60.92:3306/kaltiadb"/>
+        username="u408025956_kaltiadb" password="H00W6odR3004" driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://sql176.main-hosting.eu:3306/u408025956_kaltiadb"/>
 
 </Context>

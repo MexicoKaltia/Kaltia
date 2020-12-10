@@ -45,9 +45,9 @@
 	$.action="";
 	$.usuarioEmpresa="";
 	
-	var url = 		"http://158.101.6.33:8010/";
+	var url = 		"http://129.146.252.2:8010/";
 	var urlUpload= 	"http://129.146.252.2:8011/";
-	var urlCita = 	"http://158.101.6.33:8012/";
+	var urlCita = 	"http://129.146.252.2:8012/";
 
 //	var url = "http://localhost:8010/";
 //	var urlUpload= "http://localhost:8011/";
