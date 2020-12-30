@@ -4,15 +4,13 @@ $(document).ready(function() {
 	 $.modelo = "Algenius";	
 
 	
-	function cargaModal(seccion, modelo){
+	function cargaModal(seccion){
 		$.seccionCampos="";	
-//		console.log("cargarModal paso 1: "+seccion+modelo);
-		$.seccionCampos = estructuraSeccion(seccion+modelo);
-//		console.log("cargarModal paso 2 : "+$.seccionCampos);
+		$.seccionCampos = estructuraSeccion(seccion);
 		$('.'+seccion).attr("data-toggle","modal");
-		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
+		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
 		$("div.alertaBody_file > div").remove();
-		console.log("cargarModal paso 3 : #modalEdicion_"+seccion+modelo);
+		console.log("cargarModal paso 3 : #modalEdicion_"+seccion);
 		return $.seccionCampos; 
 	}
 
@@ -21,23 +19,23 @@ $(document).ready(function() {
 		var camposModelo = {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
-				"headerSeccion4Algenius"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
-				"headerSeccionArray5Algenius":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-				"bodySeccionArray1Algenius"  :{  "objeto":{"posicionObjetoBSA1" :"text",    "iconoObjetoBSA1" :"text", "tituloObjetoBSA1" :"text",    "descripcionObjetoBSA1" :"lorem" ,  "referenciaObjetoBSA1":"text", "botonObjetoBSA1" : "text" }},
-				"bodySeccion1Algenius" 		   :{"imagenBS1":"img", "tituloBS1":"text", "subTituloBS1":"text" , "descripcionBS1" : "lorem", "descripcion2BS1" : "lorem", "referenciaBS1":"text", "botonBS1":"text", "subTitulo2BS1":"text" },
-				"bodySeccionArray2Algenius"  :{ "tituloBSA2":"text", "subTituloBSA2":"text" , "objeto":{"posicionObjetoBSA2" :"text","imagenObjetoBSA2" :"img", "descripcionObjetoBSA2" :"lorem", "tituloObjetoBSA2" :"text",    "subTituloObjetoBSA2" :"text"  }},
-				"bodySeccionArray3Algenius"  :{ "imagenBSA3":"img", "tituloBSA3":"text",  "objeto":{"posicionObjetoBSA3" :"text","imagenObjetoBSA3" :"img", "tituloObjetoBSA3" :"text", "descripcionObjetoBSA3" :"lorem"}},
-				"bodySeccionArray4Algenius"  :{  "objeto":{"posicionObjetoBSA4" :"text","imagenObjetoBSA4" :"img"}},
+				"headerSeccion4"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
+				"headerSeccionArray5":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
+				"bodySeccionArray1"  :{  "objeto":{"posicionObjetoBSA1" :"text",    "iconoObjetoBSA1" :"text", "tituloObjetoBSA1" :"text",    "descripcionObjetoBSA1" :"lorem" ,  "referenciaObjetoBSA1":"text", "botonObjetoBSA1" : "text" }},
+				"bodySeccion1" 		   :{"imagenBS1":"img", "tituloBS1":"text", "subTituloBS1":"text" , "descripcionBS1" : "lorem", "descripcion2BS1" : "lorem", "referenciaBS1":"text", "botonBS1":"text", "subTitulo2BS1":"text" },
+				"bodySeccionArray2"  :{ "tituloBSA2":"text", "subTituloBSA2":"text" , "objeto":{"posicionObjetoBSA2" :"text","imagenObjetoBSA2" :"img", "descripcionObjetoBSA2" :"lorem", "tituloObjetoBSA2" :"text",    "subTituloObjetoBSA2" :"text"  }},
+				"bodySeccionArray3"  :{ "imagenBSA3":"img", "tituloBSA3":"text",  "objeto":{"posicionObjetoBSA3" :"text","imagenObjetoBSA3" :"img", "tituloObjetoBSA3" :"text", "descripcionObjetoBSA3" :"lorem"}},
+				"bodySeccionArray4"  :{  "objeto":{"posicionObjetoBSA4" :"text","imagenObjetoBSA4" :"img"}},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccionRedes"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Algenius"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
+				"footerSeccion3"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
 				"footerSecciones"    :{  "imagenFSS":"img", "tituloFSS" : "text" },
-//				"bodySeccionArray1Algenius":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-//				"bodySeccionArray2Algenius":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-//				"bodySeccionArray3Algenius":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-//				"bodySeccionArray4Algenius":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-//				"footerSeccion1Algenius"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-//				"footerSeccion2Algenius"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+//				"bodySeccionArray1":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
+//				"bodySeccionArray2":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
+//				"bodySeccionArray3":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
+//				"bodySeccionArray4":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
+//				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+//				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 
 				}
 		seccion = seccion;
@@ -45,24 +43,24 @@ $(document).ready(function() {
 		case "headerSeccion1": return camposModelo.headerSeccion1; break;
 		case "headerSeccion2": return camposModelo.headerSeccion2; break;
 		case "headerSeccion3": return camposModelo.headerSeccion3; break;
-		case "headerSeccion4Algenius": return camposModelo.headerSeccion4Algenius; break;
-		case "headerSeccionArray5Algenius": return camposModelo.headerSeccionArray5Algenius; break;
-		case "bodySeccionArray1Algenius": return camposModelo.bodySeccionArray1Algenius; break;
-		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
-		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
-		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
-		case "bodySeccionArray4Algenius": return camposModelo.bodySeccionArray4Algenius; break;
+		case "headerSeccion4": return camposModelo.headerSeccion4; break;
+		case "headerSeccionArray5": return camposModelo.headerSeccionArray5; break;
+		case "bodySeccionArray1": return camposModelo.bodySeccionArray1; break;
+		case "bodySeccion1": return camposModelo.bodySeccion1; break;
+		case "bodySeccionArray2": return camposModelo.bodySeccionArray2; break;
+		case "bodySeccionArray3": return camposModelo.bodySeccionArray3; break;
+		case "bodySeccionArray4": return camposModelo.bodySeccionArray4; break;
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
 		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
-		case "footerSeccion3Algenius": return camposModelo.footerSeccion3Algenius; break;   
+		case "footerSeccion3": return camposModelo.footerSeccion3; break;   
 		case "footerSecciones": return camposModelo.footerSecciones; break;   
 //		case "footerSecciones": return camposModelo.footerSeccionRedes; break;
-//		case "bodySeccion1Algenius": return camposModelo.bodySeccion1Algenius; break;
-//		case "bodySeccionArray2Algenius": return camposModelo.bodySeccionArray2Algenius; break;
-//		case "bodySeccionArray3Algenius": return camposModelo.bodySeccionArray3Algenius; break;
-//		case "bodySeccionArray4Algenius": return camposModelo.bodySeccionArray4Algenius; break;
-//		case "footerSeccion1Algenius": return camposModelo.footerSeccion1Algenius; break;   
-//		case "footerSeccion2Algenius": return camposModelo.footerSeccion2Algenius; break;   
+//		case "bodySeccion1": return camposModelo.bodySeccion1; break;
+//		case "bodySeccionArray2": return camposModelo.bodySeccionArray2; break;
+//		case "bodySeccionArray3": return camposModelo.bodySeccionArray3; break;
+//		case "bodySeccionArray4": return camposModelo.bodySeccionArray4; break;
+//		case "footerSeccion1": return camposModelo.footerSeccion1; break;   
+//		case "footerSeccion2": return camposModelo.footerSeccion2; break;   
 	
 		}
 	}
@@ -224,7 +222,7 @@ $(document).ready(function() {
 			$('#fondoHeaderHSA5').on('change', function(){ enviaImagen("fondoHeaderHSA5Form") });
 
 			$('#modalEdicionHeaderSeccionArray5_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 6);  // <-- son seis secciones en el modelo Algenius
+				valoresFinales = dataEdicion($.seccionCampos, 6);  // <-- son seis secciones en el modelo 
 				
 				while(valoresFinales.includes("C:\\fakepath\\") ){
 					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	

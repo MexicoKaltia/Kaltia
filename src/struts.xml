@@ -35,6 +35,9 @@
             <result name="skaxis" type="tiles">skaxis</result>
             <result name="viral" type="tiles">viral</result>
             <result name="besloor" type="tiles">besloor</result>
+            
+            <result name="qr" type="tiles">qr</result>
+            
             <result name="error">/WEB-INF/inicio/error.jsp</result>
         </action>
      </package>

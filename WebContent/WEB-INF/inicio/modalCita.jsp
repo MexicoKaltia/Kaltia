@@ -10,7 +10,7 @@
 <div class="modal fade" id="modalCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
-			style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/imagen.jpg?v=1');">
+			style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header" id="topCita">
 				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Cita</label>
 				<br>

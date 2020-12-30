@@ -288,7 +288,7 @@ $(document).ready(function() {
 	$('.bodySeccionArray3').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("bodySeccionArray3",$.modelo);	
-			alert($.seccionCampos);
+//			alert($.seccionCampos);
 			$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, contaObjetoBodySeccionArray3);
 				valorColumnas = 0;

@@ -8,10 +8,7 @@
 	<definition name="kaltia" extends="viral">
 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 	</definition>
-<!-- 	<definition name="perfilAdmin1" extends="kaltia"> -->
-<!-- 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" /> -->
-<!-- 		<put-attribute name="body" value="/modelo/viral/pages/accesoControl1.jsp" /> -->
-<!-- 	</definition> -->
+
 	<definition name="kaltiaMaquetas" extends="kaltia">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" />
 		<put-attribute name="body" value="/empresa/kaltia/pages/kaltiaMaquetas.jsp" />
@@ -30,7 +27,6 @@
 <!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
 <!-- 		<put-attribute name="body" value="/WEB-INF/inicio/body.jsp" /> -->
 <!-- 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" /> -->
-
 <!-- 	</definition> -->
 	
 	
@@ -40,4 +36,10 @@
 <!-- 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" /> -->
 <!-- 		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" /> -->
 <!-- 	</definition> -->
+
+<!-- 	<definition name="perfilAdmin1" extends="kaltia"> -->
+<!-- 		<put-attribute name="header" value="/modelo/viral/pages/viralHeaderInterno.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/modelo/viral/pages/accesoControl1.jsp" /> -->
+<!-- 	</definition> -->
+
 </tiles-definitions>

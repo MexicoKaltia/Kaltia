@@ -81,6 +81,7 @@
 		
 		$.idEmpresa = $("#idEmpresa").val();
 		$.action = $("#idAction").val();
+		$.modelo = $("#idModelo").val();
 		console.log("idEmpresa:"+$.idEmpresa);
 		console.log("Action:"+$.action);
 		console.log("Modelo:"+$.modelo);

@@ -4,7 +4,7 @@
 <div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content"
-			style="background-image:url('http://kaltiastore.xyz/kaltia/modelo/modal/modalImagenFondo.jpg?v=1');">
+			style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/modalImagenFondo.jpg?v=1');">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> Contacto</h5>
 				<br>

@@ -14,6 +14,7 @@ public class IdentidadVO extends BaseVO implements Serializable {
 	private String action;
 	private String empresa;
 	private String actionEstilo;
+	private String nombreCorto;
 	private String headerRequerido;
 	private String bodyRequerido; 
 	private String leftRequerido;
@@ -112,6 +113,12 @@ public class IdentidadVO extends BaseVO implements Serializable {
 	}
 	public void setActionSeccion2(ArrayList<String> actionSeccion2) {
 		this.actionSeccion2 = actionSeccion2;
+	}
+	public String getNombreCorto() {
+		return nombreCorto;
+	}
+	public void setNombreCorto(String nombreCorto) {
+		this.nombreCorto = nombreCorto;
 	}
 	
 }

@@ -46,23 +46,16 @@ public class InitAction extends ActionSupport {
 		logger.info("context:" + context.getContextPath());
 		logger.info("context:" + context);
 		logger.info("context:" + context.getServletContextName());
-		/*
-		 * System.out.println("Context url: " + context.getContextPath());
-		 * System.out.println("Context context " + context.getServletContextName());
-		 */
-		
-		
 		address = InetAddress.getLocalHost();
 		String userMachine=address.getHostName();
 		logger.info("hola:"+userMachine);
 		logger.info("hola:"+address);
 				
-
 		Identidad identidad = new Identidad();
 
 		try {
 			
-			HashMap identidadHash = identidad.identidadEmpresa(actionName);
+			HashMap identidadHash = identidad.identidadEmpresaPagina(actionName);
 			 identidadVO = (IdentidadVO) identidadHash.get("identidadVO");
 			if (identidadVO.getCodigoVO().equals("00")) {
 				

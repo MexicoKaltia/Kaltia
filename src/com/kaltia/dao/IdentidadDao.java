@@ -11,11 +11,13 @@ import org.apache.logging.log4j.Logger;
 import com.kaltia.infra.BaseInfra;
 import com.kaltia.infra.ComunResolution;
 import com.kaltia.vo.BodyVO;
+import com.kaltia.vo.EmpresaVO;
 import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.MenuVO;
 import com.kaltia.vo.ModulosVO;
+import com.kaltia.vo.QRRVO;
 import com.kaltia.vo.resource.ObjetoVO;
 
 public class IdentidadDao {
@@ -33,7 +35,8 @@ public class IdentidadDao {
 	static final Logger logger = LogManager.getLogger(IdentidadDao.class.getName());
 	public static Properties PROPS = BaseInfra.PROPS;
 	
-	public IdentidadVO qryEmpresa(String action) throws SQLException {
+
+	public EmpresaVO qryEmpresa(String action) throws SQLException {
 		
 		/*
 		 * Implementar un StoreProcedure, que verifique el status de la empresa
@@ -49,6 +52,39 @@ public class IdentidadDao {
 		 * 
 		 * return codigoInicioEm; }
 		 */
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
+		EmpresaVO empresaVO = new EmpresaVO();
+		List<String> complemento = new ArrayList<String>();
+		complemento.add(action);
+
+		String sql = "SELECT empresaNombreCorto, empresaStatus"
+				+ "  FROM tc_empresa  " 
+				+ " WHERE idAction = ? ";
+
+		try {
+			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
+			
+			if(returnDAO.size() != 0 && returnDAO!= null){
+				empresaVO.setEmpresaNombreCorto(returnDAO.get(0) != null ? returnDAO.get(0).toString() : "");
+				empresaVO.setEmpresaStatus(returnDAO.get(1) != null ? returnDAO.get(1).toString() : PROPS.getProperty("error.01"));
+				
+			}else{
+				empresaVO.setEmpresaNombreCorto("");
+				empresaVO.setEmpresaStatus(PROPS.getProperty("error.01"));
+			}
+
+		} catch (Exception e) {
+			empresaVO.setEmpresaNombreCorto("");
+			empresaVO.setEmpresaStatus(PROPS.getProperty("error.01"));
+
+			e.printStackTrace();
+		}
+		logger.info("qryEmpresa.getStatus:"+ empresaVO.getEmpresaStatus());
+		return empresaVO;
+	}
+	
+	public IdentidadVO qryAction(String action) throws SQLException {
+		
 		ArrayList<Object> returnDAO = new ArrayList<Object>();
 		IdentidadVO identidadVO = new IdentidadVO();
 		List<String> complemento = new ArrayList<String>();
@@ -94,9 +130,10 @@ public class IdentidadDao {
 
 			e.printStackTrace();
 		}
-		logger.info("qryEmpresa.getCodigo:"+ identidadVO.getCodigoVO());
+		logger.info("qryAction.getCodigo:"+ identidadVO.getCodigoVO());
 		return identidadVO;
 	}
+
 
 	public HeaderVO qryElementoHeader(String action) throws SQLException {
 		
@@ -323,6 +360,42 @@ public class IdentidadDao {
 			}
 		
 		return modulosVOArray;
+	}
+
+	public QRRVO readQRR(String action) {
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
+		QRRVO qrrVO = new QRRVO();
+		List<String> complemento = new ArrayList<String>();
+		complemento.add(action);
+
+		String sql = "SELECT idAction, tipoQRR" +
+				"  FROM tc_qrr  " +
+				" WHERE idAction = ? ";
+
+		try {
+			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
+			
+			if(returnDAO.size() != 0 && returnDAO!= null){
+				qrrVO.setIdAction(returnDAO.get(0) != null ? returnDAO.get(0).toString() : "");
+				qrrVO.setTipoQRR(returnDAO.get(1) != null ? returnDAO.get(1).toString() : PROPS.getProperty("error.01"));
+				qrrVO.setCodigo("00");
+				qrrVO.setMensaje("exito busqueda qrr");
+
+			}else{
+				qrrVO.setCodigo("01");
+				qrrVO.setMensaje("identidad:"+PROPS.getProperty("error.01"));
+				qrrVO.setIdAction(action);
+			}
+
+		} catch (Exception e) {
+			qrrVO.setCodigo("03");
+			qrrVO.setMensaje("identidad:"+PROPS.getProperty("error.03"));
+			qrrVO.setIdAction(action);
+
+			e.printStackTrace();
+		}
+		logger.info("qryQRR.getCodigo:"+ qrrVO.getCodigo());
+		return qrrVO;
 	}
 	
 	

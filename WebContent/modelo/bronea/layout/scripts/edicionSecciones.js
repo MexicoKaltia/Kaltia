@@ -1,16 +1,14 @@
 $(document).ready(function() {
 
 	console.log(window.navigator.userAgent);
+	 $.modelo = "Bronea";	
 	
-	function cargaModal(seccion, modelo){
+	function cargaModal(seccion){
 		$.seccionCampos="";	
-//		console.log("cargarModal paso 1: "+seccion+modelo);
-		$.seccionCampos = estructuraSeccion(seccion+modelo);
-//		console.log("cargarModal paso 2 : "+$.seccionCampos);
+		$.seccionCampos = estructuraSeccion(seccion);
 		$('.'+seccion).attr("data-toggle","modal");
-		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion+modelo);
+		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
 		$("div.alertaBody_file > div").remove();
-//		console.log("cargarModal paso 3 : #modalEdicion_"+seccion+modelo);
 		return $.seccionCampos; 
 	}
 
@@ -20,16 +18,16 @@ $(document).ready(function() {
 				"headerSeccion1" 		   :{  "objeto" : {    "tituloObjetoHS1" :"text", "seleccionObjetoHS1" :"text"  }},
 				"headerSeccion2" 		   :{   "telefonoHS2" : "text",   "emailHS2" : "text"},
 				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
-				"headerSeccion4Bronea"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
-				"headerSeccionArray5Bronea":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-				"bodySeccion1Bronea"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
-				"bodySeccionArray1Bronea":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-				"bodySeccionArray2Bronea":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-				"bodySeccionArray3Bronea":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-				"bodySeccionArray4Bronea":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-				"footerSeccion1Bronea"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerSeccion2Bronea"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-				"footerSeccion3Bronea"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
+				"headerSeccion4"   :{  "subtituloHS4":"text",  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text",  "seleccion2HS4" : "text",  "boton2HS4" : "text"},
+				"headerSeccionArray5":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
+				"bodySeccion1"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
+				"bodySeccionArray1":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
+				"bodySeccionArray2":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
+				"bodySeccionArray3":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
+				"bodySeccionArray4":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
+				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
+				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+				"footerSeccion3"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
 //				"footerSecciones"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 //				"footerRedes"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"}
@@ -40,19 +38,19 @@ $(document).ready(function() {
 		case "headerSeccion1": return camposModelo.headerSeccion1; break;
 		case "headerSeccion2": return camposModelo.headerSeccion2; break;
 		case "headerSeccion3": return camposModelo.headerSeccion3; break;
-		case "headerSeccion4Bronea": return camposModelo.headerSeccion4Bronea; break;
-		case "headerSeccionArray5Bronea": return camposModelo.headerSeccionArray5Bronea; break;
-		case "bodySeccion1Bronea": return camposModelo.bodySeccion1Bronea; break;
-		case "bodySeccionArray1Bronea": return camposModelo.bodySeccionArray1Bronea; break;
-		case "bodySeccionArray2Bronea": return camposModelo.bodySeccionArray2Bronea; break;
-		case "bodySeccionArray3Bronea": return camposModelo.bodySeccionArray3Bronea; break;
-		case "bodySeccionArray4Bronea": return camposModelo.bodySeccionArray4Bronea; break;
-		case "footerSeccion1Bronea": return camposModelo.footerSeccion1Bronea; break;   
-		case "footerSeccion2Bronea": return camposModelo.footerSeccion2Bronea; break;   
-		case "footerSeccion3Bronea": return camposModelo.footerSeccion3Bronea; break;   
-//		case "footerSecciones": return camposModelo.footerSeccion1Bronea; break;   
+		case "headerSeccion4": return camposModelo.headerSeccion4; break;
+		case "headerSeccionArray5": return camposModelo.headerSeccionArray5; break;
+		case "bodySeccion1": return camposModelo.bodySeccion1; break;
+		case "bodySeccionArray1": return camposModelo.bodySeccionArray1; break;
+		case "bodySeccionArray2": return camposModelo.bodySeccionArray2; break;
+		case "bodySeccionArray3": return camposModelo.bodySeccionArray3; break;
+		case "bodySeccionArray4": return camposModelo.bodySeccionArray4; break;
+		case "footerSeccion1": return camposModelo.footerSeccion1; break;   
+		case "footerSeccion2": return camposModelo.footerSeccion2; break;   
+		case "footerSeccion3": return camposModelo.footerSeccion3; break;   
+//		case "footerSecciones": return camposModelo.footerSeccion1; break;   
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;   
-//		case "footerSeccionredes": return camposModelo.footerSeccion1Bronea; break;   
+//		case "footerSeccionredes": return camposModelo.footerSeccion1; break;   
 		}
 	}
 
@@ -135,7 +133,7 @@ $(document).ready(function() {
 
 	
 
-	 $.modelo = "Bronea";	
+
 /////////////
 	/*
 	 *   Secciones   *

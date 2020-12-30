@@ -3,22 +3,20 @@ package com.kaltia.service;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.kaltia.action.InitAction;
 import com.kaltia.dao.IdentidadDao;
-import com.kaltia.infra.ComunResolution;
-
+import com.kaltia.infra.BaseInfra;
 import com.kaltia.vo.BodyVO;
+import com.kaltia.vo.EmpresaVO;
 import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
-import com.kaltia.vo.MenuLeftVO;
-import com.kaltia.vo.MenuRigthVO;
 import com.kaltia.vo.ModulosVO;
-import com.kaltia.vo.PaginaVO;
+import com.kaltia.vo.QRRVO;
 
 
 public class Identidad {
@@ -26,22 +24,65 @@ public class Identidad {
 
 	private IdentidadDao identidadDao = new IdentidadDao();
 	static final Logger logger = LogManager.getLogger(Identidad.class.getName());
-
+	public static Properties PROPS = BaseInfra.PROPS;
+	private IdentidadVO identidadVO = new IdentidadVO();
 	
-	public HashMap<String, Object> identidadEmpresa(String action) throws SQLException {
+	public HashMap<String, Object> identidadEmpresaPagina(String action) throws SQLException {
 
 		HashMap<String, Object> hashIdentidad = new HashMap<String, Object>();
-		IdentidadVO identidadVO = (IdentidadVO)identidadDao.qryEmpresa(action);
+		String nombreCorto="";
+		
+		EmpresaVO empresaVO = (EmpresaVO)identidadDao.qryEmpresa(action);
+		
 		logger.info(identidadVO.getCodigoVO());
+		
+		if(!empresaVO.getEmpresaStatus().equals(PROPS.getProperty("error.01"))) {
+			if(!empresaVO.getEmpresaStatus().equals(PROPS.getProperty("status.03"))) {
+				nombreCorto = empresaVO.getEmpresaNombreCorto();
+				logger.info("nombreCorto : "+nombreCorto);
+			}
+		}else {
+			identidadVO.setCodigoVO("99");
+			identidadVO.setMensajeVO("1 " + PROPS.getProperty("error.01"));
+			hashIdentidad.put("identidadVO", identidadVO);
+			return hashIdentidad;
+		}
+		
+		identidadVO = (IdentidadVO)identidadDao.qryAction(action);
+
 		if(identidadVO.getCodigoVO().equals("00")) {
 			if(!identidadVO.getActionPrincipal().equals("99")) {		
 				hashIdentidad = identidadElemento(action, identidadVO);
+				identidadVO.setNombreCorto(empresaVO.getEmpresaNombreCorto());
 			}else {
 				hashIdentidad.put("identidadVO", identidadVO);
 			}
 		}else {
 			hashIdentidad.put("identidadVO", identidadVO);
 		}
+		return hashIdentidad;
+	}
+	
+	public HashMap<String, Object> identidadEmpresaQRR(String action) throws SQLException {
+
+		HashMap<String, Object> hashIdentidad = new HashMap<String, Object>();
+		String nombreCorto="";
+		EmpresaVO empresaVO = (EmpresaVO)identidadDao.qryEmpresa(action);
+		
+		QRRVO qrrVO = (QRRVO)identidadDao.readQRR(action);
+		
+		if(qrrVO.getCodigo().equals("00")) {
+			identidadVO = (IdentidadVO)identidadDao.qryAction(action);
+			identidadVO.setNombreCorto(empresaVO.getEmpresaNombreCorto());
+			hashIdentidad = identidadElemento(action, identidadVO);
+			qrrVO.setCodigo("00");
+			qrrVO.setMensaje("exito busqueda qrr");	
+		}else {
+			qrrVO.setCodigo("99");
+			qrrVO.setMensaje("1 " + PROPS.getProperty("error.01"));
+		}
+		hashIdentidad.put("qrrVO", qrrVO);
+//		hashIdentidad.put("identidadVO", identidadVO);
 		return hashIdentidad;
 	}
 
@@ -126,33 +167,7 @@ public class Identidad {
 
 		return headerVOEm;
 	}
-/*
-	private Object menuLeftEm(String action) {
-		Object menuLeftVOEm = null;
-		try {
-			menuLeftVOEm = identidadDao.qryElementoMenuLeft(action, "menuLeft");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		return menuLeftVOEm;
-	}
-
-	private Object menuRigthEm(String action) {
-		Object menuRigthVOEm = null;
-
-		try {
-			menuRigthVOEm = identidadDao.qryElementoMenuRigth(action, "menuRigth");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return menuRigthVOEm;
-
-	}
-*/
 	private BodyVO bodyEm(String action) {
 		BodyVO bodyVOEm = null;
 
@@ -211,30 +226,5 @@ public class Identidad {
 		return modulosNombre;
 	}
 	
-	
-//	private void valida(Object object) {
-//		
-//		//HeaderVO headerVO = (HeaderVO)object;
-//		//logger.info("Slogan:"+headerVO.getHeaderSloganVO().get(0).getHeaderSlogan().get(0));
-//		//logger.info("Slogan:"+headerVO.getHeaderSloganVO().get(1).getHeaderSlogan().get(1));
-//		//logger.info("Slide:"+headerVO.getHeaderSlideVO().get(0).getHeaderSlide().get(0));
-//		//logger.info("Slide:"+headerVO.getHeaderSlideVO().get(1).getHeaderSlide().get(1));
-//		
-//	
-//	/*
-//	BodyVO bodyVO = (BodyVO)object;
-//									  //body.bodyPromocion.get(0).promocionVarios0
-//	//logger.info("valida BodyPromocion: "+bodyVO.getBodyPromocion().get(0).getPromocionVarios0());
-//										//<s:property value='#articulo.articuloImagen' />
-//	//logger.info("valida bodyCruadricula: "+ bodyVO.getBodyCuadricula().get(0).getArticuloImagen());
-//	logger.info("valida bodyCategoria: "+ bodyVO.getBodyCategoria().get(0).getCategoriaVarios().get(0));
-//	*/
-//	
-//		FooterVO footerVO = (FooterVO)object;
-//		for(int i = 0; i< footerVO.getFooterSeccion3().size(); i++)
-//		logger.info("valida Footer: "+footerVO.getFooterSeccion3().get(i));
-//	
-//	
-//	}
 
 }

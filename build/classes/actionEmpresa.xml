@@ -23,6 +23,42 @@
     	<action name="modelos" class="com.kaltia.action.BaseAction" method="modelosKaltia">
     		<result name="kaltiaModelos" type="tiles">kaltiaModelos</result>    		
     	</action>
+    </package>
+    
+    <package name="qr" namespace="/qr" extends="default, struts-default, tiles-default">
+	    <result-types>
+	            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+	    </result-types>
+        <action name="*" class="com.kaltia.action.BaseAction" method="qr">
+            <param name="actionInicial">menuA</param>
+            <result name="aerogemQRE" type="tiles">aerogemQRE</result>
+            <result name="algeniusQRE" type="tiles">algeniusQRE</result>
+            <result name="broneaQRE" type="tiles">broneaQRE</result>
+            <result name="besloorQRE" type="tiles">besloorQRE</result>
+            
+            <result name="aerogemQRD" type="tiles">aerogemQRD</result>
+            <result name="algeniusQRD" type="tiles">algeniusQRD</result>
+            <result name="broneaQRD" type="tiles">broneaQRD</result>
+            <result name="besloorQRD" type="tiles">besloorQRD</result>
+            
+            <result name="error">/WEB-INF/inicio/error.jsp</result>
+        </action>
+    </package>
+    
+    
+<!--     <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default"> -->
+<!--     <result-types> -->
+<!--             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/> -->
+<!--     </result-types> -->
+<!--         <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento"> -->
+<!--             <param name="actionInicial">menuA</param> -->
+<!--             <result name="contacto" type="tiles">contacto</result> -->
+<!-- 			<result name="nosotros" type="tiles">nosotros</result> -->
+<!--             <result name="ingresar" type="tiles">ingresar</result> -->
+<!--             <result name="registrar" type="tiles">registrar</result> -->
+<!--             <result name="error">/WEB-INF/inicio/error.jsp</result> -->
+<!--         </action> -->
+
 <!--         <action name ="ingresar" class="com.kaltia.action.ActionBase" method="logginUser"> -->
 <!--         	<param name="actionInicial">kaltia</param> -->
 <!--         	<result name="perfilAdmin1" type="tiles">perfilAdmin1</result> -->
@@ -45,20 +81,6 @@
 <!--        			<param name="maximumSize">10240</param> -->
 <!--   	    	</interceptor-ref> -->
 <!--   	    	<interceptor-ref name="basicStack"/> -->
-<!--         </action> -->
-    </package>
-    
-<!--     <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default"> -->
-<!--     <result-types> -->
-<!--             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/> -->
-<!--     </result-types> -->
-<!--         <action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento"> -->
-<!--             <param name="actionInicial">menuA</param> -->
-<!--             <result name="contacto" type="tiles">contacto</result> -->
-<!-- 			<result name="nosotros" type="tiles">nosotros</result> -->
-<!--             <result name="ingresar" type="tiles">ingresar</result> -->
-<!--             <result name="registrar" type="tiles">registrar</result> -->
-<!--             <result name="error">/WEB-INF/inicio/error.jsp</result> -->
 <!--         </action> -->
 <!--     </package> -->
     
