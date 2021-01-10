@@ -8,7 +8,7 @@
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
     <div class="center btmspace-50">
-      <h6 class="heading"><s:property value='header.idEmpresa'/></h6>
+      <h6 class="heading"><s:property value='identidadVO.nombreCorto'/></h6>
       <nav>
         <ul class="nospace inline pushright uppercase">
         <li><a href="#"><i class="fas fa-lg fa-home"></i></a></li>

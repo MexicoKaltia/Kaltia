@@ -30,13 +30,9 @@ $(document).ready(function() {
 				"footerSeccionRedes"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
 				"footerSecciones"    :{  "imagenFSS":"img", "tituloFSS" : "text" },
-//				"bodySeccionArray1":{  "tituloBSA1":"text",  "subTituloBSA1":"text",  "descripcion1BSA1":"lorem",  "descripcion2BSA1":"lorem",  "imagenBSA1" : "img",  "objeto" :{"posicionObjetoBSA1" :"text","referenciaObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem"  }},
-//				"bodySeccionArray2":{  "objeto":{    "posicionObjetoBSA2" :"text",    "iconoObjetoBSA2" :"text",    "referenciaObjetoBSA2" :"text",    "tituloObjetoBSA2" :"text",    "descripcionObjetoBSA2" :"lorem"  }},
-//				"bodySeccionArray3":{  "tituloBSA3" :"text",  "descripcionBSA3" : "lorem",  "objeto" : {      "posicionObjetoBSA3" :"text",      "imagenObjetoBSA3" : "img",      "referenciaObjetoBSA3" : "text",      "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text"  }},
-//				"bodySeccionArray4":{  "tituloBSA4" :"text",  "descripcionBSA4" : "lorem",  "objeto" : {      "posicionObjetoBSA4" :"text",      "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text",      "botonObjetoBSA4":"text"  }},
-//				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-//				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-
+				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
+				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
+				
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -54,14 +50,8 @@ $(document).ready(function() {
 		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
 		case "footerSeccion3": return camposModelo.footerSeccion3; break;   
 		case "footerSecciones": return camposModelo.footerSecciones; break;   
-//		case "footerSecciones": return camposModelo.footerSeccionRedes; break;
-//		case "bodySeccion1": return camposModelo.bodySeccion1; break;
-//		case "bodySeccionArray2": return camposModelo.bodySeccionArray2; break;
-//		case "bodySeccionArray3": return camposModelo.bodySeccionArray3; break;
-//		case "bodySeccionArray4": return camposModelo.bodySeccionArray4; break;
-//		case "footerSeccion1": return camposModelo.footerSeccion1; break;   
-//		case "footerSeccion2": return camposModelo.footerSeccion2; break;   
-	
+		case "bodyQRE": return camposModelo.bodyQRE; break;
+		case "bodyQRD": return camposModelo.bodyQRD; break;	
 		}
 	}
 
@@ -488,7 +478,34 @@ $(document).ready(function() {
 	});
 
 	
-	
+	$('.bodyQRE').click(function(){
+		console.log("QRE Aerogem")
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodyQRE");
+			$('#modalEdicionBodyQRE_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoQRE);
+				
+				valorColumnas = 1;
+				valorPosicion = 0;
+				valorIniciaObjeto = 0;
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//				alert(valoresFinales);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionQRE",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
 	
 	
 	

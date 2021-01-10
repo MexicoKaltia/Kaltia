@@ -112,7 +112,8 @@ public class Identidad {
 			hashIdentidad.put("body", bodyEm(action));
 			BodyVO bodyVO = (BodyVO) hashIdentidad.get("body");
 			identidadVO.setCodigoVO(bodyVO.getCodigoVO());
-			//valida(bodyVO);
+			logger.info(bodyVO.getBodyQRE().toString());
+			logger.info(bodyVO.getBodySeccionArray2().toString());
 			if (!bodyVO.getCodigoVO().equals("00")) {
 				// identidadVO.setCodigoVO(bodyVO.getCodigoVO());
 				identidadVO.setMensajeVO(bodyVO.getMensajeVO());

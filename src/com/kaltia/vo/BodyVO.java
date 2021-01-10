@@ -29,8 +29,8 @@ private ArrayList<String> bodySeccion5;
 private ArrayList<String> bodySeccion6; 
 private ArrayList<String> bodySeccion7; 
 private ArrayList<String> bodySeccion8; 
-private ArrayList<String> bodySeccion9; 
-private ArrayList<String> bodySeccion10; 
+private ArrayList<ObjetoVO> bodyQRE; 
+private ArrayList<ObjetoVO> bodyQRD; 
 private ArrayList<ObjetoVO> bodySeccionArray1;
 private ArrayList<ObjetoVO> bodySeccionArray2;
 private ArrayList<ObjetoVO> bodySeccionArray3;
@@ -105,18 +105,8 @@ public ArrayList<String> getBodySeccion8() {
 public void setBodySeccion8(ArrayList<String> bodySeccion8) {
 	this.bodySeccion8 = bodySeccion8;
 }
-public ArrayList<String> getBodySeccion9() {
-	return bodySeccion9;
-}
-public void setBodySeccion9(ArrayList<String> bodySeccion9) {
-	this.bodySeccion9 = bodySeccion9;
-}
-public ArrayList<String> getBodySeccion10() {
-	return bodySeccion10;
-}
-public void setBodySeccion10(ArrayList<String> bodySeccion10) {
-	this.bodySeccion10 = bodySeccion10;
-}
+
+
 public ArrayList<ObjetoVO> getBodySeccionArray1() {
 	return bodySeccionArray1;
 }
@@ -159,6 +149,35 @@ public ArrayList<ObjetoVO> getBodySeccionArray7() {
 public void setBodySeccionArray7(ArrayList<ObjetoVO> bodySeccionArray7) {
 	this.bodySeccionArray7 = bodySeccionArray7;
 }
+
+public ArrayList<ObjetoVO> getBodyQRE() {
+	return bodyQRE;
+}
+public void setBodyQRE(ArrayList<ObjetoVO> bodyQRE) {
+	this.bodyQRE = bodyQRE;
+}
+public ArrayList<ObjetoVO> getBodyQRD() {
+	return bodyQRD;
+}
+public void setBodyQRD(ArrayList<ObjetoVO> bodyQRD) {
+	this.bodyQRD = bodyQRD;
+}
+
+
+
+
+@Override
+public String toString() {
+	return "BodyVO [idBody=" + idBody + ", idEmpresa=" + idEmpresa + ", bodyFondo=" + bodyFondo + ", bodySeccion1="
+			+ bodySeccion1 + ", bodySeccion2=" + bodySeccion2 + ", bodySeccion3=" + bodySeccion3 + ", bodySeccion4="
+			+ bodySeccion4 + ", bodySeccion5=" + bodySeccion5 + ", bodySeccion6=" + bodySeccion6 + ", bodySeccion7="
+			+ bodySeccion7 + ", bodySeccion8=" + bodySeccion8 + ", bodyQRE=" + bodyQRE + ", bodyQRD=" + bodyQRD
+			+ ", bodySeccionArray1=" + bodySeccionArray1 + ", bodySeccionArray2=" + bodySeccionArray2
+			+ ", bodySeccionArray3=" + bodySeccionArray3 + ", bodySeccionArray4=" + bodySeccionArray4
+			+ ", bodySeccionArray5=" + bodySeccionArray5 + ", bodySeccionArray6=" + bodySeccionArray6
+			+ ", bodySeccionArray7=" + bodySeccionArray7 + "]";
+}
+
 
 
 

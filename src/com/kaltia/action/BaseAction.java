@@ -86,7 +86,9 @@ public class BaseAction extends InitAction  {
 	private InetAddress address;
 	
 	public String qr() throws UnknownHostException {
+		
 		String actionName = ActionContext.getContext().getName();
+		logger.info("-------------------------QRR : "+ actionName +"--------------------------------------------------------------");
 		ServletContext context = (ServletContext) ServletActionContext.getServletContext();
 		logger.info("actionName:" + actionName);
 		logger.info("context:" + context.getContextPath());
@@ -106,11 +108,11 @@ public class BaseAction extends InitAction  {
 			 QRRVO qrrVO = (QRRVO) identidadHash.get("qrrVO");
 			 identidadVO = (IdentidadVO) identidadHash.get("identidadVO");
 			if (qrrVO.getCodigo().equals("00")) {
-					logger.info("-------------------------QRR : "+ qrrVO.getIdAction()+"--------------------------------------------------------------");
-					header = (HeaderVO) identidadHash.get("header");
-//					body = (BodyVO) identidadHash.get("body");
-					footer = (FooterVO) identidadHash.get("footer");
 					
+					header = (HeaderVO) identidadHash.get("header");
+					body = (BodyVO) identidadHash.get("body");
+					footer = (FooterVO) identidadHash.get("footer");
+					logger.info("-------------------------FIN QRR : "+ qrrVO.getIdAction()+":"+qrrVO.getTipoQRR().toString()+"--------------------------------------------------------------");
 					return qrrVO.getTipoQRR().toString();					
 			} else {
 				return ERROR;

@@ -28,10 +28,10 @@ $(document).ready(function() {
 				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
-//				"footerSecciones"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-//				"footerRedes"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"}
-				
+				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
+				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
+
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -48,9 +48,10 @@ $(document).ready(function() {
 		case "footerSeccion1": return camposModelo.footerSeccion1; break;   
 		case "footerSeccion2": return camposModelo.footerSeccion2; break;   
 		case "footerSeccion3": return camposModelo.footerSeccion3; break;   
-//		case "footerSecciones": return camposModelo.footerSeccion1; break;   
-		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;   
-//		case "footerSeccionredes": return camposModelo.footerSeccion1; break;   
+		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
+		case "bodyQRE": return camposModelo.bodyQRE; break;
+		case "bodyQRD": return camposModelo.bodyQRD; break;
+		
 		}
 	}
 
@@ -488,6 +489,35 @@ $(document).ready(function() {
 		}
 	});
 	
+
+	$('.bodyQRE').click(function(){
+		console.log("QRE Bronea")
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodyQRE");
+			$('#modalEdicionBodyQRE_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoQRE);
+				
+				valorColumnas = 1;
+				valorPosicion = 0;
+				valorIniciaObjeto = 0;
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//				alert(valoresFinales);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionQRE",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
 	
 	
 	

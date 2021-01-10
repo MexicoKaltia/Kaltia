@@ -129,6 +129,9 @@
 					$('div.footerSeccionRedes').addClass("edicion")
 					$('div.footerSecciones').addClass("edicion")
 					
+					$('div.bodyQRE').addClass("edicion")
+					$('div.bodyQRD').addClass("edicion")
+					
 		    	$.param = decodeURI(results[1]);
 //		    		console.log($.param);
 		    	return $.param;
@@ -147,6 +150,7 @@
 		$('div').removeClass("edicion bodySeccionArray1 bodySeccionArray2 bodySeccionArray3 bodySeccionArray4 bodySeccionArray5")
 		$('div').removeClass("edicion footerSeccion1 footerSeccion2 footerSeccion3 footerSeccion4 footerSeccion5")
 		$('div').removeClass("edicion footerSeccionArray1 footerSeccionArray2 footerSeccionArray3 footerSeccionArray4 footerSeccionArray5,footerSeccionUbicacion,footerSeccionRedes,footerSecciones")
+		$('div').removeClass("edicion bodyQRE, bodyQRE")
 
 		$('nav').removeClass("edicion")
 	}
@@ -260,7 +264,6 @@
 		}
 		
 		//Ordena valoresFinales
-//		console.log("antes:"+valoresFinales);
 		var tmp0 = new Array();
 		var tmp1 = valoresFinales.split("\++");
 		var posicion ="";
@@ -271,13 +274,13 @@
 			case 3: posicion="one_third"; break;
 			case 4: posicion="one_quarter"; break;
 		}
-//		console.log(tmp1.length)
 		if(valorIniciaObjeto>0){
 			valoresFinales = tmp1[0] + "\++";
 		}else{
 			valoresFinales = "";
 		}
-		
+//		
+//		alert(valoresFinales);
 		for(i=valorIniciaObjeto; i<tmp1.length;i++){
 			tmp0 = tmp1[i].split("\&&");		
 			modula = conteoPosicion % valorColumnas;
@@ -293,8 +296,11 @@
 			valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)
 			valoresFinales = valoresFinales+"\++";
 		}
-		valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)				
-//		console.log("despues:"+valoresFinales);
+//		
+//		alert(valoresFinales);
+		valoresFinales  = valoresFinales .slice(0,valoresFinales .length-2)
+//		
+//		alert(valoresFinales);
 		return valoresFinales;
 	}
 	
@@ -458,13 +464,6 @@
 	        var fechaSeleccion = fechaSel[2]+"-"+fechaSel[1]+"-"+diaSeleccion;  
 	        var dH = new Date(fechaSeleccion);
 	        var diaSel = dH.getDay();
-//	        console.log("fechaSel:"+fechaSel);
-//	        console.log("fechaSeleccion:"+fechaSeleccion);
-//	        console.log("dH:"+dH);
-//	        console.log("diaSel:"+diaSel);
-//	        console.log("mes:"+dH.getMonth());     	   
-//	        console.log("MES:"+ mesActual[fechaSel[0]]);
-//	        console.log("MESJSON:"+ $.mesActual.(fechaSel[0]*1));
 
 	        var hrConfirmado;
 	        if(mesActual[fechaSel[0]] != null){
@@ -512,9 +511,7 @@
 	            }
 	          }
 	        }
-//	          console.log(myEvents1);
-//	          $("#horaCita").html(myEvents1).fadeIn();
-	        }else{
+        }else{
 	          tipoDia ="sabado";
 	          for(hora in mesHorario){
 	            var hr = hora;
@@ -527,11 +524,6 @@
 	             }
 	            }
 	          }
-//	          console.log(myEvents1);
-//	          $.each(myEvents1, function(disp){
-//	        	  $("#horaCita select").append('<option value="'+disp+'">'+dis+'</option>');
-//	        	      });
-	          //organiza(myEvents1, tipoDia);
 	         }
 	        organiza(myEvents1, tipoDia);
         });
@@ -774,4 +766,8 @@
 
 		  
 
-
+/*
+ *   GENERALES edicionSecciones
+ */
+		 
+			

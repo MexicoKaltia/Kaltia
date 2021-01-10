@@ -33,17 +33,15 @@ $(document).ready(function() {
 				"headerSeccion3" 		   :{"tituloHS3":"text",  "iconoHS3":"img",  "variosHS3" : "lorem",  "logoHS3":"img",  "fondoHeaderHS3":"img"},
 				"headerSeccion4"   :{  "tituloHS4":"text",  "descripcionHS4" :"lorem",  "seleccion1HS4" : "text",  "boton1HS4" : "text"},
 				"headerSeccionArray5":{"tituloHSA5":"text",  "faviconHSA5":"img",  "logoHSA5":"img",  "fondoHeaderHSA5":"img", "objeto" : {"enlaceHSA5":"text" }},
-//				"bodySeccion1"     :{  "imagenBS1" :"img",  "tituloBS1" :"text",  "descripcionBS1":"lorem",  "seleccionBS1":"text",  "botonBS1":"text"},
 				"bodySeccionArray1":{  "seleccionBSA1":"text",  "tituloBSA1":"text",  "botonBSA1":"text",  "objeto" :{"seleccionObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem" , "botonObjetoBSA1":"text" }},
 				"bodySeccionArray2":{  "seleccionBSA2":"text",  "tituloBSA2":"text",  "botonBSA2":"text",  "objeto" :{"posicionObjetoBSA2" :"text", "imagenObjetoBSA2" : "text",      "seleccionObjetoBSA2" : "text",      "tituloObjetoBSA2" :"text" }},
 				"bodySeccionArray3":{  "imagenBSA3" :"img",  "tituloBSA3" : "text",  "descripcionBSA3":"lorem", "objeto" : {"iconoObjetoBSA3" :"text",  "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text" , "seleccionObjetoBSA3" : "text",      "botonObjetoBSA3" :"text"  }},
 				"bodySeccionArray4":{  "tituloBSA4" :"text",  "seleccionBSA4":"text",  "botonBSA4":"text",  "objeto" : {"posicionObjetoBSA4" :"text",  "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text" }},
 				"bodySeccionArray5":{  "imagenBSA5" : "img", "tituloBSA5" :"text",  "seleccionBSA5":"text",  "botonBSA5":"text",  "objeto" : {"posicionObjetoBSA5" :"text",  "imagenObjetoBSA5" : "img", "tituloObjetoBSA5" : "text",      "subTituloObjetoBSA5" :"text",      "descripcionObjetoBSA5" :"lorem" }},
-//				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-//				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
-//				"footerSeccion3"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
 				"footerSeccionUbicacion"   :{  "tituloFSU" : "text",    "domicilioFSU" : "text",  "telefonoFSU" : "text",  "correoFSU" : "text", "ubicacionFSU" : "lorem"},
-				"footerSeccionRedes"	:{ "tituloFS1" : "text",  "facebookFSRText":"text", "twitterFSRText":"text", "youtubeFSRText":"text", "linkedinFSRText":"text", "googleFSText":"text" }
+				"footerSeccionRedes"	:{ "tituloFS1" : "text",  "facebookFSRText":"text", "twitterFSRText":"text", "youtubeFSRText":"text", "linkedinFSRText":"text", "googleFSText":"text" },
+				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
+				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
 				}
 		
 
@@ -80,6 +78,8 @@ $(document).ready(function() {
 		case "footerSeccionArray5": return camposModelo.footerSeccionArray5; break;
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
 		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
+		case "bodyQRE": return camposModelo.bodyQRE; break;
+		case "bodyQRD": return camposModelo.bodyQRD; break;
   
 		}
 	}
@@ -295,7 +295,7 @@ $(document).ready(function() {
 				valorPosicion = 0;
 				valorIniciaObjeto = 1;
 				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
-				alert(valoresFinales);
+//				alert(valoresFinales);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray3",
@@ -363,7 +363,6 @@ $(document).ready(function() {
 	$('.footerSeccionUbicacion').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionUbicacion","");
-			console.log("aloo");
 //			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
 		
 			$('#modalEdicionfooterSeccionUbicacion_btnSave').click(function(){
@@ -386,6 +385,7 @@ $(document).ready(function() {
 	});
 
 	$('.footerSeccionRedes').click(function(){
+		console.log("SeccionRedes Besloor")
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionRedes","");
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
@@ -402,7 +402,38 @@ $(document).ready(function() {
 		}else{
 			console.log("param:Nulo");
 		}
-	});	
+	});
+	
+
+	$('.bodyQRE').click(function(){
+		console.log("QRE Besloor")
+		if(validaParam()){
+			$.seccionCampos = cargaModal("bodyQRE");
+			$('#modalEdicionBodyQRE_btnSave').click(function(){
+				valoresFinales = dataEdicion($.seccionCampos, contaObjetoQRE);
+				
+				valorColumnas = 1;
+				valorPosicion = 0;
+				valorIniciaObjeto = 0;
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
+//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//				alert(valoresFinales);
+				finalJson = { action : $.action,
+						 idEmpresa : $.idEmpresa,	
+						 seccion : "bodySeccionQRE",
+						 valoresFinales : valoresFinales }
+				console.log(finalJson);
+				
+				enviaDataEdicion(finalJson)
+				
+			});
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
 	
 /////////////////////////////////////////////////////////////////////////
 	/*

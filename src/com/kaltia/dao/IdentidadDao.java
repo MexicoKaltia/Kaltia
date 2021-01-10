@@ -207,7 +207,7 @@ public class IdentidadDao {
 
 
 		String sql = "SELECT tw_body.idBody, tw_body.idEmpresa, tw_body.bodyFondo, "
-				+ " tw_body.bodySeccion1, tw_body.bodySeccion2, tw_body.bodySeccion3, tw_body.bodySeccion4, tw_body.bodySeccion5, tw_body.bodySeccion6, tw_body.bodySeccion7, tw_body.bodySeccion8, tw_body.bodySeccion9, tw_body.bodySeccion10, "
+				+ " tw_body.bodySeccion1, tw_body.bodySeccion2, tw_body.bodySeccion3, tw_body.bodySeccion4, tw_body.bodySeccion5, tw_body.bodySeccion6, tw_body.bodySeccion7, tw_body.bodySeccion8, tw_body.bodyQRE, tw_body.bodyQRD, "
 				+ " tw_body.bodySeccionArray1, tw_body.bodySeccionArray2, tw_body.bodySeccionArray3, tw_body.bodySeccionArray4, tw_body.bodySeccionArray5, tw_body.bodySeccionArray6, tw_body.bodySeccionArray7" 
 				+ " from tw_body "//LEFT JOIN tc_action "
 //				+ "ON tw_body.idEmpresa = tc_action.idEmpresa" 
@@ -233,8 +233,8 @@ public class IdentidadDao {
 				bodyVO.setBodySeccion6(returnDAO.get(8)!= null ? ComunResolution.arrayUno(returnDAO.get(8).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
 				bodyVO.setBodySeccion7(returnDAO.get(9)!= null ? ComunResolution.arrayUno(returnDAO.get(9).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
 				bodyVO.setBodySeccion8(returnDAO.get(10)!= null ? ComunResolution.arrayUno(returnDAO.get(10).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
-				bodyVO.setBodySeccion9(returnDAO.get(11)!= null ? ComunResolution.arrayUno(returnDAO.get(11).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
-				bodyVO.setBodySeccion10(returnDAO.get(12)!= null ? ComunResolution.arrayUno(returnDAO.get(12).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
+				bodyVO.setBodyQRE(returnDAO.get(11)!= null ? ComunResolution.seccionArray(returnDAO.get(11).toString()): new ArrayList<ObjetoVO>());
+				bodyVO.setBodyQRD(returnDAO.get(12)!= null ? ComunResolution.seccionArray(returnDAO.get(13).toString()): new ArrayList<ObjetoVO>());
 				bodyVO.setBodySeccionArray1(returnDAO.get(13) != null ? ComunResolution.seccionArray(returnDAO.get(13).toString()): new ArrayList<ObjetoVO>()); 
 				bodyVO.setBodySeccionArray2(returnDAO.get(14) != null ? ComunResolution.seccionArray(returnDAO.get(14).toString()): new ArrayList<ObjetoVO>()); 
 				bodyVO.setBodySeccionArray3(returnDAO.get(15) != null ? ComunResolution.seccionArray(returnDAO.get(15).toString()): new ArrayList<ObjetoVO>()); 

@@ -6,7 +6,7 @@
 
 <!--**********************************************************************************-->
 <!--**********************************************************************************-->
-<!-- modalBodySeccionArray3 -->
+<!-- modalIngresa -->
 <div class="modal fade" id="modalIngresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/imagen.jpg?v=1');">

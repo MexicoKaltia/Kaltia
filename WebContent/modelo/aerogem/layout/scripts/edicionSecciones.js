@@ -30,8 +30,10 @@ $(document).ready(function() {
 				"footerSeccion3"    :{  "tituloFS3" : "text", "imagenFS3":"img" },
 				"footerSeccionArray1":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }},
 				"footerSecciones"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
-				"footerSeccionUbicacion"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
-				"footerSeccionRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"}
+				"footerSeccionUbicacion"   :{  "tituloFSU" : "text",  "subtituloFSU" : "lorem",  "domicilioFSU" : "text",  "telefonoFSU" : "text",  "correoFSU" : "text", "ubicacionFSU" : "text"},
+				"footerSeccionRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
+				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
+				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
 				}
 		seccion = seccion;
 		switch (seccion) { 
@@ -51,6 +53,8 @@ $(document).ready(function() {
 		case "footerSecciones": return camposModelo.footerSeccion1; break;
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
 		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;
+		case "bodyQRE": return camposModelo.bodyQRE; break;
+		case "bodyQRD": return camposModelo.bodyQRD; break;
 		}
 	}
 
@@ -390,6 +394,36 @@ $(document).ready(function() {
 			console.log("param:Nulo");
 		}
 	});
+	
+	 
+	  $('.bodyQRE').click(function(){
+			console.log("QRE Aerogem")
+			if(validaParam()){
+				$.seccionCampos = cargaModal("bodyQRE");
+				$('#modalEdicionBodyQRE_btnSave').click(function(){
+					valoresFinales = dataEdicion($.seccionCampos, contaObjetoQRE);
+					
+					valorColumnas = 1;
+					valorPosicion = 0;
+					valorIniciaObjeto = 0;
+					while(valoresFinales.includes("C:\\fakepath\\") ){
+						valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+					}
+//					valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//					alert(valoresFinales);
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "bodySeccionQRE",
+							 valoresFinales : valoresFinales }
+					console.log(finalJson);
+					
+					enviaDataEdicion(finalJson)
+					
+				});
+			}else{
+				console.log("param:Nulo");
+			}
+		});
 
 	
 	
