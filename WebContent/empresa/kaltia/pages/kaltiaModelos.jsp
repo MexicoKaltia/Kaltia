@@ -7,8 +7,8 @@
       <h6 class="heading">M O D E L O S</h6>
       <ul class="nospace linklist">
         
-          		<li><a href="http://www.kaltia.xyz/modelo"  target="_blank">http://www.kaltia.xyz/modelo</a></li>
-          		<li><a href="http://www.kaltia.xyz/modelo-aerogem"  target="_blank">http://www.kaltia.xyz/modelo-aerogem</a></li>
+          		<li><a href="http://www.kaltiaservicios.com/contenidos/modelo"  target="_blank">http://www.kaltiaservicios.com/contenidos/modelo</a></li>
+          		<li><a href="http://www.kaltiaservicios.com/contenidos/modelo-aerogem"  target="_blank">http://www.kaltiaservicios.com/contenidos/modelo-aerogem</a></li>
           		
         
       </ul>

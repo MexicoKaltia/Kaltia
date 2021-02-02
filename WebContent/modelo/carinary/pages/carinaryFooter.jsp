@@ -54,7 +54,7 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <p class="fl_left"><a href="#"><s:property value='footer.footerSeccion4.get(0)' /><s:property value="footer.idEmpresa"/></a></p>
-    <p class="fl_right"><a href="kaltia.xyz"><s:property value='footer.footerSeccion4.get(1)' /></a></p>
+    <p class="fl_right"><a href="kaltiaservicios.com/contenidos"><s:property value='footer.footerSeccion4.get(1)' /></a></p>
   </div>
 </div>
 <!-- ################################################################################################ -->

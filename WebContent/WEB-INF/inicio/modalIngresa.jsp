@@ -11,7 +11,7 @@
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/imagen.jpg?v=1');">
 			<div class="modal-header">
-				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.empresa'/> - Ingresa</label>
+				<label class="sizeEtiqueta colorLabel"><s:property value='identidadVO.nombreCorto'/> - Ingresa</label>
 				<br>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close" id="modalEdicionBody_btnClose">

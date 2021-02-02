@@ -3,6 +3,9 @@ package com.kaltia.vo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import org.json.JSONObject;
+
+import com.kaltia.vo.resource.ArrayObjetoVO;
 import com.kaltia.vo.resource.ObjetoVO;
 
 public class BodyVO extends BaseVO implements Serializable{
@@ -30,7 +33,9 @@ private ArrayList<String> bodySeccion6;
 private ArrayList<String> bodySeccion7; 
 private ArrayList<String> bodySeccion8; 
 private ArrayList<ObjetoVO> bodyQRE; 
-private ArrayList<ObjetoVO> bodyQRD; 
+private ArrayList<ArrayObjetoVO> bodyQRD;
+private JSONObject bodyQRDJson;
+private String bodyQRDString;
 private ArrayList<ObjetoVO> bodySeccionArray1;
 private ArrayList<ObjetoVO> bodySeccionArray2;
 private ArrayList<ObjetoVO> bodySeccionArray3;
@@ -156,12 +161,27 @@ public ArrayList<ObjetoVO> getBodyQRE() {
 public void setBodyQRE(ArrayList<ObjetoVO> bodyQRE) {
 	this.bodyQRE = bodyQRE;
 }
-public ArrayList<ObjetoVO> getBodyQRD() {
+public ArrayList<ArrayObjetoVO> getBodyQRD() {
 	return bodyQRD;
 }
-public void setBodyQRD(ArrayList<ObjetoVO> bodyQRD) {
+public void setBodyQRD(ArrayList<ArrayObjetoVO> bodyQRD) {
 	this.bodyQRD = bodyQRD;
 }
+
+public JSONObject getBodyQRDJson() {
+	return bodyQRDJson;
+}
+public void setBodyQRDJson(JSONObject bodyQRDJson) {
+	this.bodyQRDJson = bodyQRDJson;
+}
+
+public String getBodyQRDString() {
+	return bodyQRDString;
+}
+public void setBodyQRDString(String bodyQRDString) {
+	this.bodyQRDString = bodyQRDString;
+}
+
 
 
 
@@ -171,7 +191,7 @@ public String toString() {
 	return "BodyVO [idBody=" + idBody + ", idEmpresa=" + idEmpresa + ", bodyFondo=" + bodyFondo + ", bodySeccion1="
 			+ bodySeccion1 + ", bodySeccion2=" + bodySeccion2 + ", bodySeccion3=" + bodySeccion3 + ", bodySeccion4="
 			+ bodySeccion4 + ", bodySeccion5=" + bodySeccion5 + ", bodySeccion6=" + bodySeccion6 + ", bodySeccion7="
-			+ bodySeccion7 + ", bodySeccion8=" + bodySeccion8 + ", bodyQRE=" + bodyQRE + ", bodyQRD=" + bodyQRD
+			+ bodySeccion7 + ", bodySeccion8=" + bodySeccion8 + ", bodyQRE=" + bodyQRE + ", bodyQRD=" + bodyQRD.toString()
 			+ ", bodySeccionArray1=" + bodySeccionArray1 + ", bodySeccionArray2=" + bodySeccionArray2
 			+ ", bodySeccionArray3=" + bodySeccionArray3 + ", bodySeccionArray4=" + bodySeccionArray4
 			+ ", bodySeccionArray5=" + bodySeccionArray5 + ", bodySeccionArray6=" + bodySeccionArray6

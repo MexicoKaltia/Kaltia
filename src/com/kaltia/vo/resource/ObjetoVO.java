@@ -23,6 +23,11 @@ public class ObjetoVO implements Serializable{
 	public void setObjetoVO(ArrayList<String> objetoVO) {
 		this.objetoVO = objetoVO;
 	}
+
+	@Override
+	public String toString() {
+		return "ObjetoVO [objetoVO=" + objetoVO.toString() + "]";
+	}
 	
 	
 

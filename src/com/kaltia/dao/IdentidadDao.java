@@ -1,12 +1,13 @@
 package com.kaltia.dao;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 
 import com.kaltia.infra.BaseInfra;
 import com.kaltia.infra.ComunResolution;
@@ -18,6 +19,7 @@ import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.MenuVO;
 import com.kaltia.vo.ModulosVO;
 import com.kaltia.vo.QRRVO;
+import com.kaltia.vo.resource.ArrayObjetoVO;
 import com.kaltia.vo.resource.ObjetoVO;
 
 public class IdentidadDao {
@@ -234,7 +236,9 @@ public class IdentidadDao {
 				bodyVO.setBodySeccion7(returnDAO.get(9)!= null ? ComunResolution.arrayUno(returnDAO.get(9).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
 				bodyVO.setBodySeccion8(returnDAO.get(10)!= null ? ComunResolution.arrayUno(returnDAO.get(10).toString(),ComunResolution.tokenUno) : new ArrayList<String>());
 				bodyVO.setBodyQRE(returnDAO.get(11)!= null ? ComunResolution.seccionArray(returnDAO.get(11).toString()): new ArrayList<ObjetoVO>());
-				bodyVO.setBodyQRD(returnDAO.get(12)!= null ? ComunResolution.seccionArray(returnDAO.get(13).toString()): new ArrayList<ObjetoVO>());
+				bodyVO.setBodyQRD(returnDAO.get(12)!= null ? ComunResolution.seccionArrayObjecto(returnDAO.get(12).toString()): new ArrayList<ArrayObjetoVO>());
+				bodyVO.setBodyQRDJson(returnDAO.get(12)!= null ? ComunResolution.seccionArrayJSON(returnDAO.get(12).toString()): new JSONObject());
+				bodyVO.setBodyQRDString(returnDAO.get(12)!= null ? ComunResolution.seccionArrayString(returnDAO.get(12).toString()): new String());
 				bodyVO.setBodySeccionArray1(returnDAO.get(13) != null ? ComunResolution.seccionArray(returnDAO.get(13).toString()): new ArrayList<ObjetoVO>()); 
 				bodyVO.setBodySeccionArray2(returnDAO.get(14) != null ? ComunResolution.seccionArray(returnDAO.get(14).toString()): new ArrayList<ObjetoVO>()); 
 				bodyVO.setBodySeccionArray3(returnDAO.get(15) != null ? ComunResolution.seccionArray(returnDAO.get(15).toString()): new ArrayList<ObjetoVO>()); 
@@ -243,9 +247,6 @@ public class IdentidadDao {
 				bodyVO.setBodySeccionArray6(returnDAO.get(18) != null ? ComunResolution.seccionArray(returnDAO.get(18).toString()): new ArrayList<ObjetoVO>()); 
 				bodyVO.setBodySeccionArray7(returnDAO.get(19) != null ? ComunResolution.seccionArray(returnDAO.get(19).toString()): new ArrayList<ObjetoVO>());
 
-				
-				//bodyVO.setBodyRequerido((returnDAO.get(18) != null ? Integer.valueOf((String)returnDAO.get(18)) : 0));
-				
 				bodyVO.setCodigoVO("00");
 				}else {
 					bodyVO.setCodigoVO("02");

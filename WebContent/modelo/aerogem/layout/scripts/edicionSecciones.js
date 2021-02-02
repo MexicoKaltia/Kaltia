@@ -425,6 +425,38 @@ $(document).ready(function() {
 			}
 		});
 
+	  $('.bodyQRD').click(function(){
+			console.log("QRD Aerogem3")
+			var jsonQRD = JSON.parse($('#jsonQRDHidden').val())
+			console.log(jsonQRD);
+			
+			if(validaParam()){
+				$.seccionCampos = cargaModal("bodyQRD");
+				$('#modalEdicionBodyQRD_btnSave').click(function(){
+					valoresFinales = dataEdicion($.seccionCampos, contaObjetoQRE);
+					
+					valorColumnas = 1;
+					valorPosicion = 0;
+					valorIniciaObjeto = 0;
+					while(valoresFinales.includes("C:\\fakepath\\") ){
+						valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+					}
+//					valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//					alert(valoresFinales);
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "bodySeccionQRE",
+							 valoresFinales : valoresFinales }
+					console.log(finalJson);
+					
+					enviaDataEdicion(finalJson)
+					
+				});
+			}else{
+				console.log("param:Nulo");
+			}
+		});
+
 	
 	
 	});/*********  fin de documento *********/

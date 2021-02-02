@@ -68,7 +68,7 @@
 		action = urlAction.split("\/");
 		
 		//actionProd -- para pruebas locales DESCOMENTAR , es decir trabajar con las siguientes lineas
-//		urlAction = "http://kaltia.xyz/bronea?tipo=AAA"
+//		urlAction = "http://kaltiaservicios.com/contenidos/bronea?tipo=AAA"
 //		action = urlAction.split("\/");
 //		actionProd = action[3].split("\?");
 //		action[3] = actionProd[0]

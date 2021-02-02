@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.simple.JSONObject;
-import org.json.simple.JsonObject;
+import org.json.JSONObject;
 
 import com.kaltia.vo.resource.ObjetoVO;
 
@@ -34,13 +33,13 @@ public class HeaderVO extends BaseVO implements Serializable{
 	private ArrayList<ObjetoVO> headerSeccionArray4; 
 	private ArrayList<ObjetoVO> headerSeccionArray5; 
 	private String headerVarios;
-	private JsonObject  headerJson;
+	private JSONObject  headerJson;
 	
 	
-	public JsonObject  getHeaderJson() {
+	public JSONObject  getHeaderJson() {
 		return headerJson;
 	}
-	public void setHeaderJson(JsonObject  headerJson) {
+	public void setHeaderJson(JSONObject  headerJson) {
 		this.headerJson = headerJson;
 	}
 	public String getIdHeader() {

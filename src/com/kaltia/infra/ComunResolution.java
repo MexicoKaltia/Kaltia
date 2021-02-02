@@ -1,11 +1,15 @@
 package com.kaltia.infra;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.kaltia.vo.MenuVO;
+import com.kaltia.vo.resource.ArrayObjetoVO;
 import com.kaltia.vo.resource.ObjetoVO;
 import com.kaltia.vo.resource.SubMenuVO;
 import com.kaltia.vo.resource.SubSubMenuVO;
@@ -26,6 +30,55 @@ public class ComunResolution {
 	private static SubMenuVO subMenuVO;
 	private static SubSubMenuVO subSubMenuVO;
 	
+	public  static ArrayList<ArrayObjetoVO> seccionArrayObjecto(String strObjeto){
+		 ArrayList<ArrayObjetoVO> arrObjetosVO = new  ArrayList<ArrayObjetoVO>();
+//		logger.info(strObjeto);
+		String[] tmp = strObjeto.split(tokenTres);
+		for(String a : tmp) {
+//			logger.info(a);
+			ArrayObjetoVO arrayObjeto = new ArrayObjetoVO();
+			arrayObjeto.setArrayObjetoVO(seccionArray(a));
+			arrObjetosVO.add(arrayObjeto);
+		}
+		
+		return arrObjetosVO;
+	}
+	
+	
+
+	public  static ArrayList<ObjetoVO> seccionArray(String strObjeto){
+		ArrayList<ObjetoVO> arrObjetoVO = new ArrayList<ObjetoVO>();
+		
+		
+		ArrayList<String> elemento = arrayUno(strObjeto, tokenUno );
+		
+		for (String a : elemento ) {
+//			logger.info(a);
+			ObjetoVO objetoVO = new ObjetoVO();
+			objetoVO.setObjetoVO(arrayUno(a, tokenDos));
+			arrObjetoVO.add(objetoVO);
+		}
+		
+	
+		return arrObjetoVO;
+	}
+	
+	
+
+	public static ArrayList<String> arrayUno(String listMenuA, String token) {
+
+		ArrayList<String> menu = new ArrayList<String>();
+
+		String[] temp = listMenuA.split(token);
+		for (String a : temp) {
+			a=a.replace(",", "|");
+			menu.add(a.trim());
+			//logger.info("valores:"+a+"-");
+		}
+
+		return menu;
+
+	}
 	
 
 	// Home--Pages--Dropdown--Link Text1--Link Text0--Link
@@ -60,39 +113,6 @@ public class ComunResolution {
 		return menuVO;
 	}
 	
-	public  static ArrayList<ObjetoVO> seccionArray(String strObjeto){
-		ArrayList<ObjetoVO> arrObjetoVO = new ArrayList<ObjetoVO>();
-		
-		
-		ArrayList<String> elemento = arrayUno(strObjeto, tokenUno );
-		
-		for (String a : elemento ) {
-			ObjetoVO objetoVO = new ObjetoVO();
-			objetoVO.setObjetoVO(arrayUno(a, tokenDos));
-			arrObjetoVO.add(objetoVO);
-		}
-		
-	
-		return arrObjetoVO;
-	}
-	
-	
-
-	public static ArrayList<String> arrayUno(String listMenuA, String token) {
-
-		ArrayList<String> menu = new ArrayList<String>();
-
-		String[] temp = listMenuA.split(token);
-		for (String a : temp) {
-			a=a.replace(",", "|");
-			menu.add(a.trim());
-			//logger.info("valores:"+a+"-");
-		}
-
-		return menu;
-
-	}
-
 	private static ArrayList<SubMenuVO> menuSub(String subMenuOr, ArrayList<String> menu) {
 
 		ArrayList<String> subMenu = new ArrayList<String>();
@@ -155,6 +175,45 @@ public class ComunResolution {
 		}
 
 		return subSubMenuArr;
+	}
+
+
+
+	public static JSONObject seccionArrayJSON(String string) {
+		JSONObject jsonObject = new JSONObject ();
+		List<String> listCategoria = new ArrayList();
+		String[] tmp = string.split(tokenTres);	
+		for(String a : tmp) {
+			String[] tmp2 = a.split(tokenUno);
+			jsonObject.put(tmp2[0],jsonArray(a));
+		}
+//		logger.info(jsonObject);
+		return jsonObject;
+	}
+
+
+
+	private static JSONArray jsonArray(String a) {
+		JSONObject jsonObject = new JSONObject ();
+		JSONArray jsonArray = new JSONArray ();
+		String[] tmp2 = a.split(tokenUno);
+		for(int i=1; i<tmp2.length; i++) {
+			String[] tmp3 = tmp2[i].split(tokenDos);
+			jsonObject.put("imagen", tmp3[0]);
+			jsonObject.put("texto", tmp3[1]);
+			jsonObject.put("descripcion", tmp3[2]);
+			jsonArray.put(jsonObject);
+		}
+		return jsonArray;
+	}
+
+
+
+	public static String seccionArrayString(String string) {
+		JSONObject json = new JSONObject();
+		json = seccionArrayJSON(string);
+		
+		return json.toString();
 	}
 	
 	

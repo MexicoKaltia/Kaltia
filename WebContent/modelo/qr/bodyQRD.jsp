@@ -3,250 +3,44 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-<!--   <link rel="stylesheet" href="css/bootstrap.css"> -->
-</head>
+
 <body background="images/fondo11.png">
-
+<div class="bodyQRD" id="bodyQRD">
+	<h2>Menu</h2>
     <div class="container">
-        
-        <div class="row">
-            <div class="col-12"><h1>Titulo Categoria</h1></div>
-            
-            <div class="elemento  col-md-6 col-lg-4" >
+    	<s:subset source="body.bodyQRD" start="0">
+		<s:iterator var="bodyQRD">
+    	 <div class="row">
+            <div class="col-12"><h1><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></h1>
+            </div>
+    		<s:subset source="#bodyQRD.arrayObjetoVO" start="1">
+			<s:iterator var="bodyQRDObjeto">
+				<div class="elemento  col-md-6 col-lg-4" >
                 <div class="card">
-                   <a href="images/paper-1074131_640.jpg" data-lightbox="ligthboxBodySeccionArray0" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/paper-1074131_640.jpg" class="card-img-top" alt="..." />
+                   <a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" data-lightbox="ligthboxBodySeccionArray0" data-title="">          		
+                    <img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" class="card-img-top" alt="..." />
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title"><s:property value='#bodyQRDObjeto.objetoVO.get(1)'/></h5>
                         <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
+                            <s:property value='#bodyQRDObjeto.objetoVO.get(2)'/>
                         </p>
                         <a href="#!" class="btn btn-primary">Ordena</a>
                     </div>
                     </a>
                 </div>
             </div>
-            
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/astronomy-1867616_640.jpg" data-lightbox="ligthboxBodySeccionArray1" data-title="Datos de QRR Dinamico2">          		
-                    <img src="images/astronomy-1867616_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/black-1072366_640.jpg" data-lightbox="ligthboxBodySeccionArray2" data-title="Datos de QRR Dinamico3">          		
-                    <img src="images/black-1072366_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/dawn-190055_640.jpg" data-lightbox="ligthboxBodySeccionArray3" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/dawn-190055_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/milky-way-1023340_640.jpg" data-lightbox="ligthboxBodySeccionArray4" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/milky-way-1023340_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/StockSnap_D4JEXR84ZJ.jpg" data-lightbox="ligthboxBodySeccionArray5" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/StockSnap_D4JEXR84ZJ.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/Screenshot_2.jpg" data-lightbox="ligthboxBodySeccionArray6" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/Screenshot_2.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            
-            
-            
-        </div>
-<hr>
-    
-         <div class="row">
-            <div class="col-12"><h1>Titulo Categoria</h1></div>
-            
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/paper-1074131_640.jpg" data-lightbox="ligthboxBodySeccionArray0" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/paper-1074131_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/astronomy-1867616_640.jpg" data-lightbox="ligthboxBodySeccionArray1" data-title="Datos de QRR Dinamico2">          		
-                    <img src="images/astronomy-1867616_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/black-1072366_640.jpg" data-lightbox="ligthboxBodySeccionArray2" data-title="Datos de QRR Dinamico3">          		
-                    <img src="images/black-1072366_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/dawn-190055_640.jpg" data-lightbox="ligthboxBodySeccionArray3" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/dawn-190055_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/milky-way-1023340_640.jpg" data-lightbox="ligthboxBodySeccionArray4" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/milky-way-1023340_640.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/StockSnap_D4JEXR84ZJ.jpg" data-lightbox="ligthboxBodySeccionArray5" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/StockSnap_D4JEXR84ZJ.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="elemento  col-md-6 col-lg-4" >
-                <div class="card">
-                   <a href="images/Screenshot_2.jpg" data-lightbox="ligthboxBodySeccionArray6" data-title="Datos de QRR Dinamico">          		
-                    <img src="images/Screenshot_2.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Ordena</a>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            
-            
-            
-        </div>
-    <hr>     
-
+				
+			</s:iterator>
+			</s:subset>
+    	</div>
+    	<hr>
+        </s:iterator>
+        </s:subset>
     </div>
-<%-- <script src="js/jquery3_5_1.min.js"></script> --%>
-<%-- <script src="js/bootstrap.js"></script> --%>
+    </div>
+<%--     <s:set var="bodyQRD" value="<s:property value='body.bodyQRDJson'/>" /> --%>
+    <input type="hidden" id="jsonQRDHidden" value="<s:property value='body.bodyQRDJson'/>"/>
+<%--     <script type="text/javascript">var jsonQRD = <s:property value='#bodyQRD'/></script> --%>
+<%--     <script type="text/javascript">var contaObjetoQRE = <s:property value='#conta'/></script> --%>
 </body>
 </html>

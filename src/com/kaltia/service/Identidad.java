@@ -66,7 +66,7 @@ public class Identidad {
 	public HashMap<String, Object> identidadEmpresaQRR(String action) throws SQLException {
 
 		HashMap<String, Object> hashIdentidad = new HashMap<String, Object>();
-		String nombreCorto="";
+//		String nombreCorto="";
 		EmpresaVO empresaVO = (EmpresaVO)identidadDao.qryEmpresa(action);
 		
 		QRRVO qrrVO = (QRRVO)identidadDao.readQRR(action);
@@ -82,9 +82,17 @@ public class Identidad {
 			qrrVO.setMensaje("1 " + PROPS.getProperty("error.01"));
 		}
 		hashIdentidad.put("qrrVO", qrrVO);
-//		hashIdentidad.put("identidadVO", identidadVO);
+		
+		if(qrrVO.getTipoQRR().contains("QRD")) {
+			BodyVO bb =(BodyVO)hashIdentidad.get("body");
+			
+			logger.info(bb.getBodyQRDJson());
+		}
+		
 		return hashIdentidad;
 	}
+
+	
 
 	private HashMap<String, Object> identidadElemento(String action, IdentidadVO identidadVO) {
 
@@ -98,7 +106,6 @@ public class Identidad {
 			hashIdentidad.put("header", headerEm(action,identidadVO.getActionEstilo()));
 			HeaderVO headerVO = (HeaderVO) hashIdentidad.get("header");
 			identidadVO.setCodigoVO(headerVO.getCodigoVO());
-		//	valida(headerVO);
 			if (!headerVO.getCodigoVO().equals("00")) {
 				identidadVO.setCodigoVO(headerVO.getCodigoVO());
 				identidadVO.setMensajeVO(headerVO.getMensajeVO());
@@ -112,10 +119,9 @@ public class Identidad {
 			hashIdentidad.put("body", bodyEm(action));
 			BodyVO bodyVO = (BodyVO) hashIdentidad.get("body");
 			identidadVO.setCodigoVO(bodyVO.getCodigoVO());
-			logger.info(bodyVO.getBodyQRE().toString());
-			logger.info(bodyVO.getBodySeccionArray2().toString());
+//			logger.info(bodyVO.getBodyQRE().toString());
+//			logger.info(bodyVO.getBodyQRD().toString());
 			if (!bodyVO.getCodigoVO().equals("00")) {
-				// identidadVO.setCodigoVO(bodyVO.getCodigoVO());
 				identidadVO.setMensajeVO(bodyVO.getMensajeVO());
 				identidadVO.setAction(action);
 				hashIdentidad.put("identidadVO", identidadVO);
@@ -128,8 +134,6 @@ public class Identidad {
 			hashIdentidad.put("footer", footerEm(action));
 			FooterVO footerVO = (FooterVO) hashIdentidad.get("footer");
 			identidadVO.setCodigoVO(footerVO.getCodigoVO());
-//			logger.info(footerVO.getFooterSeccionFoot());
-		//	valida(footerVO);
 			if (!footerVO.getCodigoVO().equals("00")) {
 				identidadVO.setCodigoVO(footerVO.getCodigoVO());
 				identidadVO.setMensajeVO(footerVO.getMensajeVO());
@@ -160,8 +164,6 @@ public class Identidad {
 
 		try {
 			headerVOEm = (HeaderVO) identidadDao.qryElementoHeader(action);
-			//JsonDOM.jsonElementoHeader(headerVOEm, action, estilo);
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -173,13 +175,8 @@ public class Identidad {
 		BodyVO bodyVOEm = null;
 
 		try {
-			bodyVOEm = (BodyVO) identidadDao.qryElementoBody(action, "body");
-			/*
-			 * for(ArticuloVO a : bodyVOEm.getBodyCuadricula()){
-			 * logger.info("bodyCuadricula:"+a.getArticuloCodigo()); }
-			 */
+			bodyVOEm = (BodyVO) identidadDao.qryElementoBody(action, "body");		
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -193,7 +190,6 @@ public class Identidad {
 		try {
 			footerVOEm = identidadDao.qryElementoFooter(action);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -202,13 +198,10 @@ public class Identidad {
 	
 	private ArrayList<String> consultaModulos(String modulos) {
 		String[] modulosCodigo =modulos.split("\\,");
-//		logger.info("0:"+modulos);
 		ArrayList<String> modulosNombre = new ArrayList<String>();
 		try {
 			ArrayList<ModulosVO> modulosVO = identidadDao.qryModulos();
-//			logger.info("1:"+modulosVO );
 			for (ModulosVO a : modulosVO) {
-//				logger.info("2:"+a.getModuloNombre());
 				for(String b : modulosCodigo) {
 					if(b.equals(a.getIdModulo())) {
 						modulosNombre.add(a.getModuloNombre());
