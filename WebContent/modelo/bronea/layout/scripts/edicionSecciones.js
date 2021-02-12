@@ -64,19 +64,28 @@ $(document).ready(function() {
 	
 	
 	
-	/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 	/*
 	 * funciones scroll
 	 */
 	
 	var valorFijo = $("#headerSeccionArray5").offset().top
-	var bsa1 = $(".bodySeccionArray1").offset().top
-	var bsa2 = $(".bodySeccionArray2").offset().top
-	var bsa3 = $(".bodySeccionArray3").offset().top
-	var bsa4 = $(".bodySeccionArray4").offset().top
+	var bsa1, bsa4, bsa3, bsa2, bs1 = 0;
+	 
+	console.log($(".bodySeccionArray10").length);
+	if($(".bodySeccionArray1").length && $(".bodySeccionArray2").length && $(".bodySeccionArray3").length && $(".bodySeccionArray4").length){
+		
+		bsa1 = $(".bodySeccionArray1").offset().top
+		bsa2 = $(".bodySeccionArray2").offset().top
+		bsa3 = $(".bodySeccionArray3").offset().top
+		bsa4 = $(".bodySeccionArray4").offset().top
+		
+		bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
+	    bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
+	}
 	
-	var bsa2 = $(".bodySeccionArray2").offset().top - (bsa3 - $(".bodySeccionArray2").offset().top) //- ((bsa3 - $(".bodySeccionArray2").offset().top)/2) 
-	var bs1 = $(".bodySeccion1").offset().top - (bsa4 - $(".bodySeccion1").offset().top) - ((bsa4 - $(".bodySeccion1").offset().top)/2)
+	
+	
 	
 	$(window).scroll(function(){
 		var scroll = $(window).scrollTop();
@@ -120,7 +129,7 @@ $(document).ready(function() {
 	});
 	$(window).scroll();
 
-	
+
 	
 	// fin funciones scroll
 	  

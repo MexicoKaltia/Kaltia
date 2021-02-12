@@ -194,14 +194,16 @@ public class ComunResolution {
 
 
 	private static JSONArray jsonArray(String a) {
-		JSONObject jsonObject = new JSONObject ();
+		
 		JSONArray jsonArray = new JSONArray ();
 		String[] tmp2 = a.split(tokenUno);
 		for(int i=1; i<tmp2.length; i++) {
 			String[] tmp3 = tmp2[i].split(tokenDos);
+			JSONObject jsonObject = new JSONObject ();
 			jsonObject.put("imagen", tmp3[0]);
-			jsonObject.put("texto", tmp3[1]);
+			jsonObject.put("titulo", tmp3[1]);
 			jsonObject.put("descripcion", tmp3[2]);
+			jsonObject.put("costo", tmp3[3]);
 			jsonArray.put(jsonObject);
 		}
 		return jsonArray;

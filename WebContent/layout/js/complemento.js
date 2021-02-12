@@ -398,6 +398,7 @@
 //		}
 
 		$(".imagenArrayForm").click(function(){
+			console.log("imagen");
 			var imgArrayForm = $(this).attr('id'); 
 			var imgArrayInput =$(this).children("input").attr('id');
 			console.log(imgArrayForm);
