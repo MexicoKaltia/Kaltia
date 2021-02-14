@@ -224,7 +224,7 @@
 							}
 //							console.log(valorStringObjeto);
 						}
-						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
+						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2);
 						valorStringObjeto = valorStringObjeto + "++";
 					}
 					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
@@ -401,8 +401,8 @@
 			console.log("imagen");
 			var imgArrayForm = $(this).attr('id'); 
 			var imgArrayInput =$(this).children("input").attr('id');
-			console.log(imgArrayForm);
-			console.log(imgArrayInput);
+//			console.log(imgArrayForm);
+//			console.log(imgArrayInput);
 			$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
 		});
 		

@@ -83,11 +83,10 @@ public class Identidad {
 		}
 		hashIdentidad.put("qrrVO", qrrVO);
 		
-		if(qrrVO.getTipoQRR().contains("QRD")) {
-			BodyVO bb =(BodyVO)hashIdentidad.get("body");
-			
-			logger.info(bb.getBodyQRDJson());
-		}
+//		if(qrrVO.getTipoQRR().contains("QRD")) {
+//			BodyVO bb =(BodyVO)hashIdentidad.get("body");
+////			logger.info(bb.getBodyQRDJson());
+//		}
 		
 		return hashIdentidad;
 	}
