@@ -1118,8 +1118,14 @@
 		    <!-- main body -->
 			<div class="modal-body">
  			      <div id="divCategoria">
-						 <select class="custom-select form-control" id="seleccionCategoria"></select> 			      	
+						 <select class="custom-select form-control" id="seleccionCategoria"></select>
+						 <div id="#divEdicionCategoria">	
+						 	
+						 </div>
+						  			      	
  			      </div>
+ 			      <div id="divNuevaCategoria"></div>
+ 			      
  			      <br><h>
  			      <div id="divCarrusel">
 <!--  			      <div id="carouselEdicionBodyQRD" class="carousel slide" data-interval="false"> <div class="carousel-inner container" id="contenedorCarrusel"><div class="carousel-item col-12 text-center" id="elementoCarrusel"> <div class="form-group row" id="divVacio"> -->
@@ -1149,10 +1155,10 @@
 			</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"
-					id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary"
-					id="modalEdicionBodyQRD_btnSave">Guardar Cambios</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSave">Guardar Cambios</button>
+				<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnNuevaCategoria">Nueva Categoria</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSaveElemento">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>

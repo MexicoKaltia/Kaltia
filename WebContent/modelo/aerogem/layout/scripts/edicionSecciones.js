@@ -426,9 +426,20 @@ $(document).ready(function() {
 		});
 
 	  $('.bodyQRD').click(function(){
+		  
 		  console.log("QRD Aerogem3")
+		  
 			if(validaParam()){
+				$('#modalEdicionBodyQRD_btnSave').hide();
 				$('#divCarrusel').empty();
+				$('#divNuevaCategoria').empty()
+				$('#divCategoria').show();
+				$('#modalEdicionBodyQRD_btnNuevaCategoria').show();
+				$('#modalEdicionBodyQRD_btnSaveElemento').hide();
+//				$('#divCategoria > divEdicionCategoria').hide();
+				
+				valida();
+				
 				$.seccionCampos = cargaModal("bodyQRD");
 				var jsonQRD = JSON.parse($('#jsonQRDHidden').val())
 				$('#seleccionCategoria').empty();
@@ -447,7 +458,18 @@ $(document).ready(function() {
 				
 				
 				$('#seleccionCategoria').change(function(event){
+//					$('#divEdicionCategoria').empty();
+					$('#divEdicionCategoria').show();
+					$('#modalEdicionBodyQRD_btnSave').show();
+					$('#modalEdicionBodyQRD_btnNuevaCategoria').hide();
+					$('#seleccionCategoria').prop("disabled",true);
+					
+					var edicionCategoria = '<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnEliminarCategoria">Eliminar Categoria</button><input type="text" class="form-control" id="categoriaActualizada" value=""/>'
+					
+					$('#divEdicionCategoria').append(edicionCategoria);
+					
 					$('#divCarrusel').empty();	
+					
 					categoria = $('#seleccionCategoria option:selected').val();
 					var carrusel = '<div id="carouselEdicionBodyQRD" class="carousel slide" data-interval="false"> <div class="carousel-inner container" id="contenedorCarrusel"><div class="carousel-item col-12 text-center" id="elementoCarrusel"></div> </div><a class="carousel-control-prev" href="#carouselEdicionBodyQRD" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselEdicionBodyQRD" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a><ol class="carousel-indicators"><li data-target="#carouselEdicionBodyQRD" data-slide-to="0" class="active"></li><li data-target="#carouselEdicionBodyQRD" data-slide-to="1"></li><li data-target="#carouselEdicionBodyQRD" data-slide-to="2"></li></ol></div>'
 					$('#divCarrusel').append(carrusel);
@@ -467,48 +489,23 @@ $(document).ready(function() {
 						var titulo = objetoArray[a].titulo;
 						var descripcion = objetoArray[a].descripcion;
 						var costo = objetoArray[a].costo;
-						var objetoCarrusel = '<div class="form-group row">\
-				          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span>\
-				          <div class="col-7">\
-					      	<img class="inspace-10 borderedbox" src="'+imagen+'" >\
-							<form id="imagenObjetoQRDForm'+a+'" class="imagenArrayForm">\
-								<hiden class="imagenObjetoQRDForm'+a+'"></hiden>\
-								<label for="imagenObjetoQRD'+a+'">Actualiza imagen:</label> \
-								<input id="imagenObjetoQRD'+a+'" type="file" name="uploadfile" accept="image/jpeg" value="'+imagen+'"/>\
-			    			</form>\
-				          </div>\
-				        </div>\
-				        <div class="form-group row">\
-				          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Elemento</span>\
-				          <div class="col-7">\
-							<input type="text" class="form-control" id="tituloObjetoQRD'+a+'" value="'+titulo+'"/>\
-				          </div>\
-				        </div>\
-				        <div class="form-group row">\
-				          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span>\
-				          <div class="col-7"><textarea class="form-control" id="descripcionObjetoQRD'+a+'">'+descripcion+'</textarea></div></div>\
-				          <div class="form-group row">\
-				          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Costo</span>\
-				          <div class="col-7">\
-							<input type="text" class="form-control" id="costoObjetoQRD'+a+'" value="'+costo+'"/></div></div>';
+						var objetoCarrusel = '<div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span><div class="col-7"><img class="inspace-10 borderedbox" src="'+imagen+'" ><form id="imagenObjetoQRDForm'+a+'" class="imagenArrayForm"><hiden class="imagenObjetoQRDForm'+a+'"></hiden><label for="imagenObjetoQRD'+a+'">Actualiza imagen:</label><input id="imagenObjetoQRD'+a+'" type="file" name="uploadfile" accept="image/jpeg" value="'+imagen+'"/></form></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Elemento</span><div class="col-7"><input type="text" class="form-control" id="tituloObjetoQRD'+a+'" value="'+titulo+'"/></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span><div class="col-7"><textarea class="form-control" id="descripcionObjetoQRD'+a+'">'+descripcion+'</textarea></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Costo</span><div class="col-7"><input type="text" class="form-control" id="costoObjetoQRD'+a+'" value="'+costo+'"/></div></div>';
 				       
 	   					$('#elementoCarrusel'+a).append(objetoCarrusel);
 						a++;
 					}
 					$(".imagenArrayForm").click(function(){
-	   					var imgArrayForm = $(this).attr('id'); 
-	   					var imgArrayInput =$(this).children("input").attr('id');
-//	   					console.log(imgArrayForm);
-//	   					console.log(imgArrayInput);
-	   					$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
-   					});
+						var imgArrayForm = $(this).attr('id'); 
+						var imgArrayInput =$(this).children("input").attr('id');
+//						console.log(imgArrayForm);
+//						console.log(imgArrayInput);
+						$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
+					});
 				});
 			}
+		  
 			$('#modalEdicionBodyQRD_btnSave').click(function(){
 				
-//				console.log(jsonQRD);
-//				console.log(categoria);
-//				console.log(jsonQRD[categoria]);
 				var jsonObjetoActualizado;
 				var jsonCategoriaActualizado = new Array();
 				for(var a=0 ; a < jsonQRD[categoria].length ; a++){
@@ -520,20 +517,72 @@ $(document).ready(function() {
 							costo: $('#costoObjetoQRD'+a).val()};
 					jsonCategoriaActualizado.push(jsonObjetoActualizado);
 				}
-//				console.log(jsonCategoriaActualizado);
 				jsonQRD[categoria]=jsonCategoriaActualizado;
-				console.log(jsonQRD);
-				var textQRD = transformaQRD(jsonQRD);
+//				console.log(jsonQRD);
 				
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "bodySeccionQRD",
-						 valoresFinales : textQRD }
-				console.log(finalJson);
+				submitDatos(jsonQRD);
+			});
+			
+			$('#modalEdicionBodyQRD_btnNuevaCategoria').click(function(){
 				
-				enviaDataEdicion(finalJson)
+				$('#modalEdicionBodyQRD_btnNuevaCategoria').hide();
+				var tituloCategoria = '<div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Nombre Categoria</span><div class="col-7"><input type="text" class="form-control" id="tituloCtegoria" value="" "/></div></div><br><h><button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnAgregarElemento">Agregar Elemento</button><div id="divNuevoElemento"></div>';
+				
+				$('#divNuevaCategoria').empty();
+				$('#divCategoria').hide();
+				$('#divNuevaCategoria').append(tituloCategoria);
+				$('#modalEdicionBodyQRD_btnAgregarElemento').hide();
+				
+				$('#tituloCtegoria').keyup(function(){
+					if(flag){
+						var btnAgregarElemento ='';
+						$('#divNuevaCategoria').append(btnAgregarElemento );
+						$('#modalEdicionBodyQRD_btnAgregarElemento').show();
+						flag = false;
+					}
+//					console.log(btnAgregarElemento);
 				});
+				
+				
+				$('#modalEdicionBodyQRD_btnAgregarElemento').click(function(){
+					
+					$('#modalEdicionBodyQRD_btnAgregarElemento').hide();
+					$('#modalEdicionBodyQRD_btnNuevaCategoria').hide();
+					
+					var objetoCarrusel = '<div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Imagen</span><div class="col-7"><img class="inspace-10 borderedbox" src="" ><form id="imagenObjetoQRDForm" class="imagenArrayForm"><hiden class="imagenObjetoQRDForm"></hiden><label for="imagenObjetoQRD">Actualiza imagen:</label><input id="imagenObjetoQRD" type="file" name="uploadfile" accept="image/jpeg" value="" required/></form></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Titulo Elemento</span><div class="col-7"><input type="text" class="form-control" id="tituloObjetoQRD" value="" required/></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Descripcion Objeto</span><div class="col-7"><textarea class="form-control" id="descripcionObjetoQRD" required></textarea></div></div><div class="form-group row"><span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>Costo</span><div class="col-7"><input type="text" class="form-control" id="costoObjetoQRD" value="" required/></div></div>';
+					$('#divNuevaCategoria').append(objetoCarrusel);
+					
+					$(".imagenArrayForm").click(function(){
+						var imgArrayForm = $(this).attr('id'); 
+						var imgArrayInput =$(this).children("input").attr('id');
+						$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
+					});
+					
+					$('#tituloObjetoQRD').keyup(function(){
+							$('#modalEdicionBodyQRD_btnSaveElemento').show();
+					});
+					$("#modalEdicionBodyQRD_btnSaveElemento").click(function(){
+//						aqui
+						console.log(jsonQRD)
+						var nuevoCategoria = $('#tituloCtegoria').val();
+						var nuevoObjeto={
+							imagen:$('#imagenObjetoQRD').val(),
+							titulo:$('#tituloObjetoQRD').val(),
+							descripcion:$('#descripcionObjetoQRD').val(),
+							costo:$('#costoObjetoQRD').val()
+						}
+						var nuevoArrayObjetos = new Array();
+						nuevoArrayObjetos.push(nuevoObjeto)
+						var nuevoSeccion = {nuevoCategoria: nuevoArrayObjetos};
+						jsonQRD[nuevoCategoria] = nuevoArrayObjetos;
+//						console.log(jsonQRD);
+						submitDatos(jsonQRD);
+					});
+				});
+			});
 		});
+	  
+	  
 
 	  function formatoImagen(imagenTexto){
 		  while(imagenTexto.includes("C:\\fakepath\\") ){
@@ -563,8 +612,20 @@ $(document).ready(function() {
 //		  console.log(text);
 		  return text;
 	  }
-		
-	
+	  
+	  function submitDatos(jsonQRD){
+		  var textQRD = transformaQRD(jsonQRD);
+			
+			finalJson = { action : $.action,
+					 idEmpresa : $.idEmpresa,	
+					 seccion : "bodySeccionQRD",
+					 valoresFinales : textQRD }
+			console.log(finalJson);
+			
+			enviaDataEdicion(finalJson)
+	  	  }
+	  
+	  
+	  
 	});/*********  fin de documento *********/
-	
-	
+function valida(){flag = true ; return flag;}
