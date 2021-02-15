@@ -436,7 +436,7 @@ $(document).ready(function() {
 				$('#divCategoria').show();
 				$('#modalEdicionBodyQRD_btnNuevaCategoria').show();
 				$('#modalEdicionBodyQRD_btnSaveElemento').hide();
-//				$('#divCategoria > divEdicionCategoria').hide();
+				$('#divEdicionElementoCategoria').hide();
 				
 				valida();
 				
@@ -452,21 +452,22 @@ $(document).ready(function() {
 //					    console.log("La clave es " + clave+ " y el valor es " + jsonQRD[clave]);
 						  optionCategoria = "<option value='"+clave+"'>"+clave+"</option>";
 						  $('#seleccionCategoria').append(optionCategoria);
-					  }
-					  
+					  }			  
 					}
 				
 				
 				$('#seleccionCategoria').change(function(event){
-//					$('#divEdicionCategoria').empty();
 					$('#divEdicionCategoria').show();
 					$('#modalEdicionBodyQRD_btnSave').show();
 					$('#modalEdicionBodyQRD_btnNuevaCategoria').hide();
+					
+					var edicionCategoria = '<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnEliminarCategoria">Eliminar Categoria</button>';
+					$('#divEdicionElementoCategoria').append(edicionCategoria);
+//					$('#divEdicionElementoCategoria').show();
+						
+
 					$('#seleccionCategoria').prop("disabled",true);
 					
-					var edicionCategoria = '<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnEliminarCategoria">Eliminar Categoria</button><input type="text" class="form-control" id="categoriaActualizada" value=""/>'
-					
-					$('#divEdicionCategoria').append(edicionCategoria);
 					
 					$('#divCarrusel').empty();	
 					

@@ -1119,11 +1119,9 @@
 			<div class="modal-body">
  			      <div id="divCategoria">
 						 <select class="custom-select form-control" id="seleccionCategoria"></select>
-						 <div id="#divEdicionCategoria">	
-						 	
-						 </div>
-						  			      	
+						 <div id="#divEdicionCategoria"></div>
  			      </div>
+ 			       <div id="#divEdicionElementoCategoria"></div>
  			      <div id="divNuevaCategoria"></div>
  			      
  			      <br><h>
