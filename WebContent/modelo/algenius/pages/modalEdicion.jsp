@@ -1150,3 +1150,46 @@
 </div>
 <!-- fin modalEdicion -->
 <!-- ################################################################################################ -->
+<!--**********************************************************************************-->
+<!-- modalbodyQRD -->
+<div class="modal fade" id="modalEdicion_bodyQRD" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/imagen.jpg?v=1');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.nombreCorto'/> body QRD</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+		    <!-- main body -->
+			<div class="modal-body">
+ 			      <div id="divCategoria">
+						 <select class="custom-select form-control" id="seleccionCategoria"></select>
+						 <div id="#divEdicionCategoria"></div>
+ 			      </div>
+ 			       <div id="divEdicionElementoCategoria"></div>
+ 			      <div id="divNuevaCategoria"></div>
+ 			      
+ 			      <br><h>
+ 			      <div id="divCarrusel">
+
+ 			      </div>
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSave">Guardar Cambios</button>
+				<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnNuevaCategoria">Nueva Categoria</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSaveElemento">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin modalEdicion -->
+<!-- ################################################################################################ -->

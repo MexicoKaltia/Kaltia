@@ -1121,7 +1121,7 @@
 						 <select class="custom-select form-control" id="seleccionCategoria"></select>
 						 <div id="#divEdicionCategoria"></div>
  			      </div>
- 			       <div id="#divEdicionElementoCategoria"></div>
+ 			       <div id="divEdicionElementoCategoria"></div>
  			      <div id="divNuevaCategoria"></div>
  			      
  			      <br><h>

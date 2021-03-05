@@ -1124,6 +1124,8 @@
 </div>
 <!-- fin modalEdicion -->
 <!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
 <!--**********************************************************************************-->
 <!-- modalbodyQRD -->
 <div class="modal fade" id="modalEdicion_bodyQRD" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -1143,14 +1145,24 @@
  			<!--**********************************************************************************-->
 		    <!-- main body -->
 			<div class="modal-body">
-  			      
+ 			      <div id="divCategoria">
+						 <select class="custom-select form-control" id="seleccionCategoriaB"></select>
+ 			      </div>
+ 			      <div id="#divEdicionCategoria"></div>
+ 			       <div id="divEdicionElementoCategoria"></div>
+ 			      <div id="divNuevaCategoria"></div>
+ 			      
+ 			      <br><h>
+ 			      <div id="divCarrusel">
+
+ 			      </div>
 			</div>
  			<!--**********************************************************************************-->
  			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"
-					id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary"
-					id="modalEdicionBodyQRD_btnSave">Guardar Cambios</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSave">Guardar Cambios</button>
+				<button type="button" class="btn btn-primary" id="modalEdicionBodyQRD_btnNuevaCategoria">Nueva Categoria</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionBodyQRD_btnSaveElemento">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>

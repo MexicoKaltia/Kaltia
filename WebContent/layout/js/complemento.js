@@ -82,9 +82,9 @@
 		$.idEmpresa = $("#idEmpresa").val();
 		$.action = $("#idAction").val();
 		$.modelo = $("#idModelo").val();
-		console.log("idEmpresa:"+$.idEmpresa);
-		console.log("Action:"+$.action);
-		console.log("Modelo:"+$.modelo);
+//		console.log("idEmpresa:"+$.idEmpresa);
+//		console.log("Action:"+$.action);
+//		console.log("Modelo:"+$.modelo);
 		
 		if (results == null){
 			_desactiveSeccionEdicion();
@@ -206,7 +206,7 @@
 					}
 					for(var i = 0 ; i < contaObjeto; i++){
 						for(campoObjeto in seccionEmpresa.objeto){
-							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
+//							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
 							if(campoObjeto.includes("referencia")){
 								valorStringObjeto = valorStringObjeto + "#"+"&&";
 							}else if(campoObjeto.includes("icono")){
@@ -398,7 +398,7 @@
 //		}
 
 		$(".imagenArrayForm").click(function(){
-			console.log("imagen");
+//			console.log("imagen");
 			var imgArrayForm = $(this).attr('id'); 
 			var imgArrayInput =$(this).children("input").attr('id');
 //			console.log(imgArrayForm);
@@ -586,7 +586,7 @@
 				  headers: {  'Access-Control-Allow-Origin': url, 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 'Access-Control-Allow-Headers': 'X-PINGOTHER' },
 				  crossDomain: true,
 				  success: 	function(data){					  
-					  console.log(data);
+//					  console.log(data);
 //						  avisaAlerta(data);
 						  avisaAlertaEdicion(data)
 					},
@@ -598,8 +598,8 @@
 		
 		function enviaImagen(idImagenForm){
 			
-			limpiaAlerta(),
-				console.log("Comineza envio imagenBody:"+idImagenForm);
+			limpiaAlerta();
+//				console.log("Comineza envio imagenBody:"+idImagenForm);
 				var alerta="";
 				  $.ajax({
 //				    url: "http://localhost:8010/fileUpload",
@@ -616,7 +616,7 @@
 				    		if(data.codigo==="00"){
 				  			  alerta="<div class='alert alert-success' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
 				  			  $(alerta).insertAfter($('.'+idImagenForm));
-				  			  console.log("envio ok");
+//				  			  console.log("envio ok");
 				  	    	}else{
 				  	    		alerta="<div class='alert alert-warning' role='alert'>imagen : "+data.codigo+"-"+data.mensaje.toString()+"</div>";
 				  				  $(alerta).insertAfter($('.'+idImagenForm));

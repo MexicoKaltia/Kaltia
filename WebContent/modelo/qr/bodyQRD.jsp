@@ -4,26 +4,35 @@
 
 <!DOCTYPE html>
 
-<body background="images/fondo11.png">
+<body style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/fondo8.png?v=1');">
 <div class="bodyQRD" id="bodyQRD">
-	<h2>Menu</h2>
+	<h1 style="font-family:verdana;color:white;">Menu</h1>
+	
+<!-- 	<ul class=""> -->
+	<span style="position:absolute; right:1px;">
+	<s:subset source="body.bodyQRD" start="0">
+	<s:iterator var="bodyQRD">
+		<a style="padding-right:25px;  color:white;" href="#<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></a>
+	    </s:iterator>
+        </s:subset>
+	</span>
+	
     <div class="container">
     	<s:subset source="body.bodyQRD" start="0">
 		<s:iterator var="bodyQRD">
     	 <div class="row">
-            <div class="col-12"><h1><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></h1>
+            <div class="col-12"><h1 style="font-family:verdana;"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></h1><a  id="<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"></a>
             </div>
     		<s:subset source="#bodyQRD.arrayObjetoVO" start="1">
 			<s:iterator var="bodyQRDObjeto">
-				<div class="elemento  col-md-6 col-lg-4" >
+				<div class="elemento  col-md-6 col-lg-4" style="padding-bottom:20px">
                 <div class="card">
                    <a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" data-lightbox="ligthboxBodySeccionArray0" data-title="">          		
                     <img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" class="card-img-top" alt="..." />
                     <div class="card-body">
-                        <h5 class="card-title"><s:property value='#bodyQRDObjeto.objetoVO.get(1)'/></h5>
-                        <p class="card-text">
-                            <s:property value='#bodyQRDObjeto.objetoVO.get(2)'/>
-                        </p>
+                        <h5 class="card-title" style="font-family:verdana"><s:property value='#bodyQRDObjeto.objetoVO.get(1)'/></h5>
+                        <p class="card-text" style="font-family:verdana"><s:property value='#bodyQRDObjeto.objetoVO.get(2)'/></p>
+                        <h4 style="font-family:verdana"><s:property value='#bodyQRDObjeto.objetoVO.get(3)'/></h4>
                         <a href="#!" class="btn btn-primary">Ordena</a>
                     </div>
                     </a>
