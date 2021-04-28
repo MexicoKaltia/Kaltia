@@ -86,6 +86,8 @@
 //		console.log("Action:"+$.action);
 //		console.log("Modelo:"+$.modelo);
 		
+		$('#mapa').append($('#valorMapa').val());
+		
 		if (results == null){
 			_desactiveSeccionEdicion();
 			console.log("results null")

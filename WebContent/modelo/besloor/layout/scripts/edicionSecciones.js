@@ -6,6 +6,7 @@
 $(document).ready(function() {
 	
 	$.modelo = "Besloor";
+	
 
 	console.log(window.navigator.userAgent);
 	

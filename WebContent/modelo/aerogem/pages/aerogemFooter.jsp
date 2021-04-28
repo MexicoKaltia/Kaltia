@@ -26,7 +26,11 @@
         
       </ul>
       <br><br>
-      <iframe src="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <ul>
+      <%--           <li><iframe src="<s:property value='footer.footerSeccionUbicacion.get(4)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></li> --%>
+              <li id="mapa"></li>
+        </ul>
+        <input  type="hidden" value="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" id="valorMapa">
     </div>
     <!-- ################################################################################################ -->
 	<div class="one_quarter footerSeccionUbicacion">

@@ -427,7 +427,6 @@ $(document).ready(function() {
 	$('.footerSeccionUbicacion').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionUbicacion","");
-			console.log("aloo");
 //			$('#imagenBS1').on('change', function(){ enviaImagen("imagenBS1Form") });
 		
 			$('#modalEdicionfooterSeccionUbicacion_btnSave').click(function(){

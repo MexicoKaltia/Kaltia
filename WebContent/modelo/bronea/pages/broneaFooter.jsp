@@ -16,9 +16,10 @@
 		  <li><i class="fa fa-map-marker"></i><address><s:property value='footer.footerSeccionUbicacion.get(2)' /></address></li>
 		 <li><i class="fa fa-phone"></i><s:property value='footer.footerSeccionUbicacion.get(3)' /></li>
 		 <li><i class="fa fa-envelope-o"></i><s:property value='footer.footerSeccionUbicacion.get(4)' /></li>
-		 <iframe src="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</ul>
-    </div>
+<%--           <li><iframe src="<s:property value='footer.footerSeccionUbicacion.get(4)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></li> --%>
+              <li id="mapa"></li>
+        </ul>
+        <input  type="hidden" value="<s:property value='footer.footerSeccionUbicacion.get(5)'/>" id="valorMapa">    </div>
     <!-- ################################################################################################ -->
     <div class="one_quarter footerSeccionRedes">
       <h6 class="heading"><s:property value='footer.footerSeccionRedes.get(0)' /></h6>

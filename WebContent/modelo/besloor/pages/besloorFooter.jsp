@@ -37,9 +37,10 @@
           </li>
           <li><i class="fas fa-phone"></i><s:property value='footer.footerSeccionUbicacion.get(2)' /></li>
           <li><i class="far fa-envelope"></i><s:property value='footer.footerSeccionUbicacion.get(3)' /></li>
-          <li><iframe src="<s:property value='footer.footerSeccionUbicacion.get(4)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></li>
+<%--           <li><iframe src="<s:property value='footer.footerSeccionUbicacion.get(4)'/>" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></li> --%>
+              <li id="mapa"></li>
         </ul>
-        
+        <input  type="hidden" value="<s:property value='footer.footerSeccionUbicacion.get(4)'/>" id="valorMapa">
       </div>
       <!-- ################################################################################################ -->
       <div class="one_quarter">

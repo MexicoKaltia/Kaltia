@@ -500,9 +500,9 @@
 						        <div class="form-group row">
 				  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo</span>
 				  			          <div class="col-7">
-				  						<input type="text" class="form-control" id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>"/>						
+				  						<input type="text" class="form-control" id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)'/>"/>						
 				            			<select class="custom-select form-control" id="seleccionObjetoBSA2">
-										  <option value="<s:property value='#bodySeccionArray2.objetoVO.get(1)'/>" selected><s:property value='#bodySeccionArray2.objetoVO.get(1)'/></option>
+										  <option value="<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>" selected><s:property value='#bodySeccionArray2.objetoVO.get(2)'/></option>
 				              				<s:iterator value='identidadVO.moduloNombre'>
 											  	<option value='<s:property/>'><s:property/></option>
 											</s:iterator>              		   
