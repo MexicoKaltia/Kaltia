@@ -239,17 +239,17 @@
 			for(campo in seccionEmpresa){
 				if(campo.includes("referencia")){
 					valoresString = valoresString + "#" + "++";
-					}else if(campo.includes("icono")){
-						var iconoClases = $("#"+campoObjeto+i).attr('class')
-						var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
-						valoresString = valoresString + iconoClase + "++";
-					}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
-						if($("#"+campo).val()==null || $("#"+campo).val()==""){
-							valoresString = valoresString + $("#"+campo).attr('value') + "++"
-						}else{
-							valoresString = valoresString + $("#"+campo).val() + "++"
-						}
+				}else if(campo.includes("icono")){
+					var iconoClases = $("#"+campoObjeto+i).attr('class')
+					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
+					valoresString = valoresString + iconoClase + "++";
+				}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
+					if($("#"+campo).val()==null || $("#"+campo).val()==""){
+						valoresString = valoresString + $("#"+campo).attr('value') + "++"
 					}else{
+						valoresString = valoresString + $("#"+campo).val() + "++"
+					}
+				}else{
 					valoresString = valoresString + $("#"+campo).val() + "++" 
 				}
 			}

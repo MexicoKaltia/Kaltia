@@ -31,18 +31,18 @@
 		                    <div class="form-group row">
 		                      <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-user bigicon"></i></span>
 		                      <div class="col-7">
-		                        <input id="nombreRegistro"  name="name" type="text" placeholder="Nombre(s)" class="form-control" maxlength="40">
+		                        <input id="nombreRegistro"  name="name" type="text" placeholder="Nombre(s) Apellido" class="form-control" maxlength="40">
 		                      </div>
 		                    </div>
-		                    <div class="form-group row">
-		                      <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-user bigicon"></i></span>
-		                      <div class="col-7">
-		                        <input id="apellidoRegistro" name="name" type="text" placeholder="Apellidos" class="form-control" maxlength="40">
-		                      </div>
-		                    </div>
+<!-- 		                    <div class="form-group row"> -->
+<%-- 		                      <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-user bigicon"></i></span> --%>
+<!-- 		                      <div class="col-7"> -->
+<!-- 		                        <input id="apellidoRegistro" name="name" type="text" placeholder="Apellidos" class="form-control" maxlength="40"> -->
+<!-- 		                      </div> -->
+<!-- 		                    </div> -->
 		
 		                    <div class="form-group row">
-		                      <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-envelope-o bigicon"></i></span>
+		                      <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-envelope bigicon"></i></span>
 		                      <div class="col-7">
 		                        <input id="emailRegistro" name="email" type="email" placeholder="Email" class="form-control" maxlength="40">
 		                      </div>

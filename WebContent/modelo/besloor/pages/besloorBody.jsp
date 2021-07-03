@@ -22,16 +22,30 @@
     <s:subset source="body.bodySeccionArray1" start="1">  
     <s:iterator  var ="bodySeccionArray1">
       <li class="one_quarter">
-        <article><a href="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />"><i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray1.objetoVO.get(1)' />"></i></a>
-          <h6 class="heading"><a href="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />"><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></a></h6>
+        <article>
+<%--         	<a href="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />"> --%>
+        		<i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray1.objetoVO.get(1)' />">
+        		</i>
+<!--         	</a> -->
+          <h6 class="heading"><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></h6>
           <p><s:property value='#bodySeccionArray1.objetoVO.get(3)' /></p>
-          <footer><a href="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></a></footer>
+          <footer>
+<%--           	<a href="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></a> --%>
+          	<a class=" validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray1.objetoVO.get(0)'/>">
+				<s:property value='#bodySeccionArray1.objetoVO.get(4)' />
+			</a>
+          </footer>
         </article>
       </li>
       </s:iterator>
       </s:subset>
     </ul>
-    <footer class="center"><a class="btn" href="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)' />"><s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' /></a></footer>
+    <footer class="center">
+<%--     	<a class="btn" href="<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)' />"></a> --%>
+    	<a class=" btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(0)'/>">
+				<s:property value='body.bodySeccionArray1.get(0).objetoVO.get(2)' />
+			</a>
+    </footer>
     <div class="clear"></div>
   </main>
 </div>
@@ -47,13 +61,23 @@
     <s:iterator  var ="bodySeccionArray2">
       <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
         <figure><img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray2.objetoVO.get(1)' />?v=1" alt="">
-          <figcaption><em>01</em> <a href="<s:property value='#bodySeccionArray2.objetoVO.get(2)' />"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></a></figcaption>
+          <figcaption><em>01</em> 
+<%--           	<a href="<s:property value='#bodySeccionArray2.objetoVO.get(2)' />"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></a> --%>
+			<a class=" validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>">
+				<s:property value='#bodySeccionArray2.objetoVO.get(3)' />
+			</a>
+          </figcaption>
         </figure>
       </li>
       </s:iterator>
       </s:subset>
     </ul>
-    <footer class="center"><a class="btn" href="<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)' />"><s:property value='body.bodySeccionArray2.get(0).objetoVO.get(2)' /></a></footer>
+    <footer class="center">
+<%--     	<a class="btn" href="<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)' />"><s:property value='body.bodySeccionArray2.get(0).objetoVO.get(2)' /></a> --%>
+			<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)'/>">
+				<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(2)' />
+			</a>
+    </footer>
   </article>
 </div>
 <!-- ################################################################################################ -->
@@ -65,10 +89,15 @@
       <p class="btmspace-50"><s:property value='body.bodySeccionArray3.get(0).objetoVO.get(2)' /></p>
       <s:subset source="body.bodySeccionArray3" start="1">  
       <s:iterator  var ="bodySeccionArray3">
-      <article><a href="#"><i class="fas <s:property value='#bodySeccionArray3.objetoVO.get(0)' />"></i></a>
+      <article><a href="#"><i class="btmspace-30 fa fa-4x <s:property value='#bodySeccionArray3.objetoVO.get(0)' />"></i></a>
         <h6 class="heading"><s:property value='#bodySeccionArray3.objetoVO.get(1)' /></h6>
         <p><s:property value='#bodySeccionArray3.objetoVO.get(2)' /></p>
-        <footer><a href="<s:property value='#bodySeccionArray3.objetoVO.get(3)' />"><s:property value='#bodySeccionArray3.objetoVO.get(4)' /></a></footer>
+        <footer>
+<%--         	<a href="<s:property value='#bodySeccionArray3.objetoVO.get(3)' />"><s:property value='#bodySeccionArray3.objetoVO.get(4)' /></a> --%>
+			<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray3.objetoVO.get(3)'/>">
+				<s:property value='#bodySeccionArray3.objetoVO.get(4)' />
+			</a>
+        </footer>
       </article>
       </s:iterator>
       </s:subset>
@@ -87,7 +116,11 @@
       <s:iterator  var ="bodySeccionArray4">
       <li class="<s:property value='#bodySeccionArray4.objetoVO.get(0)' />">
         <figure><img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)' />" alt="">
-          <figcaption><a href="<s:property value='#bodySeccionArray4.objetoVO.get(2)' />"><s:property value='#bodySeccionArray4.objetoVO.get(3)' /></a>
+          <figcaption>
+<%--           	<a href="<s:property value='#bodySeccionArray4.objetoVO.get(2)' />"><s:property value='#bodySeccionArray4.objetoVO.get(3)' /></a> --%>
+				<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray4.objetoVO.get(2)'/>">
+					<s:property value='#bodySeccionArray4.objetoVO.get(3)' />
+				</a>
             <time datetime="2045-04-03"><s:property value='#bodySeccionArray4.objetoVO.get(4)' /></time>
           </figcaption>
         </figure>
@@ -95,7 +128,12 @@
       </s:iterator>
       </s:subset>
     </ul>
-    <footer class="center"><a class="btn" href="<s:property value='body.bodySeccionArray4.get(0).objetoVO.get(1)' />"><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(2)' /></a></footer>
+    <footer class="center">
+<%--     	<a class="btn" href="<s:property value='body.bodySeccionArray4.get(0).objetoVO.get(1)' />"><s:property value='body.bodySeccionArray4.get(0).objetoVO.get(2)' /></a> --%>
+    	<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccionArray4.get(0).objetoVO.get(1)'/>">
+				<s:property value='body.bodySeccionArray4.get(0).objetoVO.get(2)' />
+			</a>
+    </footer>
   </section>
 </div>
 <!-- ################################################################################################ -->
@@ -121,7 +159,12 @@
       </s:subset>
       
     </ul>
-    <footer class="center"><a class="btn" href="<s:property value='body.bodySeccionArray5.get(0).objetoVO.get(2)' />"><s:property value='body.bodySeccionArray5.get(0).objetoVO.get(3)' /></a></footer>
+    <footer class="center">
+<%--     	<a class="btn" href="<s:property value='body.bodySeccionArray5.get(0).objetoVO.get(2)' />"><s:property value='body.bodySeccionArray5.get(0).objetoVO.get(3)' /></a> --%>
+    		<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccionArray5.get(0).objetoVO.get(2)'/>">
+				<s:property value='body.bodySeccionArray5.get(0).objetoVO.get(3)' />
+			</a>
+    </footer>
   </section>
 </div>
 </body>

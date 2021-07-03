@@ -77,7 +77,12 @@
     <article class="center">
       <h3 class="heading underline"><s:property value='header.headerSeccion4.get(0)'/></h3>
       <p><s:property value='header.headerSeccion4.get(1)'/></p>
-      <footer><a class="btn" href="<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a></footer>
+      <footer>
+<%--       	<a class="btn" href="<s:property value='header.headerSeccion4.get(2)'/>"><s:property value='header.headerSeccion4.get(3)'/></a> --%>
+      	<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='header.headerSeccion4.get(2)'/>">
+			<s:property value='header.headerSeccion4.get(3)'/>
+		</a>
+      </footer>
     </article>
   </div>
   

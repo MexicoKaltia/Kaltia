@@ -54,7 +54,12 @@
       <s:iterator  var="bodySeccionArray2" value ="body.bodySeccionArray2">
       <li class="<s:property value='#bodySeccionArray2.objetoVO.get(0)' />">
         <article><i class="fa <s:property value='#bodySeccionArray2.objetoVO.get(1)' />"></i>
-          <h6 class="heading font-x1"><a href="<s:property value='#bodySeccionArray2.objetoVO.get(2)' />"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></a></h6>
+          <h6 class="heading font-x1">
+<%--           	<a href="<s:property value='#bodySeccionArray2.objetoVO.get(2)' />"><s:property value='#bodySeccionArray2.objetoVO.get(3)' /></a> --%>
+          	<a class=" validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>">
+	        		<s:property value='#bodySeccionArray2.objetoVO.get(3)'/>
+	        	</a>
+          </h6>
           <p><s:property value='#bodySeccionArray2.objetoVO.get(4)' /></p>
         </article>
       </li>

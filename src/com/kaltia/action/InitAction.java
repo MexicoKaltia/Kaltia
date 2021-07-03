@@ -12,13 +12,14 @@ import javax.servlet.ServletContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
-
+import org.json.JSONObject;
 
 import com.kaltia.service.Identidad;
 import com.kaltia.vo.BodyVO;
 import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
+import com.kaltia.vo.ProductosVO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,6 +32,7 @@ public class InitAction extends ActionSupport {
 	protected HeaderVO header;
 	protected BodyVO body;
 	protected FooterVO footer;
+	protected JSONObject productos;
 	protected IdentidadVO identidadVO; // = new IdentidadVO();
 	
 	private InetAddress address;
@@ -62,6 +64,7 @@ public class InitAction extends ActionSupport {
 					header = (HeaderVO) identidadHash.get("header");
 					body = (BodyVO) identidadHash.get("body");
 					footer = (FooterVO) identidadHash.get("footer");
+					productos = (JSONObject) identidadHash.get("productos");
 					logger.info("Termina ejecutar action:"+actionName);					
 					if(identidadVO.getActionPrincipal().equals("1") || identidadVO.getActionPrincipal().equals("2")) {
 						if(identidadVO.getActionPrincipal().equals("1")) {
@@ -122,6 +125,13 @@ public class InitAction extends ActionSupport {
 		this.footer = footer;
 	}
 	
+	public JSONObject getProductos() {
+		return productos;
+	}
+
+	public void setProductos(JSONObject productos) {
+		this.productos = productos;
+	}
 
 
 }

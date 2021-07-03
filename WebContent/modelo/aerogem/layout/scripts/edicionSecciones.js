@@ -442,7 +442,7 @@ $(document).ready(function() {
 				valida();
 				
 				$.seccionCampos = cargaModal("bodyQRD");
-				var jsonQRD = JSON.parse($('#jsonQRDHidden').val())
+				var jsonQRD = JSON.parse($('#jsonQRDHidden').val());
 				$('#seleccionCategoria').empty();
 				var optionCategoria = "<option value='' selected>Seleccione Categoria para Edicion</option>"
 				var categoria='';

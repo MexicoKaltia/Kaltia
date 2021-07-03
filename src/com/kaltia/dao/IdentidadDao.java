@@ -18,6 +18,7 @@ import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.MenuVO;
 import com.kaltia.vo.ModulosVO;
+import com.kaltia.vo.ProductosVO;
 import com.kaltia.vo.QRRVO;
 import com.kaltia.vo.resource.ArrayObjetoVO;
 import com.kaltia.vo.resource.ObjetoVO;
@@ -25,18 +26,10 @@ import com.kaltia.vo.resource.ObjetoVO;
 public class IdentidadDao {
 
 	public IdentidadDao() {
-
-		// ArrayList<String> returnDAO = new ArrayList<String>();
-
 	}
 	
-	//private IdentidadVO identidadVO ;
-//	private static ArrayList<Object> returnDAO = new ArrayList<Object>();
-	
-	//private ArrayList<Object> arrReturnDAO = new ArrayList<Object>();
 	static final Logger logger = LogManager.getLogger(IdentidadDao.class.getName());
 	public static Properties PROPS = BaseInfra.PROPS;
-	
 
 	public EmpresaVO qryEmpresa(String action) throws SQLException {
 		
@@ -59,7 +52,7 @@ public class IdentidadDao {
 		List<String> complemento = new ArrayList<String>();
 		complemento.add(action);
 
-		String sql = "SELECT empresaNombreCorto, empresaStatus"
+		String sql = "SELECT idEmpresa, empresaNombreCorto, empresaStatus"
 				+ "  FROM tc_empresa  " 
 				+ " WHERE idAction = ? ";
 
@@ -67,8 +60,9 @@ public class IdentidadDao {
 			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
 			
 			if(returnDAO.size() != 0 && returnDAO!= null){
-				empresaVO.setEmpresaNombreCorto(returnDAO.get(0) != null ? returnDAO.get(0).toString() : "");
-				empresaVO.setEmpresaStatus(returnDAO.get(1) != null ? returnDAO.get(1).toString() : PROPS.getProperty("error.01"));
+				empresaVO.setIdEmpresa(returnDAO.get(0) != null ? returnDAO.get(0).toString() : "");
+				empresaVO.setEmpresaNombreCorto(returnDAO.get(1) != null ? returnDAO.get(1).toString() : "");
+				empresaVO.setEmpresaStatus(returnDAO.get(2) != null ? returnDAO.get(2).toString() : PROPS.getProperty("error.01"));
 				
 			}else{
 				empresaVO.setEmpresaNombreCorto("");
@@ -120,13 +114,13 @@ public class IdentidadDao {
 				//instIdentidadDao.setIdAction(instIdentidadDao.getAction());
 				
 			}else{
-				identidadVO.setCodigoVO("01");
+				identidadVO.setCodigoVO("98");
 				identidadVO.setMensajeVO("identidad:"+PROPS.getProperty("error.01"));
 				identidadVO.setIdAction(action);
 			}
 
 		} catch (Exception e) {
-			identidadVO.setCodigoVO("03");
+			identidadVO.setCodigoVO("99");
 			identidadVO.setMensajeVO("identidad:"+PROPS.getProperty("error.03"));
 			identidadVO.setIdAction(action);
 
@@ -326,6 +320,59 @@ public class IdentidadDao {
 		return footerVO;
 	}
 	
+	public ProductosVO qryProductos(String idEmpresa) {
+		ProductosVO productos = new ProductosVO();
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
+		
+		List<String> complemento = new ArrayList<String>();
+		complemento.add(idEmpresa);
+
+		String sql = "SELECT tc_productos.idEmpresa, tc_productos.checkPagina, "
+				+ " tc_productos.checkQRR, tc_productos.checkQRE, tc_productos.checkPuntoVenta, tc_productos.clientePagina, tc_productos.chatPagina, "
+				+ " tc_productos.videoPagina, tc_productos.tarjetaPagina,"
+				+ " tc_productos.retroalimentacionPagina, tc_productos.citaPagina, tc_productos.carpetaPagina,"
+				+ " tc_productos.notificacionPagina"
+				+ " from tc_productos"
+				+ " WHERE tc_productos.idEmpresa = ?";
+		
+		try {
+			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
+
+			if (returnDAO != null && returnDAO.size() > 0) {			
+				productos.setIdEmpresa(returnDAO.get(0) != null ? returnDAO.get(0).toString() : "");
+				productos.setCheckPagina(returnDAO.get(1) != null ? toBoolean(returnDAO.get(1)) : false);
+				productos.setCheckQRR(returnDAO.get(2) != null ? toBoolean( returnDAO.get(2)) : false);
+				productos.setCheckQRE(returnDAO.get(3) != null ? toBoolean( returnDAO.get(3)) : false);
+				productos.setCheckPuntoVenta(returnDAO.get(4) != null ? toBoolean( returnDAO.get(4)) : false);
+				productos.setClientePagina(returnDAO.get(5) != null ? toBoolean( returnDAO.get(5)) : false);
+				productos.setChatPagina(returnDAO.get(6) != null ? toBoolean( returnDAO.get(6)) : false);
+				productos.setVideoPagina(returnDAO.get(7) != null ? toBoolean( returnDAO.get(7)) : false);
+				productos.setTarjetaPagina(returnDAO.get(8) != null ? toBoolean( returnDAO.get(8)) : false);
+				productos.setRetroalimentacionPagina(returnDAO.get(9) != null ? toBoolean( returnDAO.get(9)) : false);
+				productos.setCitaPagina(returnDAO.get(10) != null ? toBoolean( returnDAO.get(10)) : false);
+				productos.setCarpetaPagina(returnDAO.get(11) != null ? toBoolean( returnDAO.get(11)) : false);
+				productos.setNotificacionPagina(returnDAO.get(12) != null ? toBoolean( returnDAO.get(12)) : false);
+				
+				productos.setCodigo("00");
+				}else {
+					productos.setCodigo("02");
+					productos.setMensaje("footer:"+PROPS.getProperty("error.02"));
+					productos.setIdEmpresa(idEmpresa);
+				}
+		} catch (Exception e) {
+			productos.setCodigo("03");
+			productos.setMensaje("footer:"+PROPS.getProperty("error.03"));
+			productos.setIdEmpresa(idEmpresa);
+			logger.error("elemento mal recuperado de base de datos"+ PROPS.getProperty("error.03")+"\tProductos:"+idEmpresa);
+			e.printStackTrace();
+		}
+		logger.info("qryProductos.getCodigo:"+ productos.getCodigo());
+		
+		return productos;
+	}
+	
+	
+
 	public ArrayList<ModulosVO>  qryModulos() {
 		
 		ArrayList<ModulosVO> modulosVOArray = new ArrayList<ModulosVO>();
@@ -397,6 +444,13 @@ public class IdentidadDao {
 		}
 		logger.info("qryQRR.getCodigo:"+ qrrVO.getCodigo());
 		return qrrVO;
+	}
+	
+	private boolean toBoolean(Object object) {
+		if(object.toString().equals("1")) {
+			return true;
+		}
+		return false;
 	}
 	
 	

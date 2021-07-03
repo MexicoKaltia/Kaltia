@@ -37,7 +37,7 @@ $(document).ready(function() {
 				"bodySeccionArray1":{  "seleccionBSA1":"text",  "tituloBSA1":"text",  "botonBSA1":"text",  "objeto" :{"seleccionObjetoBSA1" : "text",      "iconoObjetoBSA1" : "text",      "tituloObjetoBSA1" :"text",      "descripcionObjetoBSA1" :"lorem" , "botonObjetoBSA1":"text" }},
 				"bodySeccionArray2":{  "seleccionBSA2":"text",  "tituloBSA2":"text",  "botonBSA2":"text",  "objeto" :{"posicionObjetoBSA2" :"text", "imagenObjetoBSA2" : "text",      "seleccionObjetoBSA2" : "text",      "tituloObjetoBSA2" :"text" }},
 				"bodySeccionArray3":{  "imagenBSA3" :"img",  "tituloBSA3" : "text",  "descripcionBSA3":"lorem", "objeto" : {"iconoObjetoBSA3" :"text",  "tituloObjetoBSA3" :"text",      "descripcionObjetoBSA3" :"text" , "seleccionObjetoBSA3" : "text",      "botonObjetoBSA3" :"text"  }},
-				"bodySeccionArray4":{  "tituloBSA4" :"text",  "seleccionBSA4":"text",  "botonBSA4":"text",  "objeto" : {"posicionObjetoBSA4" :"text",  "imagenObjetoBSA4" : "img",      "referenciaObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text" }},
+				"bodySeccionArray4":{  "tituloBSA4" :"text",  "seleccionBSA4":"text",  "botonBSA4":"text",  "objeto" : {"posicionObjetoBSA4" :"text",  "imagenObjetoBSA4" : "img",      "seleccionObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text" }},
 				"bodySeccionArray5":{  "imagenBSA5" : "img", "tituloBSA5" :"text",  "seleccionBSA5":"text",  "botonBSA5":"text",  "objeto" : {"posicionObjetoBSA5" :"text",  "imagenObjetoBSA5" : "img", "tituloObjetoBSA5" : "text",      "subTituloObjetoBSA5" :"text",      "descripcionObjetoBSA5" :"lorem" }},
 				"footerSeccionUbicacion"   :{  "tituloFSU" : "text",    "domicilioFSU" : "text",  "telefonoFSU" : "text",  "correoFSU" : "text", "ubicacionFSU" : "lorem"},
 				"footerSeccionRedes"	:{ "tituloFS1" : "text",  "facebookFSRText":"text", "twitterFSRText":"text", "youtubeFSRText":"text", "linkedinFSRText":"text", "googleFSText":"text" },
@@ -243,8 +243,7 @@ $(document).ready(function() {
 				valorColumnas = 0;  	// Posicion de Objetos one_half 
 				valorPosicion = 0;  	// Numero de posicion que se encuentra el campo Posicion del JSON Campos
 				valorIniciaObjeto =0;	// Numero de posicion dentro del Array que identifica el Objeto,  regularmente es la posicion [1]
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
-				
+//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
 				finalJson = { action : $.action,
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "bodySeccionArray1",
@@ -267,8 +266,10 @@ $(document).ready(function() {
 				valorColumnas = 3; 		// Posicion de Objetos one_half
 				valorPosicion = 0;		// Numero de posicion que se encuentra el campo Posicion del JSON Campos
 				valorIniciaObjeto =1;	// Numero de posicion dentro del Array que identifica el Objeto,  regularmente es la posicion [1]
+				alert(valoresFinales);
 				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
 				//genera el finalJson
+				alert(valoresFinales);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray2",
@@ -295,8 +296,7 @@ $(document).ready(function() {
 				valorColumnas = 0;
 				valorPosicion = 0;
 				valorIniciaObjeto = 1;
-				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
-//				alert(valoresFinales);
+//				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray3",

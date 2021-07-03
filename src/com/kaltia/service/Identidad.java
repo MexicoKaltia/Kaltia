@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 
 import com.kaltia.dao.IdentidadDao;
 import com.kaltia.infra.BaseInfra;
@@ -16,6 +17,7 @@ import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.ModulosVO;
+import com.kaltia.vo.ProductosVO;
 import com.kaltia.vo.QRRVO;
 
 
@@ -32,11 +34,11 @@ public class Identidad {
 		HashMap<String, Object> hashIdentidad = new HashMap<String, Object>();
 		String nombreCorto="";
 		
+		/*
+		 * Revisa Estatus de Empresa
+		 */
 		EmpresaVO empresaVO = (EmpresaVO)identidadDao.qryEmpresa(action);
-		
-		logger.info(identidadVO.getCodigoVO());
-		
-		if(!empresaVO.getEmpresaStatus().equals(PROPS.getProperty("error.01"))) {
+		if(!empresaVO.getEmpresaStatus().equals(PROPS.getProperty("error.03")) || !empresaVO.getEmpresaStatus().equals(PROPS.getProperty("error.04"))) {
 			if(!empresaVO.getEmpresaStatus().equals(PROPS.getProperty("status.03"))) {
 				nombreCorto = empresaVO.getEmpresaNombreCorto();
 				logger.info("nombreCorto : "+nombreCorto);
@@ -48,8 +50,10 @@ public class Identidad {
 			return hashIdentidad;
 		}
 		
+		/*
+		 * Load de los datos de Action, Pagina  y Modulos
+		 */
 		identidadVO = (IdentidadVO)identidadDao.qryAction(action);
-
 		if(identidadVO.getCodigoVO().equals("00")) {
 			if(!identidadVO.getActionPrincipal().equals("99")) {		
 				hashIdentidad = identidadElemento(action, identidadVO);
@@ -144,20 +148,76 @@ public class Identidad {
 		/*
 		 *  Modulos 
 		 */
-		if(!identidadVO.getModulo().equals("") || identidadVO.getModulo() != null) {
-			ArrayList<String>modulos = consultaModulos(identidadVO.getModulo());
-			identidadVO.setModuloNombre(modulos);
-			hashIdentidad.put("modulos", modulos);
-		}else {
-			identidadVO.setMensajeVO("revisar integracion modulos");
-			identidadVO.setCodigoVO("99");
+		if(identidadVO.getActionPrincipal().equals("2")) {
+			ProductosVO productos = identidadDao.qryProductos(identidadVO.getEmpresa());
+			JSONObject jsonProductos = productosToJSON(productos); 
+			hashIdentidad.put("productos", jsonProductos);
+			logger.info("productos:"+productos.getCodigo());
+			if (!productos.getCodigo().equals("00")) {
+				identidadVO.setCodigoVO(productos.getCodigo());
+				identidadVO.setMensajeVO(productos.getMensaje());
+				hashIdentidad.put("identidadVO", identidadVO);
+				return hashIdentidad;
+			}
 		}
+		
+//		Version Anterior
+//		if(!identidadVO.getModulo().equals("") || identidadVO.getModulo() != null) {
+//			ArrayList<String>modulos = consultaModulos(identidadVO.getModulo());
+//			identidadVO.setModuloNombre(modulos);
+//			hashIdentidad.put("modulos", modulos);
+//		}else {
+//			identidadVO.setMensajeVO("revisar integracion modulos");
+//			identidadVO.setCodigoVO("99");
+//		}
 		
 		hashIdentidad.put("identidadVO", identidadVO);
 
 		return hashIdentidad;
 	}
+	
+	/*
+	 * Privates
+	 */
 
+private JSONObject productosToJSON(ProductosVO productos) {
+		
+		JSONObject json = new JSONObject();
+		//Productos
+		if(productos.isCheckPagina()) {
+			json.put("checkPagina", true);
+		}if(productos.isCheckQRR()) {
+			json.put("checkQRR", true);
+		}if(productos.isCheckQRE()) {
+			json.put("checkQRE", true);
+		}if(productos.isCheckPuntoVenta()) {
+			json.put("checkPuntoVenta", true);
+		}
+		//modulos sencillos
+		if(productos.isClientePagina()) {
+			json.put("checkClientePagina", true);
+		}if(productos.isChatPagina()) {
+			json.put("checkChatPagina", true);
+		}if(productos.isVideoPagina()) {
+			json.put("checkVideoPagina", true);
+		}if(productos.isTarjetaPagina()) {
+			json.put("checkTarjetaPagina", true);
+		}if(productos.isRetroalimentacionPagina()) {
+			json.put("checkRetroalimentacionPagina", true);
+		}
+		//modulos compuestos
+		if(productos.isCitaPagina()) {
+			json.put("checkCitaPagina", true);
+		}if(productos.isCarpetaPagina()) {
+			json.put("checkCarpetaPagina", true);
+		}if(productos.isNotificacionPagina()) {
+			json.put("checkNotificacionPagina", true);
+		}
+		
+		json.put("idEmpresa", productos.getIdEmpresa());
+		
+		return json;
+	}
 	private HeaderVO headerEm(String action, String estilo) {
 		HeaderVO headerVOEm = null;
 

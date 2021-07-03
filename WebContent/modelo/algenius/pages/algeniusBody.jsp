@@ -16,7 +16,12 @@
           <h6 class="heading font-x1"><s:property value='#bodySeccionArray1.objetoVO.get(2)'/></h6>
           <p class="btmspace-30"><s:property value='#bodySeccionArray1.objetoVO.get(3)'/> [&hellip;]</p>
 <%--    REFERENCIA CON ACTION/SUBACTION       <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a></footer> --%>
-          <footer><a class="btn" href="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a></footer>
+          <footer>
+<%--           	<a class="btn" href="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>"><s:property value='#bodySeccionArray1.objetoVO.get(5)'/> &rsaquo;</a> --%>
+				<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>">
+	        		<s:property value='#bodySeccionArray1.objetoVO.get(5)'/>
+	        	</a>
+          </footer>
         </article>
       </li>
       </s:iterator>
@@ -39,11 +44,19 @@
         <p><strong><s:property value='body.bodySeccion1.get(2)'/></strong></p>
         <p><s:property value='body.bodySeccion1.get(3)'/></p>
         <p class="btmspace-30"><s:property value='body.bodySeccion1.get(4)'/> [&hellip;]</p>
-        <footer><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><s:property value='body.bodySeccion1.get(6)'/> &raquo;</a></footer>
+        <footer>
+<%--         	<a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><s:property value='body.bodySeccion1.get(6)'/> &raquo;</a> --%>
+        	<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion1.get(5)'/>">
+	        		<s:property value='body.bodySeccion1.get(6)'/>
+	        	</a>
+        </footer>
       </div>
       <div class="one_half">
         <p><strong><s:property value='body.bodySeccion1.get(7)'/></strong></p>
-        <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><img src="<s:property value='body.bodySeccion1.get(8)'/>" alt=""></a>
+<%--         <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><img src="<s:property value='body.bodySeccion1.get(8)'/>" alt=""></a> --%>
+				<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion1.get(5)'/>">
+	        		<s:property value='body.bodySeccion1.get(8)'/>
+	        	</a>
         <p><s:property value='body.bodySeccion1.get(9)'/></p>
       </div>
     </div> 
@@ -88,7 +101,7 @@
       <s:iterator  var="bodySeccionArray3">
       <figure class="<s:property value='#bodySeccionArray3.objetoVO.get(0)' />">
 <%--  REFERENCIA ACTION/SUBACTION     	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray3.objetoVO.get(1)' />"> --%>
-		<a href="#">
+		<a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?v=1" data-lightbox="ligthboxBodySeccionArray3" data-title="<s:property value='#bodySeccionArray3.objetoVO.get(2)'/>">
       		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray3.objetoVO.get(1)'/>?v=1" alt="<s:property value='identidadVO.idAction'/>" style="max-width: 15em; max-height: 15em" >
       	</a>
         <figcaption>
@@ -96,10 +109,10 @@
           <em><s:property value='#bodySeccionArray3.objetoVO.get(3)' /></em>
           <footer>
             <ul class="faico clear">
-              <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+<!--               <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li> -->
+<!--               <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+<!--               <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li> -->
+<!--               <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li> -->
             </ul>
           </footer>
         </figcaption>
@@ -121,7 +134,7 @@
     <s:iterator value="body.bodySeccionArray4" var="bodySeccionArray4">
       <li class="<s:property value='#bodySeccionArray4.objetoVO.get(0)'/>">
 <%-- REFERENCIA ACTION/SUBACTION       	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>"> --%>
-		<a href="#">
+		<a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?v=1" data-lightbox="ligthboxBodySeccionArray4" data-title="<s:property value='#bodySeccionArray3.objetoVO.get(4)'/>">
       		<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodySeccionArray4.objetoVO.get(1)'/>?v=1" > 		
       	</a>
       </li>

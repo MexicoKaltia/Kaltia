@@ -82,10 +82,10 @@
 									              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
 									              <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected ><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
 									              <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
-									              <s:iterator value='identidadVO.moduloNombre'>
-									              	<option value='<s:property/>'><s:property/></option>
-									              </s:iterator>
-									              
+<%-- 									              <s:iterator value='identidadVO.moduloNombre'> --%>
+									              													<option value="" > - </option>
+<%-- 									              </s:iterator> --%>
+									              												<option value="" > - </option>
 									            </select>
 									            </div>
 									          </div>
@@ -291,9 +291,10 @@
 <%--               			  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> --%>
 						  <option value="<s:property value='header.headerSeccion4.get(2)'/>" selected><s:property value='header.headerSeccion4.get(2)'/></option>
  						  <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
-              				<s:iterator value='identidadVO.moduloNombre'>
-							  	<option value='<s:property/>'><s:property/></option>
-							</s:iterator>              		   
+<%--               				<s:iterator value='identidadVO.moduloNombre'> --%>
+<%-- 							  	<option value='<s:property/>'><s:property/></option> --%>
+<%-- 							</s:iterator>              		    --%>
+												<option value="" > - </option>
 						 </select> 
   			          </div>
   			    </div>
@@ -370,9 +371,10 @@
 					  <div class="col-7">
 						    <select class="custom-select form-control" id="seleccionBS1">
 							  <option value="<s:property value='body.BodySeccion1.get(6)'/>" selected><s:property value='body.BodySeccion1.get(6)'/></option>		
-	              				<s:iterator value='identidadVO.moduloNombre'>
-								  	<option value='<s:property/>'><s:property/></option>
-								</s:iterator>              		   
+<%-- 	              				<s:iterator value='identidadVO.moduloNombre'> --%>
+<%-- 								  	<option value='<s:property/>'><s:property/></option> --%>
+<%-- 								</s:iterator>              		    --%>
+												<option value="" > - </option>
 		    				</select>
 					  </div>
 					</div>
@@ -475,9 +477,10 @@
 								  <div class="col-7">
 									    <select class="custom-select form-control" id="seleccionObjetoBSA1<s:property value='#conta'/>">
 										  <option value="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>" selected><s:property value='#bodySeccionArray1.objetoVO.get(4)'/></option>		
-				              				<s:iterator value='identidadVO.moduloNombre'>
-											  	<option value='<s:property/>'><s:property/></option>
-											</s:iterator>              		   
+<%-- 				              				<s:iterator value='identidadVO.moduloNombre'> --%>
+<%-- 											  	<option value='<s:property/>'><s:property/></option> --%>
+<%-- 											</s:iterator>              		    --%>
+												<option value="" > - </option>
 					    				</select>
 								  </div>
 								</div>
@@ -561,9 +564,10 @@
 				  <div class="col-7">
 					    <select class="custom-select form-control" id="seleccionBS2">
 						  <option value="<s:property value='body.BodySeccion2.get(3)'/>" selected><s:property value='body.BodySeccion2.get(3)'/></option>		
-              				<s:iterator value='identidadVO.moduloNombre'>
-							  	<option value='<s:property/>'><s:property/></option>
-							</s:iterator>              		   
+<%--               				<s:iterator value='identidadVO.moduloNombre'> --%>
+<%-- 							  	<option value='<s:property/>'><s:property/></option> --%>
+<%-- 							</s:iterator>              		    --%>
+												<option value="" > - </option>
 	    				</select>
 				  </div>
 				</div>

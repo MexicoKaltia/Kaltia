@@ -29,6 +29,7 @@
 	<!-- JAVASCRIPTS Mis Metodos-->
 	<script src="<%=request.getContextPath()%>/modelo/<s:property value='identidadVO.actionEstilo'/>/layout/scripts/edicionSecciones.js"></script>	
 	<script src="<%=request.getContextPath()%>/layout/js/complemento.js"></script>
+	<script src="<%=request.getContextPath()%>/layout/js/productos.js"></script>
 	
 	
 		
@@ -39,6 +40,7 @@
 <input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
 <input type="hidden" id="idAction" value="<s:property value='identidadVO.action'/>" />
 <input type="hidden" id="idModelo" value="<s:property value='identidadVO.actionEstilo'/>" />
+<input type="hidden" id="productos" value="<s:property value='productos'/>" />
 
 </body>
 </html>
