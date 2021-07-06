@@ -266,10 +266,8 @@ $(document).ready(function() {
 				valorColumnas = 3; 		// Posicion de Objetos one_half
 				valorPosicion = 0;		// Numero de posicion que se encuentra el campo Posicion del JSON Campos
 				valorIniciaObjeto =1;	// Numero de posicion dentro del Array que identifica el Objeto,  regularmente es la posicion [1]
-				alert(valoresFinales);
 				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto); 
 				//genera el finalJson
-				alert(valoresFinales);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray2",
@@ -296,6 +294,7 @@ $(document).ready(function() {
 				valorColumnas = 0;
 				valorPosicion = 0;
 				valorIniciaObjeto = 1;
+//				alert(valoresFinales);
 //				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	

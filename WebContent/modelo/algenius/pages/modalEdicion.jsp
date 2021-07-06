@@ -80,7 +80,7 @@
 									          <div class="form-group row">
 									            <span class="col-3 col-form-label text-right colorLabel">Referencia</span>
 									            <div class="col-7">
-									              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
+									              <select class="custom-select form-control edicionBoton" id="seleccionObjetoHS1<s:property value='#conta'/>">
 									              <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected ><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
 									              <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
 <%-- 									              <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(3)'/></option> --%>
@@ -290,7 +290,7 @@
   			          <div class="col-7">
   						<input type="text" class="form-control" id="boton1HS4" value="<s:property value='header.headerSeccion4.get(3)'/>"/>
   						<%-- Identificar Secciones <a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
-            			<select class="custom-select form-control" id="seleccion1HS4">
+            			<select class="custom-select form-control edicionBoton" id="seleccion1HS4">
 <%--               			  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> --%>
 						  <option value="<s:property value='header.headerSeccion4.get(2)'/>" selected><s:property value='header.headerSeccion4.get(2)'/></option>
  						  <!-- <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option> -->
@@ -371,7 +371,7 @@
 				  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton 1</span>
 				  			          <div class="col-7">
 				  						<input type="text" class="form-control" id="botonObjetoBSA1<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(5)'/>"/>
-				            			<select class="custom-select form-control" id="referenciaObjetoBSA1">
+				            			<select class="custom-select form-control edicionBoton" id="referenciaObjetoBSA1">
 										  <option value="<s:property value='#bodySeccionArray1.objetoVO.get(4)'/>" selected><s:property value='#bodySeccionArray1.objetoVO.get(4)'/></option>
 <%-- 				              				<s:iterator value='identidadVO.moduloNombre'> --%>
 <%-- 											  	<option value='<s:property/>'><s:property/></option> --%>
@@ -466,7 +466,7 @@
 				<div class="form-group row">
 				  <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-terminal"></i>SeleccionModulo</span>
 				  <div class="col-7">
-					    <select class="custom-select form-control" id="seleccionBS1">
+					    <select class="custom-select form-control edicionBoton" id="seleccionBS1">
 						  <option value="<s:property value='body.BodySeccion1.get(3)'/>" selected><s:property value='body.BodySeccion1.get(5)'/></option>		
 <%--               				<s:iterator value='identidadVO.moduloNombre'> --%>
 <%-- 							  	<option value='<s:property/>'><s:property/></option> --%>

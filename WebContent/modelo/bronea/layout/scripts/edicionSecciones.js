@@ -241,7 +241,6 @@ $(document).ready(function() {
 	});
 	$('.headerSeccion4').click(function(){
 		if(validaParam()){
-			
 			$.seccionCampos = cargaModal("headerSeccion4",$.modelo);
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
 				valoresFinales = dataEdicion($.seccionCampos, 0);

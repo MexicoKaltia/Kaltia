@@ -638,12 +638,13 @@
 		$('#btnSaveRegistro').click(function(){
 			limpiaAlerta();
 			valoresRegistro = $('#nombreRegistro').val()+"++"+$('#apellidoRegistro').val()+"++"+$('#emailRegistro').val()+"++"+$('#telefonoRegistro').val()+"++"+$('#usuarioRegistro').val()+"++"+$('#passRegistro1').val()+"++"+$('#messageRegistro').val();
-			 
+			nombreCorto = $('#nombreCorto').val();
 				registroJson = { action : $.action,
 					 idEmpresa : $.idEmpresa,	
-//					 seccion : "bodySeccionArray1",
+					 nombreCorto : nombreCorto, 
 					 valoresFinales : valoresRegistro}
 				console.log(registroJson);
+				console.log(url +"createUserEmpresa/");
 
 			$.ajax({
 			   	  url: url +"createUserEmpresa/",//+ context,//+finalJson.action+"/"+finalJson[1],
@@ -680,7 +681,7 @@
 			 
 			ingresaJson = { action : $.action,
 					 idEmpresa : $.idEmpresa,	
-//					 seccion : "bodySeccionArray1",
+					 nombreCorto : nombreCorto,
 					 valoresFinales : valoresIngresa}
 				console.log(ingresaJson);
 

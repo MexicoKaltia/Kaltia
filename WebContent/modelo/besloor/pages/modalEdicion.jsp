@@ -463,9 +463,9 @@
 			        <div class="form-group row">
 				  		 <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Boton Seccion</span>
 				  		 <div class="col-7">
-				  			<input type="text" class="form-control" id="botonBSA2" value="<s:property value='body.bodySeccionArray2.objetoVO.get(2)'/>"/>						
+				  			<input type="text" class="form-control" id="botonBSA2" value="<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(2)'/>"/>						
 				            <select class="custom-select form-control edicionBoton" id="seleccionBSA2">
-					    	<option value="<s:property value='body.bodySeccionArray2.objetoVO.get(0)'/>" selected><s:property value='#bodySeccionArray2.objetoVO.get(0)'/></option>
+					    	<option value="<s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)'/>" selected><s:property value='body.bodySeccionArray2.get(0).objetoVO.get(0)'/></option>
 <%-- 				    		<s:iterator value='identidadVO.moduloNombre'> --%>
 <%-- 							  	<option value='<s:property/>'><s:property/></option> --%>
 <%-- 							</s:iterator>              		    --%>
@@ -504,7 +504,7 @@
 				  			          <span class="col-3 col-form-label text-right colorLabel"><i class="fa fa-2x fa-terminal"></i>Titulo</span>
 				  			          <div class="col-7">
 				  						<input type="text" class="form-control" id="tituloObjetoBSA2<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray2.objetoVO.get(3)'/>"/>						
-				            			<select class="custom-select form-control edicionBoton" id="seleccionObjetoBSA2">
+				            			<select class="custom-select form-control edicionBoton" id="seleccionObjetoBSA2<s:property value='#conta'/>">
 										  <option value="<s:property value='#bodySeccionArray2.objetoVO.get(2)'/>" selected><s:property value='#bodySeccionArray2.objetoVO.get(2)'/></option>
 <%-- 				              				<s:iterator value='identidadVO.moduloNombre'> --%>
 <%-- 											  	<option value='<s:property/>'><s:property/></option> --%>

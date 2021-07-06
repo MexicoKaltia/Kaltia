@@ -40,6 +40,7 @@
 <input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
 <input type="hidden" id="idAction" value="<s:property value='identidadVO.action'/>" />
 <input type="hidden" id="idModelo" value="<s:property value='identidadVO.actionEstilo'/>" />
+<input type="hidden" id="nombreCorto" value="<s:property value='identidadVO.nombreCorto'/>" />
 <input type="hidden" id="productos" value="<s:property value='productos'/>" />
 
 </body>

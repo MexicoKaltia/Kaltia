@@ -78,14 +78,16 @@
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
-    <div id="copyright" class="hoc clear"> 
-    <p class="fl_left"><a href="#"><s:property value='footer.footerSeccionFoot.get(0)' /><s:property value='identidadVO.nombreCorto'/></a></p>
-    <p class="fl_right"><a href="kaltiaservicios.com/contenidos" target="_blank"><s:property value='footer.footerSeccionFoot.get(1)' /></a></p>
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left"><a href="#"><s:property value='footer.footerSeccion4.get(0)' /><s:property value='identidadVO.nombreCorto'/></a></p>
+    <p class="fl_right"><a href="kaltiaservicios.com/contenidos" target="_blank"><s:property value='footer.footerSeccion4.get(1)' /></a></p>
   </div>
 </div>
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- ################################################################################################ -->
+</body>
+</html>
 
 </body>
 </html>

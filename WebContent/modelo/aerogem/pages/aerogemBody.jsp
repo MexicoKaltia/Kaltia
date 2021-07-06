@@ -36,12 +36,13 @@
       <s:iterator  var="bodySeccionArray1">
       <li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />">
         <article>
-        	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(4)' />">
+<%--         	<a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(4)' />"> --%>
+			<a class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray1.objetoVO.get(4)' />">
         		<i class="fa <s:property value='#bodySeccionArray1.objetoVO.get(1)' />"></i>
         	</a>
-        	  <h6 class="heading"><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></h6>
+        	<h6 class="heading"><s:property value='#bodySeccionArray1.objetoVO.get(2)' /></h6>
           	<p><s:property value='#bodySeccionArray1.objetoVO.get(3)' />&hellip;</p>
-          	<footer><a href="" class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray1.objetoVO.get(4)' />">
+          	<footer><a  class="validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='#bodySeccionArray1.objetoVO.get(4)' />">
           		<s:property value='#bodySeccionArray1.objetoVO.get(5)' /> &raquo;</a>
           	</footer>
         </article>
