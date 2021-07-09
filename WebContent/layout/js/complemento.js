@@ -87,6 +87,7 @@
 //		console.log("Modelo:"+$.modelo);
 		
 		$('#mapa').append($('#valorMapa').val());
+		$('#modalUbicacionEnlace').append($('#valorMapa').val());
 		
 		if (results == null){
 			_desactiveSeccionEdicion();
@@ -636,6 +637,7 @@
 		}
 		
 		$('#btnSaveRegistro').click(function(){
+//			var flag = false;
 			limpiaAlerta();
 			valoresRegistro = $('#nombreRegistro').val()+"++"+$('#apellidoRegistro').val()+"++"+$('#emailRegistro').val()+"++"+$('#telefonoRegistro').val()+"++"+$('#usuarioRegistro').val()+"++"+$('#passRegistro1').val()+"++"+$('#messageRegistro').val();
 			nombreCorto = $('#nombreCorto').val();

@@ -32,15 +32,13 @@
 		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp"  />
 		<put-attribute name="right" value="/modelo/bronea/pages/broneaRight.jsp" />
 		<put-attribute name="footer" value="/modelo/bronea/pages/broneaFooter.jsp" />
-<!-- 		<put-attribute name="modalUbicacion" value="/modelo/bronea/pages/modalUbicacion.jsp" /> -->
-<!-- 		<put-attribute name="headerInterno" value="/modelo/bronea/pages/headerInterno.jsp" /> -->
 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
-<!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQRE.jsp" /> -->
 	</definition>
 	
 	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
@@ -57,7 +55,6 @@
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCitaVacio.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacionVacio.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjetoVacio.jsp" />
-<!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQRE.jsp" /> -->
 	</definition>
 
 	
@@ -71,6 +68,7 @@
 		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" />		
 		<put-attribute name="modalEdicion" value="/modelo/aerogem/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
@@ -87,6 +85,7 @@
 		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/algenius/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
@@ -109,7 +108,9 @@
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/besloor/pages/modalEdicion.jsp" />
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />

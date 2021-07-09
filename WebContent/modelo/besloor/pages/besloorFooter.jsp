@@ -86,6 +86,7 @@
 		      <lo><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="btmspace-30 fab fa-4x fa-youtube" ></i></a></lo>
 		      <lo><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="btmspace-30 fab fa-4x fa-linkedin" ></i></a></lo>
 		      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fab fa-4x fa-google-plus" ></i></a></lo>
+		      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fab fa-4x fa-whatsapp" ></i></a></lo>
 	<%--         <s:subset start="1" source ="footer.footerSeccionRedes"> --%>
 	<%--         <s:iterator> --%>
 	<%-- <%--identificar Secciones --%>
@@ -108,6 +109,7 @@
 </div>
 
 <!-- ################################################################################################ -->
+<a id="wa" href="https://api.whatsapp.com/send?phone=525510302411&text=hola%20buenas%20tardes,%20quisiera%20tener%20m%C3%A1s%20informacion%20de%20sus%20servcios,%20gracias" target="_blank"><i class="fa fa-whatsapp fa-5x"></i></a>
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- ################################################################################################ -->
 </body>

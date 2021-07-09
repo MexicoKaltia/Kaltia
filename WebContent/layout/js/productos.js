@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var productosOpcion ="";
 	var productosEmpresa = JSON.parse($('#productos').val());
 	if(productosEmpresa["checkPagina"]){
-//		console.log("checkPagina");
+		productosOpcion = productosOpcion+'<option value="Ubicacion" >Ubicacion</option>';
 	}if(productosEmpresa["checkQRR"]){
 //		console.log("checkQRR");
 	}if(productosEmpresa["checkQRE"]){
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	// modulos sencillos
 	if(productosEmpresa["checkClientePagina"]){
 //		console.log("checkClientePagina");
-		productosOpcion = productosOpcion+'<option value="Registro" >Registro Cliente / Contacto</option>';
+		productosOpcion = productosOpcion+'<option value="Contacto" >Contacto Cliente</option>';
 	}if(productosEmpresa["checkChatPagina"]){
 //		console.log("checkChatPagina");
 		productosOpcion = productosOpcion+'<option value="Chat" >Modulo Chat</option>';
@@ -54,4 +54,6 @@ $(document).ready(function(){
 	
 	$('.edicionBoton').append(productosOpcion);
 	
+	
 });
+

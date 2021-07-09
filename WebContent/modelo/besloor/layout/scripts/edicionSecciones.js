@@ -295,7 +295,11 @@ $(document).ready(function() {
 				valorPosicion = 0;
 				valorIniciaObjeto = 1;
 //				alert(valoresFinales);
+				while(valoresFinales.includes("C:\\fakepath\\") ){
+					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+				}
 //				valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+//				alert(valoresFinales);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	
 						 seccion : "bodySeccionArray3",
