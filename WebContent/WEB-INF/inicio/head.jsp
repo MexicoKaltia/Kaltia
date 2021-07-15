@@ -26,6 +26,7 @@
 <link href="<%=request.getContextPath()%>/layout/css/validate/screen.css" rel="stylesheet" type="text/css" media="all">
 <!-- Importacion Propias CSS -->
 <link href="<%=request.getContextPath()%>/layout/css/edicion.css" rel="stylesheet" type="text/css" media="all">
+<link href="<%=request.getContextPath()%>/layout/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 
 
 </head>

@@ -13,10 +13,17 @@ jQuery("#backtotop").click(function () {
         scrollTop: 0
     }, 600);
 });
+jQuery("#wa").click(function () {
+    jQuery("body,html").animate({
+        scrollTop: 0
+    }, 60);
+});
 jQuery(window).scroll(function () {
-    if (jQuery(window).scrollTop() > 150) {
+    if (jQuery(window).scrollTop() > 15) {
         jQuery("#backtotop").addClass("visible");
+        jQuery("#wa").addClass("visible");
     } else {
         jQuery("#backtotop").removeClass("visible");
+        jQuery("#wa").removeClass("visible");
     }
 });

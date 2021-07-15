@@ -36,6 +36,7 @@
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
@@ -70,6 +71,7 @@
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
@@ -87,6 +89,7 @@
 		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
 		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
 		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
 		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />		

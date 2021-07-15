@@ -33,6 +33,9 @@ public class InitAction extends ActionSupport {
 	protected BodyVO body;
 	protected FooterVO footer;
 	protected JSONObject productos;
+	protected List<JSONObject> videos;
+	
+	
 	protected IdentidadVO identidadVO; // = new IdentidadVO();
 	
 	private InetAddress address;
@@ -65,7 +68,9 @@ public class InitAction extends ActionSupport {
 					body = (BodyVO) identidadHash.get("body");
 					footer = (FooterVO) identidadHash.get("footer");
 					productos = (JSONObject) identidadHash.get("productos");
-					logger.info("Termina ejecutar action:"+actionName);					
+					videos =  (List<JSONObject>) identidadHash.get("videos");
+					logger.info("Termina ejecutar action:"+actionName);		
+					
 					if(identidadVO.getActionPrincipal().equals("1") || identidadVO.getActionPrincipal().equals("2")) {
 						if(identidadVO.getActionPrincipal().equals("1")) {
 							logger.info("modelo:"+identidadVO.getActionEstilo());
@@ -132,6 +137,15 @@ public class InitAction extends ActionSupport {
 	public void setProductos(JSONObject productos) {
 		this.productos = productos;
 	}
+	
+	public List<JSONObject> getVideos() {
+		return videos;
+	}
+
+	public void setVideos(List<JSONObject> videos) {
+		this.videos = videos;
+	}
+
 
 
 }

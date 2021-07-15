@@ -296,7 +296,7 @@
 <%--               				<s:iterator value='identidadVO.moduloNombre'> --%>
 <%-- 							  	<option value='<s:property/>'><s:property/></option> --%>
 <%-- 							</s:iterator>              		    --%>
-						 </select> 
+						 </select>
   			          </div>
   			    </div>
   			  

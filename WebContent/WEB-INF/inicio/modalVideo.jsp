@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--**********************************************************************************-->
-<!-- modalRegistro -->
+<!-- modalVideo -->
 <div class="modal fade" id="modalVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content"
@@ -25,7 +25,8 @@
 					<div class="embed-responsive embed-responsive-16by9">
 <!-- 					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v64KOxKVLVg" allowfullscreen></iframe> -->
 <!-- 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=4jZBwyG7HPs&list=RD7qFfFVSerQo&index=9" allowfullscreen></iframe> -->
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4jZBwyG7HPs" allowfullscreen></iframe>
+						<iframe class="embed-responsive-item" id="frameVideo" src="https://www.youtube.com/embed/4jZBwyG7HPs" allowfullscreen></iframe>
+						<!-- <iframe class="embed-responsive-item" src="https://www.instagram.com/reel/CQqGKczj3cl" allowfullscreen></iframe> -->
 					</div>
 				</div>		    
 		      </div>
@@ -34,7 +35,7 @@
 		</div>
 	</div>
 </div>
-<!-- FIN modalREGISTRO -->
+<!-- FIN modalVideo -->
 <!--**********************************************************************************-->
 
 

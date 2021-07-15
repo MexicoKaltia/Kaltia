@@ -5,7 +5,7 @@
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <body>
-
+<script>$videoFinal ="";</script>
 
 	<!-- JAVASCRIPTS Generales-->	
 	<script src="<%=request.getContextPath()%>/layout/js/jquery-3.3.1.min.js"></script>
@@ -46,6 +46,7 @@
 <input type="hidden" id="idModelo" value="<s:property value='identidadVO.actionEstilo'/>" />
 <input type="hidden" id="nombreCorto" value="<s:property value='identidadVO.nombreCorto'/>" />
 <input type="hidden" id="productos" value="<s:property value='productos'/>" />
+<input type="hidden" id="videos" value="<s:property value='videos'/>" />
 
 </body>
 </html>

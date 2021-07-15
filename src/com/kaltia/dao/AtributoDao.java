@@ -12,6 +12,8 @@ import com.kaltia.infra.BaseInfra;
 import com.kaltia.infra.ComunResolution;
 //import com.kaltia.vo.UserEmpresa;
 //import com.kaltia.vo.UserPrimarioVO;
+import com.kaltia.vo.QRRVO;
+import com.kaltia.vo.VideoVO;
 
 public class AtributoDao {
 	
@@ -22,7 +24,6 @@ public class AtributoDao {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@SuppressWarnings("null")
 	public String[] getMaquetas() {
 		
 		List<String> complemento = new ArrayList<String>();
@@ -53,6 +54,116 @@ public class AtributoDao {
 			
 		return maquetas;
 	}
+	
+	public static List<VideoVO> consultaVideosEmpresa(String action) {
+		ArrayList<Object> arrReturnDAO = new ArrayList<Object>();	
+		List<VideoVO> arrVideos = new ArrayList<VideoVO>();
+		List<String> complemento = new ArrayList<String>();
+		complemento.add(action);
+
+		String sql = "SELECT a.videoTitulo, a.videoContexto" +
+				"  FROM tw_videos a " +
+				" WHERE a.idAction = ? ";
+
+		try {
+			arrReturnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
+			
+			if(arrReturnDAO.size() != 0 && arrReturnDAO!= null){
+				for(int i = 0; i < arrReturnDAO.size(); i++) {
+					VideoVO videoVO = new VideoVO();
+					videoVO.setVideoTitulo(arrReturnDAO.get(i) != null ? arrReturnDAO.get(i).toString() : "");
+					videoVO.setVideoContexto(arrReturnDAO.get(i+1) != null ? arrReturnDAO.get(i+1).toString() : "");
+					i++;
+					videoVO.setCodigo("00");
+					arrVideos.add(videoVO);
+				}
+				
+			}else{
+				VideoVO videoVO = new VideoVO();
+				videoVO.setCodigo("01");
+				videoVO.setMensaje("identidad:"+PROPS.getProperty("error.01"));
+			}
+
+		} catch (Exception e) {
+			VideoVO videoVO = new VideoVO();
+			videoVO.setCodigo("03");
+			videoVO.setMensaje("identidad:"+PROPS.getProperty("error.03"));
+			e.printStackTrace();
+		}
+		
+		return arrVideos;
+	}
+	
+	private boolean toBoolean(Object object) {
+		if(object.toString().equals("1")) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 
 	@SuppressWarnings("rawtypes")

@@ -185,6 +185,7 @@ $(document).ready(function() {
 			
 			$.seccionCampos = cargaModal("headerSeccion4",$.modelo);
 			$('#modalEdicionHeaderSeccion4_btnSave').click(function(){
+				
 				valoresFinales = dataEdicion($.seccionCampos, 0);
 				finalJson = { action : $.action,
 						 idEmpresa : $.idEmpresa,	

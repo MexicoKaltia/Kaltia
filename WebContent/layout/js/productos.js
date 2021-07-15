@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 //	console.log();
 	
+
+	
 	var productosEdicion = new Array();
 	var productosOpcion ="";
 	var productosEmpresa = JSON.parse($('#productos').val());
@@ -51,9 +53,39 @@ $(document).ready(function(){
 //		productosOpcion = productosOpcion+'<option value="Ingresa" >Modulo Ingresa Cliente</option>';
 //	}
 	
-	
 	$('.edicionBoton').append(productosOpcion);
 	
 	
+	
+	
+});
+
+$('#selVideo').hide();
+$('.edicionBoton').change(function(){
+	var selBoton = $(this).val();
+//	console.log(selBoton);
+	if(selBoton === "Video"){
+		$(this).after('<select class="custom-select form-control" id=selVideo></select>')
+		var videos = $('#videos').val();
+		videos = JSON.parse(videos);
+		$('#selVideo').empty();
+		var	opcionVideo = '<option value="" selected>Seleccione Video</option>';
+		$('#selVideo').append(opcionVideo);
+		for(a in videos){
+			opcionVideo =  '<option value="'+videos[a].videoContexto+'">'+videos[a].videoTitulo+'</option>';
+			$('#selVideo').append(opcionVideo);
+		}
+		$('#selVideo').show();
+		$('#selVideo').change(function(){
+			var selVideo = $('#selVideo').val();
+			
+			var idSel = $('.edicionBoton').attr("id");
+			$videoFinal = "Video**"+selVideo;
+//			console.log($videoFinal);
+//			console.log("B");
+//			console.log(idSel);
+			
+		});
+	}
 });
 

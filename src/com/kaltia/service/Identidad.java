@@ -3,12 +3,14 @@ package com.kaltia.service;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
+import com.kaltia.dao.AtributoDao;
 import com.kaltia.dao.IdentidadDao;
 import com.kaltia.infra.BaseInfra;
 import com.kaltia.vo.BodyVO;
@@ -19,6 +21,7 @@ import com.kaltia.vo.IdentidadVO;
 import com.kaltia.vo.ModulosVO;
 import com.kaltia.vo.ProductosVO;
 import com.kaltia.vo.QRRVO;
+import com.kaltia.vo.VideoVO;
 
 
 public class Identidad {
@@ -158,6 +161,13 @@ public class Identidad {
 				identidadVO.setMensajeVO(productos.getMensaje());
 				hashIdentidad.put("identidadVO", identidadVO);
 				return hashIdentidad;
+			}else {
+				if(productos.isVideoPagina()) {
+					List<VideoVO> arrVideos = AtributoDao.consultaVideosEmpresa(action);
+					if(arrVideos.size() > 0) {
+						hashIdentidad.put("videos", toJSONvideos(arrVideos));
+					}
+				}
 			}
 		}
 		
@@ -176,6 +186,8 @@ public class Identidad {
 		return hashIdentidad;
 	}
 	
+	
+
 	/*
 	 * Privates
 	 */
@@ -277,6 +289,20 @@ private JSONObject productosToJSON(ProductosVO productos) {
 		}
 		
 		return modulosNombre;
+	}
+	
+	private List<JSONObject> toJSONvideos(List<VideoVO> arrVideos) {
+		
+		List<JSONObject> arrJson = new ArrayList<JSONObject>();
+		for(VideoVO v : arrVideos) {
+			JSONObject json = new JSONObject();
+			json.put("videoTitulo", v.getVideoTitulo());
+			json.put("videoContexto", v.getVideoContexto());
+			arrJson.add(json);
+		}
+		 
+		return arrJson;
+	
 	}
 	
 

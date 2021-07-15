@@ -183,28 +183,32 @@
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
 		console.log(seccionEmpresa);
-		console.log(contaObjeto);
+//		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
 		var valorStringObjeto ="";
 		var finalJson ="";
 		if(contaObjeto > 0){
 			for(campo in seccionEmpresa){
-				if(campo.includes("referencia")){
-					valoresString = valoresString + "#"+"&&";
+				if(campo.includes("referencia") || campo.includes("seleccion")){
+					var c = $("#"+campo).val();
+					if(c === "Video"){
+						c = $videoFinal;
+					}
+					valoresString = valoresString + c + "&&";
 				}else if(campo.includes("icono")){
-					var iconoClases = $("#"+campoObjeto+i).attr('class')
-					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
+					var iconoClases = $("#"+campoObjeto+i).attr('class');
+					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","");
 					valoresString = valoresString + iconoClase + "&&";
 				}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
 					if($("#"+campo).val()==null || $("#"+campo).val()==""){
-						valoresString = valoresString + $("#"+campo).attr('value') + "&&"
+						valoresString = valoresString + $("#"+campo).attr('value') + "&&";
 					}else{
-						valoresString = valoresString + $("#"+campo).val() + "&&"
+						valoresString = valoresString + $("#"+campo).val() + "&&";
 					}
 				}else if (campo.includes("objeto")){				
 					if(valoresString.length > 0){
-					valoresString = valoresString.slice(0,valoresString.length-2)
+					valoresString = valoresString.slice(0,valoresString.length-2);
 					valoresString = valoresString + "++";
 					}
 					for(var i = 0 ; i < contaObjeto; i++){
@@ -218,9 +222,9 @@
 								valorStringObjeto = valorStringObjeto + iconoClase + "&&";
 							}else if (campoObjeto.includes("imagen") || campoObjeto.includes("logo") || campoObjeto.includes("favicon") || campoObjeto.includes("fondo")){
 								if($("#"+campoObjeto+i).val()==null || $("#"+campoObjeto+i).val()==""){
-									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).attr('value') + "&&"
+									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).attr('value') + "&&";
 								}else{
-									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&"
+									valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
 								}
 							}else{
 								valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
@@ -230,31 +234,35 @@
 						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2);
 						valorStringObjeto = valorStringObjeto + "++";
 					}
-					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2)
+					valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2);
 					valoresString = valoresString + valorStringObjeto ;
 				}else{
-					valoresString = valoresString + $("#"+campo).val() + "&&" 
+					valoresString = valoresString + $("#"+campo).val() + "&&";
 				}
 			}	
 		}else{
 			for(campo in seccionEmpresa){
-				if(campo.includes("referencia")){
-					valoresString = valoresString + "#" + "++";
+				if(campo.includes("referencia") || campo.includes("seleccion")){
+					var c = $("#"+campo).val();
+					if(c === "Video"){
+						c = $videoFinal;
+					}
+					valoresString = valoresString + c + "++";
 				}else if(campo.includes("icono")){
-					var iconoClases = $("#"+campoObjeto+i).attr('class')
-					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","")
+					var iconoClases = $("#"+campoObjeto+i).attr('class');
+					var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","");
 					valoresString = valoresString + iconoClase + "++";
 				}else if (campo.includes("imagen") || campo.includes("logo") || campo.includes("favicon") || campo.includes("fondo")){
 					if($("#"+campo).val()==null || $("#"+campo).val()==""){
-						valoresString = valoresString + $("#"+campo).attr('value') + "++"
+						valoresString = valoresString + $("#"+campo).attr('value') + "++";
 					}else{
-						valoresString = valoresString + $("#"+campo).val() + "++"
+						valoresString = valoresString + $("#"+campo).val() + "++";
 					}
 				}else{
-					valoresString = valoresString + $("#"+campo).val() + "++" 
+					valoresString = valoresString + $("#"+campo).val() + "++";
 				}
 			}
-			valoresString = valoresString.slice(0,valoresString.length-2)
+			valoresString = valoresString.slice(0,valoresString.length-2);
 		}
 		return valoresString ;
 	}
@@ -422,7 +430,15 @@
 		
 		$('.validaUsuarioEmpresa').click(function(){
 			var tipoAcceso = $(this).attr('data-target')
-//			console.log($.usuarioEmpresa);
+			console.log(tipoAcceso);
+			if(tipoAcceso.includes("Video")){
+				var v = tipoAcceso.split("**");
+				var vi = v[1];
+				console.log(vi);
+				$('#frameVideo').attr('src', 'https://www.youtube.com/embed/'+vi);
+				$(this).attr('data-target','#modalVideo');
+			}
+			
 			if($.usuarioEmpresa ==="" && tipoAcceso === "#modalCita"){
 				$('#divUsuarioEmpresa').hide();//.prop('readonly', false);
 				$('#divBotonUsuarioEmpresa').show();	
