@@ -168,6 +168,12 @@ public class Identidad {
 						hashIdentidad.put("videos", toJSONvideos(arrVideos));
 					}
 				}
+				if(productos.isChatPagina()) {
+					String numeroChat = AtributoDao.consultaChatEmpresa(action);
+					if(numeroChat != null) {
+						hashIdentidad.put("numeroChat", numeroChat);
+					}
+				}
 			}
 		}
 		

@@ -109,7 +109,7 @@
 </div>
 
 <!-- ################################################################################################ -->
-<a id="wa" href="https://api.whatsapp.com/send?phone=525510302411&text=hola%20buenas%20tardes,%20quisiera%20tener%20m%C3%A1s%20informacion%20de%20sus%20servcios,%20gracias" target="_blank"><i class="btmspace-30 fab fa-5x fa-whatsapp "></i></a>
+
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- ################################################################################################ -->
 </body>

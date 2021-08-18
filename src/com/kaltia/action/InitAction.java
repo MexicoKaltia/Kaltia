@@ -34,6 +34,8 @@ public class InitAction extends ActionSupport {
 	protected FooterVO footer;
 	protected JSONObject productos;
 	protected List<JSONObject> videos;
+	protected String numeroChat;
+	
 	
 	
 	protected IdentidadVO identidadVO; // = new IdentidadVO();
@@ -69,6 +71,7 @@ public class InitAction extends ActionSupport {
 					footer = (FooterVO) identidadHash.get("footer");
 					productos = (JSONObject) identidadHash.get("productos");
 					videos =  (List<JSONObject>) identidadHash.get("videos");
+					numeroChat=  (String) identidadHash.get("numeroChat");
 					logger.info("Termina ejecutar action:"+actionName);		
 					
 					if(identidadVO.getActionPrincipal().equals("1") || identidadVO.getActionPrincipal().equals("2")) {
@@ -146,6 +149,13 @@ public class InitAction extends ActionSupport {
 		this.videos = videos;
 	}
 
+	public String getNumeroChat() {
+		return numeroChat;
+	}
+
+	public void setNumeroChat(String numeroChat) {
+		this.numeroChat = numeroChat;
+	}
 
 
 }

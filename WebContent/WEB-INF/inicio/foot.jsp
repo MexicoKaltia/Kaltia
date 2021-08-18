@@ -4,6 +4,7 @@
 
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<div id="chatProducto"></div>
 <body>
 <script>$videoFinal ="";</script>
 
@@ -47,6 +48,7 @@
 <input type="hidden" id="nombreCorto" value="<s:property value='identidadVO.nombreCorto'/>" />
 <input type="hidden" id="productos" value="<s:property value='productos'/>" />
 <input type="hidden" id="videos" value="<s:property value='videos'/>" />
+<input type="hidden" id="numeroChatVal" value="<s:property value='numeroChat'/>" />
 
 </body>
 </html>

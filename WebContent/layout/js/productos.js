@@ -21,8 +21,10 @@ $(document).ready(function(){
 //		console.log("checkClientePagina");
 		productosOpcion = productosOpcion+'<option value="Contacto" >Contacto Cliente</option>';
 	}if(productosEmpresa["checkChatPagina"]){
-//		console.log("checkChatPagina");
+		var numeroChat = $('#numeroChatVal').val();
 		productosOpcion = productosOpcion+'<option value="Chat" >Modulo Chat</option>';
+		var chatProducto = '<a id="wa" href="https://api.whatsapp.com/send?phone=52'+numeroChat+'&text=hola%20buenas%20tardes,%20quisiera%20tener%20m%C3%A1s%20informacion%20de%20sus%20servcios,%20gracias" target="_blank"><i class="btmspace-30 fab fa-5x fa-whatsapp "></i></a>';
+		$('#chatProducto').append(chatProducto);
 	}if(productosEmpresa["checkVideoPagina"]){
 //		console.log("checkVideoPagina");
 		productosOpcion = productosOpcion+'<option value="Video" >Modulo Video</option>';

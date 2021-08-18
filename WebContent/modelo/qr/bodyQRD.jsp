@@ -12,7 +12,7 @@
 	<span style="position:absolute; right:1px;">
 	<s:subset source="body.bodyQRD" start="0">
 	<s:iterator var="bodyQRD">
-		<a style="padding-right:25px;  color:white;" href="#<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></a>
+		<a style="padding-right:50px;  color:white;" href="#<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></a>
 	    </s:iterator>
         </s:subset>
 	</span>
@@ -21,7 +21,7 @@
     	<s:subset source="body.bodyQRD" start="0">
 		<s:iterator var="bodyQRD">
     	 <div class="row">
-            <div class="col-12"><h1 style="font-family:verdana;"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></h1><a  id="<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"></a>
+            <div class="col-12"><h1 style="font-family:verdana; color:white;"><s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/></h1><a  id="<s:property value='#bodyQRD.arrayObjetoVO.get(0).objetoVO.get(0)'/>"></a>
             </div>
     		<s:subset source="#bodyQRD.arrayObjetoVO" start="1">
 			<s:iterator var="bodyQRDObjeto">
