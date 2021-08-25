@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import com.kaltia.vo.MenuVO;
 import com.kaltia.vo.resource.ArrayObjetoVO;
@@ -204,7 +204,7 @@ public class ComunResolution {
 			jsonObject.put("titulo", tmp3[1]);
 			jsonObject.put("descripcion", tmp3[2]);
 			jsonObject.put("costo", tmp3[3]);
-			jsonArray.put(jsonObject);
+			((JSONArray) jsonArray).add(jsonObject);
 		}
 		return jsonArray;
 	}

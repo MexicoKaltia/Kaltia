@@ -51,14 +51,14 @@
 	        	</a>
         </footer>
       </div>
-      <div class="one_half">
-        <p><strong><s:property value='body.bodySeccion1.get(7)'/></strong></p>
-<%--         <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><img src="<s:property value='body.bodySeccion1.get(8)'/>" alt=""></a> --%>
-				<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion1.get(5)'/>">
-	        		<s:property value='body.bodySeccion1.get(8)'/>
-	        	</a>
-        <p><s:property value='body.bodySeccion1.get(9)'/></p>
-      </div>
+<!--       <div class="one_half"> -->
+<%--         <p><strong><s:property value='body.bodySeccion1.get(7)'/></strong></p> --%>
+<%-- <%--         <a href="<s:property value='identidadVO.idAction'/>/<s:property value='body.bodySeccion1.get(5)'/>"><img src="<s:property value='body.bodySeccion1.get(8)'/>" alt=""></a> --%> 
+<%-- 				<a class="btn validaUsuarioEmpresa" data-toggle="modal" data-target="#modal<s:property value='body.bodySeccion1.get(5)'/>"> --%>
+<%-- 	        		<s:property value='body.bodySeccion1.get(8)'/> --%>
+<!-- 	        	</a> -->
+<%--         <p><s:property value='body.bodySeccion1.get(9)'/></p> --%>
+<!--       </div> -->
     </div> 
   </section>
 </div>

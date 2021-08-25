@@ -8,7 +8,9 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.kaltia.dao.AtributoDao;
 import com.kaltia.dao.IdentidadDao;
@@ -155,7 +157,7 @@ public class Identidad {
 			ProductosVO productos = identidadDao.qryProductos(identidadVO.getEmpresa());
 			JSONObject jsonProductos = productosToJSON(productos); 
 			hashIdentidad.put("productos", jsonProductos);
-			logger.info("productos:"+productos.getCodigo());
+			
 			if (!productos.getCodigo().equals("00")) {
 				identidadVO.setCodigoVO(productos.getCodigo());
 				identidadVO.setMensajeVO(productos.getMensaje());
@@ -174,6 +176,13 @@ public class Identidad {
 						hashIdentidad.put("numeroChat", numeroChat);
 					}
 				}
+				if(productos.isTarjetaPagina()) {
+					JSONObject tarjetaProductos = stringToJsonTarjeta(AtributoDao.consultaTarjetaProductos(action));
+					if(tarjetaProductos != null) {
+						hashIdentidad.put("tarjetaProductos", tarjetaProductos);
+					}
+				}
+				logger.info("identidadVOProductos:"+identidadVO.getCodigoVO());
 			}
 		}
 		
@@ -194,10 +203,13 @@ public class Identidad {
 	
 	
 
+	
+
 	/*
 	 * Privates
 	 */
 
+@SuppressWarnings("unchecked")
 private JSONObject productosToJSON(ProductosVO productos) {
 		
 		JSONObject json = new JSONObject();
@@ -297,6 +309,7 @@ private JSONObject productosToJSON(ProductosVO productos) {
 		return modulosNombre;
 	}
 	
+	@SuppressWarnings({ "unchecked" })
 	private List<JSONObject> toJSONvideos(List<VideoVO> arrVideos) {
 		
 		List<JSONObject> arrJson = new ArrayList<JSONObject>();
@@ -309,6 +322,18 @@ private JSONObject productosToJSON(ProductosVO productos) {
 		 
 		return arrJson;
 	
+	}
+	
+	private JSONObject stringToJsonTarjeta(String tarjetaProductos) {
+		JSONParser parser = new JSONParser();
+		JSONObject json = null;
+		try {
+			json = (JSONObject) parser.parse(tarjetaProductos);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;
 	}
 	
 

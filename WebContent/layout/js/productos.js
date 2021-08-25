@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-//	console.log();
-	
-
-	
 	var productosEdicion = new Array();
 	var productosOpcion ="";
 	var productosEmpresa = JSON.parse($('#productos').val());
@@ -30,7 +26,10 @@ $(document).ready(function(){
 		productosOpcion = productosOpcion+'<option value="Video" >Modulo Video</option>';
 	}if(productosEmpresa["checkTarjetaPagina"]){
 //		console.log("checkTarjetaPagina");
-		productosOpcion = productosOpcion+'<option value="Productos" >Modulo Productos</option>';
+		productosOpcion = productosOpcion+'<option value="TarjetaProductos" >Modulo Productos</option>';
+		var archivo = '<script src="layout/js/tarjetaProductos.js"></script>';
+		$('#archivosDinamicos').append(archivo);
+		
 	}if(productosEmpresa["checkRetroalimentacionPagina"]){
 //		console.log("checkRetroalimentacionPagina");
 		productosOpcion = productosOpcion+'<option value="Encuesta" >Modulo Encuesta</option>';

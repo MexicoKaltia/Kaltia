@@ -14,10 +14,9 @@
 <tiles:insertAttribute name="modalEdicion" />
 <tiles:insertAttribute name="modalIngresa" />
 <tiles:insertAttribute name="modalContacto" />
-
-<tiles:insertAttribute name="modalVideo" />
-
 <tiles:insertAttribute name="modalUbicacion" />
+<tiles:insertAttribute name="modalVideo" />
+<tiles:insertAttribute name="modalTarjetaProductos" />
 <tiles:insertAttribute name="modalCita" />
 <tiles:insertAttribute name="modalRegistro" />
 

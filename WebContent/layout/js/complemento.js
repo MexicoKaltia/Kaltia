@@ -57,12 +57,12 @@
 	var arrayTextActualizado ="";
 	var arrayTextOriginal ="";
 	
-	console.log(window.navigator.userAgent);
+//	console.log(window.navigator.userAgent);
 	
 	$.urlParam = $(function(){
 		var results = new RegExp('[\?&]' + $.variableParam + '=([^&#]*)').exec(window.location.href);
 //		var results = new RegExp('[\?&]tipo=([^&#]*)').exec(window.location.href);
-		console.log(window.location.href);
+//		console.log(window.location.href);
 //		console.log(results)
 		urlAction = window.location.href;
 		action = urlAction.split("\/");
@@ -91,7 +91,7 @@
 		
 		if (results == null){
 			_desactiveSeccionEdicion();
-			console.log("results null")
+//			console.log("results null")
 		       return null;
 		    }else{
 		    	if(decodeURI(results[1]) === $.paramInicial){

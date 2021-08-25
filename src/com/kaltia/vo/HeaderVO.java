@@ -2,9 +2,8 @@ package com.kaltia.vo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 
 import com.kaltia.vo.resource.ObjetoVO;
 

@@ -6,7 +6,7 @@
 <body>
 	<div class="bodyQRE" id="bodyQRE">
 		
-			<h2>Menu</h2>
+			<h2 style="font-family:verdana;color:white">Menu</h2>
 			<!-- carrusel -->
 			<div id="carouselBodyQRE" class="carousel slide"
 				data-interval="false">

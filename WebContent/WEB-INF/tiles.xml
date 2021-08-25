@@ -14,110 +14,59 @@
 		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/inicio/footer.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/WEB-INF/inicio/modalEdicionVacio.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresaVacio.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistroVacio.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCitaVacio.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacionVacio.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjetoVacio.jsp" />
+		<put-attribute name="modalEdicion" value="/WEB-INF/inicio/modalEdicion.jsp" />
+		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
+		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
+		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
+		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
+		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
+		<put-attribute name="modalTarjetaProductos" value="/WEB-INF/inicio/modalTarjetaProductos.jsp" />
 <!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQREVacio.jsp" /> -->
 <!-- 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" /> -->
 	</definition>
 
 	<definition name="bronea" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 		<put-attribute name="header" value="/modelo/bronea/pages/broneaHeader.jsp" />
-		<put-attribute name="left" value="/modelo/bronea/pages/broneaLeft.jsp"  />
 		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp"  />
-		<put-attribute name="right" value="/modelo/bronea/pages/broneaRight.jsp" />
 		<put-attribute name="footer" value="/modelo/bronea/pages/broneaFooter.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
-		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
-		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
+		
 	</definition>
 	
 	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="body" value="/modelo/viral/pages/viralBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
 		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
-		<put-attribute name="modalEdicion" value="/WEB-INF/inicio/modalEdicionVacio.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresaVacio.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistroVacio.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCitaVacio.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacionVacio.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjetoVacio.jsp" />
+		
 	</definition>
 
 	
 	<!-- segunda generacion -->
 	
-	<definition name="aerogem" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	<definition name="aerogem" extends="baseInicio">
 		<put-attribute name="header" value="/modelo/aerogem/pages/aerogemHeader.jsp" />
 		<put-attribute name="body" value="/modelo/aerogem/pages/aerogemBody.jsp" />
 		<put-attribute name="footer" value="/modelo/aerogem/pages/aerogemFooter.jsp" />		
 		<put-attribute name="modalEdicion" value="/modelo/aerogem/pages/modalEdicion.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
-		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
-		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
-<!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQRE.jsp" /> -->
+		
 	</definition>
-	<definition name="algenius" template="/WEB-INF/inicio/inicio.jsp">
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+	<definition name="algenius" extends="baseInicio">
 		<put-attribute name="header" value="/modelo/algenius/pages/algeniusHeader.jsp" />
 		<put-attribute name="body" value="/modelo/algenius/pages/algeniusBody.jsp" />
 		<put-attribute name="footer" value="/modelo/algenius/pages/algeniusFooter.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/algenius/pages/modalEdicion.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
-		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
-		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />		
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />		
-<!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQRE.jsp" /> -->
 	</definition>
 	
 	
 	<!-- tercera generacion -->
 	
-	<definition name="besloor" template="/WEB-INF/inicio/inicio.jsp">
+	<definition name="besloor" extends="baseInicio">
 		<put-attribute name="header" value="/modelo/besloor/pages/besloorHeader.jsp" />
-		<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
 		<put-attribute name="body" value="/modelo/besloor/pages/besloorBody.jsp" />
-		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
 		<put-attribute name="footer" value="/modelo/besloor/pages/besloorFooter.jsp" />
-		<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
-		<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
 		<put-attribute name="modalEdicion" value="/modelo/besloor/pages/modalEdicion.jsp" />
-		<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
-		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
-		<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
-		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
-		<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
-		<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
-		<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
-<!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQRE.jsp" /> -->
 	</definition>
 	
 	

@@ -6,6 +6,16 @@
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <div id="chatProducto"></div>
 <body>
+
+<input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
+<input type="hidden" id="idAction" value="<s:property value='identidadVO.action'/>" />
+<input type="hidden" id="idModelo" value="<s:property value='identidadVO.actionEstilo'/>" />
+<input type="hidden" id="nombreCorto" value="<s:property value='identidadVO.nombreCorto'/>" />
+<input type="hidden" id="productos" value="<s:property value='productos'/>" />
+<input type="hidden" id="videos" value="<s:property value='videos'/>" />
+<input type="hidden" id="numeroChatVal" value="<s:property value='numeroChat'/>" />
+<input type="hidden" id="tarjetaProductos" value="<s:property value='tarjetaProductos'/>" />
+
 <script>$videoFinal ="";</script>
 
 	<!-- JAVASCRIPTS Generales-->	
@@ -36,19 +46,12 @@
 	<script src="<%=request.getContextPath()%>/layout/js/productos.js"></script>
 	<script src="<%=request.getContextPath()%>/layout/js/validateForms.js"></script>
 	
-	
+	<div id="archivosDinamicos"></div>
 		
 	
 			
 	
 	<!-- ################################################################################################ -->
-<input type="hidden" id="idEmpresa" value="<s:property value='header.idEmpresa'/>" />
-<input type="hidden" id="idAction" value="<s:property value='identidadVO.action'/>" />
-<input type="hidden" id="idModelo" value="<s:property value='identidadVO.actionEstilo'/>" />
-<input type="hidden" id="nombreCorto" value="<s:property value='identidadVO.nombreCorto'/>" />
-<input type="hidden" id="productos" value="<s:property value='productos'/>" />
-<input type="hidden" id="videos" value="<s:property value='videos'/>" />
-<input type="hidden" id="numeroChatVal" value="<s:property value='numeroChat'/>" />
 
 </body>
 </html>

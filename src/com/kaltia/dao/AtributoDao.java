@@ -7,16 +7,8 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.kaltia.action.BaseAction;
 import com.kaltia.infra.BaseInfra;
-import com.kaltia.infra.ComunResolution;
-import com.kaltia.vo.HeaderVO;
-import com.kaltia.vo.MenuVO;
-//import com.kaltia.vo.UserEmpresa;
-//import com.kaltia.vo.UserPrimarioVO;
-import com.kaltia.vo.QRRVO;
 import com.kaltia.vo.VideoVO;
-import com.kaltia.vo.resource.ObjetoVO;
 
 public class AtributoDao {
 	
@@ -105,7 +97,6 @@ public class AtributoDao {
 		String numeroChat ;
 		String sql = "SELECT numeroChat"
 				+ " from tw_chat "// LEFT JOIN tc_action "
-//				+ "ON tw_header.idEmpresa = tc_action.idEmpresa" 
 				+ " WHERE tw_chat.idAction = ?";
 
 		try {
@@ -125,6 +116,35 @@ public class AtributoDao {
 		return numeroChat ;
 
 	}
+	
+	public static String consultaTarjetaProductos(String action) {
+
+		ArrayList<Object> returnDAO = new ArrayList<Object>();
+		List<String> complemento = new ArrayList<String>();
+		complemento.add(action);
+		String strTarjetaProductos ;
+		String sql = "SELECT tarjetaProductos"
+				+ " from tw_tarjetaProductos "// LEFT JOIN tc_action "
+				+ " WHERE tw_tarjetaProductos.idAction = ?";
+
+		try {
+			returnDAO = (ArrayList<Object>)ConexionDao.doConexion(sql, complemento);
+
+			if (returnDAO != null && returnDAO.size() > 0) {
+				strTarjetaProductos = (returnDAO.get(0) != null ? returnDAO.get(0).toString() : ""); 
+			} else {
+				return null;			
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;		
+		}
+		logger.info("strTarjetaProductos :"+ strTarjetaProductos);
+		return strTarjetaProductos ;
+
+	}
+
+
 
 	
 	/*

@@ -3,7 +3,6 @@ package com.kaltia.action;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,14 +11,13 @@ import javax.servlet.ServletContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 
 import com.kaltia.service.Identidad;
 import com.kaltia.vo.BodyVO;
 import com.kaltia.vo.FooterVO;
 import com.kaltia.vo.HeaderVO;
 import com.kaltia.vo.IdentidadVO;
-import com.kaltia.vo.ProductosVO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -35,7 +33,7 @@ public class InitAction extends ActionSupport {
 	protected JSONObject productos;
 	protected List<JSONObject> videos;
 	protected String numeroChat;
-	
+	protected JSONObject tarjetaProductos;
 	
 	
 	protected IdentidadVO identidadVO; // = new IdentidadVO();
@@ -44,6 +42,7 @@ public class InitAction extends ActionSupport {
 	
 	static final Logger logger = LogManager.getLogger(InitAction.class.getName());
 
+//	@SuppressWarnings("unchecked")
 	@Override
 	public String execute() throws UnknownHostException {
 
@@ -62,7 +61,7 @@ public class InitAction extends ActionSupport {
 
 		try {
 			
-			HashMap identidadHash = identidad.identidadEmpresaPagina(actionName);
+			HashMap<String, Object> identidadHash = identidad.identidadEmpresaPagina(actionName);
 			 identidadVO = (IdentidadVO) identidadHash.get("identidadVO");
 			if (identidadVO.getCodigoVO().equals("00")) {
 				
@@ -72,6 +71,7 @@ public class InitAction extends ActionSupport {
 					productos = (JSONObject) identidadHash.get("productos");
 					videos =  (List<JSONObject>) identidadHash.get("videos");
 					numeroChat=  (String) identidadHash.get("numeroChat");
+					tarjetaProductos = (JSONObject) identidadHash.get("tarjetaProductos");
 					logger.info("Termina ejecutar action:"+actionName);		
 					
 					if(identidadVO.getActionPrincipal().equals("1") || identidadVO.getActionPrincipal().equals("2")) {
@@ -157,5 +157,12 @@ public class InitAction extends ActionSupport {
 		this.numeroChat = numeroChat;
 	}
 
+	public JSONObject getTarjetaProductos() {
+		return tarjetaProductos;
+	}
+
+	public void setTarjetaProductos(JSONObject tarjetaProductos) {
+		this.tarjetaProductos = tarjetaProductos;
+	}
 
 }

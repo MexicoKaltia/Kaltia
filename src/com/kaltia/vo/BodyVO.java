@@ -3,7 +3,7 @@ package com.kaltia.vo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 
 import com.kaltia.vo.resource.ArrayObjetoVO;
 import com.kaltia.vo.resource.ObjetoVO;
