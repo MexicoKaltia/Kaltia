@@ -591,16 +591,22 @@ $(document).ready(function() {
 				
 				var jsonObjetoActualizado;
 				var jsonCategoriaActualizado = new Array();
+				
 				for(var a=0 ; a < jsonQRD[categoria].length ; a++){
 					var img = formatoImagen($('#imagenObjetoQRD'+a).val());
 					if(img===null || img===""){
 						img = formatoImagen($('#imagenObjetoQRD'+a).attr('value')); 
 					}
+					var costoVal = $('#costoObjetoQRD'+a).val();
+					if(costoVal == null || costoVal ==""){
+						costoVal = ".";
+					}
+					
 					jsonObjetoActualizado = {
 							imagen: img,
 							titulo: $('#tituloObjetoQRD'+a).val(),
 							descripcion: $('#descripcionObjetoQRD'+a).val(),
-							costo: $('#costoObjetoQRD'+a).val()};
+							costo: costoVal};
 					jsonCategoriaActualizado.push(jsonObjetoActualizado);
 				
 //					console.log(img);

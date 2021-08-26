@@ -27,7 +27,7 @@
 <!-- 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" /> -->
 	</definition>
 
-	<definition name="bronea" template="/WEB-INF/inicio/inicio.jsp">
+	<definition name="bronea" extends="baseInicio">
 		<put-attribute name="header" value="/modelo/bronea/pages/broneaHeader.jsp" />
 		<put-attribute name="body" value="/modelo/bronea/pages/broneaBody.jsp"  />
 		<put-attribute name="footer" value="/modelo/bronea/pages/broneaFooter.jsp" />

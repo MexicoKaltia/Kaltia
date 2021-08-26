@@ -1,0 +1,29 @@
+/*
+Template Name: Besloor
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+File: Back to Top JS
+*/
+
+jQuery("#backtotop").click(function () {
+    jQuery("body,html").animate({
+        scrollTop: 0
+    }, 600);
+});
+jQuery("#wa").click(function () {
+    jQuery("body,html").animate({
+        scrollTop: 0
+    }, 60);
+});
+jQuery(window).scroll(function () {
+    if (jQuery(window).scrollTop() > 15) {
+        jQuery("#backtotop").addClass("visible");
+        jQuery("#wa").addClass("visible");
+    } else {
+        jQuery("#backtotop").removeClass("visible");
+        jQuery("#wa").removeClass("visible");
+    }
+});

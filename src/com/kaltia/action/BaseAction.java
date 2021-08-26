@@ -4,6 +4,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import javax.servlet.ServletContext;
@@ -11,6 +12,7 @@ import javax.servlet.ServletContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
+import org.json.simple.JSONObject;
 
 import com.kaltia.infra.BaseInfra;
 import com.kaltia.service.EmpresaService;
@@ -107,11 +109,18 @@ public class BaseAction extends InitAction  {
 			HashMap identidadHash = identidad.identidadEmpresaQRR(actionName);
 			 QRRVO qrrVO = (QRRVO) identidadHash.get("qrrVO");
 			 identidadVO = (IdentidadVO) identidadHash.get("identidadVO");
+			 
 			if (qrrVO.getCodigo().equals("00")) {
 					
 					header = (HeaderVO) identidadHash.get("header");
 					body = (BodyVO) identidadHash.get("body");
 					footer = (FooterVO) identidadHash.get("footer");
+					
+					productos = (JSONObject) identidadHash.get("productos");
+					videos =  (List<JSONObject>) identidadHash.get("videos");
+					numeroChat=  (String) identidadHash.get("numeroChat");
+					tarjetaProductos = (JSONObject) identidadHash.get("tarjetaProductos");
+					 
 					logger.info("-------------------------FIN QRR : "+ qrrVO.getIdAction()+":"+qrrVO.getTipoQRR().toString()+"--------------------------------------------------------------");
 					return qrrVO.getTipoQRR().toString();					
 			} else {

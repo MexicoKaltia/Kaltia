@@ -684,11 +684,15 @@ $(document).ready(function() {
 					if(img===null || img===""){
 						img = formatoImagen($('#imagenObjetoQRD'+a).attr('value')); 
 					}
+					var costoVal = $('#costoObjetoQRD'+a).val();
+					if(costoVal == null || costoVal ==""){
+						costoVal = ".";
+					}
 					jsonObjetoActualizado = {
 							imagen: img,
 							titulo: $('#tituloObjetoQRD'+a).val(),
 							descripcion: $('#descripcionObjetoQRD'+a).val(),
-							costo: $('#costoObjetoQRD'+a).val()};
+							costo: costoVal};
 					jsonCategoriaActualizado.push(jsonObjetoActualizado);
 				
 //					console.log(img);
