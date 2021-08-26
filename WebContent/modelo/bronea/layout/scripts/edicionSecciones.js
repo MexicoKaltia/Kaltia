@@ -544,7 +544,7 @@ $(document).ready(function() {
 				valida();
 				
 				cargaModal("bodyQRD");
-				var jsonQRD = JSON.parse($('#jsonQRDHidden').val())
+				var jsonQRD = JSON.parse($('#jsonQRDHidden').val());
 //				console.log(jsonQRD);
 				$('#seleccionCategoriaB').empty();
 				var optionCategoria = "<option value='' selected>Seleccione Categoria para Edicion</option>";
@@ -609,13 +609,18 @@ $(document).ready(function() {
 							$("#modalEdicionBodyQRD_btnSaveElemento").click(function(){
 //								console.log(jsonQRD)
 								var nuevoCategoria = $('#tituloCtegoria').val();
+								var costoVal = $('#costoObjetoQRD').val();
+								
+								if(costoVal == null || costoVal ==""){
+									costoVal = ".";
+								}
 								var nuevoObjeto={
 									imagen:formatoImagen($('#imagenObjetoQRD').val()),
 									titulo:$('#tituloObjetoQRD').val(),
 									descripcion:$('#descripcionObjetoQRD').val(),
-									costo:$('#costoObjetoQRD').val()
+									costo:costoVal
 								}
-//								alert(nuevoObjeto.imagen);
+
 								var nuevoArrayObjetos = new Array();
 								for(i in jsonQRD[categoria]){
 									var elemento = jsonQRD[categoria][i];
@@ -685,6 +690,7 @@ $(document).ready(function() {
 						img = formatoImagen($('#imagenObjetoQRD'+a).attr('value')); 
 					}
 					var costoVal = $('#costoObjetoQRD'+a).val();
+					
 					if(costoVal == null || costoVal ==""){
 						costoVal = ".";
 					}
@@ -747,12 +753,16 @@ $(document).ready(function() {
 //						aqui
 //						console.log(jsonQRD)
 						var nuevoCategoria = $('#tituloCtegoria').val();
+						var costoVal = $('#costoObjetoQRD').val();
+						if(costoVal == null || costoVal ==""){
+							costoVal = ".";
+						}
 						var nuevoObjeto={
 							imagen:formatoImagen($('#imagenObjetoQRD').val()),
 							titulo:$('#tituloObjetoQRD').val(),
 							descripcion:$('#descripcionObjetoQRD').val(),
-							costo:$('#costoObjetoQRD').val()
-						}
+							costo: costoVal
+						};
 						
 						var nuevoArrayObjetos = new Array();
 						nuevoArrayObjetos.push(nuevoObjeto)

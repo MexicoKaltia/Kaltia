@@ -521,11 +521,15 @@ $(document).ready(function() {
 							$("#modalEdicionBodyQRD_btnSaveElemento").click(function(){
 //								console.log(jsonQRD)
 								var nuevoCategoria = $('#tituloCtegoria').val();
+								var costoVal = $('#costoObjetoQRD').val();
+								if(costoVal == null || costoVal ==""){
+									costoVal = ".";
+								}
 								var nuevoObjeto={
 									imagen:formatoImagen($('#imagenObjetoQRD').val()),
 									titulo:$('#tituloObjetoQRD').val(),
 									descripcion:$('#descripcionObjetoQRD').val(),
-									costo:$('#costoObjetoQRD').val()
+									costo:costoVal
 								}
 //								alert(nuevoObjeto.imagen);
 								var nuevoArrayObjetos = new Array();
@@ -661,11 +665,15 @@ $(document).ready(function() {
 //						aqui
 //						console.log(jsonQRD)
 						var nuevoCategoria = $('#tituloCtegoria').val();
+						var costoVal = $('#costoObjetoQRD').val();
+						if(costoVal == null || costoVal ==""){
+							costoVal = ".";
+						}
 						var nuevoObjeto={
 							imagen:formatoImagen($('#imagenObjetoQRD').val()),
 							titulo:$('#tituloObjetoQRD').val(),
 							descripcion:$('#descripcionObjetoQRD').val(),
-							costo:$('#costoObjetoQRD').val()
+							costo:costoVal
 						}
 						
 						var nuevoArrayObjetos = new Array();
