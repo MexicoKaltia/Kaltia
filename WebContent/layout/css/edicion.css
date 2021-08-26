@@ -31,3 +31,7 @@ div.alerta2 {
 #wa.visible{visibility:visible; opacity:.5;}
 #wa:hover{opacity:1;}
 #wa{color:#FFFFFF; background-color:#21CD13;}
+
+.iconoObjetoMapa{
+	color:white;!important
+}
