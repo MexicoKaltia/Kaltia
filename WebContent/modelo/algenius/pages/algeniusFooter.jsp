@@ -32,12 +32,13 @@
 			</a></li>
 		</s:iterator>        </ul>
       </nav>
-      <ul class="faico clear">
-        <li><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="fa  fa-facebook" ></i></a></li>
-	      <li><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="fa  fa-twitter" ></i></a></li>
-	      <li><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="fa  fa-youtube" ></i></a></li>
-	      <li><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="fa  fa-linkedin" ></i></a></li>
-	      <li><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="fa  fa-google-plus" ></i></a></li>
+      <ul class="faico clear" id="listSeccionRedes">
+<%--         <li><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="fa  fa-facebook" ></i></a></li> --%>
+<%--         <li><a href="<s:property value='footer.footerSeccionRedes.get(6)' />" target="_blank"><i class="fa  fa-instagram" ></i></a></li> --%>
+<%-- 	      <li><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="fa  fa-twitter" ></i></a></li> --%>
+<%-- 	      <li><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="fa  fa-youtube" ></i></a></li> --%>
+<%-- 	      <li><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="fa  fa-linkedin" ></i></a></li> --%>
+<%-- 	      <li><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="fa  fa-google-plus" ></i></a></li> --%>
       </ul>
     </div>
    

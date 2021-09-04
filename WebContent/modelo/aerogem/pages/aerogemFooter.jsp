@@ -10,20 +10,14 @@
   <footer id="footer" class="hoc clear"> 
     <div class="one_quarter first footerSeccionRedes">
       <h6 class="heading"><s:property value='footer.footerSeccionRedes.get(0)' /></h6>
-      <ul class="nospace linklist">
-	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>
-	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo>
-<%--         <s:subset start="1" source ="footer.footerSeccion1"> --%>
-<%--         <s:iterator> --%>
-<%-- <%--identificar Secciones --%>
-<%--            		<li><a href="<s:property value='identidadVO.idAction'/>/<s:property/>"><s:property/></a></li> --%> 
-<%--            		<li><a href="#seccion4"><s:property/></a></li> --%>
-<%--          </s:iterator> --%>
-<%--          </s:subset> --%>
-        
+      <ul class="nospace linklist" id="listSeccionRedes">
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(1)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo> --%>
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(6)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-instagram" ></i></a></lo> --%>
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(2)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo> --%>
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(3)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo> --%>
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(4)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo> --%>
+<%-- 	      <lo><a href="<s:property value='footer.footerSeccionRedes.get(5)' />" target="_blank"><i class="btmspace-30 fa fa-4x fa-google-plus" ></i></a></lo> --%>
+	      
       </ul>
       <br><br>
       <ul>

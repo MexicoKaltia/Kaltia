@@ -23,6 +23,7 @@
 		<put-attribute name="modalVideo" value="/WEB-INF/inicio/modalVideo.jsp" />
 		<put-attribute name="modalContacto" value="/WEB-INF/inicio/modalContacto.jsp" />
 		<put-attribute name="modalTarjetaProductos" value="/WEB-INF/inicio/modalTarjetaProductos.jsp" />
+		<put-attribute name="modalRedes" value="/WEB-INF/inicio/modalRedes.jsp" />
 <!-- 		<put-attribute name="modalQRE" value="/WEB-INF/inicio/modalQREVacio.jsp" /> -->
 <!-- 		<put-attribute name="css" expression="/css/inicio.css" cascade="true" /> -->
 	</definition>

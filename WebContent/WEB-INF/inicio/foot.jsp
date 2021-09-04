@@ -15,6 +15,7 @@
 <input type="hidden" id="videos" value="<s:property value='videos'/>" />
 <input type="hidden" id="numeroChatVal" value="<s:property value='numeroChat'/>" />
 <input type="hidden" id="tarjetaProductos" value="<s:property value='tarjetaProductos'/>" />
+<input type="hidden" id="seccionRedes" value="<s:property value='footer.footerSeccionRedes'/>" />
 
 <script>$videoFinal ="";</script>
 

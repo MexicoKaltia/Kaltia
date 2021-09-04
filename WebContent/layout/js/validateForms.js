@@ -43,9 +43,58 @@ $(document).ready(function(){
 	/*
 	 * fin modalContacto
 	 */
-	
+
+	$("#modalFormSeccionRedes").validate({
+		rules: {
+			textFFS1: {
+				 url: true,
+			},
+			textIFS1: {
+				 url: true
+			},
+			textTFS1: {
+				 url: true
+			},
+			textYFS1: {
+				 url: true
+			},
+			textLFS1: {
+				 url: true
+			},
+			textGFS1: {
+				 url: true
+			}
+		},
+		messages: {
+			textFFS1: "Favor captura URL - Facebook correcto",
+			textIFS1: "Favor captura URL - Instagram correcto",
+			textTFS1: "Favor captura URL - Twitter correcto",
+			textYFS1: "Favor captura URL - YouTube correcto",
+			textLFS1: "Favor captura URL - LinkedIn correcto",
+			textGFS1: "Favor captura URL - Google correcto",
+		},
+		
+		
+	});
 	
 });
+
+function validaBtn(flag){
+	setFlag(flag);
+	if(flag){
+		$('#modalEdicionFooterSeccionRedes_btnSave').hide();
+	}else{
+		$('#modalEdicionFooterSeccionRedes_btnSave').show();
+	}
+}
+
+var flag
+function setFlag(flag){
+	this.flag = flag; 
+}
+function getFlag(){
+	return this.flag; 
+}
 
 function validaModalFormContacto(){
 	var nombreRegistro = $("#nombreRegistro").val() ;

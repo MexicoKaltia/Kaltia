@@ -13,7 +13,7 @@ $(document).ready(function() {
 	function cargaModal(seccion, modelo){
 		$.seccionCampos="";	
 		$.seccionCampos = estructuraSeccion(seccion);
-		console.log($.seccionCampos);
+		
 		$('.'+seccion).attr("data-toggle","modal");
 		$('.'+seccion).attr("data-target","#modalEdicion_"+seccion);
 		$("div.alertaBody_file > div").remove();
@@ -40,7 +40,7 @@ $(document).ready(function() {
 				"bodySeccionArray4":{  "tituloBSA4" :"text",  "seleccionBSA4":"text",  "botonBSA4":"text",  "objeto" : {"posicionObjetoBSA4" :"text",  "imagenObjetoBSA4" : "img",      "seleccionObjetoBSA4" : "text",      "tituloObjetoBSA4" :"text",      "descripcionObjetoBSA4" :"text" }},
 				"bodySeccionArray5":{  "imagenBSA5" : "img", "tituloBSA5" :"text",  "seleccionBSA5":"text",  "botonBSA5":"text",  "objeto" : {"posicionObjetoBSA5" :"text",  "imagenObjetoBSA5" : "img", "tituloObjetoBSA5" : "text",      "subTituloObjetoBSA5" :"text",      "descripcionObjetoBSA5" :"lorem" }},
 				"footerSeccionUbicacion"   :{  "tituloFSU" : "text",    "domicilioFSU" : "text",  "telefonoFSU" : "text",  "correoFSU" : "text", "ubicacionFSU" : "lorem"},
-				"footerSeccionRedes"	:{ "tituloFS1" : "text",  "facebookFSRText":"text", "twitterFSRText":"text", "youtubeFSRText":"text", "linkedinFSRText":"text", "googleFSText":"text" },
+				"footerSeccionRedes"   :{  "tituloRedes" : "text",  "textFFS1" : "text", "textIFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
 				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
 				}
@@ -390,19 +390,20 @@ $(document).ready(function() {
 	});
 
 	$('.footerSeccionRedes').click(function(){
-		console.log("SeccionRedes Besloor")
+		
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccionRedes","");
+			$.seccionCampos = cargaModal("footerSeccionRedes");
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccionRedes",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
+				if($("#modalFormSeccionRedes").valid()){
+					valoresFinales = dataEdicion($.seccionCampos, 0);
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "footerSeccionRedes",
+							 valoresFinales : valoresFinales }
+					console.log(finalJson);
+					
+					enviaDataEdicion(finalJson)
+				}
 			});
 		}else{
 			console.log("param:Nulo");

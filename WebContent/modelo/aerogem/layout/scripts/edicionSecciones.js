@@ -31,7 +31,7 @@ $(document).ready(function() {
 				"footerSeccionArray1":{  "tituloFSA1" :"text", "objeto" : {  "tituloObjetoFSA1" :"text", "subTituloObjetoFSA1" :"text", "descripcionObjetoFSA1" :"lorem" }},
 				"footerSecciones"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFSU" : "text",  "subtituloFSU" : "lorem",  "domicilioFSU" : "text",  "telefonoFSU" : "text",  "correoFSU" : "text", "ubicacionFSU" : "text"},
-				"footerSeccionRedes"   :{  "tituloFS1" : "text",  "textFFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
+				"footerSeccionRedes"   :{  "tituloRedes" : "text",  "textFFS1" : "text", "textIFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
 				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
 				}
@@ -289,23 +289,21 @@ $(document).ready(function() {
 	$('.footerSeccionRedes').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionRedes");
-//			$('#imagenFS1').on('change', function(){ enviaImagen("imagenFS1Form") });
 		
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-				while(valoresFinales.includes("C:\\fakepath\\") ){
-					valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
-				}
+				if($("#modalFormSeccionRedes").valid()){
+					valoresFinales = dataEdicion($.seccionCampos, 0);
+					while(valoresFinales.includes("C:\\fakepath\\") ){
+						valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+					}
 
-//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccionRedes",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "footerSeccionRedes",
+							 valoresFinales : valoresFinales }
+					
+					enviaDataEdicion(finalJson)
+				}
 				
 			});
 		}else{

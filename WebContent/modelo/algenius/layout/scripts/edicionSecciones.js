@@ -27,7 +27,7 @@ $(document).ready(function() {
 				"bodySeccionArray3"  :{ "imagenBSA3":"img", "tituloBSA3":"text",  "objeto":{"posicionObjetoBSA3" :"text","imagenObjetoBSA3" :"img", "tituloObjetoBSA3" :"text", "descripcionObjetoBSA3" :"lorem"}},
 				"bodySeccionArray4"  :{  "objeto":{"posicionObjetoBSA4" :"text","imagenObjetoBSA4" :"img"}},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
-				"footerSeccionRedes"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
+				"footerSeccionRedes"   :{  "tituloRedes" : "text",  "textFFS1" : "text", "textIFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"footerSeccion3"   :{  "tituloFS3" : "text" ,  "referenciaFS3" : "text",  "subTituloFS3" : "text", "tagFS3" : "text",  "descripcionFS3" : "lorem"   },
 				"footerSecciones"    :{  "imagenFSS":"img", "tituloFSS" : "text" },
 				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
@@ -408,18 +408,16 @@ $(document).ready(function() {
 	$('.footerSeccionRedes').click(function(){
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionRedes","");
-//			console.log(			$.seccionCampos);
+			console.log($.seccionCampos);
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccionRedes",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
+				if($("#modalFormSeccionRedes").valid()){
+					valoresFinales = dataEdicion($.seccionCampos, 0);
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "footerSeccionRedes",
+							 valoresFinales : valoresFinales }
+					enviaDataEdicion(finalJson)
+				}
 			});
 		}else{
 			console.log("param:Nulo");

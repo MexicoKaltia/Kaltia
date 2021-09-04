@@ -2,7 +2,13 @@ $(document).ready(function(){
 
 	var productosEdicion = new Array();
 	var productosOpcion ="";
-	var productosEmpresa = JSON.parse($('#productos').val());
+	var productosEmpresa ={empty:null};
+//	console.log($('#productos').val());
+	if($('#productos').val() !== ""){
+		productosEmpresa = JSON.parse($('#productos').val());
+	}
+//	console.log(productosEmpresa);
+
 	if(productosEmpresa["checkPagina"]){
 		productosOpcion = productosOpcion+'<option value="Ubicacion" >Ubicacion</option>';
 	}if(productosEmpresa["checkQRR"]){

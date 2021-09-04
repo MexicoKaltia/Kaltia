@@ -28,6 +28,7 @@ $(document).ready(function() {
 				"footerSeccion1"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"footerSeccion2"   :{  "tituloFS2" : "text",  "textFFS2" : "text", "textTFS2" : "text", "textYFS2" : "text", "textLFS2" : "text", "textGFS2" : "text"},
 				"footerSeccion3"   :{  "tituloFS3" : "text", "imagenFS3":"img" },
+				"footerSeccionRedes"   :{  "tituloRedes" : "text",  "textFFS1" : "text", "textIFS1" : "text", "textTFS1" : "text", "textYFS1" : "text", "textLFS1" : "text", "textGFS1" : "text"},
 				"footerSeccionUbicacion"   :{  "tituloFS1" : "text",  "subtituloFS1" : "lorem",  "domicilioFS1" : "text",  "telefonoFS1" : "text",  "correoFS1" : "text", "ubicacionFS1" : "text"},
 				"bodyQRE" : {"objeto":{"imagenObjetoQRE": "img", "tituloObjetoQRE": "text", "descripcionObjetoQRE": "lorem" }},
 				"bodyQRD" : {"objeto":{"imagenObjetoQRE": "img"}}
@@ -47,7 +48,8 @@ $(document).ready(function() {
 		case "bodySeccionArray4": return camposModelo.bodySeccionArray4; break;
 		case "footerSeccion1": return camposModelo.footerSeccion1; break;   
 		case "footerSeccion2": return camposModelo.footerSeccion2; break;   
-		case "footerSeccion3": return camposModelo.footerSeccion3; break;   
+		case "footerSeccion3": return camposModelo.footerSeccion3; break;  
+		case "footerSeccionRedes": return camposModelo.footerSeccionRedes; break;  
 		case "footerSeccionUbicacion": return camposModelo.footerSeccionUbicacion; break;
 		case "bodyQRE": return camposModelo.bodyQRE; break;
 		case "bodyQRD": return camposModelo.bodyQRD; break;
@@ -449,19 +451,20 @@ $(document).ready(function() {
 
 	$('.footerSeccionRedes').click(function(){
 		if(validaParam()){
-			$.seccionCampos = cargaModal("footerSeccionRedes",$.modelo);
+			$.seccionCampos = cargaModal("footerSeccionRedes");
 			
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
-				valoresFinales = dataEdicion($.seccionCampos, 0);
-//				valoresFinales = ordenaValoresFinales(valoresFinales, 0,0,0);
-				finalJson = { action : $.action,
-						 idEmpresa : $.idEmpresa,	
-						 seccion : "footerSeccionRedes",
-						 valoresFinales : valoresFinales }
-				console.log(finalJson);
-				
-				enviaDataEdicion(finalJson)
-				
+				if($("#modalFormSeccionRedes").valid()){
+					valoresFinales = dataEdicion($.seccionCampos, 0);
+					finalJson = { action : $.action,
+							 idEmpresa : $.idEmpresa,	
+							 seccion : "footerSeccionRedes",
+							 valoresFinales : valoresFinales };
+					
+					console.log(finalJson);
+					alert("pausa");
+					enviaDataEdicion(finalJson)
+				}
 			});
 		}else{
 			console.log("param:Nulo");

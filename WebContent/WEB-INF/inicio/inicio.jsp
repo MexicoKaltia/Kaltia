@@ -12,6 +12,7 @@
 <tiles:insertAttribute name="right" />
 <tiles:insertAttribute name="footer" />
 <tiles:insertAttribute name="modalEdicion" />
+<tiles:insertAttribute name="modalRedes" />
 <tiles:insertAttribute name="modalIngresa" />
 <tiles:insertAttribute name="modalContacto" />
 <tiles:insertAttribute name="modalUbicacion" />

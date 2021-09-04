@@ -182,7 +182,7 @@
 	
 	
 	function dataEdicion(seccionEmpresa, contaObjeto){
-		console.log(seccionEmpresa);
+//		console.log(seccionEmpresa);
 //		console.log(contaObjeto);
 		var valoresString = "";
 		var valoresStringObjeto = "";
@@ -424,9 +424,112 @@
 //			console.log(rsInput);
 			if($('#'+rsCheck).prop('checked')){
 				$('#'+rsInput).prop('readonly', false);
+				
 			}
-			
 		});
+		$('#modalEdicionFooterSeccionRedes_btnSave').hide();
+		
+		var seccionRedes = $('#seccionRedes').val();
+		seccionRedes = seccionRedes.split(",")
+		$('#listSeccionRedes').empty();
+		
+		for(var a in seccionRedes){
+			var valorRed = removeChar(seccionRedes[a]);
+			var opcion ="";
+//			console.log(valorRed);
+			if(valorRed.includes("facebook")){
+				opcion =  '<lo><a href="'+valorRed+'" target="_blank"><i class="btmspace-30 fa fa-4x fa-facebook" ></i></a></lo>';
+			}
+			if(valorRed.includes("instagram")){
+				opcion =  '<lo><a href="'+valorRed+'" target="_blank"><i class="btmspace-30 fa fa-4x fa-instagram" ></i></a></lo>';
+			}
+			if(valorRed.includes("twitter")){
+				opcion =  '<lo><a href="'+valorRed+'" target="_blank"><i class="btmspace-30 fa fa-4x fa-twitter" ></i></a></lo>';
+			}
+			if(valorRed.includes("youtube")){
+				opcion =  '<lo><a href="'+valorRed+'" target="_blank"><i class="btmspace-30 fa fa-4x fa-youtube" ></i></a></lo>';
+			}
+			if(valorRed.includes("linkedin")){
+				opcion =  '<lo><a  target="_blank"><i class="btmspace-30 fa fa-4x fa-linkedin" ></i></a></lo>';
+				}
+			if(valorRed.includes("google")){
+				opcion =  '<lo><a href="'+valorRed+'" target="_blank"><i class="btmspace-30 fa fa-4x fa-google" ></i></a></lo>';
+				}
+			$('#listSeccionRedes').append(opcion);
+		}
+		
+		function removeChar(str){
+			str = str.replace("[","");
+			str = str.replace("]","");
+			str = str.replace(" ","");
+			return str;
+		}
+		
+		$('.validaCampo').focusout(function(){
+			var tipoRed  =$(this).attr('id');
+			var valorRed  =$(this).val();
+			
+			switch (tipoRed){
+			case "textFFS1":
+				if(!valorRed.includes("facebook")){
+					alert("Captura correctamente la URL de tu Facebook, ejemplo : 'https://www.facebook.com/IdFacebook'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			case "textIFS1":
+				if(!valorRed.includes("instagram")){
+					alert("Captura correctamente la URL de tu Instagram, ejemplo : 'https://www.instagram.com/IdInstagram'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			case "textTFS1":
+				if(!valorRed.includes("twitter")){
+					alert("Captura correctamente la URL de tu twitter, ejemplo : 'https://www.twitter.com/Idtwitter'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			case "textYFS1":
+				if(!valorRed.includes("youtube")){
+					alert("Captura correctamente la URL de tu youtube, ejemplo : 'https://www.youtube.com/Idyoutube'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			case "textLFS1":
+				if(!valorRed.includes("linkedin")){
+					alert("Captura correctamente la URL de tu linkedin, ejemplo : 'https://www.linkedin.com/Idlinkedin'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			case "textGFS1":
+				if(!valorRed.includes("google")){
+					alert("Captura correctamente la URL de tu google, ejemplo : 'https://www.google.com/Idgoogle'");
+					$(this).val("");
+					validaBtn(true);
+				}else{
+					validaBtn(false);
+				}
+				break;
+			}
+				
+			
+						
+		});
+		
 		
 		$('.validaUsuarioEmpresa').click(function(){
 			var tipoAcceso = $(this).attr('data-target')
@@ -588,14 +691,14 @@
 		function enviaDataEdicion(finalJson){
 			limpiaAlerta();
 			var context = "";
-			for(campo in finalJson){
-				if(campo === "action")
-					context = context + finalJson.action +"/"
-				else{
-					context = context + campo +"/"
-				}
-			}
-//			console.log(url + context)
+//			for(campo in finalJson){
+//				if(campo === "action")
+//					context = context + finalJson.action +"/"
+//				else{
+//					context = context + campo +"/"
+//				}
+//			}
+			
 			$.ajax({
 			   	  url: url +"edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
@@ -613,6 +716,7 @@
 					  errorAlerta();
 				  }
 				});
+			
 		}
 		
 		function enviaImagen(idImagenForm){
