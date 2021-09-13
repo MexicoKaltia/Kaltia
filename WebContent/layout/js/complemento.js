@@ -193,7 +193,8 @@
 				if(campo.includes("referencia") || campo.includes("seleccion")){
 					var c = $("#"+campo).val();
 					if(c === "Video"){
-						c = $videoFinal;
+						var idSelect = $("#"+campo).attr('id');
+						c = "Video**" + $('#selVideo'+idSelect).val();//$videoFinal;
 					}
 					valoresString = valoresString + c + "&&";
 				}else if(campo.includes("icono")){
@@ -213,9 +214,13 @@
 					}
 					for(var i = 0 ; i < contaObjeto; i++){
 						for(campoObjeto in seccionEmpresa.objeto){
-//							console.log("contaObjeto:"+contaObjeto+" "+campoObjeto+i)
-							if(campoObjeto.includes("referencia")){
-								valorStringObjeto = valorStringObjeto + "#"+"&&";
+							if(campoObjeto.includes("referencia") || campoObjeto.includes("seleccion")){
+								var c = $("#"+campoObjeto+i).val();
+								if(c === "Video"){
+									var idSelect = $("#"+campoObjeto+i).attr('id');
+									c = "Video**" + $('#selVideo'+idSelect).val();//$videoFinal;
+								}
+								valorStringObjeto = valorStringObjeto + c +"&&";
 							}else if(campoObjeto.includes("icono")){
 								var iconoClases = $("#"+campoObjeto+i).attr('class');
 								var iconoClase = iconoClases.replace("btmspace-30 fa fa-4x ","");
@@ -229,7 +234,6 @@
 							}else{
 								valorStringObjeto = valorStringObjeto + $("#"+campoObjeto+i).val() + "&&";
 							}
-//							console.log(valorStringObjeto);
 						}
 						valorStringObjeto = valorStringObjeto.slice(0,valoresStringObjeto.length-2);
 						valorStringObjeto = valorStringObjeto + "++";
@@ -245,7 +249,8 @@
 				if(campo.includes("referencia") || campo.includes("seleccion")){
 					var c = $("#"+campo).val();
 					if(c === "Video"){
-						c = $videoFinal;
+						var idSelect = $("#"+campo).attr('id');
+						c = "Video**" + $('#selVideo'+idSelect).val();//$videoFinal;
 					}
 					valoresString = valoresString + c + "++";
 				}else if(campo.includes("icono")){
@@ -417,7 +422,7 @@
 			$('#'+imgArrayInput).on('change', function(){ enviaImagen(imgArrayForm); });
 		});
 		
-		$('.grupoRS').click(function(){
+		$('.grupoRS2').click(function(){
 			var rsInput =$(this).children("input").attr('id');
 			var rsCheck =$(this).children("div").children("div").children("input").attr('id');
 //			console.log(rsCheck);
@@ -533,11 +538,16 @@
 		
 		$('.validaUsuarioEmpresa').click(function(){
 			var tipoAcceso = $(this).attr('data-target')
-			console.log(tipoAcceso);
+//			console.log(tipoAcceso);
 			if(tipoAcceso.includes("Video")){
-				var v = tipoAcceso.split("**");
+				if(tipoAcceso.includes("**")){
+					$(this).attr('data-video', tipoAcceso);
+				}
+				var video = $(this).attr('data-video');
+				
+				var v = video.split("**");
 				var vi = v[1];
-				console.log(vi);
+//				console.log(vi);
 				$('#frameVideo').attr('src', 'https://www.youtube.com/embed/'+vi);
 				$(this).attr('data-target','#modalVideo');
 			}
@@ -697,8 +707,9 @@
 //				else{
 //					context = context + campo +"/"
 //				}
-//			}
-			
+//			}			
+//			alert( url +"edicionSeccion/");
+//			alert(JSON.stringify(finalJson));
 			$.ajax({
 			   	  url: url +"edicionSeccion/",//+ context,//+finalJson.action+"/"+finalJson[1],
 			      dataType: 'json',
@@ -712,7 +723,9 @@
 //						  avisaAlerta(data);
 						  avisaAlertaEdicion(data)
 					},
-				  error: function(){
+				  error: function(data){
+					  console.log(data);
+					  alert(data);
 					  errorAlerta();
 				  }
 				});

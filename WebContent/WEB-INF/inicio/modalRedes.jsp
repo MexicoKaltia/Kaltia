@@ -35,12 +35,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-facebook" ></i></span>
 				      <div class="col-7">
 				      <div class="input-group grupoRS">
-						  <div class="input-group-prepend ">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="facebookFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(1)' />" id="textFFS1" name="textFFS1" readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(1)' />" id="textFFS1" name="textFFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -48,12 +44,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-instagram" ></i></span>
 				      <div class="col-7">
 						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="instagramFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(6)' />" id="textIFS1" name="textIFS1"readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(6)' />" id="textIFS1" name="textIFS1">
 						</div>
 				      </div>
 				    </div>
@@ -61,12 +53,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-twitter" ></i></span>
 				      <div class="col-7">
 						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="twitterFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(2)' />" id="textTFS1" name="textTFS1" readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(2)' />" id="textTFS1" name="textTFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -74,12 +62,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-youtube" ></i></span>
 				      <div class="col-7">
 				      <div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="youtubeFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(3)' />" id="textYFS1" name="textYFS1" readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(3)' />" id="textYFS1" name="textYFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -87,12 +71,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-linkedin" ></i></span>
 				      <div class="col-7">
 						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="linkedinFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(4)' />" id="textLFS1" name="textLFS1" readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(4)' />" id="textLFS1" name="textLFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -100,12 +80,8 @@
 				      <span class="col-3 col-form-label text-right colorLabel"><i class="btmspace-30 fa fa-3x fa-google-plus" ></i></span>
 				      <div class="col-7">
 						<div class="input-group grupoRS">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="checkbox" id="googleFS1">
-						    </div>
-						  </div>
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(5)' />" id="textGFS1" name="textGFS1" readonly>
+						  
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(5)' />" id="textGFS1" name="textGFS1" >
 						</div>
 				      </div>
 				    </div>

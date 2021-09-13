@@ -400,8 +400,7 @@ $(document).ready(function() {
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "footerSeccionRedes",
 							 valoresFinales : valoresFinales }
-					console.log(finalJson);
-					
+//					console.log(finalJson);
 					enviaDataEdicion(finalJson)
 				}
 			});

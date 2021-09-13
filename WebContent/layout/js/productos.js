@@ -67,26 +67,27 @@ $(document).ready(function(){
 	
 });
 
-$('#selVideo').hide();
+
 $('.edicionBoton').change(function(){
 	var selBoton = $(this).val();
-//	console.log(selBoton);
+	var idSelect = $(this).attr('id');
+//	alert(idSelect);
+	$('#selVideo'+idSelect).remove();
 	if(selBoton === "Video"){
-		$(this).after('<select class="custom-select form-control" id=selVideo></select>')
+		$('#selVideo'+idSelect).show();
+		$(this).after('<select class="custom-select form-control" id=selVideo'+idSelect+'></select>')
 		var videos = $('#videos').val();
 		videos = JSON.parse(videos);
-		$('#selVideo').empty();
+//		$('#selVideo').empty();
 		var	opcionVideo = '<option value="" selected>Seleccione Video</option>';
-		$('#selVideo').append(opcionVideo);
+		$('#selVideo'+idSelect).append(opcionVideo);
 		for(a in videos){
 			opcionVideo =  '<option value="'+videos[a].videoContexto+'">'+videos[a].videoTitulo+'</option>';
-			$('#selVideo').append(opcionVideo);
+			$('#selVideo'+idSelect).append(opcionVideo);
 		}
-		$('#selVideo').show();
-		$('#selVideo').change(function(){
-			var selVideo = $('#selVideo').val();
-			
-			var idSel = $('.edicionBoton').attr("id");
+		$('#selVideo'+idSelect).change(function(){
+			var selVideo = $('#selVideo'+idSelect).val();
+//			var idSel = $('.edicionBoton').attr("id");
 			$videoFinal = "Video**"+selVideo;
 //			console.log($videoFinal);
 //			console.log("B");

@@ -30,13 +30,15 @@
                 <div class="card">
                    <a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" data-lightbox="ligthboxBodySeccionArray0" data-title="">          		
                     <img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" class="card-img-top" alt="..." />
+				  </a>
                     <div class="card-body">
-                        <h4 class="card-title" style="font-family:verdana;color:navy"><s:property value='#bodyQRDObjeto.objetoVO.get(1)'/></h5>
+                    	<a href="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='#bodyQRDObjeto.objetoVO.get(0)'/>" data-lightbox="ligthboxBodySeccionArray0" data-title="">
+                        <h4 class="card-title" style="font-family:verdana;color:navy"><s:property value='#bodyQRDObjeto.objetoVO.get(1)'/></h4>
+                        </a>
                         <p class="card-text" style="font-family:verdana;color:teal"><s:property value='#bodyQRDObjeto.objetoVO.get(2)'/></p>
-                        <h5 style="font-family:verdana;color:teal"><s:property value='#bodyQRDObjeto.objetoVO.get(3)'/></h4>
-<!--                         <a href="#!" class="btn btn-primary">.</a> -->
+                        <h5 style="font-family:verdana;color:teal"><s:property value='#bodyQRDObjeto.objetoVO.get(3)'/></h5>
                     </div>
-                    </a>
+
                 </div>
             </div>
 				
