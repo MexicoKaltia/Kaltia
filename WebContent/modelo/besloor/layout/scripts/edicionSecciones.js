@@ -394,6 +394,7 @@ $(document).ready(function() {
 		if(validaParam()){
 			$.seccionCampos = cargaModal("footerSeccionRedes");
 			$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
+				
 				if($("#modalFormSeccionRedes").valid()){
 					valoresFinales = dataEdicion($.seccionCampos, 0);
 					finalJson = { action : $.action,

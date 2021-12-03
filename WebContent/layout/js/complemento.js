@@ -144,7 +144,7 @@
 		    		console.log("PARAM NO VALIDO");
 		    	}
 		    }		
-	})
+	});
 	
 	function _desactiveSeccionEdicion(){
 		$('div').removeClass("edicion headerSeccion1 headerSeccion2 headerSeccion3 headerSeccion4 headerSeccion5")
@@ -432,9 +432,10 @@
 				
 			}
 		});
-		$('#modalEdicionFooterSeccionRedes_btnSave').hide();
+//		$('#modalEdicionFooterSeccionRedes_btnSave').hide();
 		
 		var seccionRedes = $('#seccionRedes').val();
+		console.log(seccionRedes);
 		seccionRedes = seccionRedes.split(",")
 		$('#listSeccionRedes').empty();
 		
@@ -470,69 +471,71 @@
 			return str;
 		}
 		
-		$('.validaCampo').focusout(function(){
+		
+		$('.validaCampo1').focusout(function(){ // Des uso
+//		$('#modalEdicionFooterSeccionRedes_btnSave').click(function(){
 			var tipoRed  =$(this).attr('id');
 			var valorRed  =$(this).val();
+			console.log(tipoRed);
 			
 			switch (tipoRed){
 			case "textFFS1":
-				if(!valorRed.includes("facebook")){
+				if(!valorRed.includes("facebook") && !valorRed.includes("vacio")){
+					$(this).val("http://vacio.io");
 					alert("Captura correctamente la URL de tu Facebook, ejemplo : 'https://www.facebook.com/IdFacebook'");
-					$(this).val("");
+					
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			case "textIFS1":
-				if(!valorRed.includes("instagram")){
+				if(!valorRed.includes("instagram") && !valorRed.includes("vacio")){
 					alert("Captura correctamente la URL de tu Instagram, ejemplo : 'https://www.instagram.com/IdInstagram'");
-					$(this).val("");
+					$(this).val("http://vacio.io");
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			case "textTFS1":
-				if(!valorRed.includes("twitter")){
+				if(!valorRed.includes("twitter") && !valorRed.includes("vacio")){
 					alert("Captura correctamente la URL de tu twitter, ejemplo : 'https://www.twitter.com/Idtwitter'");
-					$(this).val("");
+					$(this).val("http://vacio.io");
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			case "textYFS1":
-				if(!valorRed.includes("youtube")){
+				if(!valorRed.includes("youtube") && !valorRed.includes("vacio")){
 					alert("Captura correctamente la URL de tu youtube, ejemplo : 'https://www.youtube.com/Idyoutube'");
-					$(this).val("");
+					$(this).val("http://vacio.io");
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			case "textLFS1":
-				if(!valorRed.includes("linkedin")){
+				if(!valorRed.includes("linkedin") && !valorRed.includes("vacio")){
 					alert("Captura correctamente la URL de tu linkedin, ejemplo : 'https://www.linkedin.com/Idlinkedin'");
-					$(this).val("");
+					$(this).val("http://vacio.io");
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			case "textGFS1":
-				if(!valorRed.includes("google")){
+				if(!valorRed.includes("google") && !valorRed.includes("vacio")){
 					alert("Captura correctamente la URL de tu google, ejemplo : 'https://www.google.com/Idgoogle'");
-					$(this).val("");
+					$(this).val("http://vacio.io");
 					validaBtn(true);
 				}else{
 					validaBtn(false);
 				}
 				break;
 			}
-				
-			
-						
+							
 		});
 		
 		

@@ -7,6 +7,7 @@
 <body> 
 <!-- ################################################################################################ -->
 <!-- <div class="wrapper row4 aniview reallyslow" data-av-animation="rubberBand"> -->
+<a  id="seccion3"></a>
 <div class="wrapper row4 aniview reallyslow parallax" data-av-animation="rubberBand" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSeccion3.get(1)' />');">
   <footer id="footer" class="hoc clear"> 
     <div class="one_half first footerSeccionUbicacion">

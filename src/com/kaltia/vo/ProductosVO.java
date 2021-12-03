@@ -13,6 +13,7 @@ public class ProductosVO {
 	private boolean videoPagina;
 	private boolean tarjetaPagina;
 	private boolean retroalimentacionPagina;
+	private boolean ubicacion;
 	
 	private boolean citaPagina;
 	private boolean carpetaPagina;
@@ -119,6 +120,12 @@ public class ProductosVO {
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+	public boolean isUbicacion() {
+		return ubicacion;
+	}
+	public void setUbicacion(boolean ubicacion) {
+		this.ubicacion = ubicacion;
 	}	
 	
 	

@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 
 <body style="background-image:url('http://kaltiaservicios.com/store/kaltia/modelo/modal/fondo14.png?v=1');">
+<a  id="seccion2"></a>
 <div class="bodyQRD" id="bodyQRD">
 	<h1 style="font-family:verdana;color:navy;">Menu</h1>
 	

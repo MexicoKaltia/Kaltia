@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <body>	
 <!-- ################################################################################################ -->
+<a  id="seccion3"></a>
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
     <div class="center btmspace-50">

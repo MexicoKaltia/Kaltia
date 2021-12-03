@@ -4,6 +4,7 @@
 
 <html lang="">
 <body>
+<a  id="seccion2"></a>
 	<div class="bodyQRE" id="bodyQRE">
 		
 			<h2 style="font-family:verdana;color:white">Menu</h2>

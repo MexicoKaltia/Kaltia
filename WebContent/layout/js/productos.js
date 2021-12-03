@@ -19,6 +19,9 @@ $(document).ready(function(){
 //		console.log("checkQRE");
 	}
 	// modulos sencillos
+	if(productosEmpresa["checkUbicacion"]){
+		productosOpcion = productosOpcion+'<option value="Ubicacion" >Ubicacion</option>';
+	}
 	if(productosEmpresa["checkClientePagina"]){
 //		console.log("checkClientePagina");
 		productosOpcion = productosOpcion+'<option value="Contacto" >Contacto Cliente</option>';

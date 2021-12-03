@@ -48,21 +48,45 @@ $(document).ready(function(){
 		rules: {
 			textFFS1: {
 				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textFFS1').val();
+					 return !valorRed.includes("facebook");
+				 }
 			},
 			textIFS1: {
-				 url: true
+				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textIFS1').val();
+					 return !valorRed.includes("instagram");
+				 }
 			},
 			textTFS1: {
-				 url: true
+				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textTFS1').val();
+					 return !valorRed.includes("twitter");
+				 }
 			},
 			textYFS1: {
-				 url: true
+				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textYFS1').val();
+					 return !valorRed.includes("youtube");
+				 }
 			},
 			textLFS1: {
-				 url: true
+				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textLFS1').val();
+					 return !valorRed.includes("linkedin");
+				 }
 			},
 			textGFS1: {
-				 url: true
+				 url: true,
+				 depends : function(){
+					 var valorRed = $('#textGFS1').val();
+					 return !valorRed.includes("google");
+				 }
 			}
 		},
 		messages: {

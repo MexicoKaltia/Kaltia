@@ -4,6 +4,7 @@
 
 <html lang="">
 <body>
+<a  id="seccion3"></a>
 <div class="wrapper row4 aniview reallyslow" data-av-animation="zoomIn"  style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.footerSecciones.get(0)'/>?v=1');">
   <footer id="footer" class="hoc clear"> 
     <div class="one_quarter first footerSeccionUbicacion">

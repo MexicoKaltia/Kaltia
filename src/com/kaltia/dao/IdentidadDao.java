@@ -331,7 +331,7 @@ public class IdentidadDao {
 				+ " tc_productos.checkQRR, tc_productos.checkQRE, tc_productos.checkPuntoVenta, tc_productos.clientePagina, tc_productos.chatPagina, "
 				+ " tc_productos.videoPagina, tc_productos.tarjetaPagina,"
 				+ " tc_productos.retroalimentacionPagina, tc_productos.citaPagina, tc_productos.carpetaPagina,"
-				+ " tc_productos.notificacionPagina"
+				+ " tc_productos.notificacionPagina, tc_productos.ubicacion"
 				+ " from tc_productos"
 				+ " WHERE tc_productos.idEmpresa = ?";
 		
@@ -352,6 +352,7 @@ public class IdentidadDao {
 				productos.setCitaPagina(returnDAO.get(10) != null ? toBoolean( returnDAO.get(10)) : false);
 				productos.setCarpetaPagina(returnDAO.get(11) != null ? toBoolean( returnDAO.get(11)) : false);
 				productos.setNotificacionPagina(returnDAO.get(12) != null ? toBoolean( returnDAO.get(12)) : false);
+				productos.setUbicacion(returnDAO.get(13) != null ? toBoolean( returnDAO.get(13)) : false);
 				
 				productos.setCodigo("00");
 				}else {

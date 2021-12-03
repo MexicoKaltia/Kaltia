@@ -45,7 +45,7 @@
 				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(6)' />" id="textIFS1" name="textIFS1">
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(2)' />" id="textIFS1" name="textIFS1">
 						</div>
 				      </div>
 				    </div>
@@ -54,7 +54,7 @@
 				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(2)' />" id="textTFS1" name="textTFS1" >
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(3)' />" id="textTFS1" name="textTFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -63,7 +63,7 @@
 				      <div class="col-7">
 				      <div class="input-group grupoRS">
 						  
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(3)' />" id="textYFS1" name="textYFS1" >
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(4)' />" id="textYFS1" name="textYFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -72,7 +72,7 @@
 				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(4)' />" id="textLFS1" name="textLFS1" >
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(5)' />" id="textLFS1" name="textLFS1" >
 						</div>
 				      </div>
 				    </div>
@@ -81,7 +81,7 @@
 				      <div class="col-7">
 						<div class="input-group grupoRS">
 						  
-						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(5)' />" id="textGFS1" name="textGFS1" >
+						  <input type="text" class="form-control validaCampo" value="<s:property value='footer.footerSeccionRedes.get(6)' />" id="textGFS1" name="textGFS1" >
 						</div>
 				      </div>
 				    </div>

@@ -5,6 +5,7 @@
 <html lang="es">
 <body>
 <!-- ################################################################################################ -->
+<a  id="seccion3"></a>
 <div class="wrapper row4 bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='footer.FooterSeccion3.get(1)' />');">
 <a id="seccion6"></a>
   <footer id="footer" class="hoc clear"> 

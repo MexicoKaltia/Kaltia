@@ -182,6 +182,7 @@ public class Identidad {
 						hashIdentidad.put("tarjetaProductos", tarjetaProductos);
 					}
 				}
+				
 				logger.info("identidadVOProductos:"+identidadVO.getCodigoVO());
 			}
 		}
@@ -224,7 +225,9 @@ private JSONObject productosToJSON(ProductosVO productos) {
 			json.put("checkPuntoVenta", true);
 		}
 		//modulos sencillos
-		if(productos.isClientePagina()) {
+		if(productos.isUbicacion()) {
+			json.put("checkUbicacion", true);
+		}if(productos.isClientePagina()) {
 			json.put("checkClientePagina", true);
 		}if(productos.isChatPagina()) {
 			json.put("checkChatPagina", true);
