@@ -45,6 +45,21 @@
         </action>
     </package>
     
+     <package name="inv" namespace="/inv" extends="default, struts-default, tiles-default">
+	    <result-types>
+	            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+	    </result-types>
+        <action name="*" class="com.kaltia.action.BaseAction" method="qr">
+            <param name="actionInicial">menuA</param>
+            <result name="aerogemINV" type="tiles">aerogemINV</result>
+            <result name="algeniusINV" type="tiles">algeniusINV</result>
+            <result name="broneaINV" type="tiles">broneaINV</result>
+            <result name="besloorINV" type="tiles">besloorINV</result>
+            
+            <result name="error">/WEB-INF/inicio/error.jsp</result>
+        </action>
+    </package>
+    
     
 <!--     <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default"> -->
 <!--     <result-types> -->

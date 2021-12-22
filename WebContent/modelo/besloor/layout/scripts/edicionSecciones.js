@@ -401,7 +401,6 @@ $(document).ready(function() {
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "footerSeccionRedes",
 							 valoresFinales : valoresFinales }
-//					console.log(finalJson);
 					enviaDataEdicion(finalJson)
 				}
 			});

@@ -47,46 +47,22 @@ $(document).ready(function(){
 	$("#modalFormSeccionRedes").validate({
 		rules: {
 			textFFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textFFS1').val();
-					 return !valorRed.includes("facebook");
-				 }
+				 url: true
 			},
 			textIFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textIFS1').val();
-					 return !valorRed.includes("instagram");
-				 }
+				 url: true
 			},
 			textTFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textTFS1').val();
-					 return !valorRed.includes("twitter");
-				 }
+				 url: true
 			},
 			textYFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textYFS1').val();
-					 return !valorRed.includes("youtube");
-				 }
+				 url: true
 			},
 			textLFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textLFS1').val();
-					 return !valorRed.includes("linkedin");
-				 }
+				 url: true
 			},
 			textGFS1: {
-				 url: true,
-				 depends : function(){
-					 var valorRed = $('#textGFS1').val();
-					 return !valorRed.includes("google");
-				 }
+				 url: true
 			}
 		},
 		messages: {

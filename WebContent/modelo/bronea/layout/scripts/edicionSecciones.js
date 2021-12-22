@@ -460,9 +460,6 @@ $(document).ready(function() {
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "footerSeccionRedes",
 							 valoresFinales : valoresFinales };
-					
-					console.log(finalJson);
-					alert("pausa");
 					enviaDataEdicion(finalJson)
 				}
 			});

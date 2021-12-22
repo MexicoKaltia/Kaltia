@@ -301,7 +301,6 @@ $(document).ready(function() {
 							 idEmpresa : $.idEmpresa,	
 							 seccion : "footerSeccionRedes",
 							 valoresFinales : valoresFinales }
-					
 					enviaDataEdicion(finalJson)
 				}
 				

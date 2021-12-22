@@ -36,10 +36,11 @@
 		
 	</definition>
 	
-	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
+	<definition name="viral" extends="baseInicio">
 		<put-attribute name="header" value="/modelo/viral/pages/viralHeader.jsp" />
 		<put-attribute name="body" value="/modelo/viral/pages/viralBody.jsp" />
 		<put-attribute name="footer" value="/modelo/viral/pages/viralFooter.jsp" />
+		<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
 		
 	</definition>
 
@@ -97,6 +98,20 @@
 	</definition>
 	<definition name="besloorQRD" extends="besloor">
 		<put-attribute name="body" value="/modelo/qr/bodyQRD.jsp" />
+	</definition>
+	
+	<!-- Invitacion-->
+	<definition name="broneaINV" extends="bronea">
+		<put-attribute name="body" value="/modelo/qr/bodyINV.jsp" />
+	</definition>
+	<definition name="aerogemINV" extends="aerogem">
+		<put-attribute name="body" value="/modelo/qr/bodyINV.jsp" />
+	</definition>
+	<definition name="algeniusINV" extends="algenius">
+		<put-attribute name="body" value="/modelo/qr/bodyINV.jsp" />
+	</definition>
+	<definition name="besloorINV" extends="besloor">
+		<put-attribute name="body" value="/modelo/qr/bodyINV.jsp" />
 	</definition>
 	
 	
